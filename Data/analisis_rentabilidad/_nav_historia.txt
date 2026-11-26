@@ -1,0 +1,10 @@
+1. El punto de partida: moverse en Cuba|historia/01-seccion.md
+2. La alternativa personal: cuatro preguntas antes de comprar|historia/02-seccion.md
+3. Lo que encontramos|historia/03-seccion.md
+4. La curva de valor|historia/04-seccion.md
+5. Las cuatro fuerzas invisibles|historia/05-seccion.md
+6. Dónde está el mercado|historia/06-seccion.md
+7. El espejo egipcio|historia/07-seccion.md
+8. Lo que viene|historia/08-seccion.md
+9. Cierre|historia/09-seccion.md
+Apéndice visual|historia/apendice.md

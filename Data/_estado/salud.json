@@ -1,0 +1,92 @@
+[
+  {
+    "job": "revolico",
+    "periodo_horas": 1.5,
+    "estado": "SIN DATOS",
+    "ultimo_exito": null,
+    "edad_horas": null,
+    "fallos_consecutivos": 0,
+    "ultimo_error": ""
+  },
+  {
+    "job": "circuitos",
+    "periodo_horas": 24,
+    "estado": "OK",
+    "ultimo_exito": "2026-11-23T16:07:47.618061+00:00",
+    "edad_horas": 1.4,
+    "fallos_consecutivos": 0,
+    "ultimo_error": ""
+  },
+  {
+    "job": "marketplaces",
+    "periodo_horas": 168,
+    "estado": "SIN DATOS",
+    "ultimo_exito": null,
+    "edad_horas": null,
+    "fallos_consecutivos": 0,
+    "ultimo_error": ""
+  },
+  {
+    "job": "snapshots",
+    "periodo_horas": 168,
+    "estado": "SIN DATOS",
+    "ultimo_exito": null,
+    "edad_horas": null,
+    "fallos_consecutivos": 0,
+    "ultimo_error": ""
+  },
+  {
+    "job": "fx",
+    "periodo_horas": 168,
+    "estado": "SIN DATOS",
+    "ultimo_exito": null,
+    "edad_horas": null,
+    "fallos_consecutivos": 0,
+    "ultimo_error": ""
+  },
+  {
+    "job": "onei",
+    "periodo_horas": 2160,
+    "estado": "SIN DATOS",
+    "ultimo_exito": null,
+    "edad_horas": null,
+    "fallos_consecutivos": 0,
+    "ultimo_error": ""
+  },
+  {
+    "job": "analisis",
+    "periodo_horas": 168,
+    "estado": "SIN DATOS",
+    "ultimo_exito": null,
+    "edad_horas": null,
+    "fallos_consecutivos": 0,
+    "ultimo_error": ""
+  },
+  {
+    "job": "sitio",
+    "periodo_horas": 168,
+    "estado": "SIN DATOS",
+    "ultimo_exito": null,
+    "edad_horas": null,
+    "fallos_consecutivos": 0,
+    "ultimo_error": ""
+  },
+  {
+    "job": "salud",
+    "periodo_horas": 24,
+    "estado": "SIN DATOS",
+    "ultimo_exito": null,
+    "edad_horas": null,
+    "fallos_consecutivos": 0,
+    "ultimo_error": ""
+  },
+  {
+    "job": "calidad",
+    "periodo_horas": 168,
+    "estado": "SIN DATOS",
+    "ultimo_exito": null,
+    "edad_horas": null,
+    "fallos_consecutivos": 0,
+    "ultimo_error": ""
+  }
+]

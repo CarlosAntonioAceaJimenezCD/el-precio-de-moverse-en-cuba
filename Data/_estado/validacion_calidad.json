@@ -1,0 +1,16 @@
+{
+  "fecha_utc": "2026-11-23T16:07:53.307920+00:00",
+  "filas": 2014,
+  "invalidos": 0,
+  "ratio": 0.0,
+  "reglas": {
+    "precio_positivo": 0,
+    "anio_valido": 0,
+    "km_valido": 0,
+    "moneda_valida": 0,
+    "clave_unica": 0,
+    "titulo_valido": 0
+  },
+  "umbral": 0.1,
+  "estado": "ok"
+}

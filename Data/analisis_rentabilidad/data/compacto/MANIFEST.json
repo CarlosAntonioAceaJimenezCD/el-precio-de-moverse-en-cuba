@@ -1,0 +1,84 @@
+{
+  "origen": "revolico.sqlite",
+  "compresion": "zstd",
+  "tablas": {
+    "anuncios": {
+      "filas": 10217,
+      "exportadas": 10217,
+      "particiones": 1,
+      "bytes": 23699051,
+      "archivos": [
+        {
+          "ruta": "anuncios/year=2026/month=11/parte-000.parquet",
+          "bytes": 23699051,
+          "sha256": "df78fc061653996a536d30d19261b61d34c49e42fe62aa1f478fdb9b7cf5660c"
+        }
+      ]
+    },
+    "autos": {
+      "filas": 812,
+      "exportadas": 812,
+      "particiones": 1,
+      "bytes": 1211566,
+      "archivos": [
+        {
+          "ruta": "autos/year=2026/month=11/parte-000.parquet",
+          "bytes": 1211566,
+          "sha256": "3295be8392e41dc669e3b880a515c5b9219c652806181a60e3ed28c9cb57551a"
+        }
+      ]
+    },
+    "revision": {
+      "filas": 11620,
+      "exportadas": 11620,
+      "particiones": 1,
+      "bytes": 451472,
+      "archivos": [
+        {
+          "ruta": "revision/year=2026/month=11/parte-000.parquet",
+          "bytes": 451472,
+          "sha256": "3cf9e7821fff68c6556a2b75e066f7229f483206c4265c032036f7d7d2fe77f3"
+        }
+      ]
+    },
+    "price_history": {
+      "filas": 716,
+      "exportadas": 716,
+      "particiones": 1,
+      "bytes": 7774,
+      "archivos": [
+        {
+          "ruta": "price_history/year=2026/month=11/parte-000.parquet",
+          "bytes": 7774,
+          "sha256": "7910e94415ddc92ebee72c84e03bd7fe1600516f5b4eed3280b3616678afceb8"
+        }
+      ]
+    },
+    "imagenes": {
+      "filas": 23143,
+      "exportadas": 23143,
+      "particiones": 1,
+      "bytes": 1954470,
+      "archivos": [
+        {
+          "ruta": "imagenes/year=sin_fecha/month=sin_fecha/parte-000.parquet",
+          "bytes": 1954470,
+          "sha256": "ca736c91b355f70d43e0f435d929c1242cbc54019e36bedae02ff2bbbd499adc"
+        }
+      ]
+    },
+    "telefonos": {
+      "filas": 12338,
+      "exportadas": 12338,
+      "particiones": 1,
+      "bytes": 131584,
+      "archivos": [
+        {
+          "ruta": "telefonos/year=sin_fecha/month=sin_fecha/parte-000.parquet",
+          "bytes": 131584,
+          "sha256": "97c4f791bf395909b6e872053f71f6ba87866f9cb9b30494c1007ef9daaf6aa5"
+        }
+      ]
+    }
+  }
+}
