@@ -11,6 +11,7 @@ import argparse
 import json
 import re
 import sqlite3
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
@@ -32,12 +33,24 @@ def now():
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
+_tls = threading.local()
+
+
+def _session():
+    """Sesion por hilo: reutiliza conexion TLS y reduce latencia."""
+    s = getattr(_tls, "session", None)
+    if s is None:
+        s = creq.Session(impersonate="chrome")
+        s.headers.update({"Accept-Language": "es-ES,es;q=0.9"})
+        _tls.session = s
+    return s
+
+
 def get_html(url, tries=3):
     last = ""
     for i in range(tries):
         try:
-            r = creq.get(url, impersonate="chrome", timeout=35, allow_redirects=True,
-                         headers={"Accept-Language": "es-ES,es;q=0.9"})
+            r = _session().get(url, timeout=35, allow_redirects=True)
             if r.status_code == 200 and r.text:
                 return r.text
             last = f"HTTP {r.status_code}"

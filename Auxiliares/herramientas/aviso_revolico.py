@@ -16,9 +16,12 @@ import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
+from db_chunks import ensure_db
+
 ROOT = Path(__file__).resolve().parents[2]
 DB = ROOT / "Data/Revolico/revolico.sqlite"
 QUEUE_DB = ROOT / "Data/Revolico/pipeline.sqlite"
+ensure_db(ROOT / "Data/Revolico/pipeline_chunks/MANIFEST.json", QUEUE_DB)
 ESTADO = ROOT / "Data/Revolico/estado.json"
 PARTES = ROOT / "Data/Revolico/partes"
 SALIDA = ROOT / "Data/Revolico/progreso.md"

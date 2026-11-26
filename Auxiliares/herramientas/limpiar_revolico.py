@@ -19,6 +19,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 DB = ROOT / "Data/Revolico/revolico.sqlite"
+# Rango temporal permitido para anuncios: desde 2021-01-01 hasta hoy.
+FECHA_MINIMA = "2021-01-01"
+
+# Anuncios que Revolico publica dentro de "Vehículos > Carros" pero no son autos:
+# combustible por litro, transporte de mudanza, taxi y Uber.
+EXCLUDE_IDS = {"58867937", "53777554", "53843413", "58886962"}
 
 # Categorías que SÍ son vehículos de al menos 4 ruedas.
 INCLUDE = re.compile(
@@ -34,9 +40,12 @@ EXCLUDE_CAT = re.compile(
 # Palabras del título que indican que no es un vehículo completo.
 EXCLUDE_TITLE = re.compile(
     r"\b(moto|motocicleta|bicimoto|scooter|triciclo|bici|bicicleta|llanta|neumático|"
-    r"repuesto|accesorio|radio|pantalla|estereo|alarma|faros?|parachoques?|asientos?|"
-    r"espejos?|bater[ií]a|motor\b|caja\b|transmisi[oó]n|amortiguador|radiador|"
-    r"empleo|chofer|alquiler|renta|servicio t[ée]cnico|taller|lavado)\b",
+    r"repuesto|accesorio|radio|pantalla|estereo|alarma|faros?|parachoques?|"
+    r"espejos?|amortiguador|radiador|escatolina|alternador|arranque|"
+    r"empleo|chofer|alquiler|renta|servicio t[ée]cnico|taller|lavado|"
+    r"kit solar|estaci[oó]n de energ[ií]a|aditamento|soporte para bicicletas)\b"
+    r"|(?:vendo|se vende|venta de)\s+(?:un\s+)?(?:motor|caja|transmisi[oó]n|bater[ií]a|radiador|alternador)\b"
+    r"|\bmotor suelto\b",
     re.IGNORECASE,
 )
 INCLUDE_TITLE = re.compile(
@@ -72,6 +81,7 @@ def preparar(con: sqlite3.Connection) -> None:
     )
     # La tabla se reconstruye en cada corrida para reflejar cambios de la BD.
     con.execute("DELETE FROM autos")
+    con.execute("CREATE UNIQUE INDEX IF NOT EXISTS idx_autos_id ON autos(id)")
     con.execute(
         """CREATE TABLE IF NOT EXISTS revision (
         id TEXT PRIMARY KEY, url TEXT, categoria TEXT, motivo TEXT, revisado_utc TEXT)"""
@@ -90,13 +100,24 @@ def clasificar(row: dict) -> tuple[bool, str, bool, bool]:
         "AdType" in html or "og:title" in html or "Revolico" in html
     ) and "anomaly" not in html[:2000].lower()
 
+    # 1a) Exclusión manual: servicios y combustible mal categorizados.
+    if str(row.get("id")) in EXCLUDE_IDS:
+        return False, "no es auto: servicio/combustible", pagina_ok, False
+
+    # 1b) Rango temporal: 2021-01-01 hasta hoy.
+    fecha = str(row.get("updated_on_by_user") or "")[:10]
+    hoy = datetime.now(timezone.utc).date().isoformat()
+    if fecha and (fecha < FECHA_MINIMA or fecha > hoy):
+        return False, f"fuera de rango temporal ({fecha})", pagina_ok, False
+
     # 2) ¿Es vehículo de 4+ ruedas?
     if EXCLUDE_CAT.search(cat):
         return False, f"categoría excluida: {cat}", pagina_ok, False
-    if INCLUDE.search(cat):
-        es_auto = not EXCLUDE_TITLE.search(titulo) or bool(INCLUDE_TITLE.search(titulo))
-    else:
-        es_auto = bool(INCLUDE_TITLE.search(titulo)) and not EXCLUDE_TITLE.search(titulo)
+    # Una marca en el título NO debe poder vencer a una exclusión explícita
+    # (moto, repuesto, llanta, servicio, alquiler...). La exclusión manda siempre.
+    excluida = bool(EXCLUDE_TITLE.search(titulo)) or bool(EXCLUDE_CAT.search(cat))
+    incluida = bool(INCLUDE.search(cat)) or bool(INCLUDE_TITLE.search(titulo))
+    es_auto = incluida and not excluida
     if not es_auto:
         return False, f"no es vehículo 4+ ruedas: {cat or titulo[:60]}", pagina_ok, False
 
@@ -162,7 +183,7 @@ def main() -> None:
             columns = [d[1] for d in con.execute("PRAGMA table_info(autos)")]
             values = [row.get(c) for c in columns]
             con.execute(
-                f"INSERT INTO autos ({','.join(columns)}) VALUES ({','.join('?'*len(columns))})",
+                f"INSERT OR REPLACE INTO autos ({','.join(columns)}) VALUES ({','.join('?'*len(columns))})",
                 values,
             )
         else:

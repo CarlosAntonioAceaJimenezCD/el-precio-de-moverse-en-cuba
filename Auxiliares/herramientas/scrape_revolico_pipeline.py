@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import signal
 import sqlite3
 import threading
 import time
@@ -29,10 +30,14 @@ from pathlib import Path
 
 import scrape_revolico as sr
 import limpiar_revolico as lr
+from db_chunks import ensure_db
+
+FECHA_MINIMA = "2021-01-01"
 
 OUT = sr.OUT
 MAIN_DB = sr.DB
 QUEUE_DB = OUT / "pipeline.sqlite"
+ensure_db(OUT / "pipeline_chunks" / "MANIFEST.json", QUEUE_DB)
 # Adaptado de integraciones/spinny (output_writer.py + diff_runs.py):
 # snapshot {id: precio} entre corridas para no descargar anuncios sin cambios.
 SNAP_DIR = OUT / "snapshots"
@@ -149,10 +154,93 @@ def clasificar_enlace(titulo: str) -> tuple[int, str]:
     """
     texto = titulo or ""
     excluido = bool(lr.EXCLUDE_TITLE.search(texto))
-    candidato = bool(lr.INCLUDE_TITLE.search(texto))
-    if excluido and not candidato:
+    # Antes, una marca en el título podía vencer a la exclusión y dejar pasar
+    # motos/repuestos. La exclusión manda siempre.
+    if excluido:
         return 0, "descartado en descubrimiento: no es vehículo 4+ ruedas"
     return 1, ""
+
+
+def descubrir_hasta_fecha() -> None:
+    """Modo solo-descubrimiento: página por página hacia atrás hasta 2021-01-01
+    o hasta que se acaben las páginas. No descarga ni escribe en `anuncios`.
+    """
+    c = conn_queue()
+    pagina = 1
+    anterior: set[str] = set()
+    vistos_totales: set[str] = set()
+    total = 0
+    motivo_fin = "límite de seguridad"
+
+    while pagina <= 2000:
+        if STOP.is_set():
+            motivo_fin = "detenido"
+            break
+        html = sr.get_html(sr.SEARCH.format(page=pagina))
+        st = sr.state_from(html)
+        ads: dict[str, tuple[str, str, str]] = {}
+        fechas: list[str] = []
+        for k, v in st.items():
+            if k.startswith("AdType:") and isinstance(v, dict) and v.get("permalink"):
+                fecha = str(v.get("updatedOnToOrder") or "")[:10]
+                ads[v["permalink"]] = (
+                    str(v.get("id") or ""),
+                    str(v.get("updatedOnToOrder") or ""),
+                    str(v.get("title") or ""),
+                )
+                if fecha:
+                    fechas.append(fecha)
+
+        if not ads:
+            motivo_fin = "sin anuncios en la página"
+            break
+
+        rutas_pagina = set(ads)
+        nuevos = len(rutas_pagina - vistos_totales)
+        repetidos = len(rutas_pagina & vistos_totales)
+        vistos_totales |= rutas_pagina
+        insertados = 0
+        ahora = sr.now()
+        for path, (ad_id, sig, titulo) in ads.items():
+            candidato, motivo = clasificar_enlace(titulo)
+            cur = c.execute(
+                """INSERT OR IGNORE INTO url_queue
+                   (path,status,discovered_at,ad_id,sig,titulo,es_auto_candidato,motivo)
+                   VALUES (?,?,?,?,?,?,?,?)""",
+                (path, "descubierto", ahora, ad_id, sig, titulo, candidato, motivo),
+            )
+            insertados += cur.rowcount
+        c.commit()
+        total += nuevos
+
+        fecha_min = min(fechas) if fechas else "—"
+        print(
+            f"[descubrimiento] página {pagina}: {len(ads)} anuncios, {nuevos} nuevos, "
+            f"{repetidos} repetidos, insertados {insertados}, fecha mínima {fecha_min} (acumulado {total})",
+            flush=True,
+        )
+
+        if fechas and min(fechas) < FECHA_MINIMA:
+            motivo_fin = f"alcanzada fecha mínima {FECHA_MINIMA}"
+            break
+        if nuevos == 0:
+            motivo_fin = "los anuncios se están repitiendo; se detiene el descubrimiento"
+            break
+        actual = set(ads)
+        if actual == anterior:
+            motivo_fin = "fin de páginas (página repetida)"
+            break
+        anterior = actual
+        pagina += 1
+        time.sleep(0.35)
+
+    c.close()
+    marca = OUT / ".backfill_completo"
+    marca.write_text(
+        f"{datetime.now(timezone.utc).isoformat(timespec='seconds')} | {motivo_fin} | páginas={pagina} | enlaces={total}\n",
+        encoding="utf-8",
+    )
+    print(f"Descubrimiento terminado: {motivo_fin} | páginas={pagina} | enlaces={total}", flush=True)
 
 
 def discover(max_pages: int) -> None:
@@ -198,6 +286,18 @@ def discover(max_pages: int) -> None:
     DISCOVERY_DONE.set()
 
 
+def _retry_exec(c, sql, params=()):
+    """Reintenta escrituras cuando SQLite devuelve 'database is locked'."""
+    for intento in range(8):
+        try:
+            return c.execute(sql, params)
+        except sqlite3.OperationalError as e:
+            if "locked" not in str(e).lower() or intento == 7:
+                raise
+            time.sleep(0.15 * (intento + 1))
+    return None
+
+
 def download_loop() -> None:
     c = conn_queue()
     while not STOP.is_set():
@@ -215,8 +315,13 @@ def download_loop() -> None:
             with lock_commit:
                 skipped_counter["n"] += 1
             continue
-        c.execute("UPDATE url_queue SET status='downloading' WHERE path=?", (path,))
-        c.commit()
+        _retry_exec(c, "UPDATE url_queue SET status='downloading' WHERE path=?", (path,))
+        for _ in range(8):
+            try:
+                c.commit()
+                break
+            except sqlite3.OperationalError:
+                time.sleep(0.2)
         try:
             d = sr.fetch_one(path)
             if d:
@@ -231,8 +336,13 @@ def download_loop() -> None:
             else:
                 c.execute("UPDATE url_queue SET status='failed', error='fetch_one=None' WHERE path=?", (path,))
         except Exception as e:
-            c.execute("UPDATE url_queue SET status='failed', error=? WHERE path=?", (str(e)[:300], path))
-        c.commit()
+            _retry_exec(c, "UPDATE url_queue SET status='failed', error=? WHERE path=?", (str(e)[:300], path))
+        for _ in range(8):
+            try:
+                c.commit()
+                break
+            except sqlite3.OperationalError:
+                time.sleep(0.2)
     c.close()
 
 
@@ -348,6 +458,7 @@ def main() -> None:
     ap.add_argument("--batch-size", type=int, default=25)
     ap.add_argument("--skip-unchanged", action="store_true", help="omitir anuncios cuya firma de listado no cambió (no fiable para precio)")
     ap.add_argument("--solo-colas", action="store_true", help="no descubre páginas nuevas; solo drena las colas pendientes")
+    ap.add_argument("--solo-descubrimiento", action="store_true", help="solo recorre páginas hasta 2021-01-01 o fin; sin descarga ni BD")
     args = ap.parse_args()
     global BATCH, SKIP_UNCHANGED
     BATCH = args.batch_size
@@ -355,6 +466,18 @@ def main() -> None:
 
     OUT.mkdir(parents=True, exist_ok=True)
     init_queues()
+
+    if args.solo_descubrimiento:
+        descubrir_hasta_fecha()
+        return
+
+    # Los enlaces descubiertos en el backfill pasan a cola de descarga normal.
+    q = conn_queue()
+    q.execute("UPDATE url_queue SET status='pending' WHERE status='descubierto' AND es_auto_candidato=1")
+    q.execute("UPDATE url_queue SET status='rechazado' WHERE status='descubierto' AND es_auto_candidato=0")
+    q.commit()
+    q.close()
+
     global SNAPSHOT
     SNAPSHOT = load_snapshot()
     print(f"Snapshot cargado: {len(SNAPSHOT)} anuncios", flush=True)
@@ -374,13 +497,14 @@ def main() -> None:
     for _ in range(args.processors):
         t = threading.Thread(target=process_loop, daemon=True); t.start(); threads.append(t)
 
+    signal.signal(signal.SIGTERM, lambda *_: STOP.set())
     try:
         while True:
             time.sleep(2)
             q = conn_queue()
             pending = q.execute(
                 """SELECT
-                   (SELECT count(*) FROM url_queue WHERE status IN ('pending','downloading')),
+                   (SELECT count(*) FROM url_queue WHERE status IN ('pending','downloading') AND es_auto_candidato=1),
                    (SELECT count(*) FROM download_queue WHERE status IN ('pending','processing')),
                    (SELECT count(*) FROM process_queue WHERE status='pending')"""
             ).fetchone()

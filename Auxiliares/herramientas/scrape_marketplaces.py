@@ -10,6 +10,7 @@ import argparse
 import json
 import re
 import sqlite3
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import time
 import unicodedata
 from collections import deque
@@ -27,16 +28,20 @@ SITES = {
     "autocubana": {
         "name": "Autocubana",
         "seeds": ["https://www.autocubana.com/es/vehicle_listings?car_type=carros"],
+        "page_template": "https://www.autocubana.com/es/vehicle_listings?car_type=carros&page={page}",
+        "pages": 40,
         "pattern": r"/vehicle_listings/anuncio-",
         "allow": ("autocubana.com",),
-        "max": 60,
+        "max": 667,
     },
     "itencel": {
         "name": "iTENCEL",
         "seeds": ["https://itencel.com/anuncio-categoria/vehiculos/carros/"],
+        "page_template": "https://itencel.com/anuncio-categoria/vehiculos/carros/page/{page}/",
+        "pages": 40,
         "pattern": r"/anuncio/",
         "allow": ("itencel.com",),
-        "max": 60,
+        "max": 951,
     },
     "ventacuba": {
         "name": "VentaCuba",
@@ -45,16 +50,20 @@ SITES = {
             "http://www.ventacuba.com/search/category,carros-y-camionetas/sOrder,i_price/iOrderType,asc",
             "http://www.ventacuba.com/search/category,carros-y-camionetas/sOrder,i_price/iOrderType,desc",
         ],
+        "page_template": "http://www.ventacuba.com/search/category,carros-y-camionetas/sOrder,i_price/iOrderType,asc/page,{page}",
+        "pages": 40,
         "pattern": r"_i\d+",
         "allow": ("ventacuba.com",),
-        "max": 60,
+        "max": 801,
     },
     "timbirichi": {
         "name": "Timbirichi",
         "seeds": ["https://www.timbirichi.com/vehiculos-y-piezas/carros"],
+        "page_template": "https://www.timbirichi.com/vehiculos-y-piezas/carros?page={page}",
+        "pages": 40,
         "pattern": r"/vehiculos-y-piezas/carros/.+",
         "allow": ("timbirichi.com",),
-        "max": 60,
+        "max": 281,
     },
     "cogetucarro": {
         "name": "Cogetucarro",
@@ -63,7 +72,7 @@ SITES = {
         "sitemap_pattern": r"view\.php\?id=\d+",
         "pattern": r"view\.php\?id=\d+",
         "allow": ("cogetucarro.com",),
-        "max": 200,
+        "max": 5008,
     },
     "cubisima": {
         "name": "Cubisima",
@@ -77,6 +86,8 @@ SITES = {
     "apululu": {
         "name": "Apululu",
         "seeds": ["https://apululu.es/anuncio-categoria/carros/", "https://apululu.es/anuncio-categoria/autos/"],
+        "page_template": "https://apululu.es/anuncio-categoria/carros/page/{page}/",
+        "pages": 10,
         "pattern": r"/anuncio/",
         "allow": ("apululu.es",),
         "max": 60,
@@ -84,6 +95,8 @@ SITES = {
     "carroscom": {
         "name": "Carros.com Cuba",
         "seeds": ["https://www.carros.com/cars-for-sale/cuba-co47/?lang=es"],
+        "page_template": "https://www.carros.com/cars-for-sale/cuba-co47/?lang=es&page={page}",
+        "pages": 5,
         "pattern": r"/car/",
         "allow": ("carros.com",),
         "max": 60,
@@ -365,7 +378,10 @@ def get_detail_urls(site):
             urls += [u for u in found if pat.search(u)]
         except Exception as e:
             print(f"  sitemap error: {e}", flush=True)
-    for seed in site["seeds"]:
+    seeds = list(site["seeds"])
+    if site.get("page_template") and site.get("pages"):
+        seeds += [site["page_template"].format(page=p) for p in range(2, site["pages"] + 1)]
+    for seed in seeds:
         try:
             html, _, final, soup = fetch(seed)
             for a in soup.find_all("a", href=True):
@@ -435,6 +451,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--sites", nargs="*")
     ap.add_argument("--delay", type=float, default=0.6)
+    ap.add_argument("--workers", type=int, default=1, help="tiendas en paralelo (BDs separadas)")
     ap.add_argument("--revolico", action="store_true")
     a = ap.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
@@ -443,15 +460,27 @@ def main():
         print("REVOLICO fechas encontradas:", total)
         print("MAS ANTIGUAS:", oldest[:10])
         return 0
+    targets = []
     for key, site in SITES.items():
         if a.sites and key not in a.sites:
             continue
         s = dict(site)
         s["key"] = key
-        try:
-            crawl_site(s, a.delay)
-        except Exception as e:
-            print(f"[{key}] ERROR: {e}", flush=True)
+        targets.append(s)
+    if a.workers <= 1:
+        for s in targets:
+            try:
+                crawl_site(s, a.delay)
+            except Exception as e:
+                print(f"[{s['key']}] ERROR: {e}", flush=True)
+    else:
+        with ThreadPoolExecutor(max_workers=a.workers) as ex:
+            futures = {ex.submit(crawl_site, s, a.delay): s["key"] for s in targets}
+            for fut in as_completed(futures):
+                try:
+                    fut.result()
+                except Exception as e:
+                    print(f"[{futures[fut]}] ERROR: {e}", flush=True)
     lines = ["# Resumen de marketplaces", "", "| Marketplace | Anuncios | Comentarios | Vendedores |", "|---|---:|---:|---:|"]
     for db in sorted(OUT.glob("*.sqlite")):
         c = sqlite3.connect(db)
