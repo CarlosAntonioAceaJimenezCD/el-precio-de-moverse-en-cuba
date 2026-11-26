@@ -1,0 +1,373 @@
+{
+  "source": "pipeline.sqlite",
+  "source_size": 542957568,
+  "source_sha256": "9b46a3cc93022b314fcb6b92f450c6201dfe6497200680696d977ea5899e09d0",
+  "chunk_size": 10485760,
+  "chunk_count": 52,
+  "chunks": [
+    {
+      "index": 0,
+      "name": "chunk_0000.bin",
+      "offset": 0,
+      "size": 10485760,
+      "sha256": "6d2a72291b91d7cb29bd2b5a4c5549e3f142c2c5b690f319d77b76164dd8cc75"
+    },
+    {
+      "index": 1,
+      "name": "chunk_0001.bin",
+      "offset": 10485760,
+      "size": 10485760,
+      "sha256": "3fabd3ce589a2cc3fdafce714b486c38f62f556d572a2f34d8c07703c12b2873"
+    },
+    {
+      "index": 2,
+      "name": "chunk_0002.bin",
+      "offset": 20971520,
+      "size": 10485760,
+      "sha256": "53d4b61ad0d9f166e6f53f4385a78a63c127e1c57ebf7a9a63736749dfbf65a9"
+    },
+    {
+      "index": 3,
+      "name": "chunk_0003.bin",
+      "offset": 31457280,
+      "size": 10485760,
+      "sha256": "a157e26cebe8418674d62271b9613e5bca7cf6c329684adf7c266170c3e4486c"
+    },
+    {
+      "index": 4,
+      "name": "chunk_0004.bin",
+      "offset": 41943040,
+      "size": 10485760,
+      "sha256": "94c5d6bd349289f8a428980585d63e9ad196d361737315e1bb3d8ba2f164d1db"
+    },
+    {
+      "index": 5,
+      "name": "chunk_0005.bin",
+      "offset": 52428800,
+      "size": 10485760,
+      "sha256": "955ed6d09304d6113928b6efa3e3ded6f7402c7016b464e846250298dccd2af8"
+    },
+    {
+      "index": 6,
+      "name": "chunk_0006.bin",
+      "offset": 62914560,
+      "size": 10485760,
+      "sha256": "21e800f99968604983b774e8c06797f1267a74aef6df31d903d3b06b238d2739"
+    },
+    {
+      "index": 7,
+      "name": "chunk_0007.bin",
+      "offset": 73400320,
+      "size": 10485760,
+      "sha256": "95b83ca785692cf08408356febd2218570f44301007ddaed29002fd1e89b872f"
+    },
+    {
+      "index": 8,
+      "name": "chunk_0008.bin",
+      "offset": 83886080,
+      "size": 10485760,
+      "sha256": "38e7aa485c26b8bd5dca8e61af773d5181e85283b035b94306b0a8dbba177fa9"
+    },
+    {
+      "index": 9,
+      "name": "chunk_0009.bin",
+      "offset": 94371840,
+      "size": 10485760,
+      "sha256": "9388142f1ae164084d4e842cdfd11bfbb7e6d0901102cf9f0fe2bb4713462d10"
+    },
+    {
+      "index": 10,
+      "name": "chunk_0010.bin",
+      "offset": 104857600,
+      "size": 10485760,
+      "sha256": "e4942b493edeada93df10b88ab886db2cf568d78df2a08913e803bfac155cc08"
+    },
+    {
+      "index": 11,
+      "name": "chunk_0011.bin",
+      "offset": 115343360,
+      "size": 10485760,
+      "sha256": "a273c9c4df20fa8f2f74a08f4bb32695818f625b6fe52e33c15a990dd214ff2a"
+    },
+    {
+      "index": 12,
+      "name": "chunk_0012.bin",
+      "offset": 125829120,
+      "size": 10485760,
+      "sha256": "5b1a739e66bfc35ab55c3a64b651a0f97491cdb70b8212a351356e55a1cc78bb"
+    },
+    {
+      "index": 13,
+      "name": "chunk_0013.bin",
+      "offset": 136314880,
+      "size": 10485760,
+      "sha256": "e2295e12554adeed707366603868e8ade48863dd2a737f74bcc1d246da917f57"
+    },
+    {
+      "index": 14,
+      "name": "chunk_0014.bin",
+      "offset": 146800640,
+      "size": 10485760,
+      "sha256": "02e4e4baec920a9e7660df0af4a4969042e008705472c62b5fcab7a89ffd3a4a"
+    },
+    {
+      "index": 15,
+      "name": "chunk_0015.bin",
+      "offset": 157286400,
+      "size": 10485760,
+      "sha256": "e4fa814124e66fcff3bb87fd3acacc975e1f8d9a8d5d5f16693c17f2cbd6b0bf"
+    },
+    {
+      "index": 16,
+      "name": "chunk_0016.bin",
+      "offset": 167772160,
+      "size": 10485760,
+      "sha256": "91375f374c0fec682902628c907b4da9f338f4c132991ea7fdae3ec7108bc068"
+    },
+    {
+      "index": 17,
+      "name": "chunk_0017.bin",
+      "offset": 178257920,
+      "size": 10485760,
+      "sha256": "c5a22e3b8808f2b15d8a1ae9f268cdd6bdac4017b448257a7d2b6a811ebc60ee"
+    },
+    {
+      "index": 18,
+      "name": "chunk_0018.bin",
+      "offset": 188743680,
+      "size": 10485760,
+      "sha256": "96c75b67b9df3ffd806a10fc4b13bdc7505066bb8caf0da81f27202409f90d48"
+    },
+    {
+      "index": 19,
+      "name": "chunk_0019.bin",
+      "offset": 199229440,
+      "size": 10485760,
+      "sha256": "bd876d61efdfd2d8abba70c89c88c006a3908f5769d7169a2c63ab653879988c"
+    },
+    {
+      "index": 20,
+      "name": "chunk_0020.bin",
+      "offset": 209715200,
+      "size": 10485760,
+      "sha256": "9b71aea6da7d47d3127ab0be2a47840f84dad3d554f1f2c1c852533ba20dce80"
+    },
+    {
+      "index": 21,
+      "name": "chunk_0021.bin",
+      "offset": 220200960,
+      "size": 10485760,
+      "sha256": "1252fca3e548ce23c64f8c93229e0f68a7d9bb6f0d06dfba0a502340e5e4f6d1"
+    },
+    {
+      "index": 22,
+      "name": "chunk_0022.bin",
+      "offset": 230686720,
+      "size": 10485760,
+      "sha256": "e54002d8dc4687a6c2ce82776e998be57b7cfd7fbb2e6b1a125b0ca3cef8ae9f"
+    },
+    {
+      "index": 23,
+      "name": "chunk_0023.bin",
+      "offset": 241172480,
+      "size": 10485760,
+      "sha256": "c86a2f7e97343ba041be85af84b2075ed344c04ff0741dcc0814de54f8a4631d"
+    },
+    {
+      "index": 24,
+      "name": "chunk_0024.bin",
+      "offset": 251658240,
+      "size": 10485760,
+      "sha256": "0bd9d30ad6904a471741323a49414fa2f542f7a6437c710d08b5c2bb30c62222"
+    },
+    {
+      "index": 25,
+      "name": "chunk_0025.bin",
+      "offset": 262144000,
+      "size": 10485760,
+      "sha256": "67dc763840271566f3899657e3dd07ac51c217936f554374b2007a3e834341f9"
+    },
+    {
+      "index": 26,
+      "name": "chunk_0026.bin",
+      "offset": 272629760,
+      "size": 10485760,
+      "sha256": "6d038f13d421c4fd859b0367b3f9522c7d9b0972d4dcd19e8f41f57f8fb94844"
+    },
+    {
+      "index": 27,
+      "name": "chunk_0027.bin",
+      "offset": 283115520,
+      "size": 10485760,
+      "sha256": "cfad7fb71f864375ea5c59246ad4a806a4b1d59177f664322a9de5d52ffdd548"
+    },
+    {
+      "index": 28,
+      "name": "chunk_0028.bin",
+      "offset": 293601280,
+      "size": 10485760,
+      "sha256": "0e4e82ea90db75dce3fefe8b551e5396dedd9d50bebad1ff1185f76d26d9f616"
+    },
+    {
+      "index": 29,
+      "name": "chunk_0029.bin",
+      "offset": 304087040,
+      "size": 10485760,
+      "sha256": "caf337acf27075c569d2ab7c5477366a5a4665bc1568b37290af1393656e2723"
+    },
+    {
+      "index": 30,
+      "name": "chunk_0030.bin",
+      "offset": 314572800,
+      "size": 10485760,
+      "sha256": "a5d3fc728c758db14e0f006124401e24a7e1c30db3bc2527a8d4f4e05791aa92"
+    },
+    {
+      "index": 31,
+      "name": "chunk_0031.bin",
+      "offset": 325058560,
+      "size": 10485760,
+      "sha256": "4cf75acc7333ca2e78d83c74beb5dd90e8d919dca0adaa3f0bc9802b895da7cf"
+    },
+    {
+      "index": 32,
+      "name": "chunk_0032.bin",
+      "offset": 335544320,
+      "size": 10485760,
+      "sha256": "c31d9b288dadbc8296eeda389c0ddebe2bb4093557840d8467e39ad02205e180"
+    },
+    {
+      "index": 33,
+      "name": "chunk_0033.bin",
+      "offset": 346030080,
+      "size": 10485760,
+      "sha256": "cf15cb8ee8fed744eb033ba90ccc11b7945caa8126dc135bf682289eea145cfa"
+    },
+    {
+      "index": 34,
+      "name": "chunk_0034.bin",
+      "offset": 356515840,
+      "size": 10485760,
+      "sha256": "853062e9fd71c01f27f61715f7e6b5df9ce51918003839ae7f9e084af1cb8420"
+    },
+    {
+      "index": 35,
+      "name": "chunk_0035.bin",
+      "offset": 367001600,
+      "size": 10485760,
+      "sha256": "097685d73c55248a699b259bf62483043de8b01e3cfc7136e6cb8f9baf32e182"
+    },
+    {
+      "index": 36,
+      "name": "chunk_0036.bin",
+      "offset": 377487360,
+      "size": 10485760,
+      "sha256": "a84cb02456a4d82d9541eb5f94402c771b9a109ad9848ddae76a5c4f601cff88"
+    },
+    {
+      "index": 37,
+      "name": "chunk_0037.bin",
+      "offset": 387973120,
+      "size": 10485760,
+      "sha256": "9cc80b0391984305f87911be005b108bcbbc6a15bf205a0bb41943c7d97bbcc9"
+    },
+    {
+      "index": 38,
+      "name": "chunk_0038.bin",
+      "offset": 398458880,
+      "size": 10485760,
+      "sha256": "2d88c4bd73690c21f11474a1d1748aa674ab6d75bc58587c7a014a95bea01b37"
+    },
+    {
+      "index": 39,
+      "name": "chunk_0039.bin",
+      "offset": 408944640,
+      "size": 10485760,
+      "sha256": "9300c3af9f0931756476bf97b087b2a8b0abe255b95131d8499039b364d96827"
+    },
+    {
+      "index": 40,
+      "name": "chunk_0040.bin",
+      "offset": 419430400,
+      "size": 10485760,
+      "sha256": "1708888a234de796ae90f8d144a5e761c8a866ced89bb400465f794617d0955c"
+    },
+    {
+      "index": 41,
+      "name": "chunk_0041.bin",
+      "offset": 429916160,
+      "size": 10485760,
+      "sha256": "5ced4f87a6331dc6115017ba5954c3ae387ba5f678ba2416b75e98bb472dd027"
+    },
+    {
+      "index": 42,
+      "name": "chunk_0042.bin",
+      "offset": 440401920,
+      "size": 10485760,
+      "sha256": "3120531388a7e5a5234c93892707b07940c681b149b89d41d7fa08296097de1c"
+    },
+    {
+      "index": 43,
+      "name": "chunk_0043.bin",
+      "offset": 450887680,
+      "size": 10485760,
+      "sha256": "d37f460f1c59ee610dd8420e75ae25a2df5d9e3f4213d116dccf644b0c0b1755"
+    },
+    {
+      "index": 44,
+      "name": "chunk_0044.bin",
+      "offset": 461373440,
+      "size": 10485760,
+      "sha256": "b0bc9da3f596769cba6b2c587b09b90f56c4e858659f1de4e32a4cace7fa6791"
+    },
+    {
+      "index": 45,
+      "name": "chunk_0045.bin",
+      "offset": 471859200,
+      "size": 10485760,
+      "sha256": "4ae0111024601410db2ff0c44051df415db38bdac6aac4566a5d283a720acf06"
+    },
+    {
+      "index": 46,
+      "name": "chunk_0046.bin",
+      "offset": 482344960,
+      "size": 10485760,
+      "sha256": "6471432e65e04d429e5e603c1028afaa71786473f2d1271fb26402f61fb957f9"
+    },
+    {
+      "index": 47,
+      "name": "chunk_0047.bin",
+      "offset": 492830720,
+      "size": 10485760,
+      "sha256": "590f2ca69fb8cf058521d80067bd52d21d03549b0bfa01dc629a8af391f4c24d"
+    },
+    {
+      "index": 48,
+      "name": "chunk_0048.bin",
+      "offset": 503316480,
+      "size": 10485760,
+      "sha256": "449e8aa88dd462fd810b30d4e160ff8fe7475b5078f0d7885f3cf1ef541a228e"
+    },
+    {
+      "index": 49,
+      "name": "chunk_0049.bin",
+      "offset": 513802240,
+      "size": 10485760,
+      "sha256": "9ed03e1f17f8f0d86a6bd259a1b4fe827406c250ecfaa77bfe82a477ed28cf87"
+    },
+    {
+      "index": 50,
+      "name": "chunk_0050.bin",
+      "offset": 524288000,
+      "size": 10485760,
+      "sha256": "bee81c8679b281c197c8fc6037ca7d347ece3e9fc1de59c2e8f3c97604e63da4"
+    },
+    {
+      "index": 51,
+      "name": "chunk_0051.bin",
+      "offset": 534773760,
+      "size": 8183808,
+      "sha256": "e8812fad4da3c8d5b3d51508be4671a831b51bddfe4449d75e3a0b1e0cba6c80"
+    }
+  ]
+}
