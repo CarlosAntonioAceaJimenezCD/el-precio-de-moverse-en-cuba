@@ -22,14 +22,19 @@ Anexos/Leyes/*
 !Anexos/Leyes/.herramientas/
 Anexos/Leyes/.herramientas/__pycache__/
 
-# Bases grandes: no versionar sin Git LFS
-# Large databases: not versioned without Git LFS
-Data/catalogos_concesionarios/*.sqlite
-Data/Revolico/revolico.sqlite
+# Bases grandes: gestionadas con Git LFS (ver .gitattributes)
+# Large databases: managed with Git LFS (see .gitattributes)
 Data/Revolico/.revolico_sync.lock
 *.sqlite-journal
 *.sqlite-wal
 *.sqlite-shm
+
+# Bases de trabajo locales: se distribuyen en chunks, no se versiona el original
+# Local working databases: distributed as chunks, originals are not versioned
+Data/Revolico/revolico.sqlite
+Data/Revolico/pipeline.sqlite
+Data/Revolico/partes/
+Data/mapas/circuitos_estado.sqlite
 
 # Estado interno del script de informe / Internal report script state
 Auxiliares/herramientas/.informe_state.json
@@ -40,3 +45,12 @@ Data/processed/
 outputs/
 .DS_Store
 Thumbs.db
+
+# Sitio generado
+site/
+
+# Reporte operativo de la subida (lo reescribe el timer cada 10 min)
+Data/PROGRESO_PUSH.md
+
+# Huella del panel: estado operativo generado, no contenido
+Data/_state/dashboard_fingerprint.json

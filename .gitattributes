@@ -1,0 +1,8 @@
+# Bases de datos gestionadas con Git LFS
+*.sqlite filter=lfs diff=lfs merge=lfs -text
+*.sqlite-wal filter=lfs diff=lfs merge=lfs -text
+*.sqlite-shm filter=lfs diff=lfs merge=lfs -text
+
+# Chunks de 10 MB de las bases grandes, tambien en Git LFS
+Data/Revolico/chunks/*.bin filter=lfs diff=lfs merge=lfs -text
+Data/Revolico/pipeline_chunks/*.bin filter=lfs diff=lfs merge=lfs -text
