@@ -51,7 +51,7 @@ Se estima por mínimos cuadrados ordinarios sobre **usados del canal local**, co
 - **Dummies de marca (`C(brand_tier)`):** permiten que cada segmento tenga su propio intercepto sin imponer una relación lineal entre "categoría" y precio.
 - **Muestreo restringido:** mezclar importación con mercado local, o nuevos con usados, introduciría dos regímenes de precios distintos; por eso se separaron en `canal` y `source_type`.
 
-**Resultado actual y su límite:** con 889 observaciones ningún coeficiente alcanza significancia (el p_valor más bajo es 0,165, de potencia; antigüedad tiene p = 0,237). El modelo está correctamente especificado para la forma de los datos, pero **no permite afirmar una tasa de depreciación anual ni una prima premium** con esta muestra transversal. Decirlo es parte del respaldo: el método sostiene la conclusión de que no hay conclusión numérica estable.
+**Resultado actual y su límite:** con **22 observaciones completas** de 897 candidatas ningún coeficiente alcanza significancia (el p_valor más bajo es 0,165, de potencia; antigüedad tiene p = 0,237). La muestra se reduce a 22 porque `hp` solo está presente en 52 filas y `mileage_km` en 572; al exigir todos los términos a la vez se descarta el 97,5 % de las candidatas (R² = 0,277; p del F = 0,623). El modelo está correctamente especificado para la forma de los datos, pero **no permite afirmar una tasa de depreciación anual ni una prima premium** con esta muestra transversal. Decirlo es parte del respaldo: el método sostiene la conclusión de que no hay conclusión numérica estable.
 
 ### 3.2 VIF (factor de inflación de varianza)
 

@@ -35,6 +35,8 @@ Las fases se redefinieron para que la fase activa sea la sexta. Estado a 17/11/2
 
 La creación de este informe y del `README.md` es soporte transversal y no cambia la fase activa.
 
+**Nota de actualización (27/11/2026):** esta tabla registra el estado al 17/11/2026. El pipeline de análisis (fase 8) se creó después, el 18/11/2026 (§34), y sus resultados vigentes se documentan en §59–§60.
+
 ## 3. Organización de carpetas
 
 ```text
@@ -134,7 +136,7 @@ Solo se incluyen las normas y fuentes relevantes para el contexto del proyecto:
 2. El marco regulatorio vigente es el Decreto 163/2026 y el paquete de resoluciones citado.
 3. El scraping sostenible depende del ritmo, la sesión y la reanudación, no principalmente del fingerprint TLS.
 4. La regla de las 10 páginas evitó consumir resultados repetidos.
-5. El análisis de mercado y el modelo de rentabilidad (fase 8) aún no están implementados; el producto interactivo se difiere a una especialización futura.
+5. El análisis de mercado y el modelo de rentabilidad (fase 8) están implementados en `Data/analisis_rentabilidad/` y se regeneran de forma automática; la definición del producto interactivo se difiere a una especialización futura.
 
 ---
 
@@ -142,7 +144,7 @@ Solo se incluyen las normas y fuentes relevantes para el contexto del proyecto:
 
 ## 1. Objective
 
-The project is named **AutoDecide Habana**. Its goal is to define an interactive product able to recommend the most profitable car purchase in the **Havana** automotive market, based on the user's values, concerns and constraints (budget, reliability, fuel use, maintenance, resale value, spare-part availability, etc.). The product rests on two pillars: an analysis of the Cuban automotive market and a reusable scraping pipeline that updates itself to adapt to the moment of review.
+The project is named **El precio de moverse en Cuba**. Its current goal is to analyse the Cuban automotive market —structure, prices, supply, segments, trends, affordability and profitability conditions—. Defining an interactive product that recommends the most profitable purchase is deferred to a later specialisation. The analysis rests on two pillars: the market database and a reusable scraping pipeline that is updated to match the moment of review.
 
 The former name, *ICD Automotive Market Project*, is kept for traceability of existing documentation.
 
@@ -163,6 +165,8 @@ Phases were redefined so that the active phase is the sixth. Status as of 17 Nov
 | 9 | Final documentation, PDF report and delivery | Pending |
 
 Creating this report and the `README.md` is cross-cutting support and does not change the active phase.
+
+**Update note (27/11/2026):** this table records the status as of 17 Nov 2026. The analysis pipeline (phase 8) was created later, on 18 Nov 2026 (§34), and its current results are documented in §59–§60.
 
 ## 3. Folder structure
 
@@ -895,7 +899,7 @@ Resultados sobre 323 autos: 248 precios USD válidos (≥500 USD); 74 precios <5
 
 Se amplió `analisis_mercado.py`:
 
-- **Por año del vehículo**: `precios_por_anio.csv` con n, mediana USD, mediana CUP y tasa promedio; la conversión usa `precio_USD × TRMI elTOQUE` del día del anuncio (columna `Mediana` de `Anexos/Investigacion Cambios/trmi_USD.csv`).
+- **Por año del vehículo**: `precios_por_anio.csv` con n, mediana USD, mediana CUP y tasa promedio; la conversión usa `precio_USD × TRMI elTOQUE` del día del anuncio (columna `Mediana` de `Anexos/Investigacion Cambios/trmi_USD.csv`). **Aclaración vigente:** el pipeline de `Data/analisis_rentabilidad/` usa la TRMI fija de 930 CUP/USD del 18/11/2026 (`config.py`); la serie diaria es referencia histórica, no insumo del modelo actual.
 - **Supuesto de anuncio activo**: todos los registros tienen `status=PUBLISHED` y página verificada en la captura, por lo que se asume que son comprables; no se comprueba disponibilidad en tiempo real.
 - **Serie precio vs tasa**: `serie_precio_vs_tasa.csv` y `serie_precio_vs_tasa_mensual.csv`, con variación % diaria de la TRMI, del precio CUP y del precio USD. Ejemplo: la TRMI pasó de 680 CUP/USD (09/07/2026) a 920 (16-17/11/2026); la mediana mensual CUP subió de 12,58 M (julio) a 20,7 M (noviembre).
 - **Gráficas**: `Auxiliares/herramientas/graficos_mercado.py` usa matplotlib, seaborn y plotly (instalados) y genera 8 PNG + `dashboard_interactivo.html` en `Data/analisis/graficos/`.
@@ -1199,7 +1203,7 @@ Fuentes: Cubadebate (07/02/2026), Directorio Cubano (12 y 15/05/2026), CubaTrám
 Se reescribieron los dos párrafos restantes de la sección 2 con el mismo nivel de detalle que el apartado del combustible:
 
 - **¿Quién lo mantiene?**: incorpora los **22 talleres** y **25 concesionarios** geolocalizados, las redes formales (BDC One, Dongfeng, ATR, SASA) y los talleres independientes (CarFix, Taller Calle 8, Taller VÉLO, Trisolinera Habana, Tecni-Motos, Taller Manolito), además del costo de inmovilización por piezas importadas.
-- **¿Qué devuelve la inversión?**: incorpora el uso del vehículo como **taxi formal o informal** para ingresos estables, en continuidad con taxis, triciclos y gacelas; la depreciación de **−5,43 % anual** (p < 0,001), primas premium de **+21 %**, descuentos del **−22 %** para tier medio, **30 infravalorados**, **66 anomalías** y el marco del **Decreto 163/2026**.
+- **¿Qué devuelve la inversión?**: incorpora el uso del vehículo como **taxi formal o informal** para ingresos estables, en continuidad con taxis, triciclos y gacelas; la depreciación de **−5,43 % anual** obtenida en la primera corrida (p < 0,001; §34), cifra que la corrida vigente ya no sostiene, junto con las primas premium de **+21 %**, los descuentos del **−22 %** para tier medio, **30 infravalorados**, **66 anomalías** y el marco del **Decreto 163/2026**.
 
 **EN.** Rewrote the maintenance and ROI storytelling sections with mapped workshops/dealerships, immobilization costs, taxi-income use, depreciation metrics and the 2026 regulatory framework.
 
@@ -1290,7 +1294,7 @@ Se amplió la búsqueda de fuentes más allá de los repositorios y portales ya 
 
 Las cinco más valiosas son:
 
-1. **API de tasas del Banco Central de Cuba** (`https://api.bc.gob.cu/v1/tasas-de-cambio/activas`): JSON diario con fecha embebida, útil como referencia oficial contrastada. La conversión del proyecto sigue usando la **TRMI informal** de elTOQUE (930 CUP/USD), nunca la oficial.
+1. **API de tasas del Banco Central de Cuba** (`https://api.bc.gob.cu/v1/tasas-de-cambio/activas`): JSON diario con fecha embebida, útil como referencia oficial contrastada. La conversión del proyecto sigue usando la **TRMI informal** de elTOQUE (930 CUP/USD, fijada el 18/11/2026 en `config.py`), nunca la oficial; la serie diaria de `trmi_USD.csv` se conserva como referencia histórica.
 2. **Gaceta Oficial No. 65/2026** (paquete Decreto 163 y Resoluciones 171–175): valores referenciales, impuestos y tarifas que explican la brecha entre precio anunciado y precio final.
 3. **ONEI, Anuario Estadístico 2025, capítulo 13**: serie oficial más reciente de transporte y parque automotor, ausente hasta ahora en la base.
 4. **Womy** (`https://womy.cu/cars/`): catálogo web vivo de Toyota y Lexus con precios en EUR y scraping trivial; ya existía una tabla `cat_womy` en el repo de referencias.
@@ -1372,9 +1376,9 @@ La BD pasó de 951 a **961 anuncios** (961 URLs únicas, `integrity_check=ok`). 
 
 ## 59. Storytelling alineado con los datos finales (23/11/2026)
 
-Se actualizó `PRESENTACION_STORYTELLING.md` con la narrativa vigente, conservando la voz y la estructura originales. El relato ahora usa **744 autos únicos**, **2.014 anuncios limpios** (1.323 locales y 691 de importación), mediana local de **21.000 USD**, kilometraje mediano de **44.125 km**, 50 marcas, 100 grupos comparables y 81 anomalías. La caída del transporte de pasajeros según el ONEI y los diez anuncios nuevos de iTENCEL entraron en la historia sin convertirla en una explicación técnica.
+Se actualizó `PRESENTACION_STORYTELLING.md` con la narrativa vigente, conservando la voz y la estructura originales. El relato ahora usa **772 autos únicos**, **2.029 anuncios limpios** (1.338 locales y 691 de importación), mediana local de **21.000 USD**, kilometraje mediano de **43.000 km**, 50 marcas, 101 grupos comparables y 81 anomalías (corrida vigente del 27/11/2026; los valores se actualizan solos en `outputs/tables/kpis.csv`). La caída del transporte de pasajeros según el ONEI y los diez anuncios nuevos de iTENCEL entraron en la historia sin convertirla en una explicación técnica.
 
-La depreciación se reformuló con honestidad: el modelo actual no encuentra una pendiente anual significativa tras corregir el kilometraje, y la prima premium dejó de afirmarse como cifra. Se aplicaron las skills de marketing y SEO para cifras concretas y enlaces internos, y las de voz propia y edición quirúrgica para preservar el estilo del autor. Se añadió además un **apéndice visual** con cinco cuadros y seis gráficos reales; el texto solo deja referencias discretas entre paréntesis, de modo que las tablas y figuras puedan insertarse sin romper la narrativa.
+La depreciación se reformuló con honestidad: el modelo actual no encuentra una pendiente anual significativa tras corregir el kilometraje, y la prima premium dejó de afirmarse como cifra. El modelo con todos los términos dispone de **22 observaciones completas** de 897 candidatas (R² = 0,277; p del F = 0,623), límite que se registra explícitamente en `MODELOS_Y_FUNCIONES.md`. Se aplicaron las skills de marketing y SEO para cifras concretas y enlaces internos, y las de voz propia y edición quirúrgica para preservar el estilo del autor. Se añadió además un **apéndice visual** con cinco cuadros y seis gráficos reales; el texto solo deja referencias discretas entre paréntesis, de modo que las tablas y figuras puedan insertarse sin romper la narrativa.
 
 **EN.** Updated the storytelling to the final dataset while preserving the author's voice: 744 unique cars, 2,014 clean listings, 21,000 USD median and a statistically honest depreciation narrative.
 
@@ -1458,5 +1462,23 @@ La API de GitHub reporta **205.002 KB (0,20 GB)** para el historial normal; los 
 
 ---
 
+---
+
+## 69. Declaración de uso de inteligencia artificial / AI-use declaration
+
+**ES.** Las herramientas de inteligencia artificial se utilizaron como apoyo para la redacción, la edición quirúrgica de la narrativa, la revisión bibliográfica asistida y la auditoría sistemática del propio informe. Las cifras, los modelos estadísticos y las decisiones de diseño provienen de los datos y del código versionados en este repositorio; ninguna afirmación empírica se originó en una salida de IA sin contraste contra los archivos. La auditoría completa de este documento se realizó con la skill `review` de MatCom y sus resultados se conservan en `reviews/informe-tecnico-2026-11-27.{md,forensic.md}` junto con los trece artefactos de fase.
+
+**EN.** AI tools were used to support writing, surgical editing of the narrative, assisted literature review and a systematic audit of this report. All figures, statistical models and design decisions derive from the data and code versioned in this repository; no empirical claim was taken from an AI output without verification against the files. The full audit was carried out with MatCom's `review` skill and is preserved in `reviews/informe-tecnico-2026-11-27.{md,forensic.md}` together with thirteen phase artifacts.
+
+---
+
+## 70. Referencias verificadas / Verified references
+
+**ES.** Referencias citadas y verificadas externamente durante la auditoría: Akerlof (1970), *The Market for "Lemons"* (Crossref/OpenAlex); UK Department for Transport / DVLA, estadísticas de vehículos (GOV.UK); ANFAC, informes del sector automotriz español (sitio oficial); AEADE, estadísticas de matriculaciones (sitio oficial). Las fuentes restantes figuran con estado `(metadata incomplete)` en `reviews/informe-tecnico-2026-11-27.e2-literature.md` y no se presentan como referencias verificadas. El informe no adopta todavía una convención numerada de citas; la correspondencia entre afirmación y fuente se documenta en el expediente forense.
+
+**EN.** Externally verified references cited during the audit: Akerlof (1970), *The Market for "Lemons"* (Crossref/OpenAlex); UK Department for Transport / DVLA vehicle statistics (GOV.UK); ANFAC Spanish automotive reports (official site); AEADE registration statistics (official site). Remaining sources are marked `(metadata incomplete)` in `reviews/informe-tecnico-2026-11-27.e2-literature.md` and are not presented as verified references. A numbered citation convention has not yet been adopted; claim-to-source correspondence is documented in the forensic assembly.
+
+---
+
 **Firma / Signature:** responsable del proyecto / project owner.  
-**Última actualización / Last update:** 23/11/2026.
+**Última actualización / Last update:** 27/11/2026.
