@@ -9,7 +9,7 @@ Estas funciones no "descubren" nada: hacen que los valores sean comparables. Su 
 | Función / regla | Qué hace | Por qué está respaldada |
 |---|---|---|
 | `parse_price` | Convierte `"13.000 USD"` en 13.000, `"2,300"` en 2300 y `"1.234,56"` en 1234,56. | Los portales mezclan coma de miles y punto decimal. Sin esta regla, un auto de 13.000 USD entraba como 13 USD y era rechazado. Es una normalización sintáctica, no una estimación. |
-| `parse_number` | Igual que `parse_price`, pero para km y potencia. | `"80,000 km"` se leía como 80 km. Corregirlo cambió la mediana de kilometraje de 80 a <!-- kpi:km_medianos -->43.000 km. |
+| `parse_number` | Igual que `parse_price`, pero para km y potencia. | `"80,000 km"` se leía como 80 km. Corregirlo cambió la mediana de kilometraje de 80 a <!-- kpi:km_medianos -->33.256 km. |
 | `to_usd(precio, moneda)` | `precio × FX[moneda]` con TRMI informal: USD 1, CUP 1/930, EUR 1000/930, MLC 845,35/930. | En Cuba la tasa oficial no representa la transacción cotidiana. Usar una sola tasa declarada y fechada (18/11/2026) permite comparar anuncios en USD, EUR y CUP. No es un modelo: es una convención monetaria explícita. |
 | `parse_title` / `parse_specs` | Extraen marca, modelo, año, km, potencia, combustible y transmisión del texto libre. | Los anuncios no traen columnas estructuradas. El regex es auditable y se aplica igual a todas las fuentes. |
 | `slug_title` / `repair_title` | Reconstruyen títulos de interfaz desde el slug o el JSON-LD. | Evita que páginas como "Reportar este anuncio" se conviertan en autos. |
@@ -53,6 +53,8 @@ Se estima por mínimos cuadrados ordinarios sobre **usados del canal local**, co
 
 **Resultado actual y su límite:** con **22 observaciones completas** de 897 candidatas ningún coeficiente alcanza significancia (el p_valor más bajo es 0,165, de potencia; antigüedad tiene p = 0,237). La muestra se reduce a 22 porque `hp` solo está presente en 52 filas y `mileage_km` en 572; al exigir todos los términos a la vez se descarta el 97,5 % de las candidatas (R² = 0,277; p del F = 0,623). El modelo está correctamente especificado para la forma de los datos, pero **no permite afirmar una tasa de depreciación anual ni una prima premium** con esta muestra transversal. Decirlo es parte del respaldo: el método sostiene la conclusión de que no hay conclusión numérica estable.
 
+**Modelo principal frente a modelo completo.** `04_stats.py` estima ahora dos especificaciones y deja constancia en `modelo_muestra.csv`: el modelo principal (sin `hp`) usa 572 observaciones de 897 candidatas (R² = 0,106; p del F < 0,001) y el completo usa 22 (R² = 0,277; p del F = 0,623). En el modelo principal el coeficiente de antigüedad es positivo y alcanza p < 0,05, pero esa asociación corresponde a la submuestra que declaró kilometraje y no debe leerse como depreciación: es un artefacto de selección, no una tasa anual. Por esa razón los archivos históricos (`modelo_depreciacion.csv`, `modelo_resumen.txt`, Cuadro 5) siguen alimentados por el modelo completo y ninguna narrativa afirma una pendiente anual con p < 0,05.
+
 ### 3.2 VIF (factor de inflación de varianza)
 
 Para cada variable `j`: se regresa `X_j` contra el resto y se calcula `VIF_j = 1 / (1 − R²_j)`.
@@ -75,7 +77,7 @@ Compara precios usados vs nuevos con varianzas desiguales (`equal_var=False`).
 
 - `km_anormal`: `km_per_year > 40.000` o `< 500`.
 - `precio_atipico`: precio por debajo del percentil 1 o por encima del percentil 99.
-- Se reportan <!-- kpi:anomalias -->81 anomalías en la corrida vigente.
+- Se reportan <!-- kpi:anomalias -->89 anomalías en la corrida vigente.
 
 **Por qué está respaldado:** los umbrales de km/año son criterios de uso extremo, y los percentiles 1/99 son una regla robusta de colas. No eliminan filas del análisis principal: solo las señalan para revisión.
 

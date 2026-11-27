@@ -10,17 +10,17 @@ Estos apoyos se insertan aquí para que la narrativa no se detenga. Cada cuadro 
 
 | Métrica | Valor |
 |---|---:|
-| Anuncios limpios | <!-- kpi:anuncios_totales -->2.029 |
-| Locales | <!-- kpi:anuncios_locales -->1.338 |
+| Anuncios limpios | <!-- kpi:anuncios_totales -->2.156 |
+| Locales | <!-- kpi:anuncios_locales -->1.465 |
 | De importación | <!-- kpi:anuncios_importacion -->691 |
-| Usados locales | <!-- kpi:anuncios_usados_locales -->1.317 |
+| Usados locales | <!-- kpi:anuncios_usados_locales -->1.444 |
 | Nuevos locales | <!-- kpi:anuncios_nuevos_locales -->21 |
 | Marcas distintas | <!-- kpi:marcas_distintas -->50 |
-| Precio medio local | <!-- kpi:precio_medio_usd -->28.665,42 USD |
+| Precio medio local | <!-- kpi:precio_medio_usd -->28.166,17 USD |
 | Precio mediano local | <!-- kpi:precio_mediano_usd -->21.000 USD |
 | Año mediano | <!-- kpi:anio_mediano -->2020 |
-| Kilometraje mediano | <!-- kpi:km_medianos -->43.000 km |
-| Antigüedad media | <!-- kpi:antiguedad_media -->8,3 años |
+| Kilometraje mediano | <!-- kpi:km_medianos -->33.256 km |
+| Antigüedad media | <!-- kpi:antiguedad_media -->8,2 años |
 
 <a id="cuadro-2"></a>
 
@@ -30,7 +30,7 @@ Estos apoyos se insertan aquí para que la narrativa no se detenga. Cada cuadro 
 |---|---|---:|---:|---:|
 | Importación | Usado | <!-- kpi:anuncios_importacion -->691 | <!-- kpi:mediana_importacion -->26.000 USD | <!-- kpi:media_importacion -->27.046,22 USD |
 | Local | Nuevo | 21 | 24.623,66 | 24.729,59 |
-| Local | Usado | <!-- kpi:anuncios_usados_locales -->1.317 | <!-- kpi:mediana_local -->21.000 USD | <!-- kpi:media_local_usada -->28.665,42 USD |
+| Local | Usado | <!-- kpi:anuncios_usados_locales -->1.444 | <!-- kpi:mediana_local -->21.000 USD | <!-- kpi:media_local_usada -->28.166,17 USD |
 
 <a id="cuadro-3"></a>
 
@@ -74,7 +74,7 @@ Estos apoyos se insertan aquí para que la narrativa no se detenga. Cada cuadro 
 | Potencia | −0,0046 | 0,165 |
 | Condición | −0,0340 | 0,802 |
 
-Ningún coeficiente resulta estadísticamente significativo con la base actual. Es parte de la historia: el mercado no admite una curva única.
+Ningún coeficiente resulta estadísticamente significativo con la base actual. Es parte de la historia: el mercado no admite una curva única. La tabla `modelo_muestra.csv` documenta las 22 observaciones de este modelo frente a las 572 del modelo principal; la pendiente positiva de este último refleja la selección de anuncios con kilometraje declarado y no se interpreta como depreciación.
 
 ### Gráficos
 
