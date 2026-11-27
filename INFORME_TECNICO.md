@@ -1,9 +1,9 @@
 # Informe técnico / Technical report
 
-**Proyecto / Project:** AutoDecide Habana (antes / formerly *ICD Automotive Market Project*)  
+**Proyecto / Project:** El precio de moverse en Cuba (antes / formerly *AutoDecide Habana* e *ICD Automotive Market Project*)  
 **Autor / Author:** responsable del proyecto / project owner  
-**Fecha / Date:** 17 de noviembre de 2026  
-**Ubicación / Location:** `~/Proyectos/ICD Automotive Market Project`  
+**Fecha / Date:** 23 de noviembre de 2026  
+**Ubicación / Location:** `~/Proyectos/El precio de moverse en Cuba`  
 **Estado / Status:** Fase 6 — scraping y captura de catálogos y anuncios, en curso / Phase 6 — scraping and capture, in progress  
 **Idioma / Language:** español e inglés / Spanish and English
 
@@ -13,9 +13,9 @@
 
 ## 1. Objetivo
 
-El proyecto se llama **AutoDecide Habana**. Su objetivo actual es realizar un **análisis del mercado automotor de La Habana**: caracterizar estructura, precios, oferta, segmentos, tendencias, asequibilidad y condiciones de rentabilidad. La definición de un producto interactivo que recomiende la compra más rentable según las preocupaciones del usuario queda diferida a una especialización posterior. El análisis se apoya en dos pilares: la base de datos del mercado cubano y un pipeline de scraping reutilizable que se actualiza para adaptarse al momento en que se revise.
+El proyecto se llama **El precio de moverse en Cuba**. Su objetivo actual es realizar un **análisis del mercado automotor cubano**: caracterizar estructura, precios, oferta, segmentos, tendencias, asequibilidad y condiciones de rentabilidad. La definición de un producto interactivo que recomiende la compra más rentable según las preocupaciones del usuario queda diferida a una especialización posterior. El análisis se apoya en dos pilares: la base de datos del mercado cubano y un pipeline de scraping reutilizable que se actualiza para adaptarse al momento en que se revise.
 
-Se conserva el nombre anterior, *ICD Automotive Market Project*, para mantener la trazabilidad de la documentación ya producida.
+Se conservan los nombres anteriores, *AutoDecide Habana* e *ICD Automotive Market Project*, para mantener la trazabilidad de la documentación ya producida.
 
 ## 2. Estado y fases
 
@@ -49,11 +49,11 @@ ICD Automotive Market Project/
 └── Hombros/                 # PDFs, HTML, repos y derivadas
 ```
 
-Decisiones de diseño: todo el material auxiliar vive dentro de `Auxiliares/`; los clones se hicieron con `--depth 1` y se registraron en `Auxiliares/Repositorios/_clone_log.tsv`; la descubrimiento se separó de la verificación; `Copias/` no se registra en este informe por decisión explícita.
+Decisiones de diseño: todo el material auxiliar vive dentro de `Auxiliares/`; los clones se hicieron con `--depth 1` y se registraron en `~/Utilidades/HerramientasScraping/_clone_log.tsv`; la descubrimiento se separó de la verificación; `Copias/` no se registra en este informe por decisión explícita.
 
 ## 4. Fase 1 — Marco normativo y regulatorio
 
-Se documentaron **17 empresas autorizadas** a importar y comercializar vehículos, distribuidores privados (BDC One, Dongfeng, MCV, Finauto, Changan, Chinautos, Envision, ATR Export), precios de referencia (BDC One 14.849–31.478 EUR; Dongfeng desde 21.900 EUR; Finauto desde 15.500 EUR; ATR Export con 46 modelos), aranceles y parque automotor. La norma marco es el **Decreto 163/2026** (Gaceta Oficial No. 65 Ordinaria, 04/08/2026, vigente desde el 11/08/2026), que deroga el Decreto 119/2024. Se cotejaron las resoluciones 104/2026 (MINCEX), 17/2026 (MINCIN), 52/2026 (MITRANS), 171–175/2026 (MFP), 312/2026 (Aduana) y 102/2026 (BCC). Resultado: `Data/investigacion-mercado-automotor-cuba.md` y `Data/verificacion-marketplaces-tiendas-organismos-2026-11-16.md`.
+Se documentaron **17 empresas autorizadas** a importar y comercializar vehículos, distribuidores privados (BDC One, Dongfeng, MCV, Finauto, Changan, Chinautos, Envision, ATR Export), precios de referencia (BDC One 14.849–31.478 EUR; Dongfeng desde 21.900 EUR; Finauto desde 15.500 EUR; ATR Export con 46 modelos), aranceles y parque automotor. La norma marco es el **Decreto 163/2026** (Gaceta Oficial No. 65 Ordinaria, 04/08/2026, vigente desde el 11/08/2026), que deroga el Decreto 119/2024. Se cotejaron las resoluciones 104/2026 (MINCEX), 17/2026 (MINCIN), 52/2026 (MITRANS), 171–175/2026 (MFP), 312/2026, derogada por 340/2026 (Aduana) y 102/2026 (BCC). Resultado: `Data/investigacion-mercado-automotor-cuba.md` y `Data/verificacion-marketplaces-tiendas-organismos-2026-11-16.md`.
 
 ## 5. Fase 2 — Descubrimiento y verificación de fuentes
 
@@ -112,10 +112,10 @@ Excluidas por bloqueo técnico: carrosw (HTTP 403 con Bot Verification), LlamaCu
 Solo se incluyen las normas y fuentes relevantes para el contexto del proyecto:
 
 - **Decreto 163/2026**, Gaceta Oficial No. 65 Ordinaria (04/08/2026): regula la importación y comercialización de vehículos; define el marco sobre el que debe trabajar el análisis de precios y oferta.
-- **Resolución 104/2026 (MINCEX), 17/2026 (MINCIN), 52/2026 (MITRANS), 171–175/2026 (MFP), 312/2026 (Aduana) y 102/2026 (BCC)**: desarrollos sectoriales, fiscales y cambiarios que condicionan el mercado.
+- **Resolución 104/2026 (MINCEX), 17/2026 (MINCIN), 52/2026 (MITRANS), 171–175/2026 (MFP), 312/2026, derogada por 340/2026 (Aduana) y 102/2026 (BCC)**: desarrollos sectoriales, fiscales y cambiarios que condicionan el mercado.
 - **Condiciones de uso de cada portal**: criterio operativo para la recolección. No se eluden mecanismos anti-automatización; los HTTP 403/429 se registran como limitación.
 - **Protección de datos personales, ciberseguridad y derechos de autor**: antes de publicar resultados deben verificarse las normas cubanas vigentes y aplicar solo datos agregados, sin nombres, teléfonos ni información personal de anunciantes.
-- `Anexos/Leyes/gaceta_catalog.json` es el índice de referencia; el corpus completo de gacetas no se registra entrada por entrada en este informe, solo se citan las normas anteriores.
+- `~/Utilidades/Leyes/gaceta_catalog.json` es el índice de referencia; el corpus completo de gacetas no se registra entrada por entrada en este informe, solo se citan las normas anteriores.
 
 ## 11. Problemas y soluciones
 
@@ -178,11 +178,11 @@ ICD Automotive Market Project/
 └── Hombros/                 # PDFs, HTML, repos and derivatives
 ```
 
-Design decisions: all auxiliary material lives under `Auxiliares/`; clones used `--depth 1` and are logged in `Auxiliares/Repositorios/_clone_log.tsv`; discovery was separated from verification; `Copias/` is excluded from this report by explicit decision.
+Design decisions: all auxiliary material lives under `Auxiliares/`; clones used `--depth 1` and are logged in `~/Utilidades/HerramientasScraping/_clone_log.tsv`; discovery was separated from verification; `Copias/` is excluded from this report by explicit decision.
 
 ## 4. Phase 1 — Regulatory framework
 
-**17 authorized companies** were documented, along with private distributors (BDC One, Dongfeng, MCV, Finauto, Changan, Chinautos, Envision, ATR Export), reference prices (BDC One 14,849–31,478 EUR; Dongfeng from 21,900 EUR; Finauto from 15,500 EUR; ATR Export with 46 models), tariffs and the vehicle fleet. The framework is **Decree 163/2026** (Official Gazette No. 65, 04/08/2026, in force since 11/08/2026), which repeals Decree 119/2024. Resolutions 104/2026 (MINCEX), 17/2026 (MINCIN), 52/2026 (MITRANS), 171-175/2026 (MFP), 312/2026 (Customs) and 102/2026 (BCC) were cross-checked. Results: `Data/investigacion-mercado-automotor-cuba.md` and `Data/verificacion-marketplaces-tiendas-organismos-2026-11-16.md`.
+**17 authorized companies** were documented, along with private distributors (BDC One, Dongfeng, MCV, Finauto, Changan, Chinautos, Envision, ATR Export), reference prices (BDC One 14,849–31,478 EUR; Dongfeng from 21,900 EUR; Finauto from 15,500 EUR; ATR Export with 46 models), tariffs and the vehicle fleet. The framework is **Decree 163/2026** (Official Gazette No. 65, 04/08/2026, in force since 11/08/2026), which repeals Decree 119/2024. Resolutions 104/2026 (MINCEX), 17/2026 (MINCIN), 52/2026 (MITRANS), 171-175/2026 (MFP), 312/2026, repealed by 340/2026 (Customs) and 102/2026 (BCC) were cross-checked. Results: `Data/investigacion-mercado-automotor-cuba.md` and `Data/verificacion-marketplaces-tiendas-organismos-2026-11-16.md`.
 
 ## 5. Phase 2 — Source discovery and verification
 
@@ -241,10 +241,10 @@ Excluded due to technical blocks: carrosw (HTTP 403 Bot Verification), LlamaCuba
 Only relevant norms and sources are included:
 
 - **Decree 163/2026**, Official Gazette No. 65 (04/08/2026): regulates vehicle import and sales; defines the framework for price and supply analysis.
-- **Resolution 104/2026 (MINCEX), 17/2026 (MINCIN), 52/2026 (MITRANS), 171-175/2026 (MFP), 312/2026 (Customs), 102/2026 (BCC)**: sectoral, fiscal and exchange-rate conditions.
+- **Resolution 104/2026 (MINCEX), 17/2026 (MINCIN), 52/2026 (MITRANS), 171-175/2026 (MFP), 312/2026, repealed by 340/2026 (Customs), 102/2026 (BCC)**: sectoral, fiscal and exchange-rate conditions.
 - **Terms of use of each site**: operational rule for collection. Anti-automation mechanisms are not bypassed; HTTP 403/429 are recorded as limitations.
 - **Personal data protection, cybersecurity and copyright**: before publishing results, current Cuban rules must be verified and only aggregated data used, with no names, phone numbers or personal information from advertisers.
-- `Anexos/Leyes/gaceta_catalog.json` is the reference index; the full gazette corpus is not logged entry by entry here.
+- `~/Utilidades/Leyes/gaceta_catalog.json` is the reference index; the full gazette corpus is not logged entry by entry here.
 
 ## 11. Problems and solutions
 
@@ -276,6 +276,221 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `Auxiliares/herramientas/scrape_revolico_pipeline.py` | script / script | — | 19 994 B | 3 / 3 | Pipeline de 3 etapas con colas persistentes para Revolico. | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico` | carpeta / folder | — | carpeta / folder (15 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico/.backfill_completo` | archivo / file | — | 122 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/pipeline.sqlite` | base de datos / database | — | 211 513 344 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico/progreso.md` | documento / document | — | 422 B | 2 / 2 | Progreso Revolico — 2026-11-18T00:44:26+00:00 | Actualizado / Updated |
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 147 716 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+
+| 2026-11-17 | `Auxiliares/herramientas/scrape_revolico_pipeline.py` | script / script | — | 19 592 B | 3 / 3 | Pipeline de 3 etapas con colas persistentes para Revolico. | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico` | carpeta / folder | — | carpeta / folder (14 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico/pipeline.sqlite` | base de datos / database | — | 190 513 152 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 146 073 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+
+| 2026-11-17 | … | aviso / notice | — | — | — | 175 entradas adicionales no listadas / omitted | Pendiente / Pending |
+
+| 2026-11-17 | `.gitattributes` | archivo / file | — | 184 B | 7 / 7 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `.gitignore` | archivo / file | — | 1 070 B | 9 / 9 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/whatsapp` | carpeta / folder | — | carpeta / folder (5 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/whatsapp/whatsapp_web_scraper.py` | script / script | — | 4 530 B | 3 / 3 | Scraper de WhatsApp Web mediante Playwright (sin WAHA/Docker). | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/limpiar_revolico.py` | script / script | — | 8 049 B | 3 / 3 | Limpieza de la BD de Revolico: solo vehículos de 4+ ruedas con datos útiles. | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico` | carpeta / folder | — | carpeta / folder (10 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico/pipeline.sqlite` | base de datos / database | — | 189 161 472 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico/progreso.md` | documento / document | — | 422 B | 2 / 2 | Progreso Revolico — 2026-11-18T00:03:55+00:00 | Actualizado / Updated |
+| 2026-11-17 | `Data/catalogos_concesionarios/marketplaces/apululu.sqlite` | base de datos / database | — | 132 B | 6 / 6 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/catalogos_concesionarios/marketplaces/autocubana.sqlite` | base de datos / database | — | 132 B | 6 / 6 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/catalogos_concesionarios/marketplaces/carroscom.sqlite` | base de datos / database | — | 132 B | 6 / 6 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/catalogos_concesionarios/marketplaces/cogetucarro.sqlite` | base de datos / database | — | 132 B | 6 / 6 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/catalogos_concesionarios/marketplaces/cubisima.sqlite` | base de datos / database | — | 132 B | 6 / 6 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/catalogos_concesionarios/marketplaces/itencel.sqlite` | base de datos / database | — | 132 B | 6 / 6 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/catalogos_concesionarios/marketplaces/timbirichi.sqlite` | base de datos / database | — | 132 B | 6 / 6 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/catalogos_concesionarios/marketplaces/ventacuba.sqlite` | base de datos / database | — | 132 B | 6 / 6 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/integraciones` | carpeta / folder | — | carpeta / folder (2 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Data/integraciones/telegram/telegram.sqlite` | base de datos / database | — | 131 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/integraciones/whatsapp` | carpeta / folder | — | carpeta / folder (5 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile` | carpeta / folder | — | carpeta / folder (12 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/BrowserMetrics-spare.pma` | archivo / file | — | 4 194 304 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default` | carpeta / folder | — | carpeta / folder (75 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Account Web Data` | archivo / file | — | 75 776 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Affiliation Database` | archivo / file | — | 53 248 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/AutofillAiModelCache` | carpeta / folder | — | carpeta / folder (3 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/AutofillAiModelCache/LOCK` | archivo / file | — | 0 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/AutofillAiModelCache/LOG` | archivo / file | — | 0 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/AutofillAiModelCache/LOG.old` | archivo / file | — | 0 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/AutofillStrikeDatabase` | carpeta / folder | — | carpeta / folder (3 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/AutofillStrikeDatabase/LOCK` | archivo / file | — | 0 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/AutofillStrikeDatabase/LOG` | archivo / file | — | 0 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/AutofillStrikeDatabase/LOG.old` | archivo / file | — | 0 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/BookmarkMergedSurfaceOrdering` | archivo / file | — | 4 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/BudgetDatabase` | carpeta / folder | — | carpeta / folder (3 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/BudgetDatabase/LOCK` | archivo / file | — | 0 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/BudgetDatabase/LOG` | archivo / file | — | 0 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/BudgetDatabase/LOG.old` | archivo / file | — | 0 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache` | carpeta / folder | — | carpeta / folder (2 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data` | carpeta / folder | — | carpeta / folder (45 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/0534abb8afcef528_0` | archivo / file | — | 154 009 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/0d46a4df8ea3d779_0` | archivo / file | — | 1 452 668 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/10a3426a849e3298_0` | archivo / file | — | 156 420 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/165e3a02636e6eb3_0` | archivo / file | — | 55 085 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/21ebd010c526237f_0` | archivo / file | — | 9 784 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/225f98ed89b7c900_0` | archivo / file | — | 8 833 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/295d873d703f7b4e_0` | archivo / file | — | 12 928 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/3874a70916b82ec3_0` | archivo / file | — | 214 664 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/3a1865b322459345_0` | archivo / file | — | 42 172 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/3ad3e165021c726f_0` | archivo / file | — | 215 713 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/3c9edcd2b276b9cd_0` | archivo / file | — | 1 226 397 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/3e334aa8c5fbf113_0` | archivo / file | — | 671 910 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/4151ae2ff762a854_0` | archivo / file | — | 145 248 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/42e3d325839e8a12_0` | archivo / file | — | 168 066 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/44f7b91b29c47eef_0` | archivo / file | — | 219 947 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/4aae27cd75b83f9e_0` | archivo / file | — | 12 900 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/4ab6bb88b8458ee8_0` | archivo / file | — | 11 525 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/532397b41d3f5a17_0` | archivo / file | — | 6 359 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/5efd1b20adc484c6_0` | archivo / file | — | 11 002 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/6276401f1ba03fb7_0` | archivo / file | — | 15 129 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/735c501fb6c55afc_0` | archivo / file | — | 46 754 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/7551616f72e9623f_0` | archivo / file | — | 11 082 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/80ead5ed1f17826b_0` | archivo / file | — | 12 844 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/8b84d9cc85faa32e_0` | archivo / file | — | 35 853 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/8cceb152f1e7f617_0` | archivo / file | — | 395 717 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/93bdd8cc8576346a_0` | archivo / file | — | 86 856 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/9797aca325e8b75c_0` | archivo / file | — | 44 716 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/a3465bb429a981a2_0` | archivo / file | — | 30 764 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/a3509ef4dcf72b4a_0` | archivo / file | — | 8 956 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/a606f1700428cabc_0` | archivo / file | — | 38 548 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/b0dce67085c57612_0` | archivo / file | — | 955 589 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/b8c5aec7109e3661_0` | archivo / file | — | 160 257 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/bd14ffaca8109785_0` | archivo / file | — | 377 862 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/c2bd0d486300e73e_0` | archivo / file | — | 463 301 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/cf17146354e0ac37_0` | archivo / file | — | 10 998 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/d3e4b06676dff2a7_0` | archivo / file | — | 8 518 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/d4ed473104e5d1db_0` | archivo / file | — | 360 712 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/daa1e10c7231f795_0` | archivo / file | — | 584 636 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/e99f8d540942ad5f_0` | archivo / file | — | 87 356 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/f0f6e103b299a641_0` | archivo / file | — | 365 898 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/f4331f95da3bf6dd_0` | archivo / file | — | 181 079 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/f902d83d4befec64_0` | archivo / file | — | 440 207 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/index` | archivo / file | — | 24 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/index-dir` | carpeta / folder | — | carpeta / folder (1 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/index-dir/the-real-index` | archivo / file | — | 1 056 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/Cache_Data/todelete_3c9edcd2b276b9cd_0_1` | archivo / file | — | 655 080 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/No_Vary_Search` | carpeta / folder | — | carpeta / folder (2 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/No_Vary_Search/journal.baj` | archivo / file | — | 4 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cache/No_Vary_Search/snapshot.baf` | archivo / file | — | 20 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/ClientCertificates` | carpeta / folder | — | carpeta / folder (3 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/ClientCertificates/LOCK` | archivo / file | — | 0 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/ClientCertificates/LOG` | archivo / file | — | 0 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/ClientCertificates/LOG.old` | archivo / file | — | 0 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache` | carpeta / folder | — | carpeta / folder (2 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js` | carpeta / folder | — | carpeta / folder (52 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/0640b24501e2f022_0` | archivo / file | — | 83 376 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/0b674450fc8da378_0` | archivo / file | — | 1 122 672 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/0d0e3d5ae4dcce91_0` | archivo / file | — | 361 792 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/0d46c0e43b49149c_0` | archivo / file | — | 283 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/12a83c5e901419df_0` | archivo / file | — | 5 542 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/20791451c446b207_0` | archivo / file | — | 2 287 352 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/26f74181ee50b9fe_0` | archivo / file | — | 299 424 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/3468472199a99167_0` | archivo / file | — | 356 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/34d4697458fe74a7_0` | archivo / file | — | 3 976 688 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/35e251b108e722d9_0` | archivo / file | — | 602 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/3cf8d38a2b7ebf90_0` | archivo / file | — | 457 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/3d8d3b1622e63c6d_0` | archivo / file | — | 1 776 112 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/3e0d9b39a6e6a923_0` | archivo / file | — | 283 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/4286be091fbd2dfe_0` | archivo / file | — | 270 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/4952e9763f261abe_0` | archivo / file | — | 270 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/495e249cf37efc8d_0` | archivo / file | — | 6 518 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/51442ea9034a75d3_0` | archivo / file | — | 3 213 584 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/56ecd7a3df54e112_0` | archivo / file | — | 204 408 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/5df8d2c083abf562_0` | archivo / file | — | 602 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/64afa9e2da01a3df_0` | archivo / file | — | 90 464 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/6a39c46e58561dfd_0` | archivo / file | — | 562 624 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/6f4816904529ada9_0` | archivo / file | — | 402 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/75f0ac3e57f27f0b_0` | archivo / file | — | 602 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/8326e8ca6dc7bf09_0` | archivo / file | — | 281 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/8d555e1b2e151603_0` | archivo / file | — | 265 248 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/9079515fc615d7ed_0` | archivo / file | — | 316 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/915b50612b04f04a_0` | archivo / file | — | 305 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/93b1a17c9373bfc2_0` | archivo / file | — | 530 720 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/94bf6b7bd28cb583_0` | archivo / file | — | 270 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/9aa009ca6ca01f1b_0` | archivo / file | — | 1 665 248 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/9c5bef5d94b4b7d7_0` | archivo / file | — | 602 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/9c8e97dcb569bdd9_0` | archivo / file | — | 356 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/a5d2226cc4dc927c_0` | archivo / file | — | 307 360 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/a6ef2c19adb230af_0` | archivo / file | — | 263 680 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/b400bfe838ee845f_0` | archivo / file | — | 318 248 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/b7f4464b25bedda9_0` | archivo / file | — | 1 158 712 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/bda751f6bac7de81_0` | archivo / file | — | 459 792 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/c35db760beb6e2f6_0` | archivo / file | — | 356 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/c9a3b3e9533d22f1_0` | archivo / file | — | 602 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/ce3abd2532f62cd0_0` | archivo / file | — | 66 288 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/ce6654c2839e6c2a_0` | archivo / file | — | 602 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/d2601ca77bf06636_0` | archivo / file | — | 283 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/db28d04e436322ca_0` | archivo / file | — | 206 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/db4e188ea1702b99_0` | archivo / file | — | 511 648 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/df2be79a566d657b_0` | archivo / file | — | 589 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/e24a863e8d2c07c1_0` | archivo / file | — | 283 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/e35c65fc1d1f6d94_0` | archivo / file | — | 779 992 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/e5017c2f130a03d1_0` | archivo / file | — | 1 278 624 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/f4323e166659fe33_0` | archivo / file | — | 283 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/f5ae0107f3365fa8_0` | archivo / file | — | 602 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/index` | archivo / file | — | 24 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/index-dir` | carpeta / folder | — | carpeta / folder (1 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/js/index-dir/the-real-index` | archivo / file | — | 1 248 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/wasm` | carpeta / folder | — | carpeta / folder (2 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/wasm/index` | archivo / file | — | 24 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/wasm/index-dir` | carpeta / folder | — | carpeta / folder (1 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Code Cache/wasm/index-dir/the-real-index` | archivo / file | — | 48 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Cookies` | archivo / file | — | 20 480 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/DIPS` | archivo / file | — | 36 864 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/DawnGraphiteCache` | carpeta / folder | — | carpeta / folder (5 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/DawnGraphiteCache/data_0` | archivo / file | — | 8 192 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/DawnGraphiteCache/data_1` | archivo / file | — | 270 336 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/DawnGraphiteCache/data_2` | archivo / file | — | 8 192 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/DawnGraphiteCache/data_3` | archivo / file | — | 8 192 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/DawnGraphiteCache/index` | archivo / file | — | 262 512 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/DawnWebGPUCache` | carpeta / folder | — | carpeta / folder (5 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/DawnWebGPUCache/data_0` | archivo / file | — | 8 192 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/DawnWebGPUCache/data_1` | archivo / file | — | 270 336 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/DawnWebGPUCache/data_2` | archivo / file | — | 8 192 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/DawnWebGPUCache/data_3` | archivo / file | — | 8 192 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/DawnWebGPUCache/index` | archivo / file | — | 262 512 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Extension Rules` | carpeta / folder | — | carpeta / folder (5 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Extension Rules/000003.log` | archivo / file | — | 38 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Extension Rules/CURRENT` | archivo / file | — | 16 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Extension Rules/LOCK` | archivo / file | — | 0 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Extension Rules/LOG` | archivo / file | — | 377 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Extension Rules/MANIFEST-000001` | archivo / file | — | 41 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Extension Scripts` | carpeta / folder | — | carpeta / folder (5 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Extension Scripts/000003.log` | archivo / file | — | 19 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Extension Scripts/CURRENT` | archivo / file | — | 16 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Extension Scripts/LOCK` | archivo / file | — | 0 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Extension Scripts/LOG` | archivo / file | — | 381 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Extension Scripts/MANIFEST-000001` | archivo / file | — | 41 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Extension State` | carpeta / folder | — | carpeta / folder (6 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Extension State/000003.log` | archivo / file | — | 57 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Extension State/CURRENT` | archivo / file | — | 16 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Extension State/LOCK` | archivo / file | — | 0 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Extension State/LOG` | archivo / file | — | 418 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Extension State/LOG.old` | archivo / file | — | 418 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Extension State/MANIFEST-000001` | archivo / file | — | 41 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/Favicons` | archivo / file | — | 22 528 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/GPUCache` | carpeta / folder | — | carpeta / folder (5 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/GPUCache/data_0` | archivo / file | — | 45 056 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/GPUCache/data_1` | archivo / file | — | 270 336 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/GPUCache/data_2` | archivo / file | — | 1 056 768 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/GPUCache/data_3` | archivo / file | — | 8 192 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/GPUCache/index` | archivo / file | — | 262 512 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/History` | archivo / file | — | 212 992 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/IndexedDB` | carpeta / folder | — | carpeta / folder (1 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb` | carpeta / folder | — | carpeta / folder (8 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000030.ldb` | archivo / file | — | 33 289 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000031.log` | archivo / file | — | 273 494 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000033.ldb` | archivo / file | — | 33 492 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/CURRENT` | archivo / file | — | 16 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/LOCK` | archivo / file | — | 0 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/whatsapp/.browser_profile/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/LOG` | archivo / file | — | 7 838 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+
 | 2026-11-17 | `Auxiliares/herramientas` | carpeta / folder | — | carpeta / folder (23 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
 | 2026-11-17 | `Auxiliares/herramientas/descubrir_canales_telegram.py` | script / script | — | 6 017 B | 3 / 3 | Descubre canales de Telegram referentes al mercado cubano hasta 100. | Añadido / Added |
 | 2026-11-17 | `Auxiliares/herramientas/scraper_telegram_publico.py` | script / script | — | 6 740 B | 3 / 3 | Scraper de canales públicos de Telegram sin credenciales MTProto. | Actualizado / Updated |
@@ -753,7 +968,495 @@ Objetivo de 100 canales de referencia superado (119). El descubrimiento usa 26 b
 
 **EN.** A shared SQLite DB now stores Telegram channels and car ads as they are discovered/scraped: 119 channels, 54 ads, with JSONL backups.
 
+## 30. Gestión de bases de datos con Git LFS (17/11/2026)
+
+Se instaló **Git LFS 3.8.1** y se activó en el repositorio. `.gitattributes` marca `*.sqlite`, `*.sqlite-wal` y `*.sqlite-shm` con `filter=lfs diff=lfs merge=lfs -text`; se retiraron las reglas de `.gitignore` que excluían `revolico.sqlite` y los SQLite de concesionarios.
+
+Se detuvieron temporalmente los timers de scrapeo y sincronización para tomar estados consistentes. Las bases pasan a gestionarse con LFS: `revolico.sqlite` (~803 MB), `pipeline.sqlite` (~117 MB), los catálogos de concesionarios y `telegram.sqlite`. El esquema de **partes de Revolico se conserva** como respaldo auditable; LFS no lo sustituye.
+
+**Advertencia:** la cuota LFS del plan gratuito es limitada; una BD que cambia cada 10 minutos genera un blob nuevo por commit. Vigilar el consumo con `git lfs ls-files` y `git lfs env`.
+
+**EN.** Git LFS 3.8.1 installed and configured for all SQLite files; the Revolico chunk scheme remains as an auditable backup. LFS quota must be monitored because active DBs create a new blob per change.
+
+## 31. Rango temporal de anuncios Revolico (17/11/2026)
+
+Se fijó el rango permitido de `updated_on_by_user` entre **2021-01-01 y la fecha actual** en `limpiar_revolico.py` (`FECHA_MINIMA`). Los anuncios fuera de rango van a `revision` con motivo `fuera de rango temporal`.
+
+Estado actual: anuncio más antiguo **2024-12-17**, más reciente **2026-11-17**; por tanto **0 exclusiones por fecha**. La limpieza general sobre 9.957 anuncios conservó **548 autos** y registró 9.409 exclusiones (9.316 no vehículo 4+ ruedas, 93 sin datos necesarios). El rango quedó aplicado para futuras corridas.
+
+**EN.** Revolico ads are bounded to 2021-01-01..today. Current oldest ad is 2024-12-17, so no ad was excluded by date; 548 cars were kept from 9,957 ads.
+
+## 32. Backfill de descubrimiento sin procesamiento (17/11/2026)
+
+Se añadió `--solo-descubrimiento` a `scrape_revolico_pipeline.py`. En ese modo:
+- se recorren las páginas de búsqueda desde la 1 hacia atrás;
+- se guardan todos los enlaces en `url_queue` con estado `descubierto`;
+- **no hay descarga de anuncios, ni clasificación definitiva, ni inserción en `anuncios`/`autos`/`revision`**;
+- se detiene al llegar a `FECHA_MINIMA = 2021-01-01`, al agotarse las páginas (página repetida/sin anuncios) o por límite de seguridad;
+- escribe el marcador `Data/Revolico/.backfill_completo` con motivo, páginas y enlaces.
+
+Se desactivó `revolico-scrape.timer` y se creó `revolico-backfill.service` (oneshot, `Restart=on-failure`) para ejecutar este único objetivo. Cuando el modo normal vuelva a arrancar, los enlaces `descubierto` pasan a `pending` para su descarga y clasificación.
+
+**EN.** A discovery-only mode now walks pages back to 2021-01-01 (or page exhaustion) and queues links without downloading or writing to the database; normal processing is disabled until it finishes.
+
+## 33. Parada por repetición y procesamiento de anuncios (17/11/2026)
+
+Se modificó `descubrir_hasta_fecha()` para que se detenga en cuanto una página no aporte **ningún enlace nuevo** (todos sus anuncios ya fueron vistos), además de las condiciones de fecha mínima, fin de páginas y límite de seguridad. El contador `total` ahora acumula solo enlaces nuevos.
+
+Se reinició `revolico-backfill.service` con la regla actualizada. Con el backfill en marcha, se inició `revolico-revisar.service` (`--solo-colas`) para pasar los enlaces `descubierto` a `pending`, descargarlos y aplicar la clasificación definitiva: los anuncios que cumplan los requisitos entran en `anuncios`/`autos`; el resto queda trazado en `revision`.
+
+**EN.** Discovery now stops when a page yields zero new links. The queue-draining service was started to download and classify the discovered links into the car database.
+
+---
+
+## 34. Esqueleto de análisis de rentabilidad inspirado en Egyptian-Used-Cars (18/11/2026)
+
+Creé `Data/analisis_rentabilidad/` siguiendo la arquitectura del repositorio **Egyptian-Used-Cars** (ingesta → limpieza → EDA → estadística → benchmark), pero adaptada a nuestras fuentes y preparada para crecer:
+
+```text
+Data/analisis_rentabilidad/
+├── config.py                 # marcas, tiers, FX, umbrales (configurable)
+├── scripts/
+│   ├── 01_ingest.py          # Revolico + 11 concesionarios + marketplaces -> Parquet
+│   ├── 02_clean.py           # limpieza y features; rechazos registrados en CSV
+│   ├── 03_eda.py             # KPIs y 6 gráficos Plotly HTML
+│   ├── 04_stats.py           # OLS log-precio, VIF, Kruskal-Wallis, anomalías
+│   ├── 05_benchmark.py       # benchmark por marca/modelo/año e infravalorados
+│   └── run_all.py
+├── sql/analysis.sql          # CTEs y window functions
+├── notebooks/01_exploracion.ipynb
+├── data/                     # listings_raw.parquet, listings_clean.parquet
+├── outputs/charts/           # HTML interactivos
+├── outputs/tables/           # kpis, benchmark, modelo, vif, tests, anomalías
+├── NECESIDADES.md
+└── README.md
+```
+
+Instalé además `statsmodels 0.15`, `pyarrow 26`, `kaleido`, `nbformat` y `nbconvert`. `duckdb` se desinstaló porque produce `Illegal instruction` en esta CPU; se usa Parquet + Pandas en su lugar.
+
+### Línea base real de la primera ejecución
+
+| Métrica | Valor |
+|---|---:|
+| Filas ingeridas | 972 (716 Revolico + 256 concesionarios) |
+| Filas limpias | 499 (497 usados, 2 nuevos) |
+| Rechazos | 376 (registrados, no descartados) |
+| Marcas | 32 |
+| Precio mediano usado | 24.000 USD |
+| Antigüedad media | 5,9 años |
+| Observaciones del modelo OLS | 328 |
+| Grupos de benchmark | 21 |
+| Infravalorados | 30 |
+| Anomalías | 17 |
+
+El modelo `log(precio) ~ car_age + condition_score + C(brand_tier)` da una depreciación media de **−5,43 % anual** (p<0,001), con primas de +21 % para premium y −22 % para tier medio frente al desconocido.
+
+### Brecha frente a Egipto
+
+Egipto tiene 23.500 anuncios, historial mensual de precios, HP y kilometraje estructurados, ANOVA/OLS/VIF, Tableau y Power BI. Nosotros tenemos el pipeline y las técnicas cubiertas, pero solo 497 usados, un único snapshot, HP/kilometraje mayormente ausentes y un solo benchmark de auto nuevo. El detalle y la priorización están en `Data/analisis_rentabilidad/NECESIDADES.md`.
+
+**EN.** Built a scalable analysis skeleton mirroring Egyptian-Used-Cars. First run: 972 ingested, 499 clean, 497 used cars, 32 brands, −5.43%/year depreciation. Main gap versus Egypt: listing volume, price history and structured vehicle specs.
+
+---
+
+## 35. App de circuitos eléctricos de Apklis (18/11/2026)
+
+Descargué tres APKs desde la API de Apklis (`api.apklis.cu/v2/application/` + `POST /v2/release/get_url/`): **Circuitos Habana** (`com.ermetic.circuitoshabana`, v2.2), **Apagones Habana** y **Donde Hay Luz Habana**. Con **jadx 1.5.6** descompilé la primera y encontré el mecanismo que buscábamos:
+
+- La app **no usa una API privada**: hace scraping del canal público de Telegram `https://t.me/s/EmpresaElectricaDeLaHabana` con Jsoup y User-Agent de Chrome.
+- Paginación con `?before=<message_id>`, hasta 16 páginas / 300 mensajes / 8 días, con sincronización incremental.
+- Parsea `div.tgme_widget_message`, `time[datetime]` y `div.tgme_widget_message_text`; convierte timestamps UTC a hora de Cuba con +1 h de horario de verano.
+- Filtra por palabras clave (afectación, déficit, avería, disparo, restablecido, energizado, apagón, traspasos…) y extrae circuitos, bloques, duraciones y causas.
+- Guarda el historial en SQLite local, dispara notificaciones y dibuja los circuitos sobre teselas OpenStreetMap.
+
+Evidencia y APKs en `Data/apklis/`. Detalle completo en `Data/apklis/analisis_circuitos_habana.md`.
+
+**EN.** Downloaded and decompiled the Cuban app `Circuitos Habana`. It scrapes the public Telegram channel of the Havana electric company (`t.me/s/EmpresaElectricaDeLaHabana`) with Jsoup, paginating via `?before=<id>` and parsing affectation messages into a local SQLite history. This gives us a free, real-time power-outage data source for cross-analysis with EV infrastructure.
+
+---
+
+## 36. Mapa offline, talleres e infraestructura EV (18/11/2026)
+
+- Se intentó usar `google-maps-scraper` en Docker, pero **el daemon Docker no arranca sin root** en este entorno (`dockerd needs to be started with root privileges`), por lo que se descartó esa vía.
+- Overpass/OSM fue consultado dos veces; no devuelve `shop=car`, `shop=car_repair` ni `charging_station` etiquetados en Cuba, así que no hay datos geográficos útiles de ahí.
+- Se extrajeron coordenadas de los **mapas incrustados en las propias webs** de los concesionarios (BDC One: 23.1155203,-82.3596368 y 23.0992805,-82.3050631; Dongfeng: 23.1250339,-82.4227564) y se geocodificó una dirección adicional con Nominatim.
+- Se generó `Data/mapas/mapa_ofline.html`: contorno de Cuba embebido + marcadores + Plotly incluido, funciona sin internet. También `concesionarios.csv`.
+- Se investigó infraestructura EV: Dongfeng/NWI 11 estaciones solares (2026), CIMEX+MITRANS 21 estaciones (2025), primera estación rápida en Santa Clara (08/2026), conectores CCS2 y directorios KargalaYa/ChargeFinder/Electromaps. Detalle en `Data/mapas/infraestructura_ev_cuba.md`.
+
+Pendiente: scrapear KargalaYa/Electromaps para cargadores y las páginas de contacto de los concesionarios restantes para completar el mapa con talleres.
+
+**EN.** Docker could not start without root, so the Google Maps scraper was unavailable. OSM/Overpass had no Cuban car-repair tags. Built an offline Plotly map from coordinates embedded in dealership websites and researched EV charging infrastructure sources for Cuba.
+
+---
+
+## 37. Optimización de pipelines (18/11/2026)
+
+Para acortar los tiempos de finalización:
+
+1. **Revolico:** `scrape_revolico.py` ahora usa una **sesión curl_cffi por hilo** (`threading.local`) con impersonación Chrome, reutilizando conexiones TLS en vez de crear una por petición. El servicio `revolico-revisar.service` pasó de 8 descargadores/4 procesadores a **20/8** con `--batch-size 100`, `TimeoutStartSec=0` y `Restart=on-failure` para sobrevivir reinicios.
+2. **Marketplaces:** `scrape_marketplaces.py` acepta `--workers`; el nuevo servicio `marketplaces-scrape.service` corre **6 tiendas en paralelo** con `--delay 0.8`, cada una escribiendo su propia SQLite (sin bloqueos entre ellas).
+3. **Efecto medido:** en minutos, los anuncios de Revolico pasaron de 10.117 a **10.149** y los autos de 716 a **814**; quedan 3.351 URLs pendientes y 1.940 rechazadas. Los marketplaces ya completaron Cubisima, Apululu, Carros.com, Autocubana y VentaCuba y siguen con iTENCEL/Timbirichi.
+
+Los servicios de usuario (`revolico-revisar`, `marketplaces-scrape`, `revolico-snapshot`) se reinician automáticamente tras fallo, de modo que los reinicios del servidor ya no detienen el trabajo.
+
+**EN.** Optimized both pipelines: per-thread TLS sessions, 20 downloaders/8 processors for Revolico, and 6 parallel marketplace workers with separate SQLite files. Added systemd services with automatic restart.
+
+---
+
+## 38. Reporte automático de progreso (18/11/2026)
+
+Creé `Auxiliares/herramientas/reporte_progreso.py` y el timer de usuario `progreso-report.timer`, que actualiza **`Data/progreso_reporte.md` cada 5 minutos** con:
+
+- conteos de `revolico.sqlite` (anuncios, autos, revisiones, imágenes, teléfonos, historial de precios);
+- estado de las colas de `pipeline.sqlite` (pendientes, descargando, procesadas, fallidas);
+- anuncios/comentarios/vendedores por marketplace;
+- estado de los servicios systemd.
+
+El timer es persistente (`Persistent=true`) y arranca 1 minuto después del boot. De este modo el seguimiento sobrevive a los reinicios del servidor.
+
+**EN.** Added a 5-minute systemd timer that writes `Data/progreso_reporte.md` with download/processing counts and service status.
+
+---
+
+## 39. Continuación del scrapeo y presentación narrativa (18/11/2026)
+
+- Se ampliaron los límites de `scrape_marketplaces.py`: Cogetucarro de 200 → **5.008**, Autocubana y Timbirichi a 40 páginas. El servicio `marketplaces-scrape.service` se relanzó con 6 workers; en minutos Autocubana pasó de 400 a **566** y Timbirichi de 110 a **170**, totalizando **2.121 anuncios**.
+- El pipeline de Revolico se reinició con **12 descargadores / 8 procesadores** y se añadió reintento explícito ante `database is locked` (`_retry_exec`). Quedan **3.351 URLs pendientes**; autos: **814**.
+- `reporte_progreso.py` + `progreso-report.timer` actualizan `Data/progreso_reporte.md` cada 5 minutos.
+- Se redactó `Data/analisis_rentabilidad/PRESENTACION_STORYTELLING.md`: relato en 10 actos con personajes, conflicto, hallazgos, comparación con Egipto y llamada a la acción.
+
+**EN.** Raised marketplace caps and restarted both pipelines; added SQLite lock retries. Created a 10-act storytelling presentation of the market analysis.
+
+---
+
+## 40. Renombre del repositorio en GitHub (18/11/2026)
+
+Con `gh repo rename` se cambió el nombre del repositorio remoto:
+
+```text
+antes: CarlosAntonioAceaJimenezCD/autodecide-habana
+ahora: CarlosAntonioAceaJimenezCD/el-precio-de-moverse-en-cuba
+```
+
+GitHub no permite espacios en los nombres de repositorio, por lo que se usó el slug `el-precio-de-moverse-en-cuba`. `gh` actualizó automáticamente el remoto `origin` del clon local. La carpeta local sigue siendo `~/Proyectos/ICD Automotive Market Project` para no romper las rutas absolutas de los servicios systemd ni los enlaces desde AutoDecide.
+
+Descripción actual del repo: *"Minimizar los gastos de la compra de coches en La Habana Cuba"*.
+
+---
+
+## 41. Gasolineras, estaciones de carga y serie de precios del combustible (18/11/2026)
+
+- Búsqueda en DuckDuckGo (`gasolineras cuba`) y en Yahoo/ddgs: se identificaron WhereFUEL, Directorio Cubano, D-Cuba, encuba.net, DailyFuels, GlobalPetrolPrices, ChargeFinder, Electromaps y Kargalaya.
+- **Overpass/OSM devolvió 137 gasolineras en La Habana** con coordenadas, marca, dirección y tipos de combustible. WhereFUEL usa esa misma base OSM (110 puntos en radio de 12 km).
+- **Kargalaya** aportó 9 estaciones de carga con coordenadas y precio por hora (Super48, Battery Lab, SOLGUARA, Parqueo M y 25, Universidad de Ciencias Médicas, Trisolinera Habana, PDL Campeño, ADT64, Automovion SRL). **Electromaps** añadió 3 referencias sin coordenadas. ChargeFinder respondió 403 en su API.
+- Se crearon `Data/mapas/gasolineras.csv` (137) y `Data/mapas/estaciones_carga.csv` (12), y se regeneró `mapa_ofline.html` con tres capas: concesionarios (3), carga eléctrica (9) y gasolineras (137).
+- Se creó `Data/combustible/precios_combustible.sqlite` con **18 observaciones** entre 20/08/2026 y 18/11/2026, diferenciando mercado oficial CIMEX, informal elToque y precios publicados, sin convertir monedas automáticamente.
+- El script `Auxiliares/herramientas/scrape_infraestructura.py` es idempotente y el timer `precio-combustible.timer` lo ejecuta mensualmente para alimentar la serie histórica.
+
+Hallazgo relevante: desde 07/02/2026 la venta oficial en CUP está suspendida y el combustible se vende en USD vía Ticket; desde mayo cada importador fija su precio. La B94 informal pasó de 3.500–5.000 CUP (ago) a 7.000–8.000 CUP (sep 2026).
+
+**EN.** Added 137 Havana fuel stations from OSM, 12 EV charging references, and an 18-row historical fuel-price SQLite database with a monthly update timer. Regenerated the offline map with three layers.
+
+---
+
+## 42. Base unificada del mapa y talleres (18/11/2026)
+
+Se creó `Data/mapas/mapa_elementos.sqlite` como **fuente única** del mapa offline, con tablas `tipos` y `elementos`. Cada elemento guarda coordenadas, dirección, fuente, URL, teléfono, horario, precio, estado y detalle crudo en JSON. Colores asignados:
+
+| Tipo | Color | Símbolo |
+|---|---|---|
+| Gasolinera | negro | círculo |
+| Estación de carga | verde | diamante |
+| Concesionario | azul | cuadrado |
+| Taller | rojo | triángulo |
+
+`generar_mapa_ofline.py --tipos all|gasolinera,estacion_carga|concesionario,taller` permite elegir qué capas generar; el HTML incluye Plotly embebido. Estado final: **131 gasolineras, 12 estaciones de carga, 25 concesionarios (17 con coords) y 22 talleres (todos con coords)**. Los 8 concesionarios sin coords se exportan a `elementos_sin_coordenadas.csv`.
+
+Para los talleres se usaron las webs de BDC One (schema.org Place + mapa incrustado) y Dongfeng (postventa/showrooms), Cubisima, NearPlace, Páginas Amarillas, tallermanolito.com, Yellocu y Cybo. **Cybo devolvió 403 con curl_cffi**, por lo que se aplicó el stack anti-bot disponible: `patchright` (Chromium con fingerprint de Chrome) y FlareSolverr en `http://127.0.0.1:8191/v1`. Las direcciones se geocodificaron con Nominatim y Photon (`geocode_elementos.py`); las tres referencias de Electromaps sin dirección de calle quedaron marcadas como aproximadas al centro de La Habana.
+
+**EN.** Created a unified SQLite source for the offline map with selectable layers and required colors (black fuel, green charging, blue dealerships, red workshops). Added workshops from dealership sites and directories; used patchright/FlareSolverr for anti-bot pages and Nominatim/Photon for geocoding.
+
+---
+
+## 43. Apartado de “cuánto costaría moverse” en el storytelling (18/11/2026)
+
+Se amplió la sección 2 del storytelling con el bloque **¿Cuánto costaría moverse?**, desarrollado a partir del borrador del usuario y con los vacíos completados mediante verificación web:
+
+- **Marco previo:** Acuerdo **9811 de 2024** del Consejo de Ministros, que fijaba precios minoristas de combustibles en CUP y USD.
+- **7/02/2026:** CIMEX anunció medidas temporales —respaldadas por el MEP y el viceministro Oscar Pérez-Oliva Fraga— que suspendieron la venta en CUP y activaron **Ticket** (20 L por turno, 24 h para usarlo). No se localizó una resolución numerada nueva en la Gaceta Oficial; fue una disposición administrativa.
+- **15/02/2026:** el Gobierno autorizó a **mipymes, cooperativas y otros actores económicos no estatales** a importar combustible directamente.
+- **12–15/05/2026:** nota del MFP y **Circular Especial 03/2026 de CIMEX**; desde el 15/05 cada importador habilitado fija su precio según costo real de importación (1,80–2,60 USD/L).
+- Se incorporaron también la insuficiencia prevista de electrolineras, la carga en casa condicionada por los circuitos eléctricos, las rotaciones con más de 60 h sin luz y la dependencia de los surtidores de energía.
+
+Fuentes: Cubadebate (07/02/2026), Directorio Cubano (12 y 15/05/2026), CubaTrámite (Circular 03/2026) y D-Cuba (20/02/2026).
+
+**EN.** Expanded the storytelling with a “cost of getting around” section, verified against the 2024 price agreement, the 7 Feb 2026 CIMEX measures, the 15 Feb 2026 private-import authorization and the 15 May 2026 pricing liberalization.
+
+---
+
+## 44. Reescritura de mantenimiento y retorno en el storytelling (18/11/2026)
+
+Se reescribieron los dos párrafos restantes de la sección 2 con el mismo nivel de detalle que el apartado del combustible:
+
+- **¿Quién lo mantiene?**: incorpora los **22 talleres** y **25 concesionarios** geolocalizados, las redes formales (BDC One, Dongfeng, ATR, SASA) y los talleres independientes (CarFix, Taller Calle 8, Taller VÉLO, Trisolinera Habana, Tecni-Motos, Taller Manolito), además del costo de inmovilización por piezas importadas.
+- **¿Qué devuelve la inversión?**: incorpora el uso del vehículo como **taxi formal o informal** para ingresos estables, en continuidad con taxis, triciclos y gacelas; la depreciación de **−5,43 % anual** (p < 0,001), primas premium de **+21 %**, descuentos del **−22 %** para tier medio, **30 infravalorados**, **66 anomalías** y el marco del **Decreto 163/2026**.
+
+**EN.** Rewrote the maintenance and ROI storytelling sections with mapped workshops/dealerships, immobilization costs, taxi-income use, depreciation metrics and the 2026 regulatory framework.
+
+---
+
+## 45. Reescritura de la sección 3 del storytelling (18/11/2026)
+
+Se transformó la sección **Lo que encontramos** de una tabla de datos en una narrativa de hallazgos: la proporción de anuncios que resisten el filtro de auto real, la mediana de 23.000 USD, la antigüedad media de 6,3 años, las 34 marcas, la depreciación de −5,43 % anual, los 27 grupos comparables y las 30 oportunidades infravaloradas. El cierre deja la idea central: un mercado pequeño pero con estructura suficiente para dejar de improvisar.
+
+**EN.** Rewrote the findings section of the storytelling as a narrative: signal-to-noise ratio, median price, fleet age, brands, depreciation curve and undervalued opportunities.
+
+---
+
+## 46. Apertura de la sección 3 del storytelling (18/11/2026)
+
+Se añadió una apertura que hace explícita la división del mercado en dos capas —marketplaces y concesionarios/tiendas oficiales— y una nota que define el propósito de la sección: mostrar la forma real del mercado después de separar el ruido, sin explicar el proceso de adquisición de datos.
+
+**EN.** Added an opening that frames the market as two layers (marketplaces vs. official dealerships) and states the purpose of the findings section.
+
+---
+
+## 47. Reescritura de la sección 4 del storytelling (18/11/2026)
+
+Se transformó **La curva de valor** en una narrativa sobre el envejecimiento desigual del parque: premium frente a autos de uso medio, combinación de antigüedad con kilometraje, estado y marca, y la idea de la marca como “seguro de valor”. Se eliminaron los porcentajes repetidos de la sección 3 para que la curva se sienta como continuación y no como repetición.
+
+**EN.** Rewrote the depreciation section as a narrative of unequal aging, avoiding repetition of the percentages already presented in section 3.
+
+---
+
+## 48. Definición de marcas premium y no premium (18/11/2026)
+
+Se fijó el criterio de segmentación de marcas para el storytelling y el análisis:
+
+- **Premium:** Mercedes-Benz, BMW, Audi, Lexus, Volvo, Porsche, Land Rover, Jaguar, Cadillac, Infiniti y Acura.
+- **No premium:** Hyundai, Kia, Toyota, Lada, Fiat, Chevrolet, Peugeot, Honda, Nissan, MG, Dongfeng, Moskvich, Volkswagen, Mitsubishi, Geely, Ford, Jeep, Foton, GMC, SEAT, Renault, Buick, Mazda, BYD, Changan, JAC, Plymouth, Suzuki y Pontiac, más las marcas de catálogo oficial sin volumen en la muestra (Maxus, Voyah, MHERO, FUSO, KGM/SsangYong, Chery, Haval, Great Wall e Isuzu).
+
+La lista completa, con evidencia y conteos, está en `Data/analisis_rentabilidad/marcas_cuba.md`. Se incorporó un resumen en la sección 4 del storytelling. El modelo econométrico conserva sus tres niveles (`premium`, `medio`, `economico`); la narrativa usa solo dos grupos para ser legible.
+
+**EN.** Defined premium vs. non-premium brands for Cuba based on observed listings and dealer catalogs, with a reference table and a summary in the storytelling.
+
+---
+
+## 49. Búsqueda de repositorios cubanos de automoción (19/11/2026)
+
+Se buscaron repositorios en GitHub con la API (`gh api search/repositories`) usando 31 consultas en español e inglés: mercado automotriz cubano, carros/autos/vehículos en Cuba, Revolico, motos/triciclos, precios y divisas. Tras deduplicar se obtuvieron **648 repos**, de los que se depuraron **36 con relación directa o instrumental** al mercado automotor cubano.
+
+La lista, ordenada por fecha de actualización y con la descripción de qué contiene cada uno, está en `Data/github-repos-automotriz-cuba-2026-11-19.md`. Incluye proyectos de análisis de mercado (ICD-Mercado-Automotriz, AutosxCuba, Mercado-automotriz, autos-cuba), motos y triciclos, tiendas de repuestos, scrapers de Revolico, bots de Telegram, clasificadores de anuncios, observatorios de precios y fuentes de divisa informal.
+
+Se excluyeron falsos positivos de la búsqueda amplia (GTA, proyectos genéricos “Taller 1”, repos sin relación con Cuba o automoción). El repositorio `kremondherranz-lgtm/Mercado-automotriz` ya había sido clonado en `Auxiliares/Repositorios Referencias`.
+
+**EN.** Searched GitHub for Cuban automotive-market repositories: 31 queries, 648 unique results, 36 relevant repos documented with contents and update dates.
+
+---
+
+## 50. Consolidación de bases de los repositorios de autos (19/11/2026)
+
+Se filtraron los 36 repositorios del listado anterior para conservar solo los dedicados a **autos** (se descartaron motos, triciclos, patinetes, tiendas de repuestos, bots de Revolico y divisas) y se clonaron los que faltaban. De los 7 resultantes, los dos repos de `randoloc` son duplicados en código (mismo proyecto CubAutosFinder).
+
+Se compararon 233 archivos de datos por hash y 76 CSV por contenido ordenado. Se detectaron 12 grupos de duplicados bytes y 11 de duplicados por contenido: anuncios repetidos dentro de `Mercado-automotriz`, `anuncios_limpios` = `mercado_havana`, `DATASET_COMPLETO_MEJORADO` = `DATASET_PARA_GRAFICOS`, catálogos MCV/Dongfeng/Womy/BDC repetidos entre `Mercado-automotriz` y `autos-cuba`, snapshots parciales de la encuesta, copias de entrevistas y tablas de reporte.
+
+Se creó `Data/repos-autos-referencias/referencias_autos.sqlite` con **25 tablas** (3.958 anuncios de Revolico, 3.566 limpios, catálogos de comercializadoras, 33 respuestas de encuesta, 30 + 30 + 8 entrevistas, datasets de AutosxCuba) y una tabla `provenancia`. De los 3.958 anuncios, **369 ya estaban en nuestra base** (marcados con `en_nuestro_proyecto=1`) y 3.589 son nuevos; no se modificó `revolico.sqlite` para preservar el historial de precios. Script reproducible en `Auxiliares/herramientas/consolidar_repos_autos.py`.
+
+La documentación de encuestas y entrevistas está en `Data/repos-autos-referencias/ENCUESTAS_Y_ENTREVISTAS.md`: la encuesta con datos reales fue un Google Forms de 32 preguntas aplicado a 33 personas de 4 segmentos en un barrio de La Habana (17 de 18–25 prefieren eléctrico, pero 16 de 18 no pagarían más de 4.000 USD por uno); los otros dos cuestionarios son solo instrumentos sin respuestas. Las entrevistas (30 + 30 + 8) son cualitativas, anónimas salvo el grupo de AutosxCuba —que incluye nombres y requiere cuidado— y aportan precios de combustible 2,00–2,70 USD/L, mantenimientos de 200 a 3.000 USD y percepciones sobre repuestos y clásicos.
+
+**EN.** Filtered the 36 repos down to 7 automotive-only ones, compared 233 data files, discarded 23 duplicate groups, and consolidated 25 non-duplicate tables into a provenance-tracked SQLite. Documented the surveys and interviews: one 33-respondent demand survey with data, two questionnaire instruments only, and 68 qualitative interviews.
+
+---
+
+## 51. Mejoras del proyecto (20/11/2026)
+
+Se ejecutó una tanda de mejoras una por una, sin borrar archivos. Ninguna modificó las bases fuente: todas actúan sobre código, documentación y outputs derivados, con respaldos en `/tmp/opencode/`.
+
+1. **Deduplicación de `autos`**. La tabla se reconstruyó desde `anuncios` (fuente canónica): 814 filas con 748 IDs únicos → **744 autos únicos**. Se excluyeron 4 anuncios que no son autos (`58867937`, `53777554`, `53843413`, `58886962`), marcados en `anuncios` con `es_auto=0` y motivo `no es auto: servicio/combustible`. Se creó el índice único `idx_autos_id` y `limpiar_revolico.py` incorporó `EXCLUDE_IDS`, `INSERT OR REPLACE` y el índice para que no reaparezcan.
+2. **Regeneración del análisis**. `run_all.py` volvió a correr sobre la base de 744 autos: 3.222 registros crudos y 744 limpios, frente a los 680 anteriores.
+3. **Reparación de la ingesta de marketplaces**. `parse_price` ahora interpreta separadores de miles (973 anuncios recuperados: 872 de iTENCEL, 99 de Cubisima, 2 de VentaCuba). Los precios vacíos de Autocubana se recuperan del JSON-LD (614 anuncios, mediana 17.000 USD) y los títulos de interfaz (“Reportar este anuncio”, “Administrar mis anuncios”, “Comprar carros…”) se reconstruyen desde el JSON-LD o el slug de la URL. Se añadieron filtros auditables para no-autos, spam, precios que en realidad son modelo/año (116 casos en Cogetucarro) y marcadores de precio (11 en VentaCuba), todos volcados a `descartes_marketplaces.csv`. Se incorporó la columna `canal`: **1.301 anuncios locales y 672 de importación** (iTENCEL), con `kpis_canal.csv` e `importacion_por_marca.csv` separados. La mediana local quedó en 21.000 USD.
+4. **Kilometraje**. `parse_specs` y `parse_title` convertían `80,000 km` en 80 km. Se extrajo `parse_number()` con la lógica de separadores ya usada en `parse_price`. El código está aplicado y probado (`80,000` → 80.000); la regeneración final de los outputs se registra al cierre de la tanda.
+5. **Marcas**. `config.py` incorporó Land Rover, Jaguar, Infiniti, Acura, BAIC, Daewoo, Opel, Volga, GAC, Bestune, Maxus, SsangYong y VW, con sus alias y tiers (premium/medio), para reducir los 442 anuncios en tier “desconocido”.
+
+Además se reconcilió la encuesta: el cruce filtra ahora `interes=1`, dando **28 interesados** (14 eléctrico, 10 combustión, 4 híbrido) en lugar de los 29 que contaba el script anterior; `PRODUCTOS_VS_GUSTOS.md` tiene precios y propulsiones corregidos (`friday-ev`/`sky-ev` ya figuran como eléctricos). Se actualizó la identidad del proyecto en README, informe, storytelling (cuarta fuerza “expectativas”) y NECESIDADES, y se corrigieron las rutas de 11 unidades systemd.
+
+**EN.** Executed a one-by-one improvement batch without deleting files: deduplicated `autos` to 744 unique cars, regenerated the analysis, repaired marketplace prices and titles (1,973 listings split into 1,301 local and 672 imported), fixed kilometre parsing, expanded brand configuration, reconciled the survey to 28 interested respondents, and updated documentation and systemd paths.
+
+---
+
+## 52. Ampliación de fuentes de datos (20/11/2026)
+
+Se amplió la búsqueda de fuentes más allá de los repositorios y portales ya integrados, con prioridad en fuentes oficiales, compraventa, concesionarios, divisas y datos abiertos. El resultado está en `Data/fuentes-adicionales-2026-11-20.md`: **25 fuentes** verificadas, organizadas por tipo con URL, datos expuestos, viabilidad de scraping y aporte al proyecto.
+
+Las cinco más valiosas son:
+
+1. **API de tasas del Banco Central de Cuba** (`https://api.bc.gob.cu/v1/tasas-de-cambio/activas`): JSON diario con fecha embebida, útil como referencia oficial contrastada. La conversión del proyecto sigue usando la **TRMI informal** de elTOQUE (930 CUP/USD), nunca la oficial.
+2. **Gaceta Oficial No. 65/2026** (paquete Decreto 163 y Resoluciones 171–175): valores referenciales, impuestos y tarifas que explican la brecha entre precio anunciado y precio final.
+3. **ONEI, Anuario Estadístico 2025, capítulo 13**: serie oficial más reciente de transporte y parque automotor, ausente hasta ahora en la base.
+4. **Womy** (`https://womy.cu/cars/`): catálogo web vivo de Toyota y Lexus con precios en EUR y scraping trivial; ya existía una tabla `cat_womy` en el repo de referencias.
+5. **Clasificados.st y TecnoTáctil**: el primero aporta 1.623 anuncios con paginación simple (frescura baja, útil como serie histórica) y el segundo histórico de precios de Revolico, Porlalivre y Ofertas.cu.
+
+**Hallazgo normativo crítico:** la **Resolución 312/2026 de la Aduana General fue derogada por la Resolución 340/2026**. Se actualizaron las referencias en `README.md`, en este informe y en `Data/verificacion-marketplaces-tiendas-organismos-2026-11-16.md` para conservar la trazabilidad sin citar 312 como norma vigente.
+
+También se descartaron fuentes sin valor verificable: `cubamotor.com` (dominio estacionado), agregadores de divisas con cifras contradictorias, datasets genéricos de Kaggle/UCI, Marketplace de Facebook (login obligatorio) y MININT/Dirección de Tránsito (sin estadísticas públicas de matriculaciones).
+
+**EN.** Expanded source discovery to 25 verified sources, prioritizing official data, classifieds, dealers, FX and open data. Top additions: BCC rates API, Gaceta Oficial 2026, ONEI 2025, Womy, and Clasificados.st/TecnoTáctil. Critical finding: Customs Resolution 312/2026 was repealed by Resolution 340/2026; references were updated.
+
+---
+
+## 53. Descarga completa de los anuarios del ONEI (20/11/2026)
+
+A partir del índice oficial `http://www.onei.gob.cu/cuba` se recorrieron las 12 páginas de anuarios disponibles (2014–2025) y se descargaron **todos los documentos enlazados**: 111 PDF, 7 RAR y 103 archivos Excel extraídos, unos 311 MB en total. El inventario está en `Data/fuentes-oficiales/ONEI/README.md` y, con URL, tamaño y SHA-256 por archivo, en el `INDICE.md` de cada año.
+
+La estructura es `Anuario_Estadistico_AAAA/{PDF,Archivo,Excel}/`. Los años 2014–2016, 2018 y 2019 solo publican un PDF íntegro; 2020–2025 publican capítulos en PDF más un RAR de cuadros. Los RAR se extrajeron y se conservaron sin modificar. Los 117 enlaces de documento encontrados se descargaron todos; solo se omitieron CSS y favicon. La validación por tipo MIME dio 0 archivos sospechosos.
+
+Para el proyecto, la serie más útil es el capítulo 13 (Transporte y Seguridad Vial), que permite incorporar parque automotor, matriculaciones y accidentes con series oficiales 2014–2025, hoy ausentes del análisis.
+
+**EN.** Downloaded every document linked from all 12 ONEI statistical yearbooks (2014–2025): 111 PDFs, 7 RAR archives and 103 extracted Excel files (~311 MB), organised per year with checksums and source URLs.
+
+---
+
+## 54. Base de datos distribuida en chunks (20/11/2026)
+
+`Data/Revolico/revolico.sqlite` (849.465.344 bytes) se dividió en **82 chunks de 10 MB** en `Data/Revolico/chunks/`, con un `MANIFEST.json` que guarda el SHA-256 del archivo completo, el orden, el offset y el hash de cada fragmento. La verificación de los 82 chunks dio OK.
+
+Se añadió `Auxiliares/herramientas/db_chunks.py` con tres comandos (`split`, `verify`, `assemble`); la reconstrucción valida todos los hashes antes de escribir y no reemplaza un archivo existente salvo `--force`. `.gitattributes` gestiona los `.bin` con Git LFS. `config.py` expone `REVOLICO_CHUNKS`, `REVOLICO_MANIFEST` y `DB_CHUNKS_TOOL`, y `scripts/01_ingest.py` reconstruye la base desde los chunks si el SQLite no existe. El archivo original se conserva en el árbol de trabajo.
+
+El objetivo operativo es que una subida interrumpida no pierda todo el progreso: con fragmentos de 10 MB solo se reintenta el chunk en curso. Como el historial de `main` referencia aún el objeto LFS de 804 MB, los chunks se publican en la rama huérfana `chunked-db`, sin ese objeto en su historia; `main` queda intacto hasta decidir su sustitución.
+
+**EN.** Split the 811 MiB Revolico database into 82 verified 10 MB chunks with a SHA-256 manifest, added split/verify/assemble tooling, adapted config and ingest to rebuild the DB automatically, and prepared a chunk-only orphan branch for resumable uploads.
+
+---
+
+## 55. Auditoría de fuentes, README y verificación final (23/11/2026)
+
+Se consultaron **15 fuentes web** (8 marketplaces, 7 fuentes oficiales y complementarias): 14 respondieron HTTP 200 y elTOQUE no respondió desde este entorno. Las fechas más recientes en las bases son 17–18/11/2026. El detalle está en `Data/auditoria-fuentes-2026-11-23.md`, generado por `Auxiliares/herramientas/auditar_fuentes.py` con datos calculados en cada ejecución. Las 8 semillas de marketplaces también se descargaron y se contaron sus enlaces de anuncio en `Data/auditoria-fuentes-contenido.md`; todas seguían publicando listados.
+
+Se revisaron los 33 repositorios auxiliares. De los **7 cubanos**, solo `AutosxCuba` tiene ref remoto atrasada (24 commits), pero los 7 tienen cambios locales sin commitear; no se hizo `pull` para no sobrescribir trabajo. Se encontraron dos repos nuevos por la API de GitHub: `danielzamoramato/CubAutos` y `gtrcubautos-blip/GTR-CUBAUTOS-R.S.L`, ambos de baja señal.
+
+Se reescribió `README.md` como página de entrada: descripción de una frase, quickstart ejecutable, estructura, tabla de fuentes, configuración, enlaces por tipo de documento y marco legal. Se añadió `requirements.txt` y un entorno `Auxiliares/.venv-py` funcional. Las skills `technical-writing`, `readme-writing`, `diataxis-docs`, `marketing-copy` y `pptx` quedaron instaladas y activas para redacción y presentación.
+
+La verificación del código detectó un `NameError` en `scripts/01_ingest.py` (`cfg` usado antes de importarse); se corrigió y se revalidó la importación y las funciones `parse_price`/`parse_number`. El informe de debug fue revisado y sus observaciones sobre afirmaciones no calculadas se aplicaron al generador de la auditoría.
+
+**EN.** Audited 15 web sources (14 HTTP 200), reviewed 33 auxiliary repos (7 Cuban, 1 with stale remote ref but all with local changes), rewrote the README to current standards, added a working environment and writing/presentation skills, and fixed a real import-order bug found during verification.
+
+---
+
+## 56. Análisis de los anuarios y estructura de GitHub (23/11/2026)
+
+Se revisaron los 12 anuarios del ONEI y sus 233 archivos. Las series útiles se extrajeron en `Data/fuentes-oficiales/ONEI/series_oficiales.csv` y se interpretan en `ANALISIS_DATO.md`: el transporte de pasajeros cayó un 59 % entre 2019 y 2025 y el ómnibus un 71 %; los accidentes bajaron pero la gravedad aumentó (9,9 fallecidos por cada 100 accidentes en 2025). **No hay series de parque automotor ni de matriculaciones**, por lo que esa laguna signalada en `NECESIDADES.md` no se resuelve con los anuarios; la corrección quedó registrada.
+
+Se documentó además la estructura versionada en `Data/estructura_github.md`: 1.288 archivos, 157 objetos LFS, distribuidos en `Data` (836), `Hombros` (280), `Auxiliares` (110) y `Anexos` (56), con el detalle de extensiones por carpeta y la lista de repositorios no versionados.
+
+**EN.** Analysed all 12 ONEI yearbooks: extracted passenger and road-safety series, confirmed no vehicle-fleet or registration data exists in them, and documented the GitHub tree (1,288 files, 157 LFS objects) with formats per directory.
+
+---
+
+## 57. Reclassificación de páginas y novedades detectadas (23/11/2026)
+
+Se volvieron a descargar las dos primeras páginas de los 8 marketplaces y se compararon sus enlaces con las BDs, normalizando `www.`, query, Unicode NFC y barras finales. Resultado: 7 fuentes sin enlaces nuevos; **iTENCEL mostró 10 anuncios nuevos** (`gmc-sierra-2022-add`, `honda-acord-2025-add`, entre otros), tras descartar una página de agrupación falsa. El detalle está en `Data/novedades-fuentes-2026-11-23.md`, generado por `revisar_novedades.py` sin modificar las bases. El informe de debug fue revisado y sus correcciones aplicadas.
+
+**EN.** Re-fetched the first two listing pages of all 8 marketplaces and compared normalized URLs against the stored databases: 7 sources had no new links, iTENCEL had 10 uncaptured ads after filtering one aggregation page. No database was modified.
+
+---
+
+## 58. Incorporación de anuncios nuevos de iTENCEL (23/11/2026)
+
+Se scrapearon e insertaron los 10 anuncios detectados en la reclasificación: GMC Sierra 2022, Honda Accord 2025, Hyundai Santa Cruz 2022, Hyundai Santa Fe 2024, Kia Forte GT Line 2020, Maxus G10 2015, Mercedes Sprinter 211 2020, Nissan Titan 2017, Sonata 2021 SEL y Van Nissan 2020. Se hizo copia de seguridad de `itencel.sqlite` antes de escribir (`itencel.sqlite.bak-20261123`), se canonizaron las URLs con barra final para no duplicar y se reparó un título de interfaz usando el JSON-LD.
+
+La BD pasó de 951 a **961 anuncios** (961 URLs únicas, `integrity_check=ok`). El pipeline se regeneró con el entorno `Auxiliares/.venv-py` (añadido `pyarrow` a `requirements.txt`): **2.014 anuncios limpios**, de ellos 1.323 locales y 691 de importación; mediana local 21.000 USD y mediana de kilometraje 44.125 km. Se dejó listo el terreno para volver a trabajar con Revolico.
+
+**EN.** Scraped and inserted 10 new iTENCEL ads after backing up the database and canonicalizing URLs; the database has 961 unique ads and the regenerated analysis has 2,014 clean listings (1,323 local + 691 imported).
+
+---
+
+## 59. Storytelling alineado con los datos finales (23/11/2026)
+
+Se actualizó `PRESENTACION_STORYTELLING.md` con la narrativa vigente, conservando la voz y la estructura originales. El relato ahora usa **744 autos únicos**, **2.014 anuncios limpios** (1.323 locales y 691 de importación), mediana local de **21.000 USD**, kilometraje mediano de **44.125 km**, 50 marcas, 100 grupos comparables y 81 anomalías. La caída del transporte de pasajeros según el ONEI y los diez anuncios nuevos de iTENCEL entraron en la historia sin convertirla en una explicación técnica.
+
+La depreciación se reformuló con honestidad: el modelo actual no encuentra una pendiente anual significativa tras corregir el kilometraje, y la prima premium dejó de afirmarse como cifra. Se aplicaron las skills de marketing y SEO para cifras concretas y enlaces internos, y las de voz propia y edición quirúrgica para preservar el estilo del autor. Se añadió además un **apéndice visual** con cinco cuadros y seis gráficos reales; el texto solo deja referencias discretas entre paréntesis, de modo que las tablas y figuras puedan insertarse sin romper la narrativa.
+
+**EN.** Updated the storytelling to the final dataset while preserving the author's voice: 744 unique cars, 2,014 clean listings, 21,000 USD median and a statistically honest depreciation narrative.
+
+---
+
+## 60. Inventario de funciones y modelos (23/11/2026)
+
+Se documentó en `Data/analisis_rentabilidad/MODELOS_Y_FUNCIONES.md` cada transformación y cada estimación del pipeline, con su justificación: normalización sintáctica y TRMI, features derivados, mediana y cuartiles, modelo hedónico log-lineal, VIF, Kruskal-Wallis, Welch t-test y detección de anomalías. El respaldo es metodológico y empírico: se explica por qué cada forma encaja con datos asimétricos y por qué la corrida actual **no** sostiene una tasa de depreciación ni una prima premium significativa (p mínimo 0,165; VIF 1,13–1,58; Kruskal-Wallis p = 1e−05).
+
+**EN.** Documented every function and statistical model in the pipeline with its rationale and current evidence, including the honest non-significance of the hedonic OLS coefficients.
+
+---
+
+## 61. Sitio MkDocs del proyecto (23/11/2026)
+
+Se montó un sitio de documentación con MkDocs Material cuya fuente es `docs/`, generada desde los Markdown y CSV vigentes por `Auxiliares/herramientas/generar_sitio_mkdocs.py`. La navegación sigue Diátaxis: **Historia** (9 secciones del storytelling más introducción y apéndice visual), **Referencia** (funciones y modelos, KPIs e informe técnico), **Cómo** (regeneración del análisis y del sitio) y **Fuentes** (auditoría, anuarios y estructura de GitHub).
+
+Los seis gráficos Plotly se copian a `docs/graficos/` y se enlazan desde el apéndice; las tablas del apéndice y la página de KPIs se generan desde los CSV. `mkdocs build --strict` termina sin errores ni enlaces rotos. `site/` queda ignorado por Git y `mkdocs.yml` contiene la configuración.
+
+**EN.** Built a MkDocs Material site generated from the project's Markdown and CSV: storytelling split by section, visual appendix, model reference, how-to guide and sources. Strict build passes with no broken links.
+
+---
+
+## 62. Factibilidad del timelapse eléctrico (23/11/2026)
+
+Se verificó que el canal público de Telegram de la Empresa Eléctrica de La Habana (`t.me/s/EmpresaElectricaDeLaHabana`) responde HTTP 200 y publica mensajes fechados el 23/11/2026. El APK de `Circuitos Habana` ya documenta la paginación por `?before=`, el filtro por palabras clave y la conversión UTC+1. Del APK se extrajeron 2.473 puntos, 244 circuitos y 166 polígonos de zonas a `Data/mapas/circuitos/`. El plan de captura, parseo, mapa temporal y límites está en `Data/mapas/TIMELAPSE_CIRCUITOS.md`. Se implementó además `Auxiliares/herramientas/scraper_circuitos.py`: en su primera corrida real capturó 40 mensajes, deduplicó por ID y dejó 35 circuitos sin luz, 23 mixtos y 2 con luz en `Data/mapas/circuitos_estado.sqlite`. Un informe de debug corrigió tres fallos (fecha local, filtro de relevancia y palabras de afectación) y las filas existentes se migraron sin borrarse.
+
+**EN.** Confirmed the public Telegram channel is accessible and extracted circuit geometry from the existing APK; documented a feasible capture-and-timelapse architecture with its history and rate-limit caveats.
+
+---
+
+## 63. Calidad del storytelling como puerta de entrada (23/11/2026)
+
+Se revisó el relato como introducción para visitantes nuevos. El contenido es sólido, pero antes de la revisión tenía fricción inicial (metadatos antes de la promesa), un H2 genérico, el dato fuerte enterrado y ninguna llamada a la acción. Se aplicaron correcciones quirúrgicas: titular centrado en «cuánto cuesta un carro en Cuba en 2026», gancho de tres datos al inicio, enlaces de entrada y CTA de retorno al cierre; se corrigió además un carácter cirílico en «largo».
+
+La estimación de retención (`Data/analisis_rentabilidad/ALCANCE_Y_RETENCION.md`) es **inferencia de diseño, no medición**: de cada 100 visitantes, ~58 leerían el primer párrafo, ~16 llegarían al cierre y ~5 volverían con intención de consulta. Con promesa, CTA y artefacto actualizable, la proyección condicionada es ~22–25 finalizaciones y ~18–22 retornos. Se documentaron cinco acciones de alcance y tres de retorno, con métricas.
+
+**EN.** Audited the storytelling as a landing narrative, applied surgical fixes and documented an explicit, non-measured retention estimate plus reach and return actions.
+
+---
+
+## 64. Automatización hacia una fuente auditable a dos años (23/11/2026)
+
+Se diseñó `Data/AUTOMATIZACION.md`: tres carriles desacoplados (recolectar, procesar, publicar), periodicidad realista en UTC, idempotencia por clave de fuente, marcas de agua, escrituras atómicas, cuarentena de datos inválidos, `SALUD.md` como dead-man's switch y manifiestos con hashes para reconstruir qué se sabía en cualquier fecha. Ya se activó `linger` y se detuvo el servicio `push-final` que reiniciaba 8 veces sin progreso. Queda implementar los timers `precio-*` y el envoltorio `run_step.sh` por fases.
+
+**EN.** Designed a phased, idempotent automation architecture with health checks and immutable manifests so the project remains auditable two years later; enabled linger and stopped a runaway push service.
+
+---
+
+## 65. Automatización operativa y coste de red (23/11/2026)
+
+Se activaron cinco timers `precio-*` (circuitos, calidad, salud, análisis y sitio) con `Linger=yes`, envoltorio `run_step.sh` con `flock` y estado atómico, validación con cuarentena y `SALUD.md`. Un informe de debug confirmó dos fallos latentes y ya están corregidos: `salud.py` ahora distingue `SIN DATOS` de `STALE` (antes generaba 10 alertas falsas) y el capturador escribe el ETag solo después del `commit` en SQLite (antes un 304 podía saltarse mensajes si una corrida moría a mitad de paginación). También se cerró el descriptor del `flock` en los hijos. Estimación de red: **5–10 MB/mes** si no hay cambios y **50–90 MB/mes** con novedades. Sin internet no se puede scrapear, pero sí ejecutar sin presencia del usuario; si falla la red, `SALUD.md` marca el periodo perdido y el siguiente ciclo `Persistent=true` lo recupera.
+
+**EN.** Activated five unattended timers with locking, atomic state, validation and health reporting; added conditional HTTP requests to minimize bandwidth (estimated 5–10 MB/month idle, 50–90 MB/month with changes).
+
+---
+
+## 66. Extracción continua de Revolico y arquitectura de datos (23/11/2026)
+
+Se activó `precio-revolico.timer` cada 10 minutos con `--max-pages 3`, 2 descargadores, 2 procesadores y lotes de 50, sin `git push`. El job usa `flock` y un timeout de 45 min con 5 min de margen frente al de systemd. El primer debug reveló que 3.351 enlaces `es_auto_candidato=0` quedaban `pending` para siempre: se marcan `rechazado` y se excluyen del conteo de salida; se añadió `SIGTERM → STOP` para que el cierre guarde lote, snapshot y partes. En la primera corrida corregida los anuncios `done` pasaron de 6.783 a 6.955.
+
+Se documentó la arquitectura de procesamiento en `ARQUITECTURA_DATOS.md`: Parquet particionado por `year/month`, watermark, rollups mensuales y evaluación de DuckDB/Polars/Arrow. En esta CPU `import duckdb` falla con `SIGILL`, así que la Fase 1 se hará con pyarrow/pandas, ya disponibles.
+
+**EN.** Enabled a 10-minute Revolico capture job with locking and graceful shutdown, fixed an unreachable exit condition in the pipeline, and documented a phased storage architecture (partitioned Parquet + watermarks + monthly rollups); DuckDB is blocked by a CPU SIGILL.
+
+---
+
+## 67. Optimización de espacio (23/11/2026)
+
+Con autorización explícita se quitaron: el entorno de Python antiguo e inservible (1,7 GB), dos versiones viejas de archivos grandes que ya no se usaban (1,7 GB), la copia de seguridad de iTENCEL creada durante la inserción (53 MB), los restos de sesión de WhatsApp (56 MB) y 10 archivos repetidos (66 MB). Las leyes y las herramientas de scraping **no se borraron**: se mudaron a `~/Utilidades/Leyes` y `~/Utilidades/HerramientasScraping`. El repositorio pasó de 20 GB a 10 GB.
+
+**EN.** With explicit authorization, removed a broken Python environment, old file copies, a temporary database backup, browser session data and duplicate files; moved laws and scraping tools to ~/Utilidades. Repository size dropped from 20 GB to 10 GB.
+
+---
+
+## 68. Peso en GitHub y mapa de espacio (23/11/2026)
+
+La API de GitHub reporta **205.002 KB (0,20 GB)** para el historial normal; los archivos grandes se guardan aparte y su consumo en GitHub no lo expone la API. En local, esa copia ocupa 3,3 GB con 174 archivos. El mapa completo y los candidatos a optimizar están en `Data/ESTRUCTURA_ESPACIO.md`: las tres copias partidas de Revolico (2,1 GB), el historial normal (1,0 GB), bibliotecas quizá innecesarias (66 MB de DuckDB, que además falla en esta CPU), repos de referencia (606 MB) y documentos descargados (261 MB).
+
+**EN.** GitHub reports 0.20 GB for Git history; large-file storage is not exposed by the API (3.3 GB locally). Documented a plain-language space map and optimization candidates.
+
 ---
 
 **Firma / Signature:** responsable del proyecto / project owner.  
-**Última actualización / Last update:** 17/11/2026.
+**Última actualización / Last update:** 23/11/2026.
