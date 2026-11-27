@@ -3,41 +3,41 @@
   "compresion": "zstd",
   "tablas": {
     "anuncios": {
-      "filas": 10217,
-      "exportadas": 10217,
+      "filas": 10348,
+      "exportadas": 10348,
       "particiones": 1,
-      "bytes": 23699051,
+      "bytes": 24016993,
       "archivos": [
         {
           "ruta": "anuncios/year=2026/month=11/parte-000.parquet",
-          "bytes": 23699051,
-          "sha256": "df78fc061653996a536d30d19261b61d34c49e42fe62aa1f478fdb9b7cf5660c"
+          "bytes": 24016993,
+          "sha256": "53eaf9a41d8fff32c11b62b08e86b2df5168f06a38668305413fb5886b0bc09a"
         }
       ]
     },
     "autos": {
-      "filas": 812,
-      "exportadas": 812,
+      "filas": 943,
+      "exportadas": 943,
       "particiones": 1,
-      "bytes": 1211566,
+      "bytes": 1422463,
       "archivos": [
         {
           "ruta": "autos/year=2026/month=11/parte-000.parquet",
-          "bytes": 1211566,
-          "sha256": "3295be8392e41dc669e3b880a515c5b9219c652806181a60e3ed28c9cb57551a"
+          "bytes": 1422463,
+          "sha256": "fa8c724364ae96a4b99ed6bc6b5eb927fcef4d221f52cc745ca939a627c4bcab"
         }
       ]
     },
     "revision": {
-      "filas": 11620,
-      "exportadas": 11620,
+      "filas": 13882,
+      "exportadas": 13882,
       "particiones": 1,
-      "bytes": 451472,
+      "bytes": 535646,
       "archivos": [
         {
           "ruta": "revision/year=2026/month=11/parte-000.parquet",
-          "bytes": 451472,
-          "sha256": "3cf9e7821fff68c6556a2b75e066f7229f483206c4265c032036f7d7d2fe77f3"
+          "bytes": 535646,
+          "sha256": "4e6e76833bc5dfa6c17f4f771efa1cadd5199f93051cd0e4e3f038624822508e"
         }
       ]
     },
@@ -55,28 +55,28 @@
       ]
     },
     "imagenes": {
-      "filas": 23143,
-      "exportadas": 23143,
+      "filas": 23573,
+      "exportadas": 23573,
       "particiones": 1,
-      "bytes": 1954470,
+      "bytes": 1988268,
       "archivos": [
         {
           "ruta": "imagenes/year=sin_fecha/month=sin_fecha/parte-000.parquet",
-          "bytes": 1954470,
-          "sha256": "ca736c91b355f70d43e0f435d929c1242cbc54019e36bedae02ff2bbbd499adc"
+          "bytes": 1988268,
+          "sha256": "9514160bac685d80ea2f3156ef5d49b270629b9c26a05730ddc405a5b141dcc0"
         }
       ]
     },
     "telefonos": {
-      "filas": 12338,
-      "exportadas": 12338,
+      "filas": 12500,
+      "exportadas": 12500,
       "particiones": 1,
-      "bytes": 131584,
+      "bytes": 132840,
       "archivos": [
         {
           "ruta": "telefonos/year=sin_fecha/month=sin_fecha/parte-000.parquet",
-          "bytes": 131584,
-          "sha256": "97c4f791bf395909b6e872053f71f6ba87866f9cb9b30494c1007ef9daaf6aa5"
+          "bytes": 132840,
+          "sha256": "1c4ba51d05ff684e332ec52d34abfc8af720204be504b82be3a44aad70329600"
         }
       ]
     }
