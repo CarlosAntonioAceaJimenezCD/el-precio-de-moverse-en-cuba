@@ -1,213 +1,105 @@
-# AutoDecide Habana / AutoDecide Habana
+# El precio de moverse en Cuba
 
-> **ES** — Análisis del mercado automotor habanero (estructura, precios, oferta, segmentos, tendencias y asequibilidad) con un pipeline de scraping reutilizable que se adapta al momento en que se revise. La especialización en un producto interactivo de recomendación se abordará después.
->
-> **EN** — Analysis of the Havana automotive market (structure, prices, supply, segments, trends and affordability) with a reusable scraping pipeline that adapts to the moment of review. Specialization into an interactive recommendation product will come later.
+Análisis reproducible del mercado automotor cubano: **<!-- kpi:autos_revolico -->772 autos únicos** de Revolico, **<!-- kpi:anuncios_marketplaces -->2.232 anuncios** de 8 marketplaces y **256 vehículos** de 11 concesionarios, consolidados con fuentes oficiales (ONEI, Gaceta Oficial, BCC) y una serie de entrevistas y encuestas.
 
-**Nombre del proyecto / Project name:** AutoDecide Habana  
-**Nombre anterior / Former name:** ICD Automotive Market Project  
-**Ubicación / Location:** `~/Proyectos/ICD Automotive Market Project`  
-**Sugerencia de repositorio / Suggested repository:** `autodecide-habana`  
-**Idioma / Language:** español e inglés / Spanish and English  
-**Última actualización / Last update:** 17 de noviembre de 2026
+*Ubicación:* `~/Proyectos/El precio de moverse en Cuba` · *Repositorio:* `el-precio-de-moverse-en-cuba` · *Actualizado:* 23/11/2026.
 
----
+## Qué incluye
 
-## 1. Objetivo / Objective
+- **Datos crudos y auditables**: anuncios, enlaces, colas de descarga y descartes exportados por categoría en `Data/CRUDO_POR_CATEGORIA/`.
+- **Base consolidada**: `Data/Revolico/revolico.sqlite` (<!-- kpi:anuncios_revolico -->10.177 anuncios, <!-- kpi:autos_revolico -->772 autos) y `Data/repos-autos-referencias/referencias_autos.sqlite` (25 tablas).
+- **Análisis regenerable**: KPIs, benchmarks, depreciación y gráficos en `Data/analisis_rentabilidad/`.
+- **Fuentes oficiales**: los 12 anuarios del ONEI (2014–2025), 233 archivos, en `Data/fuentes-oficiales/ONEI/`.
+- **Documentación**: informe técnico, storytelling, auditoría de fuentes e índices de datos.
 
-**ES.** Realizar un **análisis de mercado del automóvil usado en La Habana**: caracterizar la estructura del mercado, la distribución de precios, la oferta por segmento, las tendencias temporales, la asequibilidad y las condiciones de rentabilidad. No buscamos aún recomendar una compra a un usuario concreto; eso será una especialización posterior. Las líneas de trabajo actuales son:
+## Quickstart
 
-1. **Análisis del mercado automotor cubano**, con foco exclusivo en **La Habana**, tanto en el canal formal (concesionarios e importadores autorizados) como en el informal (marketplaces y anuncios de compraventa).
-2. **Construcción de la base de datos y del modelo analítico** (limpieza, comparables, depreciación, costos ocultos, rentabilidad y asequibilidad).
-3. **Pipeline de scraping reutilizable y adaptable**, capaz de actualizarse cuando cambian los sitios, los bloqueos o el contexto regulatorio.
+Requiere Python 3.10+ y Git LFS. Desde la carpeta del proyecto:
 
-**EN.** Carry out a **market analysis of used cars in Havana**: characterize market structure, price distribution, supply by segment, time trends, affordability and profitability conditions. User-specific purchase recommendations are a later specialization. Current workstreams:
+```bash
+python3 -m venv Auxiliares/.venv-py
+Auxiliares/.venv-py/bin/pip install -r requirements.txt
+Auxiliares/.venv-py/bin/python Data/analisis_rentabilidad/scripts/run_all.py
+```
 
-1. **Analysis of the Cuban automotive market**, focused only on **Havana**, covering both the formal channel (dealers and authorized importers) and the informal one (marketplaces and classified ads).
-2. **Database and analytical model** (cleaning, comparables, depreciation, hidden costs, profitability and affordability).
-3. **Reusable, adaptive scraping pipeline**, able to update itself when sites, blocks or the regulatory context change.
+Al terminar verás `INGESTA`, `LIMPIEZA`, `EDA`, `STATS` y `BENCHMARK`, y se habrán actualizado:
 
----
+```text
+Data/analisis_rentabilidad/data/listings_clean.parquet
+Data/analisis_rentabilidad/outputs/tables/kpis.csv
+Data/analisis_rentabilidad/outputs/tables/kpis_canal.csv
+```
 
-## 2. Estado actual / Current status
+**Resultado esperado:** <!-- kpi:anuncios_totales -->2.029 anuncios limpios (<!-- kpi:anuncios_locales -->1.338 locales + <!-- kpi:anuncios_importacion -->691 de importación), mediana local <!-- kpi:precio_mediano_usd -->21.000 USD.
 
-| | Estado |
+## Estructura
+
+```text
+.
+├── README.md, requirements.txt, INFORME_TECNICO.md
+├── Data/
+│   ├── Revolico/                 # base principal, colas, chunks de 10 MB y snapshot
+│   ├── catalogos_concesionarios/ # 11 concesionarios + 8 marketplaces
+│   ├── repos-autos-referencias/  # base consolidada de repos externos
+│   ├── fuentes-oficiales/ONEI/   # anuarios 2014–2025 con índice y SHA-256
+│   ├── CRUDO_POR_CATEGORIA/      # export CSV de enlaces y anuncios sin procesar
+│   └── analisis_rentabilidad/    # pipeline, KPIs, gráficos y storytelling
+├── Auxiliares/herramientas/      # scrapers, exportadores y auditoría de fuentes
+├── Auxiliares/Repositorios Referencias/  # repos clonados (no versionados)
+└── Copias/, Hombros/, Anexos/    # referencias y corpus (no versionados)
+```
+
+Los repositorios auxiliares y `Copias/` se conservan en disco pero **no se suben**: están excluidos en `.gitignore`.
+
+## Fuentes de datos
+
+| Grupo | Fuentes | Registros |
+|---|---|---:|
+| Marketplaces | Autocubana, iTENCEL, Cogetucarro, Cubisima, Timbirichi, Carros.com, Apululu, VentaCuba | 2.222 anuncios |
+| Concesionarios | BDC One, Dongfeng, Changan, Chinautos, MCV, Finauto, ATR Export y otros | 256 vehículos |
+| Revolico | `autos` (tabla canónica) | <!-- kpi:autos_revolico -->772 autos únicos |
+| Referencias externas | Repos ICD, AutosxCuba, Mercado-automotriz y otros | 3.958 anuncios ICD |
+| Oficiales | ONEI, Gaceta Oficial 65/2026, BCC, elTOQUE | 12 anuarios + normas |
+
+La conversión usa la **TRMI informal de elTOQUE (18/11/2026): 930 CUP/USD, 1.000 CUP/EUR y 845,35 CUP/MLC**. Nunca se usa la tasa oficial para los precios del mercado.
+
+## Configuración
+
+| Archivo | Qué controla |
 |---|---|
-| **ES** | **Fase 6 — Scraping y captura de catálogos y anuncios**, en curso. Las fases 1-5 están completadas; las fases 7-9 están pendientes. |
-| **EN** | **Phase 6 — Scraping and capture of catalogues and listings**, in progress. Phases 1-5 are complete; phases 7-9 are pending. |
+| `Data/analisis_rentabilidad/config.py` | Rutas, umbrales de precio/año, TRMI, marcas y tiers |
+| `.gitattributes` | Archivos SQLite y chunks `.bin` gestionados con Git LFS |
+| `Data/Revolico/chunks/MANIFEST.json` | 82 fragmentos de 10 MB y sus SHA-256 |
+| `Data/Revolico/pipeline_chunks/MANIFEST.json` | 52 fragmentos de `pipeline.sqlite` |
 
-La documentación (este `README.md` y el informe técnico) se ha creado como soporte transversal; **no cambia la fase activa del proyecto** / Documentation (this `README.md` and the technical report) was created as cross-cutting support and **does not change the active phase**.
-
----
-
-## 3. Fases del proyecto / Project phases
-
-| Fase / Phase | Nombre / Name | Estado / Status |
-|---|---|---|
-| 1 | Marco normativo y regulatorio / Regulatory framework | Completada / Complete |
-| 2 | Descubrimiento y verificación de fuentes / Source discovery and verification | Completada / Complete |
-| 3 | Infraestructura técnica y herramientas / Technical infrastructure and tools | Completada / Complete |
-| 4 | Corpus documental y trabajos investigativos / Document corpus and research | Completada / Complete |
-| 5 | Diseño del esquema de datos y del pipeline / Data schema and pipeline design | Completada / Complete |
-| 6 | **Scraping y captura de catálogos y anuncios / Scraping and capture** | **En curso / In progress** |
-| 7 | Unificación, limpieza y control de calidad / Unification, cleaning and QA | Pendiente / Pending |
-| 8 | Análisis de mercado, comparables y rentabilidad / Market analysis, comparables and profitability | Pendiente / Pending |
-| 9 | Documentación final, informe PDF y entrega / Final documentation, PDF report and delivery | Pendiente / Pending |
-
----
-
-## 4. Estructura / Structure
-
-```text
-ICD Automotive Market Project/          # AutoDecide Habana
-├── README.md                           # este archivo / this file
-├── INFORME_TECNICO.md                  # informe bilingüe / bilingual report
-├── INFORME_TECNICO.pdf                 # PDF generado desde el MD / PDF generated from MD
-├── .gitignore                          # reglas para GitHub / GitHub rules
-├── Anexos/                             # corpus legal y documentos de apoyo / legal corpus
-├── Auxiliares/                         # entorno, herramientas y repositorios / env, tools, repos
-│   ├── .venv/
-│   ├── cache/
-│   ├── herramientas/
-│   │   ├── actualizar_informe.py       # actualiza MD + PDF / updates MD + PDF
-│   │   ├── ddg_research.py
-│   │   ├── buscar_fallback.py
-│   │   ├── descargar_hombros.py
-│   │   ├── scrape_concesionarios.py
-│   │   ├── resumen_catalogos.py
-│   │   └── README.md
-│   ├── Repositorios/
-│   └── Repositorios Referencias/
-├── Copias/                             # 4 repos de referencia / 4 reference repos
-│   ├── AutosxCuba/
-│   ├── analisis-del-mercado-de-motos-bicicletas-patinetes/
-│   ├── taso-api/
-│   └── guani-saimc/
-├── Data/                               # investigaciones, verificación y SQLite / research and data
-│   └── catalogos_concesionarios/
-└── Hombros/                            # PDFs, HTML, repos y derivadas / downloads
-```
-
-`Copias/` está presente en el proyecto pero **no se registra en el informe técnico** por decisión explícita / `Copias/` exists in the project but is **excluded from the technical report** by explicit decision.
-
----
-
-## 5. Documentos y registro de altas / Documents and change log
-
-- **Informe técnico:** `INFORME_TECNICO.md` (fuente) y `INFORME_TECNICO.pdf` (entregable).
-- **Registro de altas:** sección `Registro de altas / Change log` del informe. Todo lo nuevo que se añada a la carpeta del proyecto se registra con fecha, ruta, tipo, origen, tamaño, fase, descripción y estado.
-- **Actualización:** ejecutar:
+Si `revolico.sqlite` o `pipeline.sqlite` no existen, los scripts los reconstruyen desde sus chunks:
 
 ```bash
-cd "~/Proyectos/ICD Automotive Market Project"
-Auxiliares/.venv/bin/python Auxiliares/herramientas/actualizar_informe.py
+python3 Auxiliares/herramientas/db_chunks.py verify Data/Revolico/chunks/MANIFEST.json
+python3 Auxiliares/herramientas/db_chunks.py assemble Data/Revolico/chunks/MANIFEST.json Data/Revolico/revolico.sqlite
 ```
 
-El script detecta archivos y carpetas nuevos, añade las entradas y regenera el PDF con LibreOffice. Si no existe el archivo de estado, lo crea como línea base sin registros / The script detects new files and folders, appends entries and regenerates the PDF with LibreOffice. If no state file exists, it creates a baseline without entries.
+## Sitio de documentación
 
----
-
-## 6. Uso rápido / Quick start
+El storytelling, los cuadros, los gráficos y el inventario de modelos se publican como un sitio MkDocs:
 
 ```bash
-cd "~/Proyectos/ICD Automotive Market Project/Auxiliares"
-.venv/bin/pip install curl_cffi ddgs tenacity trafilatura pandas playwright
-
-.venv/bin/python herramientas/ddg_research.py search "consulta" --pages 30 --delay 7
-.venv/bin/python herramientas/ddg_research.py analyze "consulta" --out ../Data/analisis.md
-.venv/bin/python herramientas/descargar_hombros.py --query "consulta" --out ../Hombros/mi_busqueda
-.venv/bin/python herramientas/scrape_concesionarios.py
-.venv/bin/python herramientas/resumen_catalogos.py
+Auxiliares/.venv-py/bin/python Auxiliares/herramientas/generar_sitio_mkdocs.py
+Auxiliares/.venv-py/bin/mkdocs build
+Auxiliares/.venv-py/bin/mkdocs serve
 ```
 
----
+El resultado queda en `site/` (ignorado por Git) y la configuración en `mkdocs.yml`.
 
-## 7. Marco legal / Legal framework
+## Documentación
 
-El proyecto respeta los términos de uso de cada portal: no elude mecanismos anti-automatización, no recopila datos personales de anunciantes y conserva la procedencia de cada dato. El marco del mercado automotor está constituido por el **Decreto 163/2026** (Gaceta Oficial No. 65 Ordinaria, 04/08/2026, vigente desde el 11/08/2026) y las resoluciones 104/2026 (MINCEX), 17/2026 (MINCIN), 52/2026 (MITRANS), 171-175/2026 (MFP), 312/2026 (Aduana) y 102/2026 (BCC). Antes de publicar cualquier resultado deben verificarse además las normas vigentes cubanas sobre protección de datos personales, ciberseguridad y derechos de autor. Detalle en el informe técnico.
+- **Referencia:** `INFORME_TECNICO.md` (secciones 1–60), `Data/CRUDO_POR_CATEGORIA/INDICE.md`, `Data/fuentes-oficiales/ONEI/README.md`, `Data/analisis_rentabilidad/MODELOS_Y_FUNCIONES.md`.
+- **Cómo hacerlo:** `Data/analisis_rentabilidad/README.md`, `Data/Revolico/chunks/README.md`.
+- **Explicación:** `Data/analisis_rentabilidad/PRESENTACION_STORYTELLING.md`, `Data/auditoria-fuentes-2026-11-23.md`, `Data/auditoria-fuentes-contenido.md`, `Data/novedades-fuentes-2026-11-23.md`, `Data/fuentes-adicionales-2026-11-20.md`, `Data/fuentes-oficiales/ONEI/ANALISIS_DATO.md`, `Data/estructura_github.md`, `Data/mapas/TIMELAPSE_CIRCUITOS.md`.
+- **Necesidades pendientes:** `Data/analisis_rentabilidad/NECESIDADES.md`.
 
-The project respects each site's terms of use: it does not bypass anti-automation mechanisms, does not collect personal data from advertisers, and preserves the provenance of every datum. The automotive market framework is **Decree 163/2026** (Official Gazette No. 65, 04/08/2026, in force since 11/08/2026) plus resolutions 104/2026 (MINCEX), 17/2026 (MINCIN), 52/2026 (MITRANS), 171-175/2026 (MFP), 312/2026 (Customs) and 102/2026 (BCC). Before publishing results, current Cuban rules on personal data protection, cybersecurity and copyright must also be verified. See the technical report.
+## Marco legal y límites
 
----
+El proyecto respeta los términos de uso de los portales: no elude mecanismos anti-automatización, no recopila datos personales de anunciantes y conserva la procedencia de cada dato. El marco normativo es el **Decreto 163/2026** y las resoluciones 104, 17, 52, 171–175, 340 (que derogó la 312) y 102/2026.
 
-## 8. Subida a GitHub / Publishing to GitHub
-
-El repositorio local ya está inicializado pero **no tiene commits**. Antes de subir:
-
-1. **No subir los repositorios auxiliares usados.** Quedan excluidos en `.gitignore`: `Auxiliares/Repositorios/`, `Auxiliares/Repositorios Referencias/`, `Hombros/03_Repositorios/` y `Copias/`. Solo se listan como referencia al final de este README.
-2. Tampoco se versionan `Auxiliares/.venv/`, `Auxiliares/cache/`, `Anexos/Leyes/` completo ni las `.sqlite` grandes sin Git LFS.
-3. Verificar que no haya secretos (tokens de API, claves de Telegram, etc.).
-4. Crear el repositorio remoto `autodecide-habana` y ejecutar:
-
-```bash
-git add README.md INFORME_TECNICO.md INFORME_TECNICO.pdf .gitignore Auxiliares/herramientas Data Hombros
-git commit -m "docs: nombre del proyecto, fases, informe bilingüe y script de altas"
-git branch -M main
-git remote add origin https://github.com/TU_USUARIO/autodecide-habana.git
-git push -u origin main
-```
-
-Para corpus grandes, usar Git LFS o almacenamiento externo y dejar en el repositorio solo manifiestos y scripts de descarga.
-
-**EN — Publishing framework:** the local repo has no commits yet. Do **not** upload auxiliary repositories; they are ignored and listed only at the end of this README. Check `.gitignore`, remove secrets, then commit the documentation, tools, `Data/` and `Hombros/` (not ignored), create the remote `autodecide-habana` and push. Use Git LFS or external storage for large corpora and databases.
-
----
-
-## 9. Limitaciones / Limitations
-
-- El análisis se limita a **La Habana** / Analysis is limited to **Havana**.
-- `carrosw` sigue protegido por verificación de bot / `carrosw` remains behind bot verification.
-- Los catálogos actuales contienen 256 filas en 11 tiendas; BDC One y Changan publican parte de su catálogo en PDF / Current catalogues contain 256 rows across 11 stores.
-- La fase 8 (análisis de mercado, comparables y rentabilidad) aún no está implementada; el producto interactivo queda para una especialización futura / Phase 8 (market analysis, comparables and profitability) is not implemented yet; the interactive product is deferred to a later specialization.
-
----
-
-## 10. Sincronización automática de Revolico / Automatic Revolico sync
-
-**ES.** Un timer de usuario de systemd (`revolico-update.timer`, indefinido) ejecuta cada 10 minutos `Auxiliares/herramientas/actualizar_revolico.py`. El script corre el scraper incremental, divide `Data/Revolico/revolico.sqlite` en partes de 16 MiB en `Data/Revolico/partes/`, sube **solo las partes que cambiaron**, actualiza `estado.json` y una única fila del informe técnico, y hace `commit`/`push`. La BD completa no se versiona como un solo archivo; para reconstruirla:
-
-```bash
-Auxiliares/.venv/bin/python Auxiliares/herramientas/reconstruir_revolico.py
-```
-
-El comando verifica el SHA-256 de cada parte y del resultado. El timer se gestiona con:
-
-```bash
-systemctl --user status revolico-update.timer
-systemctl --user stop revolico-update.timer
-systemctl --user start revolico-update.timer
-```
-
-**EN.** A systemd user timer runs the incremental sync every 10 minutes, uploading only changed 16 MiB chunks. Rebuild the full database with `reconstruir_revolico.py`, which verifies every hash. Manage it with `systemctl --user {status,stop,start} revolico-update.timer`.
-
----
-
-## 11. Repositorios auxiliares usados (solo referencia) / Auxiliary repositories used (reference only)
-
-**ES.** Estos repositorios se usaron como herramientas o referencia, pero **no se suben a GitHub**: están excluidos en `.gitignore` y solo se enumeran aquí.
-
-**EN.** These repositories were used as tools or references, but they are **not uploaded to GitHub**: they are excluded in `.gitignore` and listed here only.
-
-### Infraestructura, scraping y evasión de bloqueos / Infrastructure, scraping and anti-block tooling (61)
-
-```text
-AZeC4/TelegramGroup · AstrBotDevs/AstrBot · CloakHQ/CloakBrowser · D4Vinci/Scrapling · DIYgod/RSSHub · DrKLO/Telegram · FlareSolverr/FlareSolverr · JustSxm/Deals-Scraper · Kaliiiiiiiiii-Vinyzu/patchright · Kaliiiiiiiiii-Vinyzu/patchright-python · LonamiWebs/Telethon · MasuRii/FBScrapeIdeas · ScrapeGraphAI/Scrapegraph-ai · WhiskeySockets/Baileys · XD-MHLOO/facebook-gql-scraper · abhishekjnvk/telegram-channel-downloader · adbar/trafilatura · apify/crawlee · apify/crawlee-python · apurvmishra99/facebook-scraper-selenium · browser-use/browser-use · browserbase/stagehand · chris124567/cfsolve · dessant/buster · devlikeapro/waha · dgtlmoon/changedetection.io · eternnoir/pyTelegramBotAPI · evolution-foundation/evolution-api · firecrawl/firecrawl · getmaxun/maxun · gosom/google-maps-scraper · hamodywe/telegram-scraper-TeleGraphite · iyear/tdl · jhy/jsoup · jo-inc/camofox-browser · kevinzg/facebook-scraper · lexiforest/curl_cffi · lharries/whatsapp-mcp · lorien/awesome-web-scraping · mohdtalal3/facebook_post_comment_scraper · passivebot/facebook-marketplace-scraper · paulpierre/informer · pyrogram/pyrogram · python-telegram-bot/python-telegram-bot · rmyndharis/OpenWA · sarperavci/CloudflareBypassForScraping · scrapfly/Antibot-Detector · scrapy/scrapy · seleniumbase/SeleniumBase · shaikhsajid1111/facebook_page_scraper · sml2h3/ddddocr · tdlib/td · telegraf/telegraf · telegramdesktop/tdesktop · tulir/whatsmeow · ultrafunkamsterdam/nodriver · unclecode/crawl4ai · vespertiliamvir/FacebookMarketplaceScraper · wwebjs/whatsapp-web.js · xHossein/PyPasser · yagop/node-telegram-bot-api
-```
-
-### Referencias de mercado automotriz / Automotive market references (28 + 4)
-
-```text
-KoushikRao123/Automotive-Feature-and-Price-Analysis-using-Regex · JKomskis/Car-Inventory-Scraper · Mahmoud-Elsokary/Cars-Market-Listings-Analysis-Python-Pandas-Matplotlib-Seaborn · yoskev/Data-Analysis-Project-Sales-Marketing-Automotive-Car-Analysis · abdlrhmnmo/Dongfeng-Al-Ahram-Report-Market-Dashboard · moatasimyakoub92-dot/Egyptian-Used-Cars · AdwaithKalathil/IDSE-DATA-SCIENCE-PROJECT- · KiarashShayegani/Iran-Car-Market-Intelligence · MADZIVI/TradeSmart-AI · anshh-py/Vehicle-IQ · AnalistaDanielLlado/analisis-mercado-automotriz-espana · kaje94/auto-marketplace · Danail-A/automotive-market-intelligence · api-evangelist/carsxe · dmitriibilecki/automotive-market-intelligence · axiom-stat/econometric-market-valuation · luminati-io/facebook-marketplace-dataset-samples · Sama256/japan-auto-intelligence · michaelocez/nz-vehicle-market-tracker · nickholttt/nzta-analytics-dashboard · 2scraper/spinny-scraper · Busayosage/uk-automotive-transition · atushi1841/upgarage-parts-scraper · AvinabhDutta-Dev/used-cars-price-prediction · Bhavya-rajyaguru/vahan-india-automotive-market-2025 · tatendagonzo/zimbabwe-used-vehicle-market-analysis
-```
-
-### Copias locales en `Copias/` / Local copies in `Copias/` (4, excluidas también del informe técnico)
-
-```text
-anapaula65/AutosxCuba · AdrianaAmadorVerdecia/analisis-del-mercado-de-motos-bicicletas-patinetes · arielhechavaria/guani-saimc · TASALO-TEAM/taso-api
-```
-
-### Otros / Other
-
-```text
-jmev1/TFG-2026
-```
+Limitaciones actuales: elTOQUE no responde de forma estable desde este entorno (se usa su última TRMI publicada); `carrosw` está detrás de verificación de bots; parte del catálogo de BDC One y Changan solo está en PDF; la trueque de roles entre canales local e importación se mantiene separada con la columna `canal`.

@@ -1,0 +1,48 @@
+site_name: El precio de moverse en Cuba
+site_description: Análisis del mercado automotor cubano con datos verificables
+theme:
+  name: material
+  language: es
+  features:
+    - navigation.sections
+    - content.code.copy
+plugins:
+  - search
+exclude_docs: |
+  _nav_historia.txt
+markdown_extensions:
+  - tables
+  - toc:
+      permalink: true
+  - admonition
+  - attr_list
+nav:
+  - Inicio: index.md
+  - Panel interactivo: dashboard.html
+  - Historia:
+    - Introducción: historia/index.md
+    - "1. El punto de partida: moverse en Cuba": historia/01-seccion.md
+    - "2. La alternativa personal: cuatro preguntas antes de comprar": historia/02-seccion.md
+    - "3. Lo que encontramos": historia/03-seccion.md
+    - "4. La curva de valor": historia/04-seccion.md
+    - "5. Las cuatro fuerzas invisibles": historia/05-seccion.md
+    - "6. Dónde está el mercado": historia/06-seccion.md
+    - "7. El espejo egipcio": historia/07-seccion.md
+    - "8. Lo que viene": historia/08-seccion.md
+    - "9. Cierre": historia/09-seccion.md
+    - "Apéndice visual": historia/apendice.md
+  - Referencia:
+    - Funciones y modelos: referencia/modelos.md
+    - KPIs y evidencia: referencia/kpis.md
+    - Informe técnico: referencia/informe.md
+  - Cómo:
+    - Regenerar análisis y sitio: guias/regenerar.md
+    - Automatización a dos años: guias/automatizacion.md
+    - Alcance y retención: guias/alcance.md
+    - Arquitectura de datos: guias/arquitectura_datos.md
+  - Fuentes:
+    - Auditoría de fuentes: fuentes/auditoria.md
+    - Anuarios ONEI: fuentes/anuarios.md
+    - Estructura en GitHub: fuentes/estructura.md
+    - Timelapse de circuitos: fuentes/circuitos.md
+    - Mapa de espacio: fuentes/espacio.md
