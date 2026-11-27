@@ -54,3 +54,6 @@ Data/PROGRESO_PUSH.md
 
 # Huella del panel: estado operativo generado, no contenido
 Data/_state/dashboard_fingerprint.json
+
+# Indice temporal de la subida por migas
+Data/_state/.indice_migas
