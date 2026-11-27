@@ -1,0 +1,369 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Contacto Dongfeng Cuba | Cotizar carros nuevos</title>  <link rel="canonical" href="https://www.dongfengcuba.com/contacto/"> <meta name="description" content="Cotiza con Dongfeng Cuba por WhatsApp o correo. Consulta disponibilidad, precios, entrega y garantía 5 años o 150.000 km para carros nuevos."> <meta name="robots" content="index, follow"> <meta property="og:title" content="Contacto Dongfeng Cuba | Cotizar carros nuevos"> <meta property="og:type" content="website"> <meta property="og:image" content="https://www.dongfengcuba.com/open-graph/contacto.png"> <meta property="og:url" content="https://www.dongfengcuba.com/contacto/">  <meta property="og:description" content="Cotiza con Dongfeng Cuba por WhatsApp o correo. Consulta disponibilidad, precios, entrega y garantía 5 años o 150.000 km para carros nuevos.">  <meta property="og:locale" content="es_CU">  <meta property="og:site_name" content="Dongfeng Cuba">    <meta name="twitter:card" content="summary_large_image">  <meta name="twitter:title" content="Contacto Dongfeng Cuba | Cotizar carros nuevos"> <meta name="twitter:image" content="https://www.dongfengcuba.com/open-graph/contacto.png">  <meta name="twitter:description" content="Cotiza con Dongfeng Cuba por WhatsApp o correo. Consulta disponibilidad, precios, entrega y garantía 5 años o 150.000 km para carros nuevos.">   <meta name="keywords" content="contacto Dongfeng Cuba, cotizar Dongfeng Cuba, cotizar carros Dongfeng, cotizar carros nuevos en Cuba, cotización Dongfeng Cuba, precio Dongfeng Cuba, precios carros Dongfeng Cuba, comprar Dongfeng en Cuba, comprar carros nuevos en Cuba, WhatsApp Dongfeng Cuba, correo Dongfeng Cuba, teléfono Dongfeng Cuba, atención al cliente Dongfeng Cuba, ventas Dongfeng Cuba, asesor Dongfeng Cuba, showroom Dongfeng Cuba, dirección Dongfeng Cuba, locales Dongfeng Cuba, horarios Dongfeng Cuba, oficina Dongfeng Cuba, taller Dongfeng Cuba, postventa Dongfeng Cuba, garantía Dongfeng Cuba, repuestos Dongfeng Cuba, auxilio Dongfeng Cuba"> <link rel="sitemap" href="/sitemap-index.xml"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#131f35"><meta name="theme-color" content="#131f35"><meta name="msapplication-TileColor" content="#131f35"><script>
+  let metaStarted = false;
+  const pendingMetaRequests = new Set();
+  window.dongfengSetMetaConsent = function (marketing) {
+    if (!marketing) {
+      pendingMetaRequests.forEach((controller) => controller.abort());
+      pendingMetaRequests.clear();
+      if (typeof window.fbq === 'function') window.fbq('consent', 'revoke');
+      return;
+    }
+    if (metaStarted) return;
+    metaStarted = true;
+    (function (f, b, e, v, n, t, s) {
+    if (f.fbq) return;
+    n = f.fbq = function () {
+      n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+    };
+    if (!f._fbq) f._fbq = n;
+    n.push = n;
+    n.loaded = true;
+    n.version = '2.0';
+    n.queue = [];
+    t = b.createElement(e);
+    t.async = true;
+    t.src = v;
+    s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s);
+    })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+    window.fbq('consent', 'grant');
+    window.fbq('init', '1022434530605307');
+    window.fbq('track', 'PageView');
+  };
+
+  function createMetaEventId() {
+    if (typeof window.crypto?.randomUUID === 'function') {
+      return `contact_${window.crypto.randomUUID()}`;
+    }
+
+    const bytes = new Uint8Array(16);
+    window.crypto.getRandomValues(bytes);
+    const randomHex = Array.from(bytes, (byte) => byte.toString(16).padStart(2, '0')).join('');
+    return `contact_${randomHex}`;
+  }
+
+  window.meta_report_contact = function meta_report_contact() {
+    if (!window.dongfengConsent?.ready || !window.dongfengConsent.marketing ||
+      navigator.globalPrivacyControl === true || !metaStarted) return;
+    const eventId = createMetaEventId();
+
+    window.fbq('track', 'Contact', {}, { eventID: eventId });
+
+    const controller = new AbortController();
+    pendingMetaRequests.add(controller);
+    fetch('/api/meta-conversion', {
+      method: 'POST',
+      credentials: 'same-origin',
+      keepalive: true,
+      signal: controller.signal,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        eventId,
+        eventSourceUrl: window.location.origin + window.location.pathname
+      })
+    }).catch(function () {
+      // El evento del Pixel ya fue enviado; la navegación del usuario no debe bloquearse.
+    }).finally(function () {
+      pendingMetaRequests.delete(controller);
+    });
+
+    return eventId;
+  };
+</script><script>
+  // One Google tag links Ads and GA4. The queue stays local until permission.
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function gtag() {
+    window.dataLayer.push(arguments);
+  };
+
+  window.dongfengConsent = { ready: false, marketing: false, analytics: false };
+  window['ga-disable-G-BZSYM2K5VV'] = true;
+  window['ga-disable-G-F6LM2MKY6R'] = true;
+  window.gtag('consent', 'default', {
+    ad_storage: 'denied',
+    analytics_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied'
+  });
+  window.gtag('set', 'ads_data_redaction', true);
+  window.gtag('set', 'url_passthrough', false);
+
+  let googleStarted = false;
+  window.dongfengSetGoogleConsent = function (preferences) {
+    const granted = preferences.marketing && preferences.analytics && navigator.globalPrivacyControl !== true;
+    window['ga-disable-G-BZSYM2K5VV'] = !granted;
+    window['ga-disable-G-F6LM2MKY6R'] = !granted;
+    window.gtag('consent', 'update', {
+      ad_storage: granted ? 'granted' : 'denied',
+      analytics_storage: granted ? 'granted' : 'denied',
+      ad_user_data: granted ? 'granted' : 'denied',
+      ad_personalization: granted ? 'granted' : 'denied'
+    });
+    if (!granted || googleStarted) return;
+    googleStarted = true;
+    window.gtag('js', new Date());
+    window.gtag('config', 'AW-17305245506');
+    const script = document.createElement('script');
+    script.id = 'dongfeng-google-tag';
+    script.async = true;
+    script.src = '/api/google-tag/?id=AW-17305245506';
+    document.head.appendChild(script);
+  };
+
+  window.gtag_report_conversion = function gtag_report_conversion(url) {
+    let completed = false;
+    const callback = function callback() {
+      if (completed) return;
+      completed = true;
+      if (typeof url !== 'undefined' && url) {
+        window.location = url;
+      }
+    };
+
+    if (!window.dongfengConsent.ready || !window.dongfengConsent.marketing ||
+      navigator.globalPrivacyControl === true) {
+      callback();
+      return false;
+    }
+    if (typeof window.meta_report_contact === 'function') window.meta_report_contact();
+
+    window.gtag('event', 'conversion', {
+      send_to: 'AW-17305245506/hshlCODupeoaEMKu5LtA',
+      value: 1.0,
+      currency: 'EUR',
+      event_callback: callback
+    });
+
+    window.setTimeout(callback, 900);
+    return false;
+  };
+</script><link rel="stylesheet" href="/_astro/ConsentManager.JT2ORT38.css"><link rel="stylesheet" href="/_astro/BaseLayout.B16HT3O4.css"></head> <body class="relative bg-white text-slate-900 antialiased"> <div id="consent-status" class="consent-status" role="status" aria-live="polite" hidden data-pagefind-ignore></div><script type="module" src="/_astro/ConsentManager.astro_astro_type_script_index_0_lang.Dp9Drrwf.js"></script> <div id="top-anchor" class="pointer-events-none absolute left-0 top-0 h-px w-px opacity-0"></div> <header class="site-header sticky top-0 z-50 border-b text-white border-slate-800 bg-primary" data-site-header data-astro-cid-nen7h5rs> <div class="relative mx-auto h-[76px] max-w-7xl items-center gap-4 px-6 flex" data-astro-cid-nen7h5rs> <button id="menuBtn" class="absolute left-6 top-1/2 z-10 inline-flex -translate-y-1/2 items-center justify-center rounded-full border border-white/20 p-2 text-white hover:bg-white/10 lg:hidden" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobilePanel" data-astro-cid-nen7h5rs> <svg id="menuIconOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-nen7h5rs><path d="M4 6h16M4 12h16M4 18h16" data-astro-cid-nen7h5rs></path></svg> <svg id="menuIconClose" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-nen7h5rs><path d="M6 6l12 12M18 6l-12 12" data-astro-cid-nen7h5rs></path></svg> </button>  <a href="/" class="absolute left-1/2 flex -translate-x-1/2 items-center gap-3 lg:static lg:translate-x-0" data-astro-cid-nen7h5rs>  <img src="/_astro/logo.57599fd.SbDXF8sg_DqUxK.webp" srcset="/_astro/logo.57599fd.SbDXF8sg_DqUxK.webp 176w, /_astro/logo.57599fd.SbDXF8sg_2qqXQD.webp 352w" alt="Dongfeng Cuba" loading="eager" fetchpriority="high" data-astro-cid-nen7h5rs="true" decoding="async" sizes="176px" data-astro-image="fixed" data-astro-image-fit="cover" data-astro-image-pos="center" width="176" height="25" class="h-auto w-auto"> <span class="text-base font-light leading-none text-white/90" data-astro-cid-nen7h5rs>|</span> <span class="whitespace-nowrap text-sm font-light tracking-wide text-white/95" data-astro-cid-nen7h5rs>Cuba</span> </a> <div class="ml-auto hidden items-center gap-4 lg:flex" data-astro-cid-nen7h5rs> <nav class="flex items-center gap-2 text-sm text-white" data-astro-cid-nen7h5rs> <a class="px-3 py-1 text-white hover:text-white/80" href="/" data-astro-cid-nen7h5rs>Inicio</a> <a class="px-3 py-1 text-white hover:text-white/80" href="/catalogo/" data-astro-cid-nen7h5rs>Catálogo</a> <a class="px-3 py-1 text-white hover:text-white/80" href="/quienes-somos/" data-astro-cid-nen7h5rs>Quiénes somos</a> <a class="px-3 py-1 text-white hover:text-white/80" href="/servicio-y-soporte/" data-astro-cid-nen7h5rs>Servicio y soporte</a> <a class="rounded-full border border-white/45 bg-white/10 px-3 py-1 text-white" href="/contacto/" data-astro-cid-nen7h5rs>Contacto</a> <a class="px-3 py-1 text-white hover:text-white/80" href="/blog/" data-astro-cid-nen7h5rs>Noticias</a> </nav> <a href="/buscar/" class="inline-flex items-center rounded-full border px-4 py-2 text-sm font-medium transition-colors border-white/30 text-white hover:bg-white/10" data-astro-cid-nen7h5rs> <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-nen7h5rs><path d="M21 21l-4.3-4.3" data-astro-cid-nen7h5rs></path><circle cx="11" cy="11" r="7" data-astro-cid-nen7h5rs></circle></svg>
+Buscar
+</a> <a href="/contacto/" class="hidden sm:inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-secondary hover:text-white" data-astro-cid-nen7h5rs>
+Cotizar
+</a> </div>  </div> <div id="mobilePanel" class="lg:hidden hidden border-t border-white/15 text-white bg-primary" data-astro-cid-nen7h5rs> <div class="mx-auto max-w-7xl px-6 py-4 grid gap-3 text-center text-sm" data-astro-cid-nen7h5rs>  <a class="rounded-full px-3 py-2 text-white hover:text-white/80" href="/" data-astro-cid-nen7h5rs>Inicio</a> <a class="rounded-full px-3 py-2 text-white hover:text-white/80" href="/catalogo/" data-astro-cid-nen7h5rs>Catálogo</a> <a class="rounded-full px-3 py-2 text-white hover:text-white/80" href="/quienes-somos/" data-astro-cid-nen7h5rs>Quiénes somos</a> <a class="rounded-full px-3 py-2 text-white hover:text-white/80" href="/servicio-y-soporte/" data-astro-cid-nen7h5rs>Servicio y soporte</a> <a class="rounded-full px-3 py-2 border border-white/45 bg-white/10 text-white" href="/contacto/" data-astro-cid-nen7h5rs>Contacto</a> <a class="rounded-full px-3 py-2 text-white hover:text-white/80" href="/blog/" data-astro-cid-nen7h5rs>Noticias</a> <a class="mt-1 inline-flex items-center justify-center rounded-full border border-white/40 px-4 py-2 font-medium text-white transition-colors hover:bg-white/10" href="/buscar/" data-astro-cid-nen7h5rs> <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-nen7h5rs><path d="M21 21l-4.3-4.3" data-astro-cid-nen7h5rs></path><circle cx="11" cy="11" r="7" data-astro-cid-nen7h5rs></circle></svg>
+Buscar
+</a> <a class="mt-2 inline-flex items-center justify-center rounded-full bg-white px-4 py-2 font-medium text-primary transition-colors hover:bg-secondary hover:text-white" href="/contacto/" data-astro-cid-nen7h5rs>Cotizar</a>  </div> </div> </header> <script>
+  const menuBtn = document.getElementById('menuBtn');
+  const panel = document.getElementById('mobilePanel');
+  const menuIconOpen = document.getElementById('menuIconOpen');
+  const menuIconClose = document.getElementById('menuIconClose');
+
+  const syncMenuIcon = (expanded) => {
+    menuIconOpen?.classList.toggle('hidden', expanded);
+    menuIconClose?.classList.toggle('hidden', !expanded);
+    menuBtn?.setAttribute('aria-label', expanded ? 'Cerrar menú' : 'Abrir menú');
+  };
+
+  menuBtn?.addEventListener('click', () => {
+    if (!panel) return;
+    const hidden = panel.classList.toggle('hidden');
+    const expanded = !hidden;
+    menuBtn.setAttribute('aria-expanded', String(expanded));
+    syncMenuIcon(expanded);
+  });
+
+  syncMenuIcon(false);
+
+  const siteHeader = document.querySelector('[data-site-header]');
+  const revealAfterSelector = siteHeader?.dataset?.revealAfterSelector;
+
+  if (siteHeader && revealAfterSelector) {
+    const showHeader = (visible) => {
+      siteHeader.classList.toggle('site-header--visible', visible);
+      siteHeader.setAttribute('aria-hidden', visible ? 'false' : 'true');
+    };
+
+    const initHeaderReveal = () => {
+      const target = document.querySelector(revealAfterSelector);
+
+      if (target && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(
+          ([entry]) => showHeader(!entry?.isIntersecting),
+          { threshold: 0, rootMargin: '-112px 0px 0px 0px' }
+        );
+        observer.observe(target);
+      } else if (!target) {
+        showHeader(true);
+      }
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initHeaderReveal, { once: true });
+    } else {
+      initHeaderReveal();
+    }
+  }
+</script> <main>  <section id="contacto" class="mx-auto max-w-7xl space-y-10 px-6 pb-28 pt-12 sm:pb-28 sm:pt-14"> <header class="mx-auto max-w-3xl space-y-5 text-center"> <p class="text-xs tracking-[0.35em] uppercase text-slate-500">Contacto oficial</p> <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight text-primary">Cotiza y habla con ventas</h1> <p class="mx-auto max-w-2xl text-slate-700">
+Elige correo o WhatsApp para consultar disponibilidad, precio, entrega y garantía de tu próximo Dongfeng.
+</p> <div id="contacto-lead" data-contact-primary-actions class="mx-auto max-w-3xl scroll-mt-28 rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-sm sm:scroll-mt-24 sm:p-5"> <div class="flex flex-col items-stretch gap-4 sm:flex-row sm:items-center sm:justify-center sm:gap-4"> <a href="/cdn-cgi/l/email-protection#f6959a9f9398829385db929998919093989195839497b698819f8586979f98d895999bc98583949c939582cba5999a9f959f828392d3c4c69293d3c4c69f989099849b97959f354598d3c4c697d3c4c6b299989190939891d3c4c6b5839497d3c4c69293859293d3c4c6a19394" onclick="return gtag_report_conversion(this.href)" data-model-mailto class="inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary/90 sm:w-auto sm:min-w-60"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="mr-2 h-4 w-4" aria-hidden="true" data-icon="lucide:mail">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m22 7l-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect width="20" height="16" x="2" y="4" rx="2"/></g> </svg>
+Cotizar por correo
+</a> <div class="w-full sm:w-auto"> <div class="flex items-center justify-center gap-2 py-1 text-xs font-medium uppercase tracking-[0.2em] text-slate-400 sm:hidden"> <span class="h-px flex-1 max-w-[72px] bg-slate-300"></span> <span>O</span> <span class="h-px flex-1 max-w-[72px] bg-slate-300"></span> </div> <div class="hidden sm:flex sm:h-12 sm:items-center sm:justify-center sm:px-2"> <span class="h-8 w-px bg-slate-300"></span> </div> </div> <a href="https://api.whatsapp.com/send?phone=34711284561&amp;text=Hola%20DONGFENG%20CUBA%2C%20necesito%20información" onclick="return gtag_report_conversion(this.href)" data-model-whatsapp target="_blank" rel="noopener" class="inline-flex w-full items-center justify-center rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1ebe5d] sm:w-auto sm:min-w-60"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="mr-2 h-4 w-4" aria-hidden="true" data-icon="lucide:message-circle">   <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092a10 10 0 1 0-4.777-4.719"/> </svg>
+Hablar por WhatsApp
+</a> </div> <p class="mt-4 inline-flex flex-wrap items-center justify-center gap-1.5 text-sm text-slate-600"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-4 w-4" aria-hidden="true" data-icon="lucide:mail-open">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0z"/><path d="m22 10l-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10"/></g> </svg>
+Correo directo:
+<a href="/cdn-cgi/l/email-protection#67040b0e02091302144a0308090001020900041205062709100e1417060e094904080a" onclick="return gtag_report_conversion(this.href)" data-model-mailto class="font-medium text-primary underline hover:text-primary/80"> <span class="__cf_email__" data-cfemail="f89b94919d968c9d8bd59c97969f9e9d969f9b8d9a99b8968f918b88999196d69b9795">[email&#160;protected]</span> </a> </p> <p id="modelContactContext" class="mt-3 hidden flex-wrap items-center justify-center gap-1.5 text-sm text-slate-600"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-4 w-4" aria-hidden="true" data-icon="lucide:car-front">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m21 8l-2 2l-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10L3 8m4 6h.01M17 14h.01"/><rect width="18" height="8" x="3" y="10" rx="2"/><path d="M5 18v2m14-2v2"/></g> </svg>
+Interés en:
+<a id="modelContactLink" href="/catalogo/" class="font-medium text-primary underline hover:text-primary/80"></a> </p> </div> </header> <div class="grid gap-6 lg:grid-cols-2"> <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm space-y-4"> <h2 class="inline-flex items-center gap-2 text-base font-bold uppercase text-primary"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-4 w-4" aria-hidden="true" data-icon="lucide:map-pin">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></g> </svg>
+Locales
+</h2> <p class="flex gap-2"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="mt-1 h-4 w-4 shrink-0 text-slate-500" aria-hidden="true" data-icon="lucide:store">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5m8.774-10.69a1.12 1.12 0 0 0-1.549 0a2.5 2.5 0 0 1-3.451 0a1.12 1.12 0 0 0-1.548 0a2.5 2.5 0 0 1-3.452 0a1.12 1.12 0 0 0-1.549 0a2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"/><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"/></g> </svg> <span><span class="font-bold uppercase">Showroom 1:</span><br>
+Inmobiliaria Residencial Miramar. Ave. 7ma y Calle 20, Miramar, La Habana.</span> </p> <p class="flex gap-2"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="mt-1 h-4 w-4 shrink-0 text-slate-500" aria-hidden="true" data-icon="lucide:store">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5m8.774-10.69a1.12 1.12 0 0 0-1.549 0a2.5 2.5 0 0 1-3.451 0a1.12 1.12 0 0 0-1.548 0a2.5 2.5 0 0 1-3.452 0a1.12 1.12 0 0 0-1.549 0a2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"/><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"/></g> </svg> <span><span class="font-bold uppercase">Showroom 2:</span><br>
+Complejo 5ta Avenida, 5ta Avenida y Calle 114, Playa, La Habana.</span> </p> <p class="flex gap-2"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="mt-1 h-4 w-4 shrink-0 text-slate-500" aria-hidden="true" data-icon="lucide:building-2">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 12h4m-4-4h4m0 13v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/></g> </svg> <span><span class="font-bold uppercase">Dirección (Oficina):</span><br>
+Inmobiliaria Residencial Miramar, Avenida 7ma esquina a 20; 4to piso, Oficina No. 403,
+          Miramar, Playa, La Habana, Cuba.</span> </p> <p class="flex gap-2"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="mt-1 h-4 w-4 shrink-0 text-slate-500" aria-hidden="true" data-icon="lucide:car-front">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m21 8l-2 2l-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10L3 8m4 6h.01M17 14h.01"/><rect width="18" height="8" x="3" y="10" rx="2"/><path d="M5 18v2m14-2v2"/></g> </svg> <span><span class="font-bold uppercase">Recogida del vehículo:</span><br>
+Complejo 5ta Avenida, 5ta Avenida y Calle 114, Playa, La Habana.</span> </p> <p class="flex gap-2"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="mt-1 h-4 w-4 shrink-0 text-slate-500" aria-hidden="true" data-icon="lucide:warehouse">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11"/><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8zM6 13h12M6 17h12"/></g> </svg> <span><span class="font-bold uppercase">Depósito (NWI / ZELCOM S.A.):</span><br>
+ZELCOM S.A. Cielo Abierto 1, sector Norte (Berroa).</span> </p> </article> <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm space-y-4"> <h2 class="inline-flex items-center gap-2 text-base font-bold uppercase text-primary"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-4 w-4" aria-hidden="true" data-icon="lucide:clock-3">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6h4"/></g> </svg>
+Horarios
+</h2> <ul class="text-slate-700 space-y-2"> <li class="flex gap-2"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mt-1 h-4 w-4 shrink-0 text-slate-500" aria-hidden="true" data-icon="lucide:store">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5m8.774-10.69a1.12 1.12 0 0 0-1.549 0a2.5 2.5 0 0 1-3.451 0a1.12 1.12 0 0 0-1.548 0a2.5 2.5 0 0 1-3.452 0a1.12 1.12 0 0 0-1.549 0a2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"/><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"/></g> </svg>Atención al cliente en Showroom: de 9:00 am a 5:00 pm.</li> <li class="flex gap-2"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mt-1 h-4 w-4 shrink-0 text-slate-500" aria-hidden="true" data-icon="lucide:wrench">   <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"/> </svg>Trabajo en el taller: de 8:30 am a 5:00 pm.</li> <li class="flex gap-2"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mt-1 h-4 w-4 shrink-0 text-slate-500" aria-hidden="true" data-icon="lucide:life-buoy">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93l4.24 4.24m5.66 0l4.24-4.24m-4.24 9.9l4.24 4.24m-9.9-4.24l-4.24 4.24"/><circle cx="12" cy="12" r="4"/></g> </svg>Servicio de auxilio en la vía: 24 horas.</li> </ul> <div class="h-px bg-slate-200"></div> <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-slate-700"> <p class="inline-flex items-center gap-2 font-semibold text-slate-900"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-4 w-4" aria-hidden="true" data-icon="lucide:phone">   <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233a14 14 0 0 0 6.392 6.384"/> </svg>
+Teléfonos / Atención al cliente
+</p> <p class="mt-2"> <span class="inline-flex items-center gap-1 font-semibold"><svg width="1em" height="1em" viewBox="0 0 24 24" class="h-3.5 w-3.5" aria-hidden="true" data-icon="lucide:building-2">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 12h4m-4-4h4m0 13v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/></g> </svg>Oficina:</span><br>
++53 7 204 1319
+</p> <p class="mt-2"> <span class="inline-flex items-center gap-1 font-semibold"><svg width="1em" height="1em" viewBox="0 0 24 24" class="h-3.5 w-3.5" aria-hidden="true" data-icon="lucide:users">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 3.128a4 4 0 0 1 0 7.744M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></g> </svg>Atención al cliente:</span><br>
++5363438107
+</p> </div> </article> </div> <section class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm space-y-4"> <h2 class="inline-flex items-center gap-2 text-base font-bold uppercase text-primary"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-4 w-4" aria-hidden="true" data-icon="lucide:shield-check">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12l2 2l4-4"/></g> </svg>
+Servicios postventa
+</h2> <div class="grid gap-6 lg:grid-cols-2"> <div class="space-y-4"> <p>
+North World Industry (NWI) es el distribuidor exclusivo de Dongfeng en Cuba. Su servicio
+            postventa ofrece la mejor garantía del mercado en Cuba, confianza y seguridad a todos los clientes.
+</p> <ul class="space-y-2 text-slate-700"> <li class="flex gap-2"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mt-1 h-4 w-4 shrink-0 text-slate-500" aria-hidden="true" data-icon="lucide:wrench">   <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"/> </svg>Diagnóstico, mantenimiento y reparaciones en los talleres Dongfeng en Cuba.</li> <li class="flex gap-2"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mt-1 h-4 w-4 shrink-0 text-slate-500" aria-hidden="true" data-icon="lucide:package-check">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 22V12m4 5l2 2l4-4"/><path d="M21 11.127V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.729l7 4a2 2 0 0 0 2 .001l1.32-.753"/><path d="M3.29 7L12 12l8.71-5M7.5 4.27l8.997 5.148"/></g> </svg>Tienda física con stock disponible de partes, piezas, lubricantes y accesorios.</li> <li class="flex gap-2"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mt-1 h-4 w-4 shrink-0 text-slate-500" aria-hidden="true" data-icon="lucide:life-buoy">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93l4.24 4.24m5.66 0l4.24-4.24m-4.24 9.9l4.24 4.24m-9.9-4.24l-4.24 4.24"/><circle cx="12" cy="12" r="4"/></g> </svg>Servicio de Asistencia Técnica y Auxilio en la Vía las 24 horas.</li> <li class="flex gap-2"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mt-1 h-4 w-4 shrink-0 text-slate-500" aria-hidden="true" data-icon="lucide:plug-zap">   <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6l-2.3 2.3a2.4 2.4 0 0 0 0 3.4ZM2 22l3-3m2.5-5.5L10 11m.5 5.5L13 14m5-11l-4 4h6l-4 4"/> </svg>Montaje de instalaciones eléctricas y cargadores para vehículos.</li> </ul> </div> <div class="space-y-4"> <h3 class="inline-flex items-center gap-2 font-semibold"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-4 w-4 text-slate-500" aria-hidden="true" data-icon="lucide:users-round">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></g> </svg>
+Contactos de talleres
+</h3> <p class="flex gap-2"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="mt-1 h-4 w-4 shrink-0 text-slate-500" aria-hidden="true" data-icon="lucide:fuel">   <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 4 0v-6.998a2 2 0 0 0-.59-1.42L18 5m-4 16V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16m-1 0h13M3 9h11"/> </svg> <span><span class="font-semibold">Vehículos de combustión:</span><br>
+Abel: +53 5 502 6749<br>
+Ricardo: +53 5 922 6120</span> </p> <p class="flex gap-2"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="mt-1 h-4 w-4 shrink-0 text-slate-500" aria-hidden="true" data-icon="lucide:battery-full">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 10v4m4-4v4m8 0v-4M6 10v4"/><rect width="16" height="12" x="2" y="6" rx="2"/></g> </svg> <span><span class="font-semibold">Vehículos eléctricos:</span><br>
+Gustavo: +53 5 295 2891<br>
+Sixto: +53 5 300 4821</span> </p> <p class="flex gap-2"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="mt-1 h-4 w-4 shrink-0 text-slate-500" aria-hidden="true" data-icon="lucide:ambulance">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 10H6m8 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2m14 0h2a1 1 0 0 0 1-1v-3.28a1 1 0 0 0-.684-.948l-1.923-.641a1 1 0 0 1-.578-.502l-1.539-3.076A1 1 0 0 0 16.382 8H14M8 8v4m1 6h6"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></g> </svg> <span><span class="font-semibold">Auxilio en la vía (24h):</span><br>
+Yandi<br>
++53 5 2586810<br>
+Héctor<br>
++53 5 0015391</span> </p> <p class="flex gap-2"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="mt-1 h-4 w-4 shrink-0 text-slate-500" aria-hidden="true" data-icon="lucide:badge-check">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77a4 4 0 0 1 6.74 0a4 4 0 0 1 4.78 4.78a4 4 0 0 1 0 6.74a4 4 0 0 1-4.77 4.78a4 4 0 0 1-6.75 0a4 4 0 0 1-4.78-4.77a4 4 0 0 1 0-6.76"/><path d="m16 9l-5.5 5.5L8 12"/></g> </svg> <span><span class="font-semibold">Clientes en garantía:</span><br>
+Esthefany: +53 5 400 8050<br>
+Cobertura según línea: Dongfeng, Voyah y MHERO con garantía principal de 5 años o 150.000 km; carros eléctricos con cobertura de 8 años o 200.000 km en batería de alto voltaje, tren motriz eléctrico y componentes eléctricos principales; vehículos comerciales Dongfeng con 3 años o 100.000 km.</span> </p> </div> </div> <div class="pt-1"> <a href="/servicio-y-soporte/" class="inline-flex items-center rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-medium text-slate-900 transition-colors hover:border-secondary hover:text-secondary">
+Ampliar información de postventa
+</a> </div> </section> </section> <div data-contact-floating-actions class="pointer-events-none fixed inset-x-0 bottom-0 z-50 translate-y-full border-t border-slate-200 bg-white/95 p-3 opacity-0 shadow-[0_-12px_30px_rgba(15,23,42,0.12)] backdrop-blur transition duration-200 sm:bottom-4 sm:left-1/2 sm:right-auto sm:w-[min(560px,calc(100vw-2rem))] sm:-translate-x-1/2 sm:rounded-full sm:border sm:p-2" aria-hidden="true"> <div class="grid grid-cols-2 gap-3 sm:gap-2"> <a href="/cdn-cgi/l/email-protection#bdded1d4d8d3c9d8ce90d9d2d3dadbd8d3dadec8dfdcfdd3cad4cecddcd4d393ded2d082cec8dfd7d8dec980eed2d1d4ded4c9c8d9988f8dd9d8988f8dd4d3dbd2cfd0dcded47e0ed3988f8ddc988f8df9d2d3dadbd8d3da988f8dfec8dfdc988f8dd9d8ced9d8988f8dead8df" onclick="return gtag_report_conversion(this.href)" data-model-mailto class="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-3 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary/90"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" aria-hidden="true" data-icon="lucide:mail">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m22 7l-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect width="20" height="16" x="2" y="4" rx="2"/></g> </svg> <span>Correo</span> </a> <a href="https://api.whatsapp.com/send?phone=34711284561&amp;text=Hola%20DONGFENG%20CUBA%2C%20necesito%20información" onclick="return gtag_report_conversion(this.href)" data-model-whatsapp target="_blank" rel="noopener" class="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#25D366] px-3 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1ebe5d]"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" aria-hidden="true" data-icon="lucide:message-circle">   <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092a10 10 0 1 0-4.777-4.719"/> </svg> <span>WhatsApp</span> </a> </div> </div> <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="application/json" id="model-contact-map">{"box-430":{"name":"BOX","path":"/modelos/box-430/"},"captain-3-5t":{"name":"CAPTAIN 3,5 T","path":"/modelos/captain-3-5t/"},"captain-4-5t":{"name":"CAPTAIN 4,5 T","path":"/modelos/captain-4-5t/"},"captain-5-5t":{"name":"CAPTAIN 5,5 T","path":"/modelos/captain-5-5t/"},"captain-8-10t":{"name":"CAPTAIN 8-10 T","path":"/modelos/captain-8-10t/"},"captain-12t":{"name":"CAPTAIN 12 T","path":"/modelos/captain-12t/"},"captain-14t":{"name":"CAPTAIN 12 T","path":"/modelos/captain-12t/"},"captain-t-4x4":{"name":"CAPTAIN T 4x4","path":"/modelos/captain-t-4x4/"},"captain-w":{"name":"CAPTAIN W","path":"/modelos/captain-w/"},"electric-v7":{"name":"ELECTRIC V7","path":"/modelos/electric-v7/"},"em-26":{"name":"EM 26","path":"/modelos/em-26/"},"epi-007-530":{"name":"Eπ 007 EV","path":"/modelos/epi-007-530/"},"epi-007-phev":{"name":"Eπ 007 PHEV","path":"/modelos/epi-007-phev/"},"epi-008-phev":{"name":"Eπ 008 PHEV","path":"/modelos/epi-008-phev/"},"ev-18-3t":{"name":"EV 18 3 T","path":"/modelos/ev-18-3t/"},"ev-200-1-8t":{"name":"EV 200 1.8 T","path":"/modelos/ev-200-1-8t/"},"ev-400-5t":{"name":"EV 400 5 T","path":"/modelos/ev-400-5t/"},"friday-phev":{"name":"Friday PHEV","path":"/modelos/friday-phev/"},"friday-ev":{"name":"Friday EV","path":"/modelos/friday-ev/"},"huge-hev":{"name":"Huge HEV","path":"/modelos/huge-hev/"},"k33-cargo":{"name":"Van K33 Cargo","path":"/modelos/k33-cargo/"},"k33-pasajeros":{"name":"Microbús K33","path":"/modelos/k33-pasajeros/"},"k33-refrigerado":{"name":"Van K33 Refrigerado","path":"/modelos/k33-refrigerado/"},"m5-cargo":{"name":"Van M5 Cargo","path":"/modelos/m5-cargo/"},"m5-cargo-400":{"name":"Van M5 EV 400","path":"/modelos/m5-cargo-400/"},"m5-pasajeros":{"name":"Microbús M5","path":"/modelos/m5-pasajeros/"},"m5-pasajeros-400":{"name":"Microbús M5 EV 400","path":"/modelos/m5-pasajeros-400/"},"mage-phev":{"name":"Mage PHEV","path":"/modelos/mage-phev/"},"mhero":{"name":"MHERO","path":"https://www.mherocuba.com/"},"mhero-1":{"name":"MHERO I","path":"https://www.mherocuba.com/mhero-1/"},"mhero-2":{"name":"MHERO II","path":"https://www.mherocuba.com/mhero-2/"},"mini-van-cargo":{"name":"MINI VAN CARGO","path":"/modelos/mini-van-cargo/"},"mini-van-pasajeros":{"name":"MINI VAN PASAJEROS","path":"/modelos/mini-van-pasajeros/"},"rich-6":{"name":"Rich 6","path":"/modelos/rich-6/"},"rich-7-ev":{"name":"Rich 7 EV","path":"/modelos/rich-7-ev/"},"rich-7-tiger":{"name":"Rich 7 Tiger","path":"/modelos/rich-7-tiger/"},"shine":{"name":"Shine E1 Manual","path":"/modelos/shine/"},"shine-automatico-e2":{"name":"Shine E2 Automático","path":"/modelos/shine-automatico-e2/"},"shine-gs":{"name":"Shine GS","path":"/modelos/shine-gs/"},"sky-ev":{"name":"Sky EV","path":"/modelos/sky-ev/"},"t5-evo":{"name":"T5 EVO","path":"/modelos/t5-evo/"},"u-van":{"name":"U VAN","path":"/modelos/u-van/"},"v9":{"name":"V9 PHEV","path":"/modelos/v9/"},"vigo-480":{"name":"Vigo EV","path":"/modelos/vigo-480/"},"voyah":{"name":"Voyah","path":"https://www.voyah-cuba.com/"},"voyah-courage":{"name":"Voyah Courage","path":"https://www.voyah-cuba.com/courage/"},"voyah-dream":{"name":"Voyah Dream PHEV","path":"https://www.voyah-cuba.com/dream/"},"voyah-free":{"name":"Voyah Free +","path":"https://www.voyah-cuba.com/free/"},"voyah-passion-s":{"name":"Voyah Passion S Ultra+","path":"https://www.voyah-cuba.com/passion-s/"},"voyah-taishan":{"name":"Voyah Taishan","path":"https://www.voyah-cuba.com/taishan/"},"z9":{"name":"Z9 PHEV","path":"/modelos/z9/"},"z9-diesel":{"name":"Z9 Diesel","path":"/modelos/z9-diesel/"}}</script><script>
+    (() => {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get('modelo')?.trim();
+      if (!slug) return;
+
+      const mapNode = document.getElementById('model-contact-map');
+      let modelMap = {};
+      try {
+        modelMap = JSON.parse(mapNode?.textContent || '{}');
+      } catch {
+        return;
+      }
+
+      const model = modelMap[slug];
+      if (!model?.name || !model?.path) return;
+
+      const modelUrl = new URL(model.path, window.location.origin).toString();
+      const emailAddress = 'clientes-dongfengcuba@nwispain.com';
+      const emailSubject = `Solicitud de información sobre ${model.name} | Dongfeng Cuba`;
+      const emailBody = [
+        'Hola DONGFENG CUBA,',
+        '',
+        `Estoy interesado en este modelo: ${model.name}`,
+        `Enlace: ${modelUrl}`,
+        '',
+        'Quisiera recibir información de disponibilidad, precio y cotización.',
+        '',
+        'Saludos.'
+      ].join('\n');
+      const mailtoHref = `mailto:${emailAddress}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+      const whatsappMessage = `Hola DONGFENG CUBA, estoy interesado en este modelo: ${model.name}. Enlace: ${modelUrl}`;
+      const whatsappHref = `https://api.whatsapp.com/send?phone=34711284561&text=${encodeURIComponent(whatsappMessage)}`;
+
+      document.querySelectorAll('[data-model-mailto]').forEach((link) => {
+        if (!(link instanceof HTMLAnchorElement)) return;
+        link.setAttribute('href', mailtoHref);
+      });
+
+      document.querySelectorAll('[data-model-whatsapp]').forEach((link) => {
+        if (!(link instanceof HTMLAnchorElement)) return;
+        link.setAttribute('href', whatsappHref);
+      });
+
+      const context = document.getElementById('modelContactContext');
+      const modelLink = document.getElementById('modelContactLink');
+      if (context && modelLink instanceof HTMLAnchorElement) {
+        modelLink.textContent = model.name;
+        modelLink.setAttribute('href', modelUrl);
+        context.classList.remove('hidden');
+        context.classList.add('inline-flex');
+      }
+    })();
+  </script><script>
+    (() => {
+      const primaryActions = document.querySelector('[data-contact-primary-actions]');
+      const floatingActions = document.querySelector('[data-contact-floating-actions]');
+      if (!(floatingActions instanceof HTMLElement)) return;
+
+      const showFloatingActions = () => {
+        floatingActions.classList.remove('pointer-events-none', 'translate-y-full', 'opacity-0');
+        floatingActions.classList.add('pointer-events-auto', 'translate-y-0', 'opacity-100');
+        floatingActions.setAttribute('aria-hidden', 'false');
+      };
+
+      const hideFloatingActions = () => {
+        floatingActions.classList.remove('pointer-events-auto', 'translate-y-0', 'opacity-100');
+        floatingActions.classList.add('pointer-events-none', 'translate-y-full', 'opacity-0');
+        floatingActions.setAttribute('aria-hidden', 'true');
+      };
+
+      if (!primaryActions) {
+        showFloatingActions();
+        return;
+      }
+
+      if (!('IntersectionObserver' in window)) {
+        showFloatingActions();
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry?.isIntersecting) {
+            hideFloatingActions();
+          } else {
+            showFloatingActions();
+          }
+        },
+        { threshold: 0.2 }
+      );
+
+      observer.observe(primaryActions);
+    })();
+  </script> </main> <footer id="site-footer" class="border-t border-white/10 text-white bg-primary"> <div class="mx-auto max-w-7xl px-6 py-12"> <div class="mb-10 grid items-center gap-7 border-b border-white/15 pb-10 sm:grid-cols-[auto_1fr] sm:gap-10" data-company-brand> <a href="https://quintaavenidamotores.com/" class="inline-flex w-fit max-w-full rounded-lg transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-white" aria-label="5ta Avenida Motores, web de la compañía">  <img src="/_astro/logo-blanco.D-wbVZx-_ZeGGQ1.svg" alt="5ta Avenida Motores S.U.R.L. — A su Servicio" loading="lazy" decoding="async" width="280" height="128" class="h-auto w-64 max-w-full sm:w-72"> </a> <div class="max-w-2xl space-y-3"> <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">5ta Avenida Motores · Cuba</p> <h2 class="text-xl font-semibold tracking-tight sm:text-2xl">Nuestras propuestas comerciales para Cuba</h2> <p class="text-sm leading-6 text-white/80">
+Dongfeng Cuba, Voyah Cuba y MHERO Cuba son propuestas comerciales de 5ta Avenida Motores para el mercado cubano.
+</p> <a href="https://quintaavenidamotores.com/revista/" class="inline-flex items-center gap-2 rounded-full border border-white/35 px-4 py-2 text-sm font-semibold text-white transition hover:border-white/70 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+Leer la revista de 5ta Avenida Motores
+<svg width="1em" height="1em" viewBox="0 0 24 24" class="h-4 w-4" aria-hidden="true" data-icon="lucide:arrow-up-right">   <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h10v10M7 17L17 7"/> </svg> </a> </div> </div> <section class="rounded-3xl border border-white/15 bg-white/[0.06] p-5 sm:p-6 mb-10" aria-label="Vehículos nuevos, 0 km y año modelo 2026"> <div class="flex flex-col gap-4 sm:flex-row sm:items-start"> <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-primary"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true" data-icon="lucide:badge-check">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77a4 4 0 0 1 6.74 0a4 4 0 0 1 4.78 4.78a4 4 0 0 1 0 6.74a4 4 0 0 1-4.77 4.78a4 4 0 0 1-6.75 0a4 4 0 0 1-4.78-4.77a4 4 0 0 1 0-6.76"/><path d="m16 9l-5.5 5.5L8 12"/></g> </svg> </span> <div class="max-w-5xl"> <p class="text-lg font-semibold text-white">
+Vehículos nuevos, 0 km y año modelo 2026 </p> <p class="mt-2 text-sm leading-6 text-white/75">
+Todos los vehículos del catálogo Dongfeng Cuba —automóviles, SUV, pickups, vans, microbuses y camiones— se comercializan nuevos y a estrenar. Cada unidad cuenta con garantía oficial y respaldo posventa de Dongfeng Cuba: servicio técnico, talleres especializados y repuestos originales, según las condiciones de cada modelo.
+</p> </div> </div> </section> <div class="grid md:grid-cols-12 gap-10"> <div class="md:col-span-5"> <div class="flex items-center gap-3 leading-none">  <img src="/_astro/logo.57599fd.SbDXF8sg_DqUxK.webp" srcset="/_astro/logo.57599fd.SbDXF8sg_DqUxK.webp 176w, /_astro/logo.57599fd.SbDXF8sg_2qqXQD.webp 352w" alt="Dongfeng Cuba" loading="lazy" decoding="async" sizes="176px" data-astro-image="fixed" data-astro-image-fit="cover" data-astro-image-pos="center" width="176" height="25" class="h-auto w-auto"> <span class="h-5 w-px bg-white/60"></span> <span class="whitespace-nowrap text-sm font-light tracking-wide text-white/95">
+Cuba
+</span> </div> <p class="mt-4 max-w-md text-sm leading-6 text-white/80">
+Movilidad para particulares, familias y negocios con representación y respaldo oficial de Dongfeng Cuba.
+</p> <div class="mt-8 flex max-w-md flex-wrap items-center gap-4"> <p class="text-sm text-white/90">Síguenos en las redes sociales</p> <a href="https://www.facebook.com/profile.php?id=61566478454771" target="_blank" rel="noopener noreferrer" class="group relative w-12 h-12 flex items-center justify-center rounded-full bg-white hover:scale-110 hover:bg-white/90 transition-transform transition-colors text-primary"> <span class="absolute bottom-full mb-2 px-2 py-1 text-xs !text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
+Facebook
+</span> <svg class="w-8 h-8" style="display:block;fill:currentColor" data-donate="true" data-tag="fac" data-name="Facebook" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"> <path d="M211.9 197.4h-36.7v59.9h36.7V433.1h70.5V256.5h49.2l5.2-59.1h-54.4c0 0 0-22.1 0-33.7 0-13.9 2.8-19.5 16.3-19.5 10.9 0 38.2 0 38.2 0V82.9c0 0-40.2 0-48.8 0 -52.5 0-76.1 23.1-76.1 67.3C211.9 188.8 211.9 197.4 211.9 197.4z"></path> </svg> </a> <a href="https://www.instagram.com/dongfeng_cuba" target="_blank" rel="noopener noreferrer" class="group relative w-12 h-12 flex items-center justify-center rounded-full bg-white hover:scale-110 hover:bg-white/90 transition-transform transition-colors text-primary"> <span class="absolute bottom-full mb-2 px-2 py-1 text-xs !text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
+Instagram
+</span> <svg class="w-8 h-8" style="display:block;fill:currentColor" data-donate="true" data-tag="ins" data-name="Instagram" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"> <path d="M256 109.3c47.8 0 53.4 0.2 72.3 1 17.4 0.8 26.9 3.7 33.2 6.2 8.4 3.2 14.3 7.1 20.6 13.4 6.3 6.3 10.1 12.2 13.4 20.6 2.5 6.3 5.4 15.8 6.2 33.2 0.9 18.9 1 24.5 1 72.3s-0.2 53.4-1 72.3c-0.8 17.4-3.7 26.9-6.2 33.2 -3.2 8.4-7.1 14.3-13.4 20.6 -6.3 6.3-12.2 10.1-20.6 13.4 -6.3 2.5-15.8 5.4-33.2 6.2 -18.9 0.9-24.5 1-72.3 1s-53.4-0.2-72.3-1c-17.4-0.8-26.9-3.7-33.2-6.2 -8.4-3.2-14.3-7.1-20.6-13.4 -6.3-6.3-10.1-12.2-13.4-20.6 -2.5-6.3-5.4-15.8-6.2-33.2 -0.9-18.9-1-24.5-1-72.3s0.2-53.4 1-72.3c0.8-17.4 3.7-26.9 6.2-33.2 3.2-8.4 7.1-14.3 13.4-20.6 6.3-6.3 12.2-10.1 20.6-13.4 6.3-2.5 15.8-5.4 33.2-6.2C202.6 109.5 208.2 109.3 256 109.3M256 77.1c-48.6 0-54.7 0.2-73.8 1.1 -19 0.9-32.1 3.9-43.4 8.3 -11.8 4.6-21.7 10.7-31.7 20.6 -9.9 9.9-16.1 19.9-20.6 31.7 -4.4 11.4-7.4 24.4-8.3 43.4 -0.9 19.1-1.1 25.2-1.1 73.8 0 48.6 0.2 54.7 1.1 73.8 0.9 19 3.9 32.1 8.3 43.4 4.6 11.8 10.7 21.7 20.6 31.7 9.9 9.9 19.9 16.1 31.7 20.6 11.4 4.4 24.4 7.4 43.4 8.3 19.1 0.9 25.2 1.1 73.8 1.1s54.7-0.2 73.8-1.1c19-0.9 32.1-3.9 43.4-8.3 11.8-4.6 21.7-10.7 31.7-20.6 9.9-9.9 16.1-19.9 20.6-31.7 4.4-11.4 7.4-24.4 8.3-43.4 0.9-19.1 1.1-25.2 1.1-73.8s-0.2-54.7-1.1-73.8c-0.9-19-3.9-32.1-8.3-43.4 -4.6-11.8-10.7-21.7-20.6-31.7 -9.9-9.9-19.9-16.1-31.7-20.6 -11.4-4.4-24.4-7.4-43.4-8.3C310.7 77.3 304.6 77.1 256 77.1L256 77.1z"></path> <path d="M256 164.1c-50.7 0-91.9 41.1-91.9 91.9s41.1 91.9 91.9 91.9 91.9-41.1 91.9-91.9S306.7 164.1 256 164.1zM256 315.6c-32.9 0-59.6-26.7-59.6-59.6s26.7-59.6 59.6-59.6 59.6 26.7 59.6 59.6S288.9 315.6 256 315.6z"></path> <circle cx="351.5" cy="160.5" r="21.5"></circle> </svg> </a> </div> <div class="mt-8 max-w-md border-t border-white/15 pt-8"> <a href="https://www.mherocuba.com/" class="flex items-center gap-3 leading-none" aria-label="MHERO Cuba">  <img src="/_astro/mhero-logo.CNU0r0Xx_Z2svpDI.webp" alt="MHERO" loading="lazy" decoding="async" width="132" height="24" class="h-auto w-28"> <span class="h-5 w-px bg-white/45"></span> <span class="whitespace-nowrap text-sm font-light tracking-wide text-white/90">
+Cuba
+</span> </a> <p class="mt-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/55">Lujo off-road</p> <p class="mt-2 text-sm leading-6 text-white/75">
+SUV MHERO con presencia extrema, tecnología electrificada y respaldo oficial Dongfeng Cuba.
+</p> <a href="https://www.mherocuba.com/" class="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold transition hover:bg-white/90 text-primary">
+Ver MHERO Cuba
+<svg width="1em" height="1em" viewBox="0 0 24 24" class="h-4 w-4" aria-hidden="true" data-icon="lucide:arrow-up-right">   <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h10v10M7 17L17 7"/> </svg> </a> </div> <div class="mt-8 max-w-md border-t border-white/15 pt-8"> <a href="https://www.voyah-cuba.com/" class="flex items-center gap-3 leading-none" aria-label="Voyah Cuba">  <img src="/_astro/voyah-logo-white.AG5fU9jY_Z11qROy.webp" alt="Voyah" loading="lazy" decoding="async" width="132" height="46" class="h-auto w-28"> <span class="h-5 w-px bg-white/45"></span> <span class="whitespace-nowrap text-sm font-light tracking-wide text-white/90">
+Cuba
+</span> </a> <p class="mt-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/55">Segmento de lujo</p> <p class="mt-2 text-sm leading-6 text-white/75">
+Modelos Voyah con tecnología electrificada, confort ejecutivo y respaldo oficial Dongfeng Cuba.
+</p> <a href="https://www.voyah-cuba.com/" class="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold transition hover:bg-white/90 text-primary">
+Ver modelos
+<svg width="1em" height="1em" viewBox="0 0 24 24" class="h-4 w-4" aria-hidden="true" data-icon="lucide:arrow-up-right">   <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h10v10M7 17L17 7"/> </svg> </a> </div> <div class="mt-8 grid grid-cols-1 gap-8 border-t border-white/15 pt-8 text-sm md:grid-cols-2"> <div> <p class="font-semibold">Servicios</p> <ul class="mt-3 space-y-2 text-white/70"> <li><a class="hover:text-white" href="/catalogo/">Catálogo</a></li> <li><a class="hover:text-white" href="/buscar/">Buscar modelos</a></li> <li><a class="hover:text-white" href="/servicio-y-soporte/">Servicio y soporte</a></li> <li><a class="hover:text-white" href="/faq/">Preguntas frecuentes</a></li> <li><a class="hover:text-white" href="/blog/">Noticias</a></li> <li><a class="hover:text-white" href="/contacto/">Contacto</a></li> </ul> </div> <div> <p class="font-semibold">Empresa</p> <ul class="mt-3 space-y-2 text-white/70"> <li><a class="hover:text-white" href="/">Inicio</a></li> <li><a class="hover:text-white" href="/quienes-somos/">Quiénes somos</a></li> <li><a class="hover:text-white" href="https://quintaavenidamotores.com/revista/">Revista de 5ta Avenida Motores</a></li> <li><a class="hover:text-white" href="/blog/categoria/noticias-corporativas/">Noticias corporativas</a></li> <li><a class="hover:text-white" href="/blog/categoria/noticias/">Noticias</a></li><li><a class="hover:text-white" href="/blog/categoria/lanzamientos/">Lanzamientos</a></li><li><a class="hover:text-white" href="/blog/categoria/movilidad-electrica/">Movilidad eléctrica</a></li><li><a class="hover:text-white" href="/blog/categoria/servicio-y-posventa/">Servicio y posventa</a></li><li><a class="hover:text-white" href="/blog/categoria/flotas-y-negocios/">Flotas y negocios</a></li> </ul> </div> </div> </div> <div class="md:col-span-7 text-sm"> <div class="rounded-3xl border border-white/20 bg-white/[0.03] p-5 sm:p-6"> <p class="font-semibold">Explora nuestros modelos por segmento y motorización</p> <div class="mt-4 grid gap-6 sm:grid-cols-2"> <div> <p class="text-xs uppercase tracking-[0.2em] text-white/70">Por segmento</p> <ul class="mt-3 space-y-2 text-white/80"> <li> <a class="inline-flex items-center gap-1.5 hover:text-white" href="/catalogo/#sedan"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-3.5 w-3.5" aria-hidden="true" data-icon="lucide:car-front">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m21 8l-2 2l-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10L3 8m4 6h.01M17 14h.01"/><rect width="18" height="8" x="3" y="10" rx="2"/><path d="M5 18v2m14-2v2"/></g> </svg> Sedán </a> </li><li> <a class="inline-flex items-center gap-1.5 hover:text-white" href="/catalogo/#familiar"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-3.5 w-3.5" aria-hidden="true" data-icon="lucide:users">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 3.128a4 4 0 0 1 0 7.744M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></g> </svg> Familiar </a> </li><li> <a class="inline-flex items-center gap-1.5 hover:text-white" href="/catalogo/#suv"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-3.5 w-3.5" aria-hidden="true" data-icon="lucide:car">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></g> </svg> SUV </a> </li><li> <a class="inline-flex items-center gap-1.5 hover:text-white" href="/catalogo/#camionetas"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-3.5 w-3.5" aria-hidden="true" data-icon="lucide:truck">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2m10 0H9m10 0h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></g> </svg> Camionetas </a> </li><li> <a class="inline-flex items-center gap-1.5 hover:text-white" href="/catalogo/#vehiculos-comerciales"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-3.5 w-3.5" aria-hidden="true" data-icon="lucide:bus-front">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 6L2 7m8-1h4m8 1l-2-1"/><rect width="16" height="16" x="4" y="3" rx="2"/><path d="M4 11h16M8 15h.01M16 15h.01M6 19v2m12 0v-2"/></g> </svg> Vehículos comerciales </a> </li> </ul> </div> <div> <p class="text-xs uppercase tracking-[0.2em] text-white/70">Por combustión</p> <ul class="mt-3 space-y-2 text-white/80"> <li> <a class="inline-flex items-center gap-1.5 hover:text-white" href="/catalogo/#electricos"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-3.5 w-3.5" aria-hidden="true" data-icon="lucide:battery-full">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 10v4m4-4v4m8 0v-4M6 10v4"/><rect width="16" height="12" x="2" y="6" rx="2"/></g> </svg> Carros eléctricos </a> </li><li> <a class="inline-flex items-center gap-1.5 hover:text-white" href="/catalogo/#hibridos"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-3.5 w-3.5" aria-hidden="true" data-icon="lucide:leaf">   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M11 20a10 10 0 0 0 10-10a25.9 25.9 0 0 0-1.04-7.281a1 1 0 0 0-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0 0 11 20"/><path d="M2 21a5 5 0 0 1 2.911-4.544C7.613 15.212 8.351 15.24 11 13"/></g> </svg> Carros híbridos </a> </li><li> <a class="inline-flex items-center gap-1.5 hover:text-white" href="/catalogo/#diesel"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-3.5 w-3.5" aria-hidden="true" data-icon="lucide:fuel">   <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 4 0v-6.998a2 2 0 0 0-.59-1.42L18 5m-4 16V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16m-1 0h13M3 9h11"/> </svg> Carros diésel </a> </li><li> <a class="inline-flex items-center gap-1.5 hover:text-white" href="/catalogo/#gasolina"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-3.5 w-3.5" aria-hidden="true" data-icon="lucide:fuel">   <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 4 0v-6.998a2 2 0 0 0-.59-1.42L18 5m-4 16V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16m-1 0h13M3 9h11"/> </svg> Carros gasolina </a> </li> </ul> </div> </div> <div class="mt-6 border-t border-white/15 pt-6"> <p class="text-xs uppercase tracking-[0.2em] text-white/70">Modelos del catálogo por familia</p> <div class="mt-4 grid gap-x-6 gap-y-7 sm:grid-cols-2 lg:grid-cols-3"> <section class="break-inside-avoid"> <h3 class="text-sm font-semibold text-white">eπ</h3> <ul class="mt-3 space-y-2 text-white/70"> <li> <a class="hover:text-white" href="/modelos/epi-007-530/">Eπ 007 EV</a> </li><li> <a class="hover:text-white" href="/modelos/epi-007-phev/">Eπ 007 PHEV</a> </li><li> <a class="hover:text-white" href="/modelos/epi-008-phev/">Eπ 008 PHEV</a> </li> </ul> </section><section class="break-inside-avoid"> <h3 class="text-sm font-semibold text-white">Aeolus</h3> <ul class="mt-3 space-y-2 text-white/70"> <li> <a class="hover:text-white" href="/modelos/shine/">Shine E1 Manual</a> </li><li> <a class="hover:text-white" href="/modelos/shine-automatico-e2/">Shine E2 Automático</a> </li><li> <a class="hover:text-white" href="/modelos/shine-gs/">Shine GS</a> </li><li> <a class="hover:text-white" href="/modelos/mage-phev/">Mage PHEV</a> </li><li> <a class="hover:text-white" href="/modelos/huge-hev/">Huge HEV</a> </li><li> <a class="hover:text-white" href="/modelos/sky-ev/">Sky EV</a> </li> </ul> </section><section class="break-inside-avoid"> <h3 class="text-sm font-semibold text-white">Voyah</h3> <ul class="mt-3 space-y-2 text-white/70"> <li> <a class="hover:text-white" href="https://www.voyah-cuba.com/courage/">Voyah Courage</a> </li><li> <a class="hover:text-white" href="https://www.voyah-cuba.com/passion-s/">Voyah Passion S Ultra+</a> </li><li> <a class="hover:text-white" href="https://www.voyah-cuba.com/free/">Voyah Free +</a> </li><li> <a class="hover:text-white" href="https://www.voyah-cuba.com/taishan/">Voyah Taishan</a> </li><li> <a class="hover:text-white" href="https://www.voyah-cuba.com/dream/">Voyah Dream PHEV</a> </li> </ul> </section><section class="break-inside-avoid"> <h3 class="text-sm font-semibold text-white">Forthing</h3> <ul class="mt-3 space-y-2 text-white/70"> <li> <a class="hover:text-white" href="/modelos/t5-evo/">T5 EVO</a> </li><li> <a class="hover:text-white" href="/modelos/friday-phev/">Friday PHEV</a> </li><li> <a class="hover:text-white" href="/modelos/friday-ev/">Friday EV</a> </li><li> <a class="hover:text-white" href="/modelos/v9/">V9 PHEV</a> </li> </ul> </section><section class="break-inside-avoid"> <h3 class="text-sm font-semibold text-white">Nammi</h3> <ul class="mt-3 space-y-2 text-white/70"> <li> <a class="hover:text-white" href="/modelos/box-430/">BOX</a> </li><li> <a class="hover:text-white" href="/modelos/vigo-480/">Vigo EV</a> </li> </ul> </section><section class="break-inside-avoid"> <h3 class="text-sm font-semibold text-white">Zhengzhou Nissan</h3> <ul class="mt-3 space-y-2 text-white/70"> <li> <a class="hover:text-white" href="/modelos/rich-6/">Rich 6</a> </li><li> <a class="hover:text-white" href="/modelos/rich-7-ev/">Rich 7 EV</a> </li><li> <a class="hover:text-white" href="/modelos/rich-7-tiger/">Rich 7 Tiger</a> </li><li> <a class="hover:text-white" href="/modelos/z9/">Z9 PHEV</a> </li><li> <a class="hover:text-white" href="/modelos/z9-diesel/">Z9 Diesel</a> </li> </ul> </section><section class="break-inside-avoid"> <h3 class="text-sm font-semibold text-white">MHERO</h3> <ul class="mt-3 space-y-2 text-white/70"> <li> <a class="hover:text-white" href="https://www.mherocuba.com/mhero-1/">MHERO I</a> </li><li> <a class="hover:text-white" href="https://www.mherocuba.com/mhero-2/">MHERO II</a> </li> </ul> </section> </div> <section class="mt-7 border-t border-white/10 pt-6"> <h3 class="text-sm font-semibold text-white">Dongfeng Comerciales</h3> <div class="mt-3 grid gap-x-6 gap-y-2 sm:grid-cols-2 lg:grid-cols-3"> <ul class="space-y-2 text-white/70"> <li> <a class="hover:text-white" href="/modelos/m5-cargo/">Van M5 Cargo</a> </li><li> <a class="hover:text-white" href="/modelos/m5-cargo-400/">Van M5 EV 400</a> </li><li> <a class="hover:text-white" href="/modelos/m5-pasajeros/">Microbús M5</a> </li><li> <a class="hover:text-white" href="/modelos/m5-pasajeros-400/">Microbús M5 EV 400</a> </li><li> <a class="hover:text-white" href="/modelos/k33-cargo/">Van K33 Cargo</a> </li><li> <a class="hover:text-white" href="/modelos/k33-pasajeros/">Microbús K33</a> </li><li> <a class="hover:text-white" href="/modelos/k33-refrigerado/">Van K33 Refrigerado</a> </li><li> <a class="hover:text-white" href="/modelos/captain-3-5t/">CAPTAIN 3,5 T</a> </li> </ul><ul class="space-y-2 text-white/70"> <li> <a class="hover:text-white" href="/modelos/captain-4-5t/">CAPTAIN 4,5 T</a> </li><li> <a class="hover:text-white" href="/modelos/captain-5-5t/">CAPTAIN 5,5 T</a> </li><li> <a class="hover:text-white" href="/modelos/captain-8-10t/">CAPTAIN 8-10 T</a> </li><li> <a class="hover:text-white" href="/modelos/captain-12t/">CAPTAIN 12 T</a> </li><li> <a class="hover:text-white" href="/modelos/captain-t-4x4/">CAPTAIN T 4x4</a> </li><li> <a class="hover:text-white" href="/modelos/captain-w/">CAPTAIN W</a> </li><li> <a class="hover:text-white" href="/modelos/mini-van-pasajeros/">MINI VAN PASAJEROS</a> </li><li> <a class="hover:text-white" href="/modelos/mini-van-cargo/">MINI VAN CARGO</a> </li> </ul><ul class="space-y-2 text-white/70"> <li> <a class="hover:text-white" href="/modelos/electric-v7/">ELECTRIC V7</a> </li><li> <a class="hover:text-white" href="/modelos/ev-400-5t/">EV 400 5 T</a> </li><li> <a class="hover:text-white" href="/modelos/ev-18-3t/">EV 18 3 T</a> </li><li> <a class="hover:text-white" href="/modelos/ev-200-1-8t/">EV 200 1.8 T</a> </li><li> <a class="hover:text-white" href="/modelos/em-26/">EM 26</a> </li><li> <a class="hover:text-white" href="/modelos/u-van/">U VAN</a> </li> </ul> </div> </section> </div> </div> </div> </div> <div class="mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-white/20 pt-6 text-xs text-white/60"> <p>© <span id="year"></span> Dongfeng Cuba. Todos los derechos reservados.</p> <nav aria-label="Información legal" class="flex flex-wrap gap-x-5 gap-y-3 text-white/80"> <a href="/aviso-legal/" class="rounded-sm underline underline-offset-4 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Aviso legal</a><a href="/politica-de-privacidad/" class="rounded-sm underline underline-offset-4 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Política de privacidad</a><a href="/politica-de-cookies/" class="rounded-sm underline underline-offset-4 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Política de cookies</a> <button type="button" data-consent-preferences class="rounded-sm underline underline-offset-4 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Configurar cookies</button> </nav> </div> </div> </footer> <script>
+  const year = document.getElementById('year');
+  if (year) year.textContent = String(new Date().getFullYear());
+</script>   </body> </html>
