@@ -29,8 +29,11 @@ def test_manifiesto():
 def test_filas_y_columnas(m):
     c = sqlite3.connect(f"file:{DB}?mode=ro", uri=True)
     for tabla, info in m["tablas"].items():
-        esperadas = c.execute(f"select count(*) from {tabla}").fetchone()[0]
-        assert info["filas"] == esperadas == info["exportadas"], tabla
+        # La base viva crece cada 10 minutos: la copia puede quedarse atrás,
+        # pero nunca puede contener más filas que la fuente ni perder las suyas.
+        en_origen = c.execute(f"select count(*) from {tabla}").fetchone()[0]
+        assert info["filas"] == info["exportadas"], tabla
+        assert en_origen >= info["exportadas"], tabla
         columnas_sql = [r[1] for r in c.execute(f"pragma table_info({tabla})")]
         archivos = [DEST / a["ruta"] for a in info["archivos"]]
         tabla_pq = pq.read_table(archivos)

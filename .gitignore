@@ -57,3 +57,10 @@ Data/_state/dashboard_fingerprint.json
 
 # Indice temporal de la subida por migas
 Data/_state/.indice_migas
+
+# Estado operativo de los timers (cambia en cada corrida)
+Data/_state/.locks/
+Data/_state/calidad.json
+
+# Comando de cache
+.playground/

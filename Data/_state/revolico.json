@@ -1,11 +1,11 @@
 {
   "status": "running",
-  "heartbeat_utc": "2026-11-27T03:57:54.724787+00:00",
-  "inicio": 1795751872,
-  "fin_utc": "2026-11-27T03:57:40.601344+00:00",
-  "duracion_s": 2999,
+  "heartbeat_utc": "2026-11-27T06:28:28.131261+00:00",
+  "inicio": 1795760908,
+  "fin_utc": "2026-11-27T06:28:17.598481+00:00",
+  "duracion_s": 3000,
   "exit_code": 143,
   "last_success_utc": null,
-  "last_failure_utc": "2026-11-27T03:57:40.601344+00:00",
-  "fallos_consecutivos": 11
+  "last_failure_utc": "2026-11-27T06:28:17.598481+00:00",
+  "fallos_consecutivos": 14
 }
