@@ -1,6 +1,6 @@
 # El precio de moverse en Cuba
 
-### Cuánto cuesta un carro en Cuba: <!-- kpi:autos_revolico -->772 autos, <!-- kpi:anuncios_totales -->2.029 anuncios y una serie oficial detrás
+### Cuánto cuesta un carro en Cuba: <!-- kpi:autos_revolico -->947 autos, <!-- kpi:anuncios_totales -->2.156 anuncios y una serie oficial detrás
 
 **Versión:** 23/11/2026 · Datos reales del mercado automotor cubano.
 
@@ -72,9 +72,9 @@ Al lado de esas redes formales están los talleres independientes que sostienen 
 
 El auto es también un activo, y en Cuba suele tener dos vidas: la de quien lo compra para moverse y la de quien lo pone a trabajar. Algunos se suman al ecosistema y lo convierten en taxi —formal o informal— para tener una fuente de ingresos estable, ocupando el mismo lugar que antes tenían el taxi, el triciclo eléctrico y las gacelas en turnos de noche. Otros lo revenden, lo usan para cargar mercancías o lo mantienen como reserva de valor frente a una moneda que se mueve todos los días.
 
-Nuestra base reúne **<!-- kpi:autos_revolico -->772 autos únicos de Revolico** dentro de **<!-- kpi:anuncios_totales -->2.029 anuncios limpios**: <!-- kpi:anuncios_locales -->1.338 del mercado local y <!-- kpi:anuncios_importacion -->691 de importación. El precio mediano del usado local es de **<!-- kpi:precio_mediano_usd -->21.000 USD**, con una media de **<!-- kpi:precio_medio_usd -->28.665,42 USD**; la antigüedad promedio es de **<!-- kpi:antiguedad_media -->8,3 años** y el kilometraje mediano, de **<!-- kpi:km_medianos -->43.000 km**.
+Nuestra base reúne **<!-- kpi:autos_revolico -->947 autos únicos de Revolico** dentro de **<!-- kpi:anuncios_totales -->2.156 anuncios limpios**: <!-- kpi:anuncios_locales -->1.465 del mercado local y <!-- kpi:anuncios_importacion -->691 de importación. El precio mediano del usado local es de **<!-- kpi:precio_mediano_usd -->21.000 USD**, con una media de **<!-- kpi:precio_medio_usd -->28.166,17 USD**; la antigüedad promedio es de **<!-- kpi:antiguedad_media -->8,2 años** y el kilometraje mediano, de **<!-- kpi:km_medianos -->33.256 km**.
 
-Con **<!-- kpi:marcas_distintas -->50 marcas** y **<!-- kpi:grupos_benchmark -->101 grupos** de marca, modelo y año comparables, detectamos **<!-- kpi:infravalorados -->30 oportunidades infravaloradas** y **<!-- kpi:anomalias -->81 anomalías** entre precio y kilometraje. La depreciación ya no se presenta como una cifra única: al corregir el kilometraje, el modelo actual no encuentra una pendiente anual estadísticamente significativa. La edad ya no explica el precio por sí sola; importa de dónde viene el auto, en qué moneda se paga y en qué estado llega. Ese retorno depende también del precio de compra, de la documentación y de la regulación vigente —en particular del Decreto 163/2026—. Cuando el taxi sube con la hora y el combustible cambia con la divisa, el carro propio deja de ser solo un gasto: es una decisión sobre cómo se conserva —o se pierde— el valor.
+Con **<!-- kpi:marcas_distintas -->50 marcas** y **<!-- kpi:grupos_benchmark -->113 grupos** de marca, modelo y año comparables, detectamos **<!-- kpi:infravalorados -->30 oportunidades infravaloradas** y **<!-- kpi:anomalias -->89 anomalías** entre precio y kilometraje. La depreciación ya no se presenta como una cifra única: al corregir el kilometraje, el modelo actual no encuentra una pendiente anual estadísticamente significativa. La edad ya no explica el precio por sí sola; importa de dónde viene el auto, en qué moneda se paga y en qué estado llega. Ese retorno depende también del precio de compra, de la documentación y de la regulación vigente —en particular del Decreto 163/2026—. Cuando el taxi sube con la hora y el combustible cambia con la divisa, el carro propio deja de ser solo un gasto: es una decisión sobre cómo se conserva —o se pierde— el valor.
 
 *Apoyo: [Cuadro 1](#cuadro-1-kpis-del-mercado) y [Cuadro 2](#cuadro-2-mercado-local-e-importación).*
 
@@ -88,11 +88,11 @@ Estas cuatro preguntas tienen respuesta, pero estaban dispersas en anuncios, cat
 
 Lo primero que uno debe saber es que el mercado está dividido en dos partes: la de los **marketplaces**, donde vende principalmente el particular o el pequeño comercial, y la de los **concesionarios y tiendas oficiales**, donde el precio lo fija la marca o el importador autorizado. Son dos mercados que conviven, se influyen y no siempre se parecen.
 
-Uno debe prepararse para una proporción incómoda: de unos miles de anuncios que parecen autos, solo unos pocos cientos son realmente autos en venta. En nuestro caso quedaron **<!-- kpi:autos_revolico -->772 autos** con datos suficientes frente a **<!-- kpi:anuncios_marketplaces -->2.232 anuncios** en los marketplaces especializados; en la última revisión aparecieron diez anuncios nuevos en iTENCEL. El resto son otros vehículos —motos, triciclos, utilitarios—, renta, servicios y piezas: ruido para quien busca un carro, pero parte de la historia del transporte cubano.
+Uno debe prepararse para una proporción incómoda: de unos miles de anuncios que parecen autos, solo unos pocos cientos son realmente autos en venta. En nuestro caso quedaron **<!-- kpi:autos_revolico -->947 autos** con datos suficientes frente a **<!-- kpi:anuncios_marketplaces -->2.232 anuncios** en los marketplaces especializados; en la última revisión aparecieron diez anuncios nuevos en iTENCEL. El resto son otros vehículos —motos, triciclos, utilitarios—, renta, servicios y piezas: ruido para quien busca un carro, pero parte de la historia del transporte cubano.
 
-Con esa muestra apareció el mercado. El precio mediano del usado local era de **<!-- kpi:precio_mediano_usd -->21.000 USD**, con una media de **<!-- kpi:precio_medio_usd -->28.665,42 USD**; la antigüedad promedio de los anuncios era de **<!-- kpi:antiguedad_media -->8,3 años**, el kilometraje mediano de **<!-- kpi:km_medianos -->43.000 km**, y convivían **<!-- kpi:marcas_distintas -->50 marcas** en un parque donde los modelos recientes se cruzan con clásicos de décadas. El canal importado —<!-- kpi:anuncios_importacion -->691 anuncios— corre en paralelo, con una mediana de <!-- kpi:mediana_importacion -->26.000 USD. La dispersión también es parte del retrato: no hay un solo precio del “auto cubano”, sino muchos precios según marca, estado y documentación.
+Con esa muestra apareció el mercado. El precio mediano del usado local era de **<!-- kpi:precio_mediano_usd -->21.000 USD**, con una media de **<!-- kpi:precio_medio_usd -->28.166,17 USD**; la antigüedad promedio de los anuncios era de **<!-- kpi:antiguedad_media -->8,2 años**, el kilometraje mediano de **<!-- kpi:km_medianos -->33.256 km**, y convivían **<!-- kpi:marcas_distintas -->50 marcas** en un parque donde los modelos recientes se cruzan con clásicos de décadas. El canal importado —<!-- kpi:anuncios_importacion -->691 anuncios— corre en paralelo, con una mediana de <!-- kpi:mediana_importacion -->26.000 USD. La dispersión también es parte del retrato: no hay un solo precio del “auto cubano”, sino muchos precios según marca, estado y documentación.
 
-El dato más fuerte ya no es una curva única, sino una división: el mercado local y el importado no se mueven igual. Con **<!-- kpi:grupos_benchmark -->101 grupos** de marca, modelo y año comparables y **<!-- kpi:infravalorados -->30 oportunidades infravaloradas**, la diferencia entre comprar bien y comprar mal puede medirse en miles de dólares.
+El dato más fuerte ya no es una curva única, sino una división: el mercado local y el importado no se mueven igual. Con **<!-- kpi:grupos_benchmark -->113 grupos** de marca, modelo y año comparables y **<!-- kpi:infravalorados -->30 oportunidades infravaloradas**, la diferencia entre comprar bien y comprar mal puede medirse en miles de dólares.
 
 *Apoyo: [Gráfico 1](#gráfico-1-distribución-de-precios) y [Gráfico 2](#gráfico-2-distribución-por-año).*
 
@@ -198,17 +198,17 @@ Estos apoyos se insertan aquí para que la narrativa no se detenga. Cada cuadro 
 
 | Métrica | Valor |
 |---|---:|
-| Anuncios limpios | <!-- kpi:anuncios_totales -->2.029 |
-| Locales | <!-- kpi:anuncios_locales -->1.338 |
+| Anuncios limpios | <!-- kpi:anuncios_totales -->2.156 |
+| Locales | <!-- kpi:anuncios_locales -->1.465 |
 | De importación | <!-- kpi:anuncios_importacion -->691 |
-| Usados locales | <!-- kpi:anuncios_usados_locales -->1.317 |
+| Usados locales | <!-- kpi:anuncios_usados_locales -->1.444 |
 | Nuevos locales | <!-- kpi:anuncios_nuevos_locales -->21 |
 | Marcas distintas | <!-- kpi:marcas_distintas -->50 |
-| Precio medio local | <!-- kpi:precio_medio_usd -->28.665,42 USD |
+| Precio medio local | <!-- kpi:precio_medio_usd -->28.166,17 USD |
 | Precio mediano local | <!-- kpi:precio_mediano_usd -->21.000 USD |
 | Año mediano | <!-- kpi:anio_mediano -->2020 |
-| Kilometraje mediano | <!-- kpi:km_medianos -->43.000 km |
-| Antigüedad media | <!-- kpi:antiguedad_media -->8,3 años |
+| Kilometraje mediano | <!-- kpi:km_medianos -->33.256 km |
+| Antigüedad media | <!-- kpi:antiguedad_media -->8,2 años |
 
 ### Cuadro 2. Mercado local e importación
 
@@ -216,7 +216,7 @@ Estos apoyos se insertan aquí para que la narrativa no se detenga. Cada cuadro 
 |---|---|---:|---:|---:|
 | Importación | Usado | <!-- kpi:anuncios_importacion -->691 | <!-- kpi:mediana_importacion -->26.000 USD | <!-- kpi:media_importacion -->27.046,22 USD |
 | Local | Nuevo | 21 | 24.623,66 | 24.729,59 |
-| Local | Usado | <!-- kpi:anuncios_usados_locales -->1.317 | <!-- kpi:mediana_local -->21.000 USD | <!-- kpi:media_local_usada -->28.665,42 USD |
+| Local | Usado | <!-- kpi:anuncios_usados_locales -->1.444 | <!-- kpi:mediana_local -->21.000 USD | <!-- kpi:media_local_usada -->28.166,17 USD |
 
 ### Cuadro 3. Pasajeros transportados (ONEI, millones)
 
@@ -254,7 +254,7 @@ Estos apoyos se insertan aquí para que la narrativa no se detenga. Cada cuadro 
 | Potencia | −0,0046 | 0,165 |
 | Condición | −0,0340 | 0,802 |
 
-Ningún coeficiente resulta estadísticamente significativo con la base actual. Es parte de la historia: el mercado no admite una curva única.
+Ningún coeficiente resulta estadísticamente significativo con la base actual. Es parte de la historia: el mercado no admite una curva única. La tabla `modelo_muestra.csv` documenta las 22 observaciones de este modelo frente a las 572 del modelo principal; la pendiente positiva de este último refleja la selección de anuncios con kilometraje declarado y no se interpreta como depreciación.
 
 ### Gráficos
 

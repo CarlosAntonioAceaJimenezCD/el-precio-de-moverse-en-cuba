@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Estadistica y econometria: depreciacion, tests, VIF y anomalias."""
+"""Estadistica y econometria: depreciacion, tests, VIF y anomalias.
+
+Se estiman dos modelos: el principal, con terminos de cobertura suficiente,
+y el completo, que incluye potencia (`hp`) y por eso reduce la muestra por
+eliminacion de filas incompletas. La tabla `modelo_muestra.csv` hace visible
+esa perdida para que ninguna conclusion estadistica se cite sin su n.
+"""
 import sys
 from pathlib import Path
 
@@ -27,43 +33,68 @@ def vif(df: pd.DataFrame, cols: list[str]) -> pd.DataFrame:
     return pd.DataFrame(out, columns=["variable", "VIF"]).round(2)
 
 
+def formula_terms(d: pd.DataFrame, incluir_hp: bool = True) -> str:
+    """Construye la formula solo con terminos observables y suficientes."""
+    terminos = ["car_age"]
+    if d["mileage_km"].notna().sum() > 30:
+        terminos.append("np.log1p(mileage_km)")
+    if incluir_hp and d["hp"].notna().sum() > 30:
+        terminos.append("hp")
+    if d["condition_score"].notna().sum() > 30:
+        terminos.append("condition_score")
+    if d["brand_tier"].nunique() > 1:
+        terminos.append("C(brand_tier)")
+    return "log_price ~ " + " + ".join(terminos)
+
+
 def main():
     df = pd.read_parquet(cfg.DATA / "listings_clean.parquet")
     d = df[(df["source_type"] == "usado") & (df["canal"] == "local") & df["price_usd"].gt(0) & df["car_age"].notna()].copy()
     d["log_price"] = np.log(d["price_usd"])
     d = d[d["car_age"].between(0, 40)]
 
-    modelo = pd.DataFrame()
-    if len(d) > 30:
+    import statsmodels.formula.api as smf
+
+    modelos: dict[str, tuple] = {}
+    for nombre, incluir_hp in (("principal", False), ("completo", True)):
+        formula = formula_terms(d, incluir_hp)
         try:
-            import statsmodels.formula.api as smf
-
-            formula = "log_price ~ car_age"
-            if d["mileage_km"].notna().sum() > 30:
-                formula += " + np.log1p(mileage_km)"
-            if d["hp"].notna().sum() > 30:
-                formula += " + hp"
-            if d["condition_score"].notna().sum() > 30:
-                formula += " + condition_score"
-            if d["brand_tier"].nunique() > 1:
-                formula += " + C(brand_tier)"
-            fit = smf.ols(formula, data=d).fit()
-            modelo = pd.DataFrame(
-                {
-                    "termino": fit.params.index,
-                    "coeficiente": fit.params.values.round(4),
-                    "p_valor": fit.pvalues.values.round(4),
-                    "intervalo_bajo": fit.conf_int()[0].values.round(4),
-                    "intervalo_alto": fit.conf_int()[1].values.round(4),
-                }
-            )
-            (cfg.TABLES / "modelo_resumen.txt").write_text(str(fit.summary()), encoding="utf-8")
+            modelos[nombre] = (smf.ols(formula, data=d).fit(), formula)
         except Exception as e:
-            modelo = pd.DataFrame([{"termino": "ERROR", "coeficiente": str(e)}])
+            print(f"Fallo en modelo {nombre}: {e}", flush=True)
 
-    if modelo.empty:
-        modelo = pd.DataFrame([{"termino": "sin datos suficientes", "coeficiente": None}])
+    if "completo" not in modelos:
+        raise SystemExit("No se pudo estimar el modelo completo")
+
+    # Compatibilidad: los archivos historicos siguen alimentados por el modelo
+    # completo, que es el que citan el Cuadro 5 y el storytelling.
+    fit = modelos["completo"][0]
+    modelo = pd.DataFrame(
+        {
+            "termino": fit.params.index,
+            "coeficiente": fit.params.values.round(4),
+            "p_valor": fit.pvalues.values.round(4),
+            "intervalo_bajo": fit.conf_int()[0].values.round(4),
+            "intervalo_alto": fit.conf_int()[1].values.round(4),
+        }
+    )
     modelo.to_csv(cfg.TABLES / "modelo_depreciacion.csv", index=False)
+    (cfg.TABLES / "modelo_resumen.txt").write_text(str(fit.summary()), encoding="utf-8")
+
+    muestra = pd.DataFrame(
+        [
+            {
+                "modelo": nombre,
+                "candidatas": len(d),
+                "observaciones": int(ajuste.nobs),
+                "r2": round(float(ajuste.rsquared), 4),
+                "p_f": round(float(ajuste.f_pvalue), 4),
+                "terminos": formula,
+            }
+            for nombre, (ajuste, formula) in modelos.items()
+        ]
+    )
+    muestra.to_csv(cfg.TABLES / "modelo_muestra.csv", index=False)
 
     num = ["car_age", "mileage_km", "price_usd", "hp", "condition_score"]
     cols = [c for c in num if d[c].notna().sum() > 30]
@@ -93,7 +124,9 @@ def main():
     ]
     anomalias.to_csv(cfg.TABLES / "anomalias.csv", index=False)
 
-    print(f"STATS: {len(d)} observaciones | modelo={len(modelo)} terminos | anomalias={len(anomalias)}")
+    n_principal = int(modelos["principal"][0].nobs) if "principal" in modelos else 0
+    n_completo = int(fit.nobs)
+    print(f"STATS: {len(d)} candidatas | principal n={n_principal} | completo n={n_completo} | anomalias={len(anomalias)}")
 
 
 if __name__ == "__main__":

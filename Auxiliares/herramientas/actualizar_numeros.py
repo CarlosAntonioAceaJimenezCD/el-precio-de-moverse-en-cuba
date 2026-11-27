@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parents[2]
 ANA = ROOT / "Data/analisis_rentabilidad"
 TABLAS = ANA / "outputs/tables"
 ARCHIVOS = [
+    ROOT / "INFORME_TECNICO.md",
     ROOT / "README.md",
     ANA / "PRESENTACION_STORYTELLING.md",
     ANA / "ALCANCE_Y_RETENCION.md",
@@ -70,6 +71,16 @@ def valores() -> dict[str, str]:
     salida["grupos_benchmark"] = es_espana(len(filas_csv(TABLAS / "benchmark.csv")))
     salida["anomalias"] = es_espana(len(filas_csv(TABLAS / "anomalias.csv")))
     salida["infravalorados"] = es_espana(len(filas_csv(TABLAS / "infravalorados.csv")))
+
+    muestra = {r["modelo"]: r for r in filas_csv(TABLAS / "modelo_muestra.csv")}
+    if "completo" in muestra:
+        fila = muestra["completo"]
+        salida["modelo_candidatas"] = es_espana(float(fila["candidatas"]))
+        salida["modelo_n_completo"] = es_espana(float(fila["observaciones"]))
+        salida["modelo_r2_completo"] = es_espana(float(fila["r2"]), 3)
+        salida["modelo_pf_completo"] = es_espana(float(fila["p_f"]), 3)
+    if "principal" in muestra:
+        salida["modelo_n_principal"] = es_espana(float(muestra["principal"]["observaciones"]))
 
     c = sqlite3.connect(f"file:{ROOT}/Data/Revolico/revolico.sqlite?mode=ro", uri=True, timeout=30)
     salida["autos_revolico"] = es_espana(c.execute("select count(*) from autos").fetchone()[0])

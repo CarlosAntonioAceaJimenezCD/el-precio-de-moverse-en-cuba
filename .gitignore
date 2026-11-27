@@ -61,6 +61,12 @@ Data/_state/.indice_migas
 # Estado operativo de los timers (cambia en cada corrida)
 Data/_state/.locks/
 Data/_state/calidad.json
+Data/_state/circuitos.json
+Data/_state/prueba.json
+Data/_state/revolico.json
+Data/_state/salud.json
+Data/_state/telegram_circuitos.json
+Data/_estado/
 
 # Comando de cache
 .playground/
