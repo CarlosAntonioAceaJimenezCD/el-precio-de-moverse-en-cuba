@@ -1,0 +1,13 @@
+fuente,nombre,lat,lon,provincia,municipio,precio,estado,renovable,url
+Kargalaya,Super48,20.886066,-76.278307,Holguín,Holguín,250,verified,true,https://www.kargalaya.com/estaciones
+Kargalaya,Battery Lab,23.123442,-82.375241,La Habana,Cerro,0,verified,true,https://www.kargalaya.com/estaciones
+Kargalaya,Estacion de carga SOLGUARA,22.375803,-80.021646,Villa Clara,Santa Clara,1000,unverified,true,https://www.kargalaya.com/estaciones
+Kargalaya,Parqueo M y 25,23.139395,-82.381361,La Habana,Plaza de la Revolución,200,unverified,false,https://www.kargalaya.com/estaciones
+Kargalaya,Universidad de Ciencias Médicas de La Habana,23.078418,-82.444882,La Habana,Playa,100,unverified,true,https://www.kargalaya.com/estaciones
+Kargalaya,Trisolinera Habana,23.113255,-82.439137,La Habana,Playa,250,unverified,true,https://www.kargalaya.com/estaciones
+Kargalaya,PDL Campeño,23.138055,-82.38516,La Habana,Plaza,0,unverified,false,https://www.kargalaya.com/estaciones
+Kargalaya,Estación de Carga de ADT64 ,22.4047,-79.969147,Villa Clara,Santa Clara,0,unverified,true,https://www.kargalaya.com/estaciones
+Kargalaya,Automovion SRL,23.1071,-82.341025,La Habana,San Miguel del Padron,500,unverified,false,https://www.kargalaya.com/estaciones
+Electromaps,Tecxol_Xetid_1,,,La Habana,,,sin coordenadas,,https://www.electromaps.com/es/puntos-carga/cuba
+Electromaps,Campismo Las Almendras,,,La Habana,,,sin coordenadas,,https://www.electromaps.com/es/puntos-carga/cuba
+Electromaps,Campismo Peña Blanca,,,La Habana,,,sin coordenadas,,https://www.electromaps.com/es/puntos-carga/cuba

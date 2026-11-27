@@ -1,0 +1,9 @@
+nombre,lat,lon,direccion,fuente,url,telefono,horario,precio,estado,detalles_json,tipo
+AGN Motors,,,,web del concesionario,,,,,,"{""name"": ""AGN Motors"", ""address"": """", ""lat"": """", ""lon"": """", ""source"": ""agn_motors""}",concesionario
+ATR Export,,,,web del concesionario,,,,,,"{""name"": ""ATR Export"", ""address"": """", ""lat"": """", ""lon"": """", ""source"": ""atr_export""}",concesionario
+Bdc Inbond De Bdc International S.a.,,,"Autopista Nacional, KM 2 1/2 y carretera de Coyula, Guanabacoa, Havana , Cuba",Yellocu,https://es.yellocu.com/company/250469/BDC_Inbond_de_BDC_International_SA,+53 7 795-8809,,,,"{""categoria"": ""Venta de vehículos"", ""ciudad"": ""Habana""}",concesionario
+Changan Automotive,,,,web del concesionario,,,,,,"{""name"": ""Changan Automotive"", ""address"": """", ""lat"": """", ""lon"": """", ""source"": ""changan""}",concesionario
+Chinautos Cuba (LXWY),,,,web del concesionario,,,,,,"{""name"": ""Chinautos Cuba (LXWY)"", ""address"": """", ""lat"": """", ""lon"": """", ""source"": ""chinautos_cuba""}",concesionario
+ConnectingCuba,,,,web del concesionario,,,,,,"{""name"": ""ConnectingCuba"", ""address"": """", ""lat"": """", ""lon"": """", ""source"": ""connectingcuba""}",concesionario
+División de Trasporte Automotor CIMEX,,,"Calle 7ma A entre 66 y 70 #6612, Havana , Cuba",Yellocu,https://es.yellocu.com/company/250026/Division_de_Trasporte_Automotor_CIMEX,,,,,"{""categoria"": ""Venta de vehículos"", ""ciudad"": ""Habana""}",concesionario
+MCV Commercial,,,,web del concesionario,,,,,,"{""name"": ""MCV Commercial"", ""address"": """", ""lat"": """", ""lon"": """", ""source"": ""mcv_commercial""}",concesionario

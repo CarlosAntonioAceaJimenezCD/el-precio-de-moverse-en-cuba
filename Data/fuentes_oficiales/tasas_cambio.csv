@@ -1,0 +1,5 @@
+fecha,fuente,tipo,USD_CUP,EUR_CUP,MLC_CUP,nota
+2026-11-18,elTOQUE (via DolarApp),informal TRMI,930,1000,845.35,"Usada en el analisis; tasa oficial no aplica a transacciones diarias"
+2026-11-17,BCC,oficial,24,26.42,,"Referencia contable"
+2026-11-17,BCC,publica CADECA,120,132.12,,"Referencia publica"
+2026-11-17,BCC,especial,832,916.03,,"Referencia sectores especificos"

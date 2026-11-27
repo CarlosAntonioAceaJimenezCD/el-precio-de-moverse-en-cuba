@@ -160,4 +160,4 @@ En `Auxiliares/Repositorios` están clonados con profundidad 1 (61 repositorios,
 - `crawl4ai`
 - `Scrapegraph-ai`
 
-Registro autoritativo de clones: `Auxiliares/Repositorios/_clone_log.tsv` (61 entradas `OK`).
+Registro autoritativo de clones: `~/Utilidades/HerramientasScraping/_clone_log.tsv` (61 entradas `OK`).
