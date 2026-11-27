@@ -1,0 +1,2137 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-18T15:40:34Z",
+    "timestamp_areas_base": "2026-11-18T09:44:31Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 259547981,
+  "lat": 23.0950291,
+  "lon": -82.4205784,
+  "tags": {
+    "addr:street": "Avenida 41",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "fuel:diesel": "yes",
+    "fuel:octane_95": "yes",
+    "fuel:octane_98": "yes",
+    "name": "Servicentro Tropicana",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 2040938",
+    "self_service": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 259548199,
+  "lat": 23.1269761,
+  "lon": -82.4122887,
+  "tags": {
+    "addr:street": "Calle 2",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "fuel:octane_90": "yes",
+    "fuel:octane_95": "yes",
+    "name": "Oro Negro El Túnel",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 2045760"
+  }
+},
+{
+  "type": "node",
+  "id": 259548362,
+  "lat": 23.1162915,
+  "lon": -82.4003972,
+  "tags": {
+    "addr:street": "Avenida 26",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "fuel:diesel": "yes",
+    "fuel:gasoline": "yes",
+    "fuel:octane_90": "yes",
+    "fuel:octane_94": "yes",
+    "name": "Oro Negro Acapulco",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 8815313"
+  }
+},
+{
+  "type": "node",
+  "id": 259548393,
+  "lat": 23.1231897,
+  "lon": -82.4051375,
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "Avendia 23",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "brand:wikipedia": "en:Cuba Petróleo Union",
+    "fuel:octane_95": "yes",
+    "fuel:octane_98": "yes",
+    "name": "Servicentro 23 y 24",
+    "operator": "CUPET - CIMEX",
+    "self_service": "yes",
+    "source": "local knowledge"
+  }
+},
+{
+  "type": "node",
+  "id": 259548398,
+  "lat": 23.1217501,
+  "lon": -82.4062490,
+  "tags": {
+    "addr:street": "Calle 23",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "name": "Oro Negro El Puente",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 8346517"
+  }
+},
+{
+  "type": "node",
+  "id": 259548740,
+  "lat": 23.1263258,
+  "lon": -82.3671861,
+  "tags": {
+    "addr:city": "La Habana",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Hatuey",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 444828539,
+  "lat": 23.0220963,
+  "lon": -82.4025573,
+  "tags": {
+    "addr:street": "Carretera de Wajay (243)",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Fontanar",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 1224618032,
+  "lat": 23.0882367,
+  "lon": -82.3782469,
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "Mayía Rodríguez",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Mónaco",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 1276548958,
+  "lat": 23.0864466,
+  "lon": -82.3662219,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Lagueruela",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 1276572437,
+  "lat": 23.0939110,
+  "lon": -82.3660132,
+  "tags": {
+    "addr:street": "Avenida Santa Catalina",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Santa Catalina",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 1276581509,
+  "lat": 23.1012728,
+  "lon": -82.3730925,
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "General Lacret",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "name": "Oro Negro El Protector",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 6407882"
+  }
+},
+{
+  "type": "node",
+  "id": 1755524771,
+  "lat": 23.1696094,
+  "lon": -82.1460412,
+  "tags": {
+    "addr:city": "Guanabo",
+    "addr:street": "5ta Avenida",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Guanabo",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 1800943612,
+  "lat": 23.0686902,
+  "lon": -82.3950055,
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "Avenida San Francisco (Calle 100)",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro El Futuro",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 1895822332,
+  "lat": 23.0899874,
+  "lon": -82.4595037,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Biltmore",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 2287897906,
+  "lat": 23.1407306,
+  "lon": -82.3947663,
+  "tags": {
+    "addr:city": "Vedado",
+    "addr:street": "Línea",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "compressed_air": "yes",
+    "name": "Servicentro Modelo",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 8328646"
+  }
+},
+{
+  "type": "node",
+  "id": 2306042596,
+  "lat": 23.1295860,
+  "lon": -82.4020348,
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "Calle 12",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "fuel:diesel": "yes",
+    "fuel:gasoline": "yes",
+    "fuel:octane_90": "yes",
+    "name": "Oro Negro 12 y 17",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 8339238"
+  }
+},
+{
+  "type": "node",
+  "id": 2324851307,
+  "lat": 23.1217167,
+  "lon": -82.3218724,
+  "tags": {
+    "addr:city": "Guanabacoa",
+    "addr:street": "Vía Blanca",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "building": "yes",
+    "name": "Oro Negro Los Paraguas",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 979176"
+  }
+},
+{
+  "type": "node",
+  "id": 2334999520,
+  "lat": 23.1113700,
+  "lon": -82.3259178,
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "Vía Blanca y Calzada Guanabacoa",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "fuel:diesel": "yes",
+    "fuel:octane_90": "yes",
+    "fuel:octane_94": "yes",
+    "name": "Servicentro La Shell",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 2394655564,
+  "lat": 23.1093911,
+  "lon": -82.3495413,
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "Vía Blanca",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "building": "yes",
+    "name": "Servicentro Via Blanca",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 2394657549,
+  "lat": 23.1227936,
+  "lon": -82.3609391,
+  "tags": {
+    "addr:street": "Atares",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "building": "yes",
+    "name": "Cupet",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 2398540530,
+  "lat": 23.0483659,
+  "lon": -82.4190441,
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "Rotonda de la CUJAE",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "building": "yes",
+    "fuel:diesel": "yes",
+    "fuel:octane_90": "yes",
+    "fuel:octane_94": "yes",
+    "name": "Oro Negro Aeropuerto",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 2676819"
+  }
+},
+{
+  "type": "node",
+  "id": 2398562838,
+  "lat": 23.1264802,
+  "lon": -82.3952044,
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "Calzada Zapata",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "building": "yes",
+    "compressed_air": "yes",
+    "fuel:diesel": "no",
+    "fuel:octane_91": "yes",
+    "fuel:octane_95": "yes",
+    "name": "Servicentro Zapata y 6",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2411620880,
+  "lat": 23.0529193,
+  "lon": -82.4034835,
+  "tags": {
+    "addr:street": "Avenida Rancho Boyeros",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "fuel:diesel": "yes",
+    "name": "Oro Negro Capdevila",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 6450772"
+  }
+},
+{
+  "type": "node",
+  "id": 2411660881,
+  "lat": 23.0834179,
+  "lon": -82.3572144,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "building": "yes",
+    "name": "Servicentro Víbora Park",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 2415994836,
+  "lat": 23.1130709,
+  "lon": -82.3677379,
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "Vía Blanca y Agua Dulce",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Agua Dulce",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 2616746951,
+  "lat": 23.1453178,
+  "lon": -82.3009754,
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "Rotonda de Cojímar",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "name": "Oro Negro Rotonda de Cojímar",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 7974970"
+  }
+},
+{
+  "type": "node",
+  "id": 2652458360,
+  "lat": 23.1357075,
+  "lon": -82.4070940,
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "3ra",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro 3ra y 12",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 3197831850,
+  "lat": 23.0504541,
+  "lon": -82.2777214,
+  "tags": {
+    "addr:street": "Carretera Central (Calzada de Guines)",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Palace",
+    "name:en": "Garage The Palace",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 6827563"
+  }
+},
+{
+  "type": "node",
+  "id": 3289790759,
+  "lat": 23.0997774,
+  "lon": -82.4369609,
+  "tags": {
+    "addr:street": "Avenida 13",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "name": "Oro Negro Almendares",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "7 204 1938"
+  }
+},
+{
+  "type": "node",
+  "id": 3303669998,
+  "lat": 23.1286060,
+  "lon": -82.3913523,
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "Paseo y Zapata",
+    "amenity": "fuel",
+    "name": "Gasolinera de Paseo y Zapata",
+    "operator": "MININT"
+  }
+},
+{
+  "type": "node",
+  "id": 3531597926,
+  "lat": 23.1351927,
+  "lon": -82.3666447,
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:housenumber": "270",
+    "addr:street": "Zanja",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "name": "Oro Negro Zanja",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 8764743"
+  }
+},
+{
+  "type": "node",
+  "id": 3573519645,
+  "lat": 23.0841524,
+  "lon": -82.3394124,
+  "tags": {
+    "addr:street": "Dolores (Camilo Cienfuegos)",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "fuel:diesel": "yes",
+    "fuel:octane_90": "yes",
+    "fuel:octane_94": "yes",
+    "name": "Servicentro Dolores y 24",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 6967346",
+    "self_service": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3672555130,
+  "lat": 23.1602740,
+  "lon": -82.3287335,
+  "tags": {
+    "addr:street": "Avenida 46",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Habana del Este",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 7681982"
+  }
+},
+{
+  "type": "node",
+  "id": 3711315779,
+  "lat": 23.1173238,
+  "lon": -82.4317008,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "fuel:diesel": "yes",
+    "name": "Servicentro La Copa",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 2023343"
+  }
+},
+{
+  "type": "node",
+  "id": 3711321999,
+  "lat": 23.0657907,
+  "lon": -82.4486513,
+  "tags": {
+    "addr:street": "Avenida 51",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "name": "Oro Negro La Lisa",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 265 5402; +53 7 265 5403"
+  }
+},
+{
+  "type": "node",
+  "id": 3711323670,
+  "lat": 23.0833494,
+  "lon": -82.4204186,
+  "tags": {
+    "addr:street": "Avenida 51",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "disused:amenity": "fuel",
+    "old_name": "Servicentro Lucevan",
+    "old_name:en": "Lucevan's Servi Cupet",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 3722309063,
+  "lat": 23.0383962,
+  "lon": -82.2606006,
+  "tags": {
+    "addr:street": "Carretera Central (Calzada de Guines)",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Cotorro",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 6821843"
+  }
+},
+{
+  "type": "node",
+  "id": 3785611069,
+  "lat": 23.1409590,
+  "lon": -82.3871969,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Cupet",
+    "operator": "Comité Provincial PCC",
+    "self_service": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3793657729,
+  "lat": 23.1026440,
+  "lon": -82.3917909,
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "Vía Blanca",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "name": "Oro Negro Ciudad Deportiva",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 8834203"
+  }
+},
+{
+  "type": "node",
+  "id": 3804428946,
+  "lat": 23.1632902,
+  "lon": -82.1520548,
+  "tags": {
+    "addr:street": "Vía Blanca",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "name": "Oro Negro Gato Verde",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 7963211"
+  }
+},
+{
+  "type": "node",
+  "id": 3877044572,
+  "lat": 23.1036805,
+  "lon": -82.4447699,
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "5ta Avenida",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "name": "Oro Negro El Náutico",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 2025140"
+  }
+},
+{
+  "type": "node",
+  "id": 3913861819,
+  "lat": 23.1180538,
+  "lon": -82.3842819,
+  "tags": {
+    "amenity": "fuel",
+    "name": "MINFAR"
+  }
+},
+{
+  "type": "node",
+  "id": 3919163815,
+  "lat": 23.1356192,
+  "lon": -82.3782177,
+  "tags": {
+    "addr:city": "Centro Habana",
+    "addr:street": "Calzada de Infanta y San Rafael",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Infanta y San Rafael",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 4147906946,
+  "lat": 23.1468499,
+  "lon": -82.2694862,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Berroa",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 4162077189,
+  "lat": 23.0856623,
+  "lon": -82.3740068,
+  "tags": {
+    "addr:street": "D´Strampes",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro El Eficiente",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 4469439291,
+  "lat": 23.0603233,
+  "lon": -82.2603105,
+  "tags": {
+    "addr:street": "Calle 20",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "name": "Oro Negro Santa María",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 6821841"
+  }
+},
+{
+  "type": "node",
+  "id": 4488938141,
+  "lat": 23.1340434,
+  "lon": -82.3002759,
+  "tags": {
+    "addr:city": "Guanabacoa, La Habana",
+    "addr:postcode": "11100",
+    "addr:street": "Avenida Cojimar",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "fuel:diesel": "yes",
+    "fuel:octane_80": "yes",
+    "name": "Servicentro Roble",
+    "opening_hours": "24/7",
+    "operator": "CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 4525192162,
+  "lat": 23.1164512,
+  "lon": -82.4205665,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro La Sierra",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 2093131"
+  }
+},
+{
+  "type": "node",
+  "id": 4577159589,
+  "lat": 23.1013172,
+  "lon": -82.3401786,
+  "tags": {
+    "addr:street": "Calzada de Güines",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro El Tunel",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 5175350423,
+  "lat": 23.1195770,
+  "lon": -82.3833528,
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:housenumber": "452",
+    "addr:street": "Ayestarán",
+    "amenity": "fuel",
+    "fuel:octane_95": "yes",
+    "name": "El Niño",
+    "operator": "Empresa Provincial de Transporte de La Habana"
+  }
+},
+{
+  "type": "node",
+  "id": 5233640330,
+  "lat": 23.1189488,
+  "lon": -82.4323172,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "fuel:diesel": "yes",
+    "name": "Servicentro 1ra y 40",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 5233654523,
+  "lat": 23.1061977,
+  "lon": -82.3614271,
+  "tags": {
+    "addr:street": "Calle Luco",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro La Especial Luyanó",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 5285804731,
+  "lat": 23.0074743,
+  "lon": -82.2177838,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 5843749273,
+  "lat": 23.1199719,
+  "lon": -82.1297273,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Campo Florido",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 5927079785,
+  "lat": 23.0936594,
+  "lon": -82.4157461,
+  "tags": {
+    "addr:housenumber": "58C21",
+    "addr:street": "Avenida 51",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "fuel:diesel": "yes",
+    "fuel:octane_92": "yes",
+    "fuel:octane_95": "yes",
+    "name": "Servicentro Alturas de Belén",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "payment:cards": "yes",
+    "payment:cash": "yes",
+    "phone": "+53 7 207 9917",
+    "self_service": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5937300249,
+  "lat": 23.0340734,
+  "lon": -82.3741896,
+  "tags": {
+    "addr:street": "Luz",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Zoológico Nacional",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 6402430990,
+  "lat": 23.0820270,
+  "lon": -82.3420952,
+  "tags": {
+    "addr:street": "Milagros",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Part",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 6775852451,
+  "lat": 23.1220589,
+  "lon": -82.3609752,
+  "tags": {
+    "amenity": "fuel",
+    "name": "Atarés",
+    "operator": "MINFAR"
+  }
+},
+{
+  "type": "node",
+  "id": 6910948295,
+  "lat": 23.0570981,
+  "lon": -82.4229426,
+  "tags": {
+    "amenity": "fuel",
+    "name": "Terminal CUJAE"
+  }
+},
+{
+  "type": "node",
+  "id": 6910948296,
+  "lat": 23.0686625,
+  "lon": -82.5131978,
+  "tags": {
+    "amenity": "fuel",
+    "name": "Terminal Santa Fe",
+    "operator": "Almacenes CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 6910948297,
+  "lat": 22.9678475,
+  "lon": -82.3948898,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 6910948298,
+  "lat": 23.0452682,
+  "lon": -82.3271849,
+  "tags": {
+    "amenity": "fuel",
+    "fuel:diesel": "yes",
+    "name": "Base de Ómnibus Calvario",
+    "operator": "Ómnibus Urbanos"
+  }
+},
+{
+  "type": "node",
+  "id": 6910948299,
+  "lat": 23.0367962,
+  "lon": -82.2383522,
+  "tags": {
+    "amenity": "fuel",
+    "fuel:diesel": "yes",
+    "name": "Base de Metrobús Alberro",
+    "operator": "Ómnibus Urbanos"
+  }
+},
+{
+  "type": "node",
+  "id": 6910948300,
+  "lat": 23.0408007,
+  "lon": -82.2620502,
+  "tags": {
+    "amenity": "fuel",
+    "fuel:diesel": "yes",
+    "name": "Base de Ómnibus Cotorro",
+    "operator": "Ómnibus Urbanos",
+    "self_service": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6910980495,
+  "lat": 23.0463280,
+  "lon": -82.3762248,
+  "tags": {
+    "amenity": "fuel",
+    "fuel:diesel": "yes",
+    "name": "Base de Ómnibus Fortuna",
+    "operator": "Ómnibus Urbanos"
+  }
+},
+{
+  "type": "node",
+  "id": 6910980496,
+  "lat": 23.0530449,
+  "lon": -82.4781720,
+  "tags": {
+    "amenity": "fuel",
+    "fuel:diesel": "yes",
+    "name": "Base de Ómnibus San Agustín",
+    "operator": "Ómnibus Urbanos"
+  }
+},
+{
+  "type": "node",
+  "id": 6910980497,
+  "lat": 22.9872536,
+  "lon": -82.3713036,
+  "tags": {
+    "amenity": "fuel",
+    "fuel:diesel": "yes",
+    "name": "Base de Metrobús Mulgoba",
+    "operator": "Ómnibus Urbanos"
+  }
+},
+{
+  "type": "node",
+  "id": 6910980498,
+  "lat": 23.0774649,
+  "lon": -82.3670422,
+  "tags": {
+    "amenity": "fuel",
+    "fuel:diesel": "yes",
+    "name": "Base de Ómnibus Santa Amalia",
+    "operator": "Ómnibus Urbanos"
+  }
+},
+{
+  "type": "node",
+  "id": 6910980499,
+  "lat": 23.0884482,
+  "lon": -82.3070293,
+  "tags": {
+    "amenity": "fuel",
+    "fuel:diesel": "yes",
+    "name": "Base de Ómnibus Diezmero",
+    "operator": "Ómnibus Urbanos"
+  }
+},
+{
+  "type": "node",
+  "id": 6910980501,
+  "lat": 23.1630432,
+  "lon": -82.2702121,
+  "tags": {
+    "amenity": "fuel",
+    "fuel:diesel": "yes",
+    "name": "Base de Ómnibus Alamar",
+    "operator": "Ómnibus Urbanos"
+  }
+},
+{
+  "type": "node",
+  "id": 6910980589,
+  "lat": 23.0916085,
+  "lon": -82.4527517,
+  "tags": {
+    "amenity": "fuel",
+    "name": "Base de Ómnibus Playa",
+    "operator": "Ómnibus Urbanos"
+  }
+},
+{
+  "type": "node",
+  "id": 6910980986,
+  "lat": 23.0906434,
+  "lon": -82.3434535,
+  "tags": {
+    "amenity": "fuel",
+    "fuel:diesel": "yes",
+    "name": "Base de Ómnibus Lawton",
+    "operator": "Ómnibus Urbanos"
+  }
+},
+{
+  "type": "node",
+  "id": 6910980987,
+  "lat": 23.1000466,
+  "lon": -82.3839226,
+  "tags": {
+    "amenity": "fuel",
+    "fuel:diesel": "yes",
+    "name": "Base de Ómnibus Palatino",
+    "operator": "Ómnibus Urbanos"
+  }
+},
+{
+  "type": "node",
+  "id": 6910980988,
+  "lat": 23.1495153,
+  "lon": -82.3129425,
+  "tags": {
+    "amenity": "fuel",
+    "fuel:diesel": "yes",
+    "name": "Base de Ómnibus Bahía",
+    "operator": "Ómnibus Urbanos"
+  }
+},
+{
+  "type": "node",
+  "id": 6910981085,
+  "lat": 23.0665363,
+  "lon": -82.4435996,
+  "tags": {
+    "amenity": "fuel",
+    "fuel:diesel": "yes",
+    "name": "Base de Ómnibus La Lisa",
+    "operator": "Ómnibus Urbanos"
+  }
+},
+{
+  "type": "node",
+  "id": 8041170285,
+  "lat": 23.0331687,
+  "lon": -82.4730505,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Novia del Mediodía",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 8758191527,
+  "lat": 23.1127259,
+  "lon": -82.3561148,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 8986041818,
+  "lat": 23.1106128,
+  "lon": -82.3905602,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "brand:wikipedia": "en:Cuba Petróleo Union",
+    "name": "Servicentro Ayestarán y Boyeros",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 10012262394,
+  "lat": 23.1197046,
+  "lon": -82.4034349,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 10703239905,
+  "lat": 23.1047217,
+  "lon": -82.4232546,
+  "tags": {
+    "amenity": "fuel",
+    "name": "COPEXTEL"
+  }
+},
+{
+  "type": "node",
+  "id": 11066728253,
+  "lat": 23.0715270,
+  "lon": -82.3509286,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "mobile": "7 643 2716",
+    "name": "Servicentro La Lira",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "node",
+  "id": 13111243929,
+  "lat": 23.1023354,
+  "lon": -82.3505737,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 13111243931,
+  "lat": 23.1021773,
+  "lon": -82.3506193,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 13544432101,
+  "lat": 23.1392095,
+  "lon": -82.3827030,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "way",
+  "id": 55565444,
+  "center": {
+    "lat": 23.1236708,
+    "lon": -82.2797750
+  },
+  "tags": {
+    "amenity": "fuel",
+    "building": "yes",
+    "fuel:diesel": "yes",
+    "name": "Base de Ómnibus Guanabacoa",
+    "operator": "Ómnibus Urbanos",
+    "source": "Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 228289969,
+  "center": {
+    "lat": 23.0990546,
+    "lon": -82.3944262
+  },
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "Avenida Rancho Boyeros",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "building": "yes",
+    "name": "Oro Negro La Forestal",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 6412984"
+  }
+},
+{
+  "type": "way",
+  "id": 229949436,
+  "center": {
+    "lat": 23.0968323,
+    "lon": -82.3826060
+  },
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "Avenida Santa Catalina y Vento",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Vento y Santa Catalina",
+    "operator": "CUPET - CIMEX",
+    "phone": "7 648 7610, 7 641 0302"
+  }
+},
+{
+  "type": "way",
+  "id": 229950864,
+  "center": {
+    "lat": 23.1022500,
+    "lon": -82.3507288
+  },
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Porvenir y Bouza",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 259805513,
+  "center": {
+    "lat": 23.0948200,
+    "lon": -82.4440830
+  },
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "building": "yes",
+    "name": "Servicentro 11 y 98",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 317430569,
+  "center": {
+    "lat": 23.0636001,
+    "lon": -82.3913198
+  },
+  "tags": {
+    "addr:street": "Calle 100",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "building": "yes",
+    "name": "Oro Negro Altahabana",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 6441404"
+  }
+},
+{
+  "type": "way",
+  "id": 318791263,
+  "center": {
+    "lat": 23.1114501,
+    "lon": -82.4169775
+  },
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro El Arbolito",
+    "operator": "CUPET - CIMEX",
+    "phone": "+5372037156"
+  }
+},
+{
+  "type": "way",
+  "id": 341956278,
+  "center": {
+    "lat": 23.1601086,
+    "lon": -82.2935392
+  },
+  "tags": {
+    "addr:city": "Cojimar",
+    "addr:street": "Martí Real",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "building": "yes",
+    "name": "Servicentro Cojímar",
+    "operator": "CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 350181592,
+  "center": {
+    "lat": 23.1426296,
+    "lon": -82.3857249
+  },
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "Calle L",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "building": "yes",
+    "name": "Servicentro L y 17",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 350463043,
+  "center": {
+    "lat": 23.0202659,
+    "lon": -82.2536142
+  },
+  "tags": {
+    "addr:street": "52",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 6824450"
+  }
+},
+{
+  "type": "way",
+  "id": 365800185,
+  "center": {
+    "lat": 23.1289509,
+    "lon": -82.3160266
+  },
+  "tags": {
+    "amenity": "fuel",
+    "building": "commercial"
+  }
+},
+{
+  "type": "way",
+  "id": 377302919,
+  "center": {
+    "lat": 23.0793143,
+    "lon": -82.3787931
+  },
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "building": "yes",
+    "name": "Oro Negro Los Pinos",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 6431598"
+  }
+},
+{
+  "type": "way",
+  "id": 398372453,
+  "center": {
+    "lat": 23.0959450,
+    "lon": -82.3538716
+  },
+  "tags": {
+    "addr:street": "Porvenir",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "building": "yes",
+    "name": "Servicentro Porvenir y A",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 398741661,
+  "center": {
+    "lat": 23.0853001,
+    "lon": -82.3769601
+  },
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro San Miguel(MININT)",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 467864281,
+  "center": {
+    "lat": 22.9774434,
+    "lon": -82.3844498
+  },
+  "tags": {
+    "addr:city": "Santiago de Las Vegas",
+    "addr:street": "Avenida Rancho Boyeros (Doble Vía)",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "building": "yes",
+    "fuel:diesel": "yes",
+    "fuel:octane_85": "yes",
+    "name": "Servicentro El Principal",
+    "operator": "CUPET - CIMEX",
+    "phone": "7 6830369;7 6830370"
+  }
+},
+{
+  "type": "way",
+  "id": 628713188,
+  "center": {
+    "lat": 23.0750995,
+    "lon": -82.4315565
+  },
+  "tags": {
+    "addr:street": "Avenida 45",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "building": "yes",
+    "name": "Servicentro 122 y 45",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 689780282,
+  "center": {
+    "lat": 23.0906525,
+    "lon": -82.4215502
+  },
+  "tags": {
+    "addr:housenumber": "8004",
+    "addr:street": "Avenida 41",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "building": "yes",
+    "name": "Oro Negro El Lido",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 2653739"
+  }
+},
+{
+  "type": "way",
+  "id": 874488802,
+  "center": {
+    "lat": 23.0401229,
+    "lon": -82.4666565
+  },
+  "tags": {
+    "addr:street": "Avenida 51",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "building": "yes",
+    "name": "Cupet Arroyo Arenas",
+    "operator": "CUPET"
+  }
+},
+{
+  "type": "way",
+  "id": 970988248,
+  "center": {
+    "lat": 23.0768233,
+    "lon": -82.3158293
+  },
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "building": "yes",
+    "name": "Servicentro Veracruz",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 997698851,
+  "center": {
+    "lat": 23.1352888,
+    "lon": -82.3875202
+  },
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "building": "roof",
+    "compressed_air": "yes",
+    "fuel:diesel": "yes",
+    "fuel:octane_91": "yes",
+    "fuel:octane_95": "yes",
+    "name": "Servicentro G y 25",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 1073892976,
+  "center": {
+    "lat": 23.1278510,
+    "lon": -82.3940696
+  },
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "Calzada Zapata",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "fuel:diesel": "yes",
+    "fuel:octane_91": "no",
+    "fuel:octane_95": "no",
+    "name": "Servicentro Zapata y 4 El Jardín",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 1083044447,
+  "center": {
+    "lat": 23.1009877,
+    "lon": -82.4316898
+  },
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "check_date": "2025-05-25",
+    "check_date:opening_hours": "2025-05-25",
+    "name": "Servicentro Coyula",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 1093893217,
+  "center": {
+    "lat": 5.9806276,
+    "lon": -74.9708787
+  },
+  "tags": {
+    "amenity": "fuel",
+    "building": "roof",
+    "name": "Aragonés",
+    "operator": "Zeuss"
+  }
+},
+{
+  "type": "way",
+  "id": 1257957265,
+  "center": {
+    "lat": 23.1113524,
+    "lon": -82.4141364
+  },
+  "tags": {
+    "addr:street": "42",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "fuel:octane_95": "yes",
+    "name": "Oro Negro El Mar",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 2069781"
+  }
+},
+{
+  "type": "way",
+  "id": 1286470471,
+  "center": {
+    "lat": 23.0477344,
+    "lon": -82.3620254
+  },
+  "tags": {
+    "addr:street": "Calzada de Bejucal",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro La Granjita (Capri)",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 6432724"
+  }
+},
+{
+  "type": "way",
+  "id": 1286470473,
+  "center": {
+    "lat": 23.1206734,
+    "lon": -82.3033456
+  },
+  "tags": {
+    "addr:street": "Independencia Este",
+    "amenity": "fuel",
+    "name": "Servicentro Corral Falso"
+  }
+},
+{
+  "type": "way",
+  "id": 1286678151,
+  "center": {
+    "lat": 22.9674066,
+    "lon": -82.3881597
+  },
+  "tags": {
+    "addr:housenumber": "18815",
+    "addr:street": "Calle 17 (413)",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "building": "yes",
+    "name": "Servicentro Santiago de las Vegas",
+    "name:signed": "no",
+    "operator": "CUPET - CIMEX",
+    "phone": "7 6839372"
+  }
+},
+{
+  "type": "way",
+  "id": 1286678153,
+  "center": {
+    "lat": 23.0925009,
+    "lon": -82.4538477
+  },
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "5ta Avenida",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "name": "Oro Negro La Rotonda",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 2089617"
+  }
+},
+{
+  "type": "way",
+  "id": 1287921384,
+  "center": {
+    "lat": 23.1189920,
+    "lon": -82.4166495
+  },
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro 31 y 18",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 2043174"
+  }
+},
+{
+  "type": "way",
+  "id": 1287921398,
+  "center": {
+    "lat": 23.0115718,
+    "lon": -82.4486301
+  },
+  "tags": {
+    "addr:city": "Boyeros",
+    "addr:housenumber": "18376",
+    "addr:postcode": "10800",
+    "addr:street": "290",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro El Chico",
+    "operator": "CUPET - CIMEX",
+    "phone": "7 645 4455"
+  }
+},
+{
+  "type": "way",
+  "id": 1311130389,
+  "center": {
+    "lat": 23.1447594,
+    "lon": -82.3838788
+  },
+  "tags": {
+    "addr:city": "Vedado, Havanna",
+    "addr:street": "Línea y Malecón",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Vista al Mar",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 1342486919,
+  "center": {
+    "lat": 23.1411633,
+    "lon": -82.4020743
+  },
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "Paseo y Malecón",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "compressed_air": "no",
+    "name": "Servicentro Riviera",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 1377671929,
+  "center": {
+    "lat": 23.1562960,
+    "lon": -82.2707041
+  },
+  "tags": {
+    "addr:city": "Alamar",
+    "addr:street": "Vía Blanca",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Alamar",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 1377682843,
+  "center": {
+    "lat": 23.1609933,
+    "lon": -82.1482859
+  },
+  "tags": {
+    "addr:street": "Vía Blanca",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "name": "Oro Negro Guanabo",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 7964094"
+  }
+},
+{
+  "type": "way",
+  "id": 1387041273,
+  "center": {
+    "lat": 23.0983082,
+    "lon": -82.4497151
+  },
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "112 esq 5ta Ave",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "brand:wikipedia": "Q3007579",
+    "name": "Servicentro 5ta y 112",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 1387041287,
+  "center": {
+    "lat": 23.1432785,
+    "lon": -82.3781970
+  },
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "Avenida 23",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Oro Negro La Rampa",
+    "opening_hours": "24/7",
+    "operator": "CIMEX",
+    "phone": "+53 7 8731480"
+  }
+},
+{
+  "type": "way",
+  "id": 1408650854,
+  "center": {
+    "lat": 22.9761154,
+    "lon": -82.2891864
+  },
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Managua",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 1410413201,
+  "center": {
+    "lat": 23.1687472,
+    "lon": -82.2037381
+  },
+  "tags": {
+    "addr:housenumber": "34035",
+    "addr:street": "Via Blanca",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "name": "Oro Negro Tarará",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 796 0515;+53 7 797 1044"
+  }
+},
+{
+  "type": "way",
+  "id": 1413530244,
+  "center": {
+    "lat": 23.0807224,
+    "lon": -82.4219693
+  },
+  "tags": {
+    "addr:street": "Avenida 51",
+    "amenity": "fuel",
+    "disused:amenity": "fuel",
+    "fuel:diesel": "yes",
+    "name": "Servicentro 100 y 51 (inhabilitado)",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 1419233884,
+  "center": {
+    "lat": 23.1151732,
+    "lon": -82.3775136
+  },
+  "tags": {
+    "addr:street": "Calzada del Cerro",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "fuel:diesel": "no",
+    "fuel:octane_91": "yes",
+    "fuel:octane_95": "no",
+    "name": "Servi Calzada del Cerro",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 1432005807,
+  "center": {
+    "lat": 23.1148127,
+    "lon": -82.3590081
+  },
+  "tags": {
+    "addr:street": "Fábrica",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Fábrica",
+    "operator": "CUPET - CIMEX",
+    "phone": "7 6992155"
+  }
+},
+{
+  "type": "way",
+  "id": 1432094479,
+  "center": {
+    "lat": 23.1135830,
+    "lon": -82.3595660
+  },
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "Vía Blanca y Fábrica",
+    "amenity": "fuel",
+    "name": "Oro Negro La Capital",
+    "opening_hours": "24/7",
+    "operator": "CUPET – CIMEX",
+    "phone": "7 698 0376;7 698 4202"
+  }
+},
+{
+  "type": "way",
+  "id": 1434878774,
+  "center": {
+    "lat": 23.0039858,
+    "lon": -82.4134432
+  },
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Aeropuerto",
+    "operator": "CUPET - CIMEX",
+    "phone": "7 6497629"
+  }
+},
+{
+  "type": "way",
+  "id": 1434878779,
+  "center": {
+    "lat": 22.9701608,
+    "lon": -82.3853569
+  },
+  "tags": {
+    "addr:city": "Santiago de Las Vegas",
+    "addr:street": "Avenida Rancho Boyeros (Doble Vía)",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Doble Vía",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 1452551710,
+  "center": {
+    "lat": 23.1364568,
+    "lon": -82.4002543
+  },
+  "tags": {
+    "addr:street": "Línea",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "compressed_air": "yes",
+    "name": "Oro Negro El Álamo",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 8339340"
+  }
+},
+{
+  "type": "way",
+  "id": 1454480810,
+  "center": {
+    "lat": 23.0621388,
+    "lon": -82.4743226
+  },
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "check_date": "2024-02-18",
+    "name": "Servicentro San Agustín",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 1456107179,
+  "center": {
+    "lat": 23.1448722,
+    "lon": -82.3845782
+  },
+  "tags": {
+    "addr:city": "Vedado, Havanna",
+    "addr:street": "Calzada (7ma)",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Tángana",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX",
+    "phone": "+53 7 8332489"
+  }
+},
+{
+  "type": "way",
+  "id": 1456107180,
+  "center": {
+    "lat": 23.1334198,
+    "lon": -82.3760012
+  },
+  "tags": {
+    "addr:street": "Avenida Zanja",
+    "amenity": "fuel",
+    "brand": "Oro Negro",
+    "not:brand:wikidata": "Q3007579",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 1457384164,
+  "center": {
+    "lat": 23.1702850,
+    "lon": -82.2446032
+  },
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "fuel:diesel": "yes",
+    "name": "Servicentro Bacuranao",
+    "opening_hours": "24/7",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 1469577911,
+  "center": {
+    "lat": 23.0171841,
+    "lon": -82.4944772
+  },
+  "tags": {
+    "addr:street": "Avenida 251",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Punta Brava",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 1472875476,
+  "center": {
+    "lat": 23.0605925,
+    "lon": -82.4022055
+  },
+  "tags": {
+    "addr:city": "La Habana",
+    "addr:street": "Avenida Rancho Boyeros",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Servicentro Boyeros y Vento",
+    "operator": "CUPET - CIMEX"
+  }
+},
+{
+  "type": "way",
+  "id": 1493545731,
+  "center": {
+    "lat": 23.0106828,
+    "lon": -82.3960734
+  },
+  "tags": {
+    "addr:street": "Avenida Rancho Boyeros",
+    "amenity": "fuel",
+    "brand": "Cupet",
+    "brand:wikidata": "Q3007579",
+    "name": "Pequeño Gigante",
+    "operator": "CUPET - CIMEX",
+    "phone": "7 645 0206;  7 646 5525",
+    "self_service": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1509893140,
+  "center": {
+    "lat": 23.1181233,
+    "lon": -82.3266440
+  },
+  "tags": {
+    "addr:housenumber": "252",
+    "addr:street": "Calzada de Regla",
+    "amenity": "fuel",
+    "name": "Servicentro El Crisol",
+    "phone": "7 797 7242"
+  }
+}
+
+  ]
+}
