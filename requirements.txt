@@ -1,13 +1,14 @@
 # Dependencias para el pipeline de análisis y las herramientas de datos
-pandas>=2.2
-numpy>=1.26
-plotly>=5.18
-statsmodels>=0.14
-scipy>=1.11
-beautifulsoup4>=4.12
-curl_cffi>=0.7
-tenacity>=8.2
-trafilatura>=1.6
-pyarrow>=14.0
-mkdocs>=1.6
-mkdocs-material>=9.5
+# Fijadas a versiones menores (criterio de reproducibilidad de nivel master).
+pandas~=2.2.0
+numpy~=1.26.0
+plotly~=5.18.0
+statsmodels~=0.14.0
+scipy~=1.11.0
+beautifulsoup4~=4.12.0
+curl_cffi~=0.7.0
+tenacity~=8.2.0
+trafilatura~=1.6.0
+pyarrow~=14.0.0
+mkdocs~=1.6.0
+mkdocs-material~=9.5.0

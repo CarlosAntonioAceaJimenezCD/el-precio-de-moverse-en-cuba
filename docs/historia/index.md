@@ -1,6 +1,6 @@
 # El precio de moverse en Cuba
 
-### Cuánto cuesta un carro en Cuba: <!-- kpi:autos_revolico -->947 autos, <!-- kpi:anuncios_totales -->2.156 anuncios y una serie oficial detrás
+### Cuánto cuesta un carro en Cuba: <!-- kpi:autos_revolico -->952 autos, <!-- kpi:anuncios_totales -->2.156 anuncios y una serie oficial detrás
 
 **Versión:** 23/11/2026 · Datos reales del mercado automotor cubano.
 

@@ -80,7 +80,10 @@ def valores() -> dict[str, str]:
         salida["modelo_r2_completo"] = es_espana(float(fila["r2"]), 3)
         salida["modelo_pf_completo"] = es_espana(float(fila["p_f"]), 3)
     if "principal" in muestra:
-        salida["modelo_n_principal"] = es_espana(float(muestra["principal"]["observaciones"]))
+        fila = muestra["principal"]
+        salida["modelo_n_principal"] = es_espana(float(fila["observaciones"]))
+        salida["modelo_r2_principal"] = es_espana(float(fila["r2"]), 3)
+        salida["modelo_pf_principal"] = es_espana(float(fila["p_f"]), 3)
 
     c = sqlite3.connect(f"file:{ROOT}/Data/Revolico/revolico.sqlite?mode=ro", uri=True, timeout=30)
     salida["autos_revolico"] = es_espana(c.execute("select count(*) from autos").fetchone()[0])

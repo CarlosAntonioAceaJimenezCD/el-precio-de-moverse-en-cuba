@@ -5,7 +5,7 @@ Los metadatos se verificaron en vivo con OpenAlex/Crossref. `metadata incomplete
 indica que algún campo no pudo confirmarse; esas entradas no se presentan como
 referencias verificadas. `Citada: sí/no` indica mención nominal en el informe.
 
-[1] Akerlof, G. A.. *The Market for "Lemons": Quality Uncertainty and the Market Mechanism*. The Quarterly Journal of Economics (1970). https://doi.org/10.2307/1879431. Citada en el informe: yes. **(metadata incomplete)**
+[1] Akerlof, G. A.. *The Market for "Lemons": Quality Uncertainty and the Market Mechanism*. The Quarterly Journal of Economics (1970). https://doi.org/10.2307/1879431. Citada en el informe: yes. **(metadata incomplete: resumen indexado no sustantivo; identidad y DOI verificados en OpenAlex)**
 
 [2] Lewis, G. M.. *Asymmetric Information, Adverse Selection and Online Disclosure: The Case of eBay Motors*. American Economic Review (2011 (el registro OpenAlex indexa la versión SSRN de 2010; la publicación AER es de 2011)). https://doi.org/10.1257/aer.101.4.1535. Citada en el informe: no.
 
@@ -23,7 +23,7 @@ referencias verificadas. `Citada: sí/no` indica mención nominal en el informe.
 
 [9] Du, Z.; Yang, Z.; Zhang, Y.; Li, S.; Liu, Y.. *Nonlinear Depreciation and Brand Heterogeneity in Chinese Used-Car Listing Prices: An Interpretable Hedonic Regression and Out-of-Sample Evaluation*. Advances in Economics, Management and Political Sciences (2026). https://doi.org/10.54254/2754-1169/2026.38524. Citada en el informe: no.
 
-[10] Kang, W.; Fu, X.. *The pricing of used electric vehicles via machine learning and hedonic price model: A comparative study*. Computers & Industrial Engineering (2026). https://doi.org/10.1016/j.cie.2026.111964. Citada en el informe: no. **(metadata incomplete)**
+[10] Kang, W.; Fu, X.. *The pricing of used electric vehicles via machine learning and hedonic price model: A comparative study*. Computers & Industrial Engineering (2026). https://doi.org/10.1016/j.cie.2026.111964. Citada en el informe: no. **(metadata incomplete: resumen no indexado; campos bibliográficos verificados)**
 
 [11] Miranda, A. M.; Alavi, A. B.; Gella, M. A.. *Depreciation Patterns in the UAE Used Car Market: Evidence from Dubizzle Listings*. Journal of Business Insight and Innovation (2026). https://doi.org/10.63544/jbii.v5i6.110. Citada en el informe: no.
 
@@ -39,11 +39,11 @@ referencias verificadas. `Citada: sí/no` indica mención nominal en el informe.
 
 [17] Ahtesham, M.; Zulfiqar, J.. *Used Car Price Prediction with Pyspark*. Lecture Notes in Networks and Systems (Springer) (2022). https://doi.org/10.1007/978-3-031-01942-5_17. Citada en el informe: no.
 
-[18] Madhusudhanan, K.; Behrens, G.; Stubbemann, M.; Schmidt-Thieme, L.. *ProbSAINT: Probabilistic Tabular Regression for Used Car Pricing*. arXiv:2403.03812; IEEE BigData 2024, Industry & Government Track (2024). https://arxiv.org/abs/2403.03812. Citada en el informe: no. **(metadata incomplete)**
+[18] Madhusudhanan, K.; Behrens, G.; Stubbemann, M.; Schmidt-Thieme, L.. *ProbSAINT: Probabilistic Tabular Regression for Used Car Pricing*. arXiv:2403.03812; IEEE BigData 2024, Industry & Government Track (2024). https://arxiv.org/abs/2403.03812 · https://doi.org/10.1109/bigdata62323.2024.10825740. Citada en el informe: no. 13 citas verificadas en OpenAlex el 27/11/2026; versión publicada en IEEE BigData 2024.
 
-[19] Pal, N.; Arora, P.; Sundararaman, D.; Kohli, P.; Palakurthy, S. S.. *How much is my car worth? A methodology for predicting used cars prices using Random Forest*. arXiv:1711.06970 (FICC, Camera Ready) (2017). https://arxiv.org/abs/1711.06970. Citada en el informe: no. **(metadata incomplete)**
+[19] Pal, N.; Arora, P.; Sundararaman, D.; Kohli, P.; Palakurthy, S. S.. *How much is my car worth? A methodology for predicting used cars prices using Random Forest*. arXiv:1711.06970 (FICC, Camera Ready) (2017). https://arxiv.org/abs/1711.06970 · https://doi.org/10.1007/978-3-030-03402-3_28. Citada en el informe: no. 96 citas verificadas en OpenAlex; discrepancia de año documentada: preprint 2017, publicación 2018.
 
-[20] Arefin, S. E.. *Second Hand Price Prediction for Tesla Vehicles*. arXiv:2101.03788 (2021). https://arxiv.org/abs/2101.03788. Citada en el informe: no. **(metadata incomplete)**
+[20] Arefin, S. E.. *Second Hand Price Prediction for Tesla Vehicles*. arXiv:2101.03788 (2021). https://arxiv.org/abs/2101.03788. Citada en el informe: no. 9 citas verificadas en OpenAlex el 27/11/2026.
 
 [21] Krotov, V.; Johnson, L.; Silva, L.. *Legality and Ethics of Web Scraping*. Communications of the Association for Information Systems (2020). https://doi.org/10.17705/1cais.04724. Citada en el informe: no.
 
@@ -79,4 +79,4 @@ referencias verificadas. `Citada: sí/no` indica mención nominal en el informe.
 
 [37] Etro, F.. *Product Selection in Online Marketplaces*. Journal of Economics & Management Strategy (2020). https://doi.org/10.1111/jems.12428. Citada en el informe: no.
 
-[38] Quariguasi Frota Neto, J.; Bloemhof-Ruwaard, J. M.; Corbett, C. J.. *Market prices of remanufactured, used and new items: Evidence from eBay*. International Journal of Production Economics (2015). https://doi.org/10.1016/j.ijpe.2015.02.006. Citada en el informe: no. **(metadata incomplete)**
+[38] Quariguasi Frota Neto, J.; Bloemhof-Ruwaard, J. M.; Corbett, C. J.. *Market prices of remanufactured, used and new items: Evidence from eBay*. International Journal of Production Economics (2015). https://doi.org/10.1016/j.ijpe.2015.02.006. Citada en el informe: no. Resumen no indexado en OpenAlex; discrepancia de año documentada: 2015 en OpenAlex, 2016 en Crossref (published-print).

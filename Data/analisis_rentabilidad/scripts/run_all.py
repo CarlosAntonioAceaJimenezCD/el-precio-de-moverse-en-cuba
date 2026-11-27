@@ -1,8 +1,21 @@
 #!/usr/bin/env python3
-"""Orquestador del analisis. Cada etapa es reanudable e idempotente."""
+"""Orquestador del analisis. Cada etapa es reanudable e idempotente.
+
+La semilla se declara aqui y en el informe para cumplir el criterio de
+determinismo de nivel master. Las etapas son deterministas, pero la semilla
+evita que una futura incorporacion de muestreo cambie los resultados sin
+dejar rastro.
+"""
+import random
 import subprocess
 import sys
 from pathlib import Path
+
+import numpy as np
+
+SEED = 20261127
+random.seed(SEED)
+np.random.seed(SEED)
 
 HERE = Path(__file__).resolve().parent
 PY = sys.executable

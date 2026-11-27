@@ -267,7 +267,7 @@ Only relevant norms and sources are included:
 2. The current regulatory framework is Decree 163/2026 and the cited resolutions.
 3. Sustainable scraping depends on pace, session and resumability, not mainly on TLS fingerprinting.
 4. The 10-page rule prevented consuming repeated results.
-5. The interactive product and profitability model (phase 8) are not implemented yet.
+5. The market analysis and the profitability model (phase 8) are implemented under `Data/analisis_rentabilidad/` and regenerate automatically; the interactive product is deferred to a later specialisation.
 
 ---
 
@@ -901,7 +901,7 @@ Se amplió `analisis_mercado.py`:
 
 - **Por año del vehículo**: `precios_por_anio.csv` con n, mediana USD, mediana CUP y tasa promedio; la conversión usa `precio_USD × TRMI elTOQUE` del día del anuncio (columna `Mediana` de `Anexos/Investigacion Cambios/trmi_USD.csv`). **Aclaración vigente:** el pipeline de `Data/analisis_rentabilidad/` usa la TRMI fija de 930 CUP/USD del 18/11/2026 (`config.py`); la serie diaria es referencia histórica, no insumo del modelo actual.
 - **Supuesto de anuncio activo**: todos los registros tienen `status=PUBLISHED` y página verificada en la captura, por lo que se asume que son comprables; no se comprueba disponibilidad en tiempo real.
-- **Serie precio vs tasa**: `serie_precio_vs_tasa.csv` y `serie_precio_vs_tasa_mensual.csv`, con variación % diaria de la TRMI, del precio CUP y del precio USD. Ejemplo: la TRMI pasó de 680 CUP/USD (09/07/2026) a 920 (16-17/11/2026); la mediana mensual CUP subió de 12,58 M (julio) a 20,7 M (noviembre).
+- **Serie precio vs tasa**: `serie_precio_vs_tasa.csv` y `serie_precio_vs_tasa_mensual.csv`, con variación % diaria de la TRMI, del precio CUP y del precio USD. Ejemplo histórico: la TRMI pasó de 680 CUP/USD (09/07/2026) a 920 (16-17/11/2026), valor ya sustituido por la convención fija de 930 del 18/11/2026 que usa el pipeline; la mediana mensual CUP subió de 12,58 M (julio) a 20,7 M (noviembre).
 - **Gráficas**: `Auxiliares/herramientas/graficos_mercado.py` usa matplotlib, seaborn y plotly (instalados) y genera 8 PNG + `dashboard_interactivo.html` en `Data/analisis/graficos/`.
 
 **EN.** Prices converted to CUP with elTOQUE daily TRMI, divided by vehicle year, with a daily/monthly price-vs-rate series and a full plotting module (matplotlib/seaborn/plotly). Active ads are assumed purchasable.
@@ -1211,7 +1211,7 @@ Se reescribieron los dos párrafos restantes de la sección 2 con el mismo nivel
 
 ## 45. Reescritura de la sección 3 del storytelling (18/11/2026)
 
-Se transformó la sección **Lo que encontramos** de una tabla de datos en una narrativa de hallazgos: la proporción de anuncios que resisten el filtro de auto real, la mediana de 23.000 USD, la antigüedad media de 6,3 años, las 34 marcas, la depreciación de −5,43 % anual, los 27 grupos comparables y las 30 oportunidades infravaloradas. El cierre deja la idea central: un mercado pequeño pero con estructura suficiente para dejar de improvisar.
+Se transformó la sección **Lo que encontramos** de una tabla de datos en una narrativa de hallazgos (cifras de la corrida del 18/11/2026, posteriores a las que se recogen en §59): la proporción de anuncios que resisten el filtro de auto real, la mediana de 23.000 USD, la antigüedad media de 6,3 años, las 34 marcas, la depreciación de −5,43 % anual, los 27 grupos comparables y las 30 oportunidades infravaloradas. El cierre deja la idea central: un mercado pequeño pero con estructura suficiente para dejar de improvisar.
 
 **EN.** Rewrote the findings section of the storytelling as a narrative: signal-to-noise ratio, median price, fleet age, brands, depreciation curve and undervalued opportunities.
 
@@ -1466,19 +1466,58 @@ La API de GitHub reporta **205.002 KB (0,20 GB)** para el historial normal; los 
 
 ## 69. Declaración de uso de inteligencia artificial / AI-use declaration
 
-**ES.** Las herramientas de inteligencia artificial se utilizaron como apoyo para la redacción, la edición quirúrgica de la narrativa, la revisión bibliográfica asistida y la auditoría sistemática del propio informe. Las cifras, los modelos estadísticos y las decisiones de diseño provienen de los datos y del código versionados en este repositorio; ninguna afirmación empírica se originó en una salida de IA sin contraste contra los archivos. La auditoría completa de este documento se realizó con la skill `review` de MatCom y sus resultados se conservan en `reviews/informe-tecnico-2026-11-27.{md,forensic.md}` junto con los trece artefactos de fase.
+**ES.** Las herramientas de inteligencia artificial (OpenCode/Claude Code con las skills `review` de MatCom, `deep-research` y `technical-writing`) se utilizaron en cuatro fases: investigación y verificación de fuentes, redacción y edición de la narrativa, generación y revisión de código, y traducción bilingüe. El protocolo de supervisión consiste en contrastar toda cifra contra los CSV y bases versionados, ejecutar las pruebas automatizadas y conservar el registro de auditoría en `reviews/`; ninguna salida de IA se aceptó sin ese contraste. Las cifras, los modelos estadísticos y las decisiones de diseño provienen de los datos y del código versionados en este repositorio; ninguna afirmación empírica se originó en una salida de IA sin contraste contra los archivos. La auditoría completa de este documento se realizó con la skill `review` de MatCom y sus resultados se conservan en `reviews/informe-tecnico-2026-11-27.{md,forensic.md}` junto con los trece artefactos de fase.
 
-**EN.** AI tools were used to support writing, surgical editing of the narrative, assisted literature review and a systematic audit of this report. All figures, statistical models and design decisions derive from the data and code versioned in this repository; no empirical claim was taken from an AI output without verification against the files. The full audit was carried out with MatCom's `review` skill and is preserved in `reviews/informe-tecnico-2026-11-27.{md,forensic.md}` together with thirteen phase artifacts.
+**EN.** AI tools (OpenCode/Claude Code with MatCom's `review` skill, `deep-research` and `technical-writing`) were used in four phases: research and source verification, drafting and editing, code generation and review, and bilingual translation. The supervision protocol requires every figure to be checked against versioned CSVs and databases, the automated tests to be run, and the audit trail to be kept under `reviews/`; no AI output was accepted without that verification. All figures, statistical models and design decisions derive from the data and code versioned in this repository; no empirical claim was taken from an AI output without verification against the files. The full audit was carried out with MatCom's `review` skill and is preserved in `reviews/informe-tecnico-2026-11-27.{md,forensic.md}` together with thirteen phase artifacts.
 
 ---
 
 ## 70. Referencias verificadas / Verified references
 
-**ES.** Referencias citadas y verificadas externamente durante la auditoría: Akerlof (1970), *The Market for "Lemons"* (Crossref/OpenAlex); UK Department for Transport / DVLA, estadísticas de vehículos (GOV.UK); ANFAC, informes del sector automotriz español (sitio oficial); AEADE, estadísticas de matriculaciones (sitio oficial). Las fuentes restantes figuran con estado `(metadata incomplete)` en `reviews/informe-tecnico-2026-11-27.e2-literature.md` y no se presentan como referencias verificadas. La convención numerada de 38 referencias y su estado de verificación están en `Data/referencias.md`; la correspondencia entre afirmación y fuente se documenta en el expediente forense.
+**ES.** Referencias citadas y verificadas externamente durante la auditoría: Akerlof (1970), *The Market for "Lemons"* (DOI 10.2307/1879431 confirmado en OpenAlex; el resumen indexado es solo un índice de secciones, por lo que su flag es `(metadata incomplete: resumen)`); UK Department for Transport / DVLA, estadísticas de vehículos (GOV.UK); ANFAC, informes del sector automotriz español (sitio oficial); AEADE, estadísticas de matriculaciones (sitio oficial). Las fuentes restantes figuran con estado `(metadata incomplete)` en `reviews/informe-tecnico-2026-11-27.e2-literature.md` y no se presentan como referencias verificadas. La convención numerada de 38 referencias y su estado de verificación están en `Data/referencias.md`; la correspondencia entre afirmación y fuente se documenta en el expediente forense.
 
 **EN.** Externally verified references cited during the audit: Akerlof (1970), *The Market for "Lemons"* (Crossref/OpenAlex); UK Department for Transport / DVLA vehicle statistics (GOV.UK); ANFAC Spanish automotive reports (official site); AEADE registration statistics (official site). Remaining sources are marked `(metadata incomplete)` in `reviews/informe-tecnico-2026-11-27.e2-literature.md` and are not presented as verified references. A numbered list of 38 references and their verification status is available in `Data/referencias.md`; claim-to-source correspondence is documented in the forensic assembly.
 
 ---
+
+---
+
+## 71. Cumplimiento de estándares de nivel master / Master-level standards
+
+### 71.1 Bases de comparación / Baselines
+
+| Base / Baseline | Descripción | Métrica observada |
+|---|---|---|
+| Mediana global ( ingenua ) | Predice la mediana de los usados locales | MAE 18.220,46 USD sobre 1.444 anuncios |
+| Egyptian-Used-Cars | Referencia de ingeniería del campo: 23.500 anuncios y series mensuales | Contraste cualitativo de cobertura y frescura |
+| Modelo principal propio | OLS de log-precio con antigüedad, km, condición y tier | R² 0,101 sobre 584 observaciones |
+
+**EN.** Baseline 1 is the naive global median (MAE 18,220.46 USD on 1,444 listings); baseline 2 is the Egyptian-Used-Cars engineering reference (23,500 listings, monthly series); the local principal model is reported alongside both.
+
+### 71.2 Ablación explícita / Explicit ablation
+
+`modelo_muestra.csv` documenta la ablación del término `hp`: al retirarlo, la muestra pasa de 28 a 584 observaciones de 981 candidatas y el R² baja de 0,274 a 0,101. El cambio de especificación y el cambio de muestra se informan juntos. La pendiente positiva de antigüedad en el modelo principal se atribuye a la selección de anuncios con kilometraje declarado y no se interpreta como una tasa de depreciación.
+
+**EN.** Removing `hp` changes the sample from 28 to 584 observations and R² from 0.274 to 0.101; both changes are reported together. The positive age slope in the principal model is attributed to selection into the mileage-reported subsample, not to a depreciation rate.
+
+### 71.3 Pruebas y tamaño muestral / Tests and sample size
+
+No hay diseño pareado: los anuncios son observaciones independientes, por lo que no se aplican Wilcoxon de pares ni t de diferencias; se usan Kruskal-Wallis y Welch para grupos independientes. El tamaño se mide en anuncios (981 candidatas de 8 marketplaces), no en ensayos experimentales.
+
+### 71.4 Amenazas a la validez / Threats to validity
+
+- **Externa:** solo La Habana y anuncios en línea; los precios son pedidos, no transaccionados.
+- **De constructo:** kilometraje y potencia faltan en la mayoría de los anuncios; la condición se infiere del texto.
+- **Interna:** no hay asignación aleatoria; la ablación es observacional.
+- **Estadística conclusiva:** el modelo completo usa 28 observaciones y ningún coeficiente alcanza p < 0,05; el principal tiene mejor cobertura pero su signo de antigüedad refleja selección.
+
+### 71.5 Protocolo, semillas y reproducción / Protocol, seeds and reproduction
+
+La semilla `SEED = 20261127` está declarada en `run_all.py` y en este documento. Comando único: `Auxiliares/.venv-py/bin/python Data/analisis_rentabilidad/scripts/run_all.py`. Puntos de entrada con argumentos: `generar_dashboard.py --solo-si-cambia`, `exportar_parquet_compacto.py --tablas ...`, `db_chunks.py split|verify|assemble` y `generar_sitio_mkdocs.py`. Las dependencias están fijadas a serie menor en `requirements.txt`. Prueba de humo: `python3 Auxiliares/herramientas/test_smoke_pipeline.py`.
+
+### 71.6 Posicionamiento frente a trabajos cercanos / Positioning against prior work
+
+Frente a Gegić, Isaković, Keco, Mašetić y Kevrić (2019), que predicen precios con machine learning sobre catálogos estructurados, este trabajo parte de anuncios en lenguaje libre y construye las variables por análisis del texto: la contribución es de procedencia y normalización, no de algoritmo. Frente a Muça, Bani y Alla (2026), que integran datos públicos empresariales albaneses mediante scraping, el énfasis aquí es la conversión con TRMI fechada y la auditoría de procedencia, no el pipeline de integración. Frente a Du, Yang, Zhang, Li y Liu (2026), que modelan depreciación no lineal y heterogeneidad de marca con evaluación fuera de muestra, este trabajo no estima una tasa anual: reporta la no significancia de los coeficientes y la pérdida de muestra como hallazgo. Frente a Vidal Alejandro, Muñiz-Cuza y Calas Torres (2024), que estudian el mercado informal de divisas en Cuba, la tasa informal se usa aquí como convención de conversión fechada, no como objeto de estudio.
 
 **Firma / Signature:** responsable del proyecto / project owner.  
 **Última actualización / Last update:** 27/11/2026.

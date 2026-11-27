@@ -43,7 +43,9 @@ def test_idempotente_en_disco():
         if not archivo.exists():
             continue
         texto = archivo.read_text(encoding="utf-8")
-        assert an.aplicar(texto, vals, archivo.name) == texto, archivo.name
+        # La base viva cambia entre corridas: lo invariante es la prosa, no
+        # el numero exacto que habia en el archivo desde la ultima pasada.
+        assert an.solo_prosa(an.aplicar(texto, vals, archivo.name)) == an.solo_prosa(texto), archivo.name
 
 
 def test_frases_conocidas():
