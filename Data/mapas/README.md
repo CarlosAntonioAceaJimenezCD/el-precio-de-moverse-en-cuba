@@ -18,7 +18,7 @@
 
 ```bash
 cd Auxiliares
-.venv/bin/python herramientas/generar_mapa_ofline.py --tipos all
+.venv-py/bin/python herramientas/generar_mapa_ofline.py --tipos all
 .venv/bin/python herramientas/generar_mapa_ofline.py --tipos gasolinera,estacion_carga
 .venv/bin/python herramientas/generar_mapa_ofline.py --tipos concesionario,taller --out ../Data/mapas/mapa_talleres.html
 ```

@@ -128,7 +128,7 @@ El **Decreto 163/2026** abrió el mercado a 17 empresas autorizadas. Las resoluc
 La app cubana **Circuitos Habana** sigue los mensajes públicos de la Empresa Eléctrica y registra qué circuitos están afectados. Para un carro eléctrico, la energía no es un dato menor: es parte del costo de propiedad.
 
 ### Las expectativas
-La encuesta y las entrevistas muestran un deseo que la oferta no alcanza. Entre las 28 personas a las que les interesaría comprar, 14 prefieren el eléctrico; pero 16 de 18 no pagarían más de 4.000 USD por uno, y el eléctrico más barato del catálogo formal cuesta poco más de 10.000 USD. Kia y Hyundai son las marcas modernas más vistas —28 y 25 de 30 entrevistas— y no aparecen en ese catálogo. El precio no solo refleja costos: también refleja lo que la gente espera y lo que todavía no puede conseguir.
+La encuesta y las entrevistas muestran un deseo que la oferta no alcanza. Entre las 28 personas a las que les interesaría comprar, 14 prefieren el eléctrico; pero 16 de 18 no pagarían más de 4.000 USD por uno, y el eléctrico más barato del catálogo formal cuesta poco más de 10.000 USD. Kia y Hyundai son las marcas modernas más vistas —28 y 25 de 30 entrevistas— y no aparecen en ese catálogo. Las respuestas son agregadas y anónimas; el grupo documentado en `Data/repos-autos-referencias/ENCUESTAS_Y_ENTREVISTAS.md` que incluye nombres se usa solo como contexto interno y no se publica. El precio no solo refleja costos: también refleja lo que la gente espera y lo que todavía no puede conseguir.
 
 *Apoyo: [Cuadro 2](#cuadro-2-mercado-local-e-importación).*
 
@@ -245,16 +245,16 @@ Estos apoyos se insertan aquí para que la narrativa no se detenga. Cada cuadro 
 
 | Término | Coeficiente | p_valor |
 |---|---:|---:|
-| Intercepto | 12,4469 | 0,000 |
-| Económico | −1,1228 | 0,328 |
-| Medio | −1,2332 | 0,239 |
-| Premium | 0,0662 | 0,947 |
-| Antigüedad | −0,0708 | 0,237 |
-| log(km) | −0,0226 | 0,740 |
-| Potencia | −0,0046 | 0,165 |
-| Condición | −0,0340 | 0,802 |
+| Intercepto | <!-- kpi:coef_intercept -->12,0884 | <!-- kpi:p_intercept -->0,000 |
+| Económico | <!-- kpi:coef_tier_economico -->-1,0208 | <!-- kpi:p_tier_economico -->0,142 |
+| Medio | <!-- kpi:coef_tier_medio -->-0,9780 | <!-- kpi:p_tier_medio -->0,094 |
+| Premium | <!-- kpi:coef_tier_premium -->0,1146 | <!-- kpi:p_tier_premium -->0,875 |
+| Antigüedad | <!-- kpi:coef_car_age -->-0,0632 | <!-- kpi:p_car_age -->0,150 |
+| log(km) | <!-- kpi:coef_log_km -->-0,0333 | <!-- kpi:p_log_km -->0,471 |
+| Potencia | <!-- kpi:coef_hp -->-0,0036 | <!-- kpi:p_hp -->0,140 |
+| Condición | <!-- kpi:coef_condition -->-0,0254 | <!-- kpi:p_condition -->0,817 |
 
-Ningún coeficiente resulta estadísticamente significativo con la base actual. Es parte de la historia: el mercado no admite una curva única. La tabla `modelo_muestra.csv` documenta las 22 observaciones de este modelo frente a las 572 del modelo principal; la pendiente positiva de este último refleja la selección de anuncios con kilometraje declarado y no se interpreta como depreciación.
+Ningún coeficiente resulta estadísticamente significativo con la base actual. Es parte de la historia: el mercado no admite una curva única. La tabla `modelo_muestra.csv` documenta las <!-- kpi:modelo_n_completo -->28 observaciones de este modelo frente a las <!-- kpi:modelo_n_principal -->586 del modelo principal; la pendiente positiva de este último refleja la selección de anuncios con kilometraje declarado y no se interpreta como depreciación.
 
 ### Gráficos
 

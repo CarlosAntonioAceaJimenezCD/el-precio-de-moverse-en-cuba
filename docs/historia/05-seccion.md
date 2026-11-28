@@ -12,7 +12,7 @@ El **Decreto 163/2026** abrió el mercado a 17 empresas autorizadas. Las resoluc
 La app cubana **Circuitos Habana** sigue los mensajes públicos de la Empresa Eléctrica y registra qué circuitos están afectados. Para un carro eléctrico, la energía no es un dato menor: es parte del costo de propiedad.
 
 ### Las expectativas
-La encuesta y las entrevistas muestran un deseo que la oferta no alcanza. Entre las 28 personas a las que les interesaría comprar, 14 prefieren el eléctrico; pero 16 de 18 no pagarían más de 4.000 USD por uno, y el eléctrico más barato del catálogo formal cuesta poco más de 10.000 USD. Kia y Hyundai son las marcas modernas más vistas —28 y 25 de 30 entrevistas— y no aparecen en ese catálogo. El precio no solo refleja costos: también refleja lo que la gente espera y lo que todavía no puede conseguir.
+La encuesta y las entrevistas muestran un deseo que la oferta no alcanza. Entre las 28 personas a las que les interesaría comprar, 14 prefieren el eléctrico; pero 16 de 18 no pagarían más de 4.000 USD por uno, y el eléctrico más barato del catálogo formal cuesta poco más de 10.000 USD. Kia y Hyundai son las marcas modernas más vistas —28 y 25 de 30 entrevistas— y no aparecen en ese catálogo. Las respuestas son agregadas y anónimas; el grupo documentado en `Data/repos-autos-referencias/ENCUESTAS_Y_ENTREVISTAS.md` que incluye nombres se usa solo como contexto interno y no se publica. El precio no solo refleja costos: también refleja lo que la gente espera y lo que todavía no puede conseguir.
 
 *Apoyo: [Cuadro 2](apendice.md#cuadro-2).*
 

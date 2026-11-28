@@ -65,16 +65,16 @@ Estos apoyos se insertan aquí para que la narrativa no se detenga. Cada cuadro 
 
 | Término | Coeficiente | p_valor |
 |---|---:|---:|
-| Intercepto | 12,4469 | 0,000 |
-| Económico | −1,1228 | 0,328 |
-| Medio | −1,2332 | 0,239 |
-| Premium | 0,0662 | 0,947 |
-| Antigüedad | −0,0708 | 0,237 |
-| log(km) | −0,0226 | 0,740 |
-| Potencia | −0,0046 | 0,165 |
-| Condición | −0,0340 | 0,802 |
+| Intercepto | <!-- kpi:coef_intercept -->12,0884 | <!-- kpi:p_intercept -->0,000 |
+| Económico | <!-- kpi:coef_tier_economico -->-1,0208 | <!-- kpi:p_tier_economico -->0,142 |
+| Medio | <!-- kpi:coef_tier_medio -->-0,9780 | <!-- kpi:p_tier_medio -->0,094 |
+| Premium | <!-- kpi:coef_tier_premium -->0,1146 | <!-- kpi:p_tier_premium -->0,875 |
+| Antigüedad | <!-- kpi:coef_car_age -->-0,0632 | <!-- kpi:p_car_age -->0,150 |
+| log(km) | <!-- kpi:coef_log_km -->-0,0333 | <!-- kpi:p_log_km -->0,471 |
+| Potencia | <!-- kpi:coef_hp -->-0,0036 | <!-- kpi:p_hp -->0,140 |
+| Condición | <!-- kpi:coef_condition -->-0,0254 | <!-- kpi:p_condition -->0,817 |
 
-Ningún coeficiente resulta estadísticamente significativo con la base actual. Es parte de la historia: el mercado no admite una curva única. La tabla `modelo_muestra.csv` documenta las 22 observaciones de este modelo frente a las 572 del modelo principal; la pendiente positiva de este último refleja la selección de anuncios con kilometraje declarado y no se interpreta como depreciación.
+Ningún coeficiente resulta estadísticamente significativo con la base actual. Es parte de la historia: el mercado no admite una curva única. La tabla `modelo_muestra.csv` documenta las <!-- kpi:modelo_n_completo -->28 observaciones de este modelo frente a las <!-- kpi:modelo_n_principal -->586 del modelo principal; la pendiente positiva de este último refleja la selección de anuncios con kilometraje declarado y no se interpreta como depreciación.
 
 ### Gráficos
 

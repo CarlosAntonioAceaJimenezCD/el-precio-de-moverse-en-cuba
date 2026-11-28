@@ -1,0 +1,51 @@
+---
+type: audit-artifact
+phase: v9-ethics
+slug: informe-tecnico-2026-11-28-iter4
+generated_at: 2026-11-28T07:13:53Z
+audited_document: /home/thony70807/Proyectos/El precio de moverse en Cuba/.playground/audit-cache/informe-tecnico-2026-11-28-iter4/informe-tecnico-2026-11-28-iter4.text.md
+language: es
+level: master
+---
+
+## Resumen
+
+- §69 (L1487–L1491) conserva los tres elementos de `V9.ai_use_declaration.master`: herramientas nominales, cuatro fases y protocolo de supervisión; la huella citada apunta ahora a la iteración 3, verificada en E3.
+- La declaración se comprime respecto de la iteración 3 (fases en sustantivos sueltos, sin criterio de aceptación explícito); no hay artefacto V7 de esta iteración, así que no se emite hallazgo cruzado de densidad.
+- §71.15 (L1551–L1555) declara COI, doble uso y disponibilidad; la tensión entre «no se reclutaron sujetos humanos» y la encuesta a 33 personas con entrevistas que incluyen nombres (L1287–L1289) queda registrada; la licencia sigue pendiente y coincide con el repositorio.
+
+### F-V9-001 — §69 satisface el criterio master de declaración de uso de IA: herramientas, cuatro fases y supervisión
+
+La sección se titula «Declaración de uso de inteligencia artificial / AI-use declaration» (L1487). La versión ES declara: «Las herramientas de IA (OpenCode/Claude Code con las skills `review`, `deep-research` y `technical-writing`) se usaron en investigación, redacción, código y traducción» (L1489); la EN reproduce la declaración: «AI tools (OpenCode/Claude Code with `review`, `deep-research` and `technical-writing`) were used for research, drafting, code and translation» (L1491). El protocolo de supervisión figura en el mismo párrafo: «Cada cifra se contrastó contra los CSV versionados y las pruebas automatizadas; la huella queda en `reviews/`» (L1489), con equivalente en L1491, y se ilustra con el caso «un R² citado como 0,277 que el CSV daba como 0,274 y se corrigió con marcadores» (L1489). El criterio `V9.ai_use_declaration.master` exige: «Declaration expected; should name tools, phases (research, drafting, code generation, translation), and supervision protocol». Los tres componentes concurren: herramientas con nombre, las cuatro fases que enumera el criterio y una supervisión con acciones verificables (contraste contra CSV, pruebas y registro bajo `reviews/`). El cierre «El registro de la tercera pasada está en `reviews/informe-tecnico-2026-11-27-iter3.{md,forensic.md}` y sus 13 artefactos» (L1489) atribuye la huella y coincide con el inventario E3 (L188–L191: 45 artefactos de tres pasadas más el plan de la iteración 4).
+
+— polarity: positive · confidence: high · related: [[#F-V9-002]] · criteria: V9.ai_use_declaration.master
+
+### F-V9-002 — Granularidad reducida en §69 respecto de la iteración 3; la huella se desplaza de la pasada 1 a la pasada 3
+
+La declaración de la iteración 3 nombraba «las skills `review` de MatCom, `deep-research` y `technical-writing`» y desplegaba las fases como «investigación y verificación de fuentes, redacción y edición de la narrativa, generación y revisión de código, y traducción bilingüe» (`reviews/informe-tecnico-2026-11-27-iter3.text.md`, L1469). En esta iteración las mismas cuatro fases aparecen como sustantivos sueltos —«investigación, redacción, código y traducción» (L1489)—: se conservan las cuatro categorías del criterio, pero desaparecen los calificadores «generación y revisión de», «bilingüe» y «y verificación de fuentes». El protocolo también se comprime: la formulación previa «contrastar toda cifra contra los CSV y bases versionados, ejecutar las pruebas automatizadas y conservar el registro de auditoría en `reviews/`; ninguna salida de IA se aceptó sin ese contraste» (iteración 3, L1469) pasa a «Cada cifra se contrastó contra los CSV versionados y las pruebas automatizadas; la huella queda en `reviews/`» (L1489), donde las pruebas se leen como término de comparación y se retiran tanto el criterio de aceptación como la frase de procedencia «ninguna afirmación empírica se originó en una salida de IA sin contraste contra los archivos». El cambio es de detalle, no de cobertura: `V9.ai_use_declaration.master` sigue satisfecho según F-V9-001. En sentido inverso, la huella mejora: la iteración 3 citaba los artefactos de la pasada 1, mientras L1489 cita los de la pasada 3, que E3 confirma presentes (L188–L191). No se recibió `v7_ai_density_hint` y `reviews/` no contiene artefacto V7 de esta iteración, por lo que no se emite hallazgo cruzado de densidad; la verificación cruzada disponible es la de E3.
+
+— polarity: neutral · confidence: high · related: [[#F-V9-001]] · criteria: V9.ai_use_declaration.master
+
+### F-V9-003 — §71.15 declara ausencia de sujetos humanos y de anonimización ejecutada; §50 documenta 33 encuestados y entrevistas con nombres
+
+La declaración reza: «No se reclutaron sujetos humanos: la encuesta de 33 respuestas y las entrevistas se tratan como documentación de contexto, no como datos experimentales; no se requirió un procedimiento de anonimización ejecutado» (L1553; «No human subjects were recruited: the 33-response survey and interviews are context documentation, not experimental data, so no executed anonymisation procedure was required», L1555). El propio informe documenta en §50 que la base consolidada contiene «33 respuestas de encuesta, 30 + 30 + 8 entrevistas» (L1287) y que «la encuesta con datos reales fue un Google Forms de 32 preguntas aplicado a 33 personas de 4 segmentos en un barrio de La Habana»; sobre las entrevistas añade: «son cualitativas, anónimas salvo el grupo de AutosxCuba —que incluye nombres y requiere cuidado—» (L1289). En §7 también se consigna para redes sociales: «No verificables como fuente estadística; requieren consentimiento y sin datos personales» (L847), y en §10 la restricción «aplicar solo datos agregados, sin nombres, teléfonos ni información personal de anunciantes» (L128, equivalente en L270). La búsqueda de «IRB», «comité de ética» y «ethics committee» en el texto en caché no devuelve coincidencias. El criterio `V9.data_ethics.master` condiciona el consentimiento y la aprobación a que sean aplicables; la declaración de no aplicabilidad la establece el documento, mientras el corpus que describe incluye respuestas de 33 personas y un grupo de entrevistas con nombres. No se nombra consentimiento de esos respondientes ni aprobación de comité.
+
+— polarity: negative · confidence: medium · related: [] · criteria: V9.data_ethics.master
+
+### F-V9-004 — Conflicto de intereses: declaración de ausencia presente en §71.15, con equivalente inglés ambiguo
+
+§71.15 registra «Se declara ausencia de conflicto de intereses» (L1553), formulación que cubre el barrido que en la iteración 3 no encontraba declaración formal (`reviews/informe-tecnico-2026-11-27-iter3.v9-ethics.md`, L37). La versión EN, «No conflict of interest is declared» (L1555), admite dos lecturas: la de una declaración que niega el conflicto y la de la ausencia de tal declaración; el texto ES es inequívoco. No se nombran tutores, asesores ni patrocinadores; la única otra coincidencia de «conflicto» es narrativa —«relato en 10 actos con personajes, conflicto, hallazgos» (L1150)—. El criterio `V9.coi_statement.master` indica «Not required; tutor/advisor relationship implicit», de modo que la declaración presente supera lo exigible en este nivel y su ausencia no constituiría hallazgo negativo.
+
+— polarity: positive · confidence: medium · related: [] · criteria: V9.coi_statement.master
+
+### F-V9-005 — Doble uso: fuera de la lista sensible, con salvedad de datos de contacto registrada
+
+La declaración señala: «El tema no se considera de doble uso sensible, con la salvedad de que los anuncios contienen datos de contacto que se excluyen de la publicación» (L1553; «The topic is not considered sensitive dual-use, except that listing contact details are excluded from publication», L1555). El objeto del informe —precios de automóviles usados en Cuba, conversiones con TRMI y análisis estadístico— no figura entre los temas que `V9.dual_use` enumera como sensibles (LLMs, vigilancia, biosecuridad, armas autónomas, diagnóstico clínico). En nivel master la discusión se «encourage[d]»; el documento ofrece una discusión breve con la salvedad de contactos y respalda la restricción en §10 con «Protección de datos personales, ciberseguridad y derechos de autor» (L128/L270) y en §71.4 con las amenazas a la validez (L1532–L1539). No hay declaración formal de impacto social; no es exigible en este nivel.
+
+— polarity: neutral · confidence: high · related: [] · criteria: V9.dual_use.master
+
+### F-V9-006 — Disponibilidad de datos y código remitida a §71.5; licencia pendiente y sin commit fijado en el informe
+
+§71.15 remite: «La disponibilidad de datos y código se documenta en §71.5; la licencia queda pendiente de declaración» (L1553; equivalente en L1555). §71.5 consigna la ubicación y la vía de obtención —«Las bases crudas están en `Data/Revolico/` gestionadas con Git LFS y reconstruibles desde `chunks/MANIFEST.json`; el repositorio público es `https://github.com/CarlosAntonioAceaJimenezCD/el-precio-de-moverse-en-cuba`» (L1543)— junto al comando único, los puntos de entrada con argumentos, las dependencias fijadas en `requirements.txt` y la prueba de humo (L1543). `V9.data_availability_statement.master` («Brief statement: where the data lives, how to obtain») y `V9.code_availability_statement.master` («"Code available at" statement with URL and brief description») quedan cubiertos por esa remisión y por la URL impresa. La licencia no aparece declarada: «No se ha declarado todavía una licencia de datos o código» (L1543), y E3 confirma que no hay archivo `LICENSE`/`LICENCIA` en la raíz del repositorio (L193–L196), de modo que la limitación está documentada y no es una brecha oculta. El informe no fija commit, etiqueta ni DOI para la versión que produjo los resultados, aunque E3 registra 194 commits y último commit del 28/11/2026 (L18–L21); esa fijación y la licencia formal son precisiones del nivel doctoral, no requisitos del nivel master.
+
+— polarity: positive · confidence: high · related: [[#F-V9-001]] · criteria: V9.data_availability_statement.master, V9.code_availability_statement.master

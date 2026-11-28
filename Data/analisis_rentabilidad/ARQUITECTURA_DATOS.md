@@ -5,8 +5,8 @@
 `exportar_parquet_compacto.py` copia **todas** las tablas y columnas de
 `revolico.sqlite` a Parquet particionado por `year=/month=` y comprimido con
 Zstandard, en `Data/analisis_rentabilidad/data/compacto/`. Medición real:
-**849 MB → 27,5 MB** (10.217 anuncios, 812 autos, 23.143 imágenes, 11.620
-revisiones, 12.338 teléfonos y 716 precios), con las mismas filas, columnas
+**849 MB → 27,5 MB** (10.379 anuncios, 974 autos, 23.697 imágenes, 14.512
+revisiones, 12.538 teléfonos y 716 precios), con las mismas filas, columnas
 y valores; `MANIFEST.json` guarda recuentos y SHA-256 por archivo. La SQLite
 sigue siendo la base de trabajo del capturador; el Parquet es la copia
 compacta para analizar y publicar. Se regenera al final de `run_all.py` y se
@@ -23,7 +23,7 @@ Cuatro medidas atacan el crecimiento: particionar, guardar un watermark, pre-agr
 
 | Opción | Cuándo conviene | Adopción | Veredicto |
 |---|---|---|---|
-| **DuckDB** sobre Parquet | Motor principal: SQL embebido, sin servidor, lee Parquet con `hive_partitioning` y predicate pushdown | Muy baja: `pip install duckdb`; cambiar `pd.read_parquet` por `con.sql(...)` | **Recomendado** |
+| **DuckDB** sobre Parquet | Motor evaluado pero bloqueado por `SIGILL` en esta CPU; se usa pyarrow/pandas | — | **Bloqueado** |
 | **Polars** lazy/streaming | Cuando el cuello sea limpieza/transformación; ~1,15–1,33× más rápido que DuckDB en benchmarks de proveedor | Media: reescribir transforms | Segundo motor, solo con medición |
 | **PyArrow dataset / Parquet particionado** | Capa de almacenamiento común; `write_dataset` con `partitioning` y row groups grandes | Muy baja: ya está vía pandas | Base de la Fase 1 |
 | **Iceberg / Delta Lake** | ACID, time travel y correcciones de histórico; con writer concurrente | Alta: catálogo, snapshots, compactación | No ahora |

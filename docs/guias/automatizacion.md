@@ -11,8 +11,8 @@ Objetivo: que una persona abra el proyecto **dos años después** y lo encuentre
 | Job | Frecuencia | Por qué |
 |---|---|---|
 | Radar Telegram (circuitos y anuncios, 2–3 páginas) | Diario | La vista pública solo conserva mensajes recientes |
-| Revolico incremental | Semanal | El backfill completo es caro y agresivo |
-| Snapshots de precio (`price_history`) | Semanal, tras Revolico | 104 observaciones en 2 años bastan para depreciación |
+| Revolico incremental | Cada 10 minutos | Timer `precio-revolico.timer`, sin `git push` |
+| Snapshots de precio (`price_history`) | Semanal, tras Revolico | series mensuales previstas; aún no hay estimación temporal publicada |
 | Marketplaces (8 sitios) | Semanal | Más frecuencia aumenta bloqueos sin señal nueva |
 | TRMI / tipo de cambio | Semanal, con fecha de vigencia | Evita el `FX=930` clavado en `config.py` |
 | ONEI | Trimestral | Los anuarios son estáticos |
@@ -20,7 +20,7 @@ Objetivo: que una persona abra el proyecto **dos años después** y lo encuentre
 | Sitio MkDocs | Semanal, tras el análisis | Publica auditoría junto a los KPIs |
 | Validación de calidad + `SALUD.md` | Diario | Dead-man's switch visible en el repo |
 | Metadatos pequeños a Git | Diario | Separado de los binarios grandes |
-| LFS por objetos con ledger | Semanal | Chunks de 10 MiB reanudables; el ref push es lo que se cuelga |
+| Publicación LFS | Bajo demanda | Chunks de 10 MiB reanudables; push por bloques cuando hay cambios |
 
 Todo se programa en **UTC**, con `Persistent=true` y `RandomizedDelaySec=5m` para recuperarse tras apagones sin picos de carga.
 
@@ -78,7 +78,7 @@ Se guarda, en UTC y con hashes:
 - Capturador de circuitos con **ETag / Last-Modified** (HTTP 304 = sin descarga) y evidencia en estado HTTP.
 - Timers `precio-{circuitos,calidad,salud,analisis,sitio}.{service,timer}` creados, verificados con `systemd-analyze verify`, habilitados y activos.
 
-**Pendiente (fase siguiente):** timers para Revolico y marketplaces (sus scripts actuales hacen push o reescritura completa), ledger LFS y unificación de `chunks/` con `partes/`.
+**Pendiente (fase siguiente):** ledger LFS, unificación de `chunks/` con `partes/` y estimación temporal con la serie mensual; los timers de Revolico y circuitos ya están activos y no hacen push.
 
 ## 6b. Internet y ancho de banda
 
@@ -91,7 +91,7 @@ Consumo estimado con las peticiones condicionales ya implementadas:
 | Circuitos (2 páginas) | Diario | ~2–5 KB/día | ~220 KB/día |
 | Marketplaces (8 sitios, 2 páginas) | Semanal | ~20–50 KB/semana | ~1,5 MB/semana |
 | Revolico incremental | Semanal | ~0,5 MB/semana | ~10–20 MB/semana |
-| **Total estimado** | — | **~5–10 MB/mes** | **~50–90 MB/mes** |
+| **Total estimado** | — | **~2–3 MB/mes** | **~56–100 MB/mes** |
 
 Son estimaciones de diseño, no mediciones de facturación. El punto clave: con ETag/Last-Modified el coste de **comprobar** si hay novedades es despreciable; el ancho de banda se gasta solo cuando el contenido cambia. Para reducirlo más: limitar páginas por sitio, programar de madrugada y guardar solo HTML que cambió. Cada fase tiene criterio de «listo» medible en el informe técnico.
 

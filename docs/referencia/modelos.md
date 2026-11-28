@@ -51,7 +51,7 @@ Se estima por mínimos cuadrados ordinarios sobre **usados del canal local**, co
 - **Dummies de marca (`C(brand_tier)`):** permiten que cada segmento tenga su propio intercepto sin imponer una relación lineal entre "categoría" y precio.
 - **Muestreo restringido:** mezclar importación con mercado local, o nuevos con usados, introduciría dos regímenes de precios distintos; por eso se separaron en `canal` y `source_type`.
 
-**Resultado actual y su límite:** con **<!-- kpi:modelo_n_completo -->28 observaciones completas** de <!-- kpi:modelo_candidatas -->993 candidatas ningún coeficiente alcanza significancia (el p_valor más bajo es 0,165, de potencia; antigüedad tiene p = 0,237). La muestra se reduce a 22 porque `hp` solo está presente en 52 filas y `mileage_km` en 572; al exigir todos los términos a la vez se descarta el 97,5 % de las candidatas (R² = <!-- kpi:modelo_r2_completo -->0,274; p del F = <!-- kpi:modelo_pf_completo -->0,411). El modelo está correctamente especificado para la forma de los datos, pero **no permite afirmar una tasa de depreciación anual ni una prima premium** con esta muestra transversal. Decirlo es parte del respaldo: el método sostiene la conclusión de que no hay conclusión numérica estable.
+**Resultado actual y su límite:** con **<!-- kpi:modelo_n_completo -->28 observaciones completas** de <!-- kpi:modelo_candidatas -->993 candidatas ningún coeficiente alcanza significancia (el p_valor más bajo es <!-- kpi:modelo_p_min -->0,0941; antigüedad tiene p = <!-- kpi:p_car_age -->0,150). La muestra se reduce a <!-- kpi:modelo_n_completo -->28 porque `hp` solo está presente en 52 filas y `mileage_km` en 572; al exigir todos los términos se descarta la mayor parte de las <!-- kpi:modelo_candidatas -->993 candidatas (R² = <!-- kpi:modelo_r2_completo -->0,274; p del F = <!-- kpi:modelo_pf_completo -->0,411). El modelo está correctamente especificado para la forma de los datos, pero **no permite afirmar una tasa de depreciación anual ni una prima premium** con esta muestra transversal. Decirlo es parte del respaldo: el método sostiene la conclusión de que no hay conclusión numérica estable.
 
 **Modelo principal frente a modelo completo.** `04_stats.py` estima ahora dos especificaciones y deja constancia en `modelo_muestra.csv`: el modelo principal (sin `hp`) usa <!-- kpi:modelo_n_principal -->586 observaciones de <!-- kpi:modelo_candidatas -->993 candidatas (R² = <!-- kpi:modelo_r2_principal -->0,101; p del F <!-- kpi:modelo_pf_principal -->0,000) y el completo usa <!-- kpi:modelo_n_completo -->28 (R² = <!-- kpi:modelo_r2_completo -->0,274; p del F = <!-- kpi:modelo_pf_completo -->0,411). En el modelo principal el coeficiente de antigüedad es positivo y alcanza p < 0,05, pero esa asociación corresponde a la submuestra que declaró kilometraje y no debe leerse como depreciación: es un artefacto de selección, no una tasa anual. Por esa razón los archivos históricos (`modelo_depreciacion.csv`, `modelo_resumen.txt`, Cuadro 5) siguen alimentados por el modelo completo y ninguna narrativa afirma una pendiente anual con p < 0,05.
 
@@ -59,11 +59,11 @@ Se estima por mínimos cuadrados ordinarios sobre **usados del canal local**, co
 
 Para cada variable `j`: se regresa `X_j` contra el resto y se calcula `VIF_j = 1 / (1 − R²_j)`.
 
-**Por qué está respaldado:** detecta multicolinealidad antes de interpretar coeficientes. Valores cercanos a 1 (los actuales van de 1,13 a 1,58) indican que los regresores no se explican entre sí; por tanto, la falta de significancia no se atribuye a colinealidad.
+**Por qué está respaldado:** detecta multicolinealidad antes de interpretar coeficientes. Valores cercanos a 1 (los actuales van de <!-- kpi:vif_min -->1,12 a <!-- kpi:vif_max -->1,40) indican que los regresores no se explican entre sí; por tanto, la falta de significancia no se atribuye a colinealidad.
 
 ### 3.3 Kruskal-Wallis
 
-Se aplica a los precios por `brand_tier` (grupos con más de 5 observaciones). Resultado vigente: H = 25,741, p = 1e−05.
+Se aplica a los precios por `brand_tier` (grupos con más de 5 observaciones). Resultado vigente: H = <!-- kpi:kw_h -->44,313 p = <!-- kpi:kw_p -->0,00000
 
 **Por qué está respaldado:** es la alternativa no paramétrica a ANOVA; no exige normalidad y compara distribuciones completas, no solo medias. Encaja con precios asimétricos y con tres grupos de distinto tamaño. Permite afirmar que **los tiers no provienen de la misma distribución de precios**, aunque el OLS no asigne un coeficiente significativo a cada dummy.
 

@@ -102,8 +102,12 @@ def main():
     vif_df.to_csv(cfg.TABLES / "vif.csv", index=False)
 
     tests = []
-    if d["brand_tier"].nunique() > 1 and len(d) > 30:
-        groups = [g["price_usd"].values for _, g in d.groupby("brand_tier") if len(g) > 5]
+    # Mismo universo que 03c_comparaciones.py: usados locales con precio y tier,
+    # sin el filtro de car_age que solo aplica al modelo. Así ambos CSV coinciden.
+    dk = df[(df["source_type"] == "usado") & (df["canal"] == "local")
+            & df["price_usd"].gt(0) & df["brand_tier"].notna()]
+    if dk["brand_tier"].nunique() > 1 and len(dk) > 30:
+        groups = [g["price_usd"].values for _, g in dk.groupby("brand_tier") if len(g) > 5]
         if len(groups) >= 2:
             h, p = stats.kruskal(*groups)
             tests.append(("Kruskal-Wallis precio por tier", round(h, 3), round(p, 5)))

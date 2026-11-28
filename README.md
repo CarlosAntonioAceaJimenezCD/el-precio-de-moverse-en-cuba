@@ -2,7 +2,7 @@
 
 Análisis reproducible del mercado automotor cubano: **<!-- kpi:autos_revolico -->974 autos únicos** de Revolico, **<!-- kpi:anuncios_marketplaces -->2.232 anuncios** de 8 marketplaces y **256 vehículos** de 11 concesionarios, consolidados con fuentes oficiales (ONEI, Gaceta Oficial, BCC) y una serie de entrevistas y encuestas.
 
-*Ubicación:* `~/Proyectos/El precio de moverse en Cuba` · *Repositorio:* `el-precio-de-moverse-en-cuba` · *Actualizado:* 23/11/2026.
+*Ubicación:* `~/Proyectos/El precio de moverse en Cuba` · *Repositorio:* `el-precio-de-moverse-en-cuba` (https://github.com/CarlosAntonioAceaJimenezCD/el-precio-de-moverse-en-cuba) · *Actualizado:* 28/11/2026.
 
 ## Qué incluye
 
@@ -55,7 +55,7 @@ Los repositorios auxiliares y `Copias/` se conservan en disco pero **no se suben
 
 | Grupo | Fuentes | Registros |
 |---|---|---:|
-| Marketplaces | Autocubana, iTENCEL, Cogetucarro, Cubisima, Timbirichi, Carros.com, Apululu, VentaCuba | 2.222 anuncios |
+| Marketplaces | Autocubana, iTENCEL, Cogetucarro, Cubisima, Timbirichi, Carros.com, Apululu, VentaCuba | 2.232 anuncios |
 | Concesionarios | BDC One, Dongfeng, Changan, Chinautos, MCV, Finauto, ATR Export y otros | 256 vehículos |
 | Revolico | `autos` (tabla canónica) | <!-- kpi:autos_revolico -->974 autos únicos |
 | Referencias externas | Repos ICD, AutosxCuba, Mercado-automotriz y otros | 3.958 anuncios ICD |
@@ -93,13 +93,14 @@ El resultado queda en `site/` (ignorado por Git) y la configuración en `mkdocs.
 
 ## Documentación
 
-- **Referencia:** `INFORME_TECNICO.md` (secciones 1–60), `Data/CRUDO_POR_CATEGORIA/INDICE.md`, `Data/fuentes-oficiales/ONEI/README.md`, `Data/analisis_rentabilidad/MODELOS_Y_FUNCIONES.md`.
+- **Arquitectura y evolución:** `Data/analisis_rentabilidad/ARQUITECTURA_DATOS.md`, `Data/analisis_rentabilidad/ALCANCE_Y_RETENCION.md`, `Data/AUTOMATIZACION.md`, `Data/ESTRUCTURA_ESPACIO.md`, `Data/mapas/README.md`.
+- **Referencia:** `INFORME_TECNICO.md` (secciones 1–71.15), `Data/referencias.md` (41 entradas), `Data/CRUDO_POR_CATEGORIA/INDICE.md`, `Data/fuentes-oficiales/ONEI/README.md`, `Data/analisis_rentabilidad/MODELOS_Y_FUNCIONES.md`.
 - **Cómo hacerlo:** `Data/analisis_rentabilidad/README.md`, `Data/Revolico/chunks/README.md`.
 - **Explicación:** `Data/analisis_rentabilidad/PRESENTACION_STORYTELLING.md`, `Data/auditoria-fuentes-2026-11-23.md`, `Data/auditoria-fuentes-contenido.md`, `Data/novedades-fuentes-2026-11-23.md`, `Data/fuentes-adicionales-2026-11-20.md`, `Data/fuentes-oficiales/ONEI/ANALISIS_DATO.md`, `Data/estructura_github.md`, `Data/mapas/TIMELAPSE_CIRCUITOS.md`.
 - **Necesidades pendientes:** `Data/analisis_rentabilidad/NECESIDADES.md`.
 
 ## Marco legal y límites
 
-El proyecto respeta los términos de uso de los portales: no elude mecanismos anti-automatización, no recopila datos personales de anunciantes y conserva la procedencia de cada dato. El marco normativo es el **Decreto 163/2026** y las resoluciones 104, 17, 52, 171–175, 340 (que derogó la 312) y 102/2026.
+El proyecto respeta los términos de uso de los portales: no elude mecanismos anti-automatización, no publica datos personales de anunciantes —los teléfonos se almacenan en la base de trabajo pero se excluyen de la publicación— y conserva la procedencia de cada dato. El uso de IA en redacción, código y auditoría se declara en §69 del informe técnico. El marco normativo es el **Decreto 163/2026** y las resoluciones 104, 17, 52, 171–175, 340 (que derogó la 312) y 102/2026.
 
 Limitaciones actuales: elTOQUE no responde de forma estable desde este entorno (se usa su última TRMI publicada); `carrosw` está detrás de verificación de bots; parte del catálogo de BDC One y Changan solo está en PDF; la trueque de roles entre canales local e importación se mantiene separada con la columna `canal`.

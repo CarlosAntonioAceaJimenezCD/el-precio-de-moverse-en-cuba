@@ -31,9 +31,9 @@ ARCHIVOS = [
 # El valor que sigue al marcador solo puede ser un número y, como mucho, una
 # unidad. Cualquier otra cosa significa que el patrón se comió prosa y hay que
 # parar antes de escribir.
-NUMERO = re.compile(r"^[0-9.,]+(?:\s*(?:USD|km|años))?$")
-MARCADOR = re.compile(r"(<!-- kpi:([a-z0-9_]+) -->)([0-9.,]+(?:\s*(?:USD|km|años))?)")
-RUIDO = re.compile(r"<!-- kpi:[a-z0-9_]+ -->|[0-9.,]+|\b(?:USD|km|años)\b")
+NUMERO = re.compile(r"^-?[0-9.,]+(?:\s*(?:USD|km|años))?$")
+MARCADOR = re.compile(r"(<!-- kpi:([a-z0-9_]+) -->)(-?[0-9.,]+(?:\s*(?:USD|km|años))?)")
+RUIDO = re.compile(r"<!-- kpi:[a-z0-9_]+ -->|-?[0-9]+[0-9.,]*|\b(?:USD|km|años)\b")
 
 
 def es_espana(v: float, decimales: int = 0) -> str:
@@ -86,6 +86,20 @@ def valores() -> dict[str, str]:
         salida["modelo_pf_principal"] = es_espana(float(fila["p_f"]), 3)
 
     coef = filas_csv(TABLAS / "modelo_depreciacion.csv")
+    nombres = {
+        "Intercept": "intercept",
+        "C(brand_tier)[T.economico]": "tier_economico",
+        "C(brand_tier)[T.medio]": "tier_medio",
+        "C(brand_tier)[T.premium]": "tier_premium",
+        "car_age": "car_age",
+        "np.log1p(mileage_km)": "log_km",
+        "hp": "hp",
+        "condition_score": "condition",
+    }
+    for r in coef:
+        if r["termino"] in nombres:
+            salida[f"coef_{nombres[r['termino']]}"] = es_espana(float(r["coeficiente"]), 4)
+            salida[f"p_{nombres[r['termino']]}"] = es_espana(float(r["p_valor"]), 3)
     ps = [float(r["p_valor"]) for r in coef if r["termino"] != "Intercept" and r["p_valor"]]
     if ps:
         salida["modelo_p_min"] = es_espana(min(ps), 4)
@@ -96,6 +110,7 @@ def valores() -> dict[str, str]:
     tests = filas_csv(TABLAS / "tests.csv")
     for r in tests:
         if r["test"].startswith("Kruskal-Wallis"):
+            salida["kw_h"] = es_espana(float(r["estadistico"]), 3)
             # Notacion decimal: la guarda de prosa no tolera letras en el valor.
             salida["kw_p"] = es_espana(float(r["p_valor"]), 5)
     for r in filas_csv(TABLAS / "comparaciones.csv"):
