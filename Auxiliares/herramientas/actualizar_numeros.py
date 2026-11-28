@@ -98,6 +98,9 @@ def valores() -> dict[str, str]:
         if r["test"].startswith("Kruskal-Wallis"):
             # Notacion decimal: la guarda de prosa no tolera letras en el valor.
             salida["kw_p"] = es_espana(float(r["p_valor"]), 5)
+    for r in filas_csv(TABLAS / "comparaciones.csv"):
+        salida["ci_bajo"] = es_espana(float(r["ic_bajo"]))
+        salida["ci_alto"] = es_espana(float(r["ic_alto"])) + " USD"
     bases = filas_csv(TABLAS / "baselines.csv")
     for r in bases:
         salida[f"mae_{r['modelo']}"] = es_espana(float(r["mae_usd"]), 2) + " USD"

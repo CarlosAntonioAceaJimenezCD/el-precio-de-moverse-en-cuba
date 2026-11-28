@@ -151,6 +151,8 @@ Solo se incluyen las normas y fuentes relevantes para el contexto del proyecto:
 
 # Part II — English
 
+*Nota: la numeración de secciones se reinicia en esta parte; las referencias cruzadas se interpretan dentro de cada parte.*
+
 ## Abstract (VSN-C)
 
 - **Vision:** buyers of used cars in Cuba decide from scattered asking prices, without price series and with a daily informal exchange rate.
@@ -856,7 +858,7 @@ Fuentes académicas y repositorios revisados para definir los requerimientos del
 
 1. **Pregunta y decisión**: qué se decide, para quién y en qué horizonte (PUCE: funcionamiento del mercado de usados; Chile: variables que influyen en tener automóvil).
 2. **Delimitación**: geografía, producto, canal y unidad de análisis.
-3. **Marco teórico y normativo**: asimetría de información (Akerlof), selección adversa, riesgo moral, regulación vigente.
+3. **Marco teórico y normativo**: asimetría de información (Akerlof [1]), selección adversa, riesgo moral, regulación vigente.
 4. **Diseño de datos**: fuentes primarias (encuestas/entrevistas) y secundarias (registros, anuncios), esquema común, muestreo y sesgos.
 5. **Recolección y curación**: captura, deduplicación, validación y trazabilidad (ETL + BI).
 6. **Descriptivo y segmentación**: distribución de precios, participación por marca/segmento, series temporales.
@@ -1054,7 +1056,7 @@ Data/analisis_rentabilidad/
 └── README.md
 ```
 
-Instalé además `statsmodels 0.14`, `pyarrow 14`, `kaleido`, `nbformat` y `nbconvert`. `duckdb` se desinstaló porque produce `Illegal instruction` en esta CPU; se usa Parquet + Pandas en su lugar.
+Instalé además `statsmodels 0.15`, `pyarrow 26`, `kaleido`, `nbformat` y `nbconvert`. `duckdb` se desinstaló porque produce `Illegal instruction` en esta CPU; se usa Parquet + Pandas en su lugar.
 
 ### Línea base real de la primera ejecución
 
@@ -1075,7 +1077,7 @@ El modelo `log(precio) ~ car_age + condition_score + C(brand_tier)` da una depre
 
 ### Brecha frente a Egipto
 
-Egipto tiene 23.500 anuncios, historial mensual de precios, HP y kilometraje estructurados, ANOVA/OLS/VIF, Tableau y Power BI. Nosotros tenemos el pipeline y las técnicas cubiertas, pero solo 497 usados, un único snapshot, HP/kilometraje mayormente ausentes y un solo benchmark de auto nuevo. El detalle y la priorización están en `Data/analisis_rentabilidad/NECESIDADES.md`.
+Egipto tiene 23.500 anuncios, historial mensual de precios, HP y kilometraje estructurados, ANOVA/OLS/VIF, Tableau y Power BI. La predicción de precios sobre catálogos estructurados tiene antecedentes [14], [18], ausentes del contraste original. Nosotros tenemos el pipeline y las técnicas cubiertas, pero solo 497 usados, un único snapshot, HP/kilometraje mayormente ausentes y un solo benchmark de auto nuevo. El detalle y la priorización están en `Data/analisis_rentabilidad/NECESIDADES.md`. Las versiones citadas corresponden a la primera ejecución; las vigentes están fijadas en `requirements.txt`.
 
 **EN.** Built a scalable analysis skeleton mirroring Egyptian-Used-Cars. First run: 972 ingested, 499 clean, 497 used cars, 32 brands, −5.43%/year depreciation. Main gap versus Egypt: listing volume, price history and structured vehicle specs.
 
@@ -1414,7 +1416,7 @@ Se documentó en `Data/analisis_rentabilidad/MODELOS_Y_FUNCIONES.md` cada transf
 
 Se montó un sitio de documentación con MkDocs Material cuya fuente es `docs/`, generada desde los Markdown y CSV vigentes por `Auxiliares/herramientas/generar_sitio_mkdocs.py`. La navegación sigue Diátaxis: **Historia** (9 secciones del storytelling más introducción y apéndice visual), **Referencia** (funciones y modelos, KPIs e informe técnico), **Cómo** (regeneración del análisis y del sitio) y **Fuentes** (auditoría, anuarios y estructura de GitHub).
 
-Los seis gráficos Plotly se copian a `docs/graficos/` y se enlazan desde el apéndice; las tablas del apéndice y la página de KPIs se generan desde los CSV. `mkdocs build --strict` termina sin errores ni enlaces rotos. `site/` queda ignorado por Git y `mkdocs.yml` contiene la configuración.
+El panel interactivo vigente es `Data/dashboard.html`, copiado a `docs/dashboard.html`; los seis gráficos Plotly se copian a `docs/graficos/` y se enlazan desde el apéndice; las tablas del apéndice y la página de KPIs se generan desde los CSV. `mkdocs build --strict` termina sin errores ni enlaces rotos. `site/` queda ignorado por Git y `mkdocs.yml` contiene la configuración.
 
 **EN.** Built a MkDocs Material site generated from the project's Markdown and CSV: storytelling split by section, visual appendix, model reference, how-to guide and sources. Strict build passes with no broken links.
 
@@ -1484,9 +1486,9 @@ La API de GitHub reporta **205.002 KB (0,20 GB)** para el historial normal; los 
 
 ## 69. Declaración de uso de inteligencia artificial / AI-use declaration
 
-**ES.** Las herramientas de inteligencia artificial (OpenCode/Claude Code con las skills `review` de MatCom, `deep-research` y `technical-writing`) se utilizaron en cuatro fases: investigación y verificación de fuentes, redacción y edición de la narrativa, generación y revisión de código, y traducción bilingüe. El protocolo de supervisión consiste en contrastar toda cifra contra los CSV y bases versionados, ejecutar las pruebas automatizadas y conservar el registro de auditoría en `reviews/`; ninguna salida de IA se aceptó sin ese contraste. Las cifras, los modelos estadísticos y las decisiones de diseño provienen de los datos y del código versionados en este repositorio; ninguna afirmación empírica se originó en una salida de IA sin contraste contra los archivos. La auditoría completa de este documento se realizó con la skill `review` de MatCom y sus resultados se conservan en `reviews/informe-tecnico-2026-11-27.{md,forensic.md}` junto con los trece artefactos de fase.
+**ES.** Las herramientas de IA (OpenCode/Claude Code con las skills `review`, `deep-research` y `technical-writing`) se usaron en investigación, redacción, código y traducción. Cada cifra se contrastó contra los CSV versionados y las pruebas automatizadas; la huella queda en `reviews/`. Un ejemplo del contraste: la revisión detectó un R² citado como 0,277 que el CSV daba como 0,274 y se corrigió con marcadores. El registro de la tercera pasada está en `reviews/informe-tecnico-2026-11-27-iter3.{md,forensic.md}` y sus 13 artefactos.
 
-**EN.** AI tools (OpenCode/Claude Code with MatCom's `review` skill, `deep-research` and `technical-writing`) were used in four phases: research and source verification, drafting and editing, code generation and review, and bilingual translation. The supervision protocol requires every figure to be checked against versioned CSVs and databases, the automated tests to be run, and the audit trail to be kept under `reviews/`; no AI output was accepted without that verification. All figures, statistical models and design decisions derive from the data and code versioned in this repository; no empirical claim was taken from an AI output without verification against the files. The full audit was carried out with MatCom's `review` skill and is preserved in `reviews/informe-tecnico-2026-11-27.{md,forensic.md}` together with thirteen phase artifacts.
+**EN.** AI tools (OpenCode/Claude Code with `review`, `deep-research` and `technical-writing`) were used for research, drafting, code and translation. Each figure was checked against versioned CSVs and automated tests, with the trail kept under `reviews/`. For instance, an R² quoted as 0,277 was corrected to 0,274 after comparison with the CSV. The third audit is preserved in `reviews/informe-tecnico-2026-11-27-iter3.{md,forensic.md}` and its 13 artifacts.
 
 ---
 
@@ -1523,7 +1525,9 @@ Las 981 candidatas y las 8 fuentes se registran en `Data/analisis_rentabilidad/c
 
 ### 71.3 Pruebas y tamaño muestral / Tests and sample size
 
-No hay diseño pareado: los anuncios son observaciones independientes, por lo que no se aplican Wilcoxon de pares ni t de diferencias; se usan Kruskal-Wallis y Welch para grupos independientes. El tamaño se mide en anuncios (981 candidatas de 8 marketplaces), no en ensayos experimentales.
+No hay diseño pareado: los anuncios son observaciones independientes, por lo que no se aplican Wilcoxon de pares ni t de diferencias; se usan Kruskal-Wallis y Welch para grupos independientes. El tamaño se mide en anuncios (981 candidatas de 8 marketplaces), no en ensayos experimentales. El contraste central se cuantifica con H = 44,313 y un intervalo bootstrap de la diferencia de medianas premium−económico de <!-- kpi:ci_bajo -->10.000 a <!-- kpi:ci_alto -->29.500 USD (`comparaciones.csv`, 2.000 réplicas).
+
+**EN.** There is no paired design: listings are independent, so Kruskal-Wallis and Welch are used. Sample size is measured in listings, not trials; an operationalised SOTA baseline is still missing.
 
 ### 71.4 Amenazas a la validez / Threats to validity
 
@@ -1532,13 +1536,23 @@ No hay diseño pareado: los anuncios son observaciones independientes, por lo qu
 - **Interna:** no hay asignación aleatoria; la ablación es observacional.
 - **Estadística conclusiva:** el modelo completo usa 28 observaciones y ningún coeficiente alcanza p < 0,05; el principal tiene mejor cobertura pero su signo de antigüedad refleja selección.
 
+**EN.** Threats are external (Havana only, asking prices), construct (missing mileage and power), internal (no random assignment) and statistical conclusion (28 complete cases).
+
 ### 71.5 Protocolo, semillas y reproducción / Protocol, seeds and reproduction
 
-La semilla `SEED = 20261127` está declarada en `run_all.py` y en este documento. Comando único: `Auxiliares/.venv-py/bin/python Data/analisis_rentabilidad/scripts/run_all.py`. Puntos de entrada con argumentos: `generar_dashboard.py --solo-si-cambia`, `exportar_parquet_compacto.py --tablas ...`, `db_chunks.py split|verify|assemble` y `generar_sitio_mkdocs.py`. Las dependencias están fijadas a serie menor en `requirements.txt`. Prueba de humo: `python3 Auxiliares/herramientas/test_smoke_pipeline.py`.
+La semilla `SEED = 20261127` está declarada en `run_all.py` y se propaga a cada etapa por la variable de entorno `PROYECTO_SEED`; antes se declaraba sin efecto. El panel vigente es `Data/dashboard.html` (copiado a `docs/dashboard.html`). Las bases crudas están en `Data/Revolico/` gestionadas con Git LFS y reconstruibles desde `chunks/MANIFEST.json`; el repositorio público es `https://github.com/CarlosAntonioAceaJimenezCD/el-precio-de-moverse-en-cuba`. No se ha declarado todavía una licencia de datos o código. Comando único: `Auxiliares/.venv-py/bin/python Data/analisis_rentabilidad/scripts/run_all.py`. Puntos de entrada con argumentos: `generar_dashboard.py --solo-si-cambia`, `exportar_parquet_compacto.py --tablas ...`, `db_chunks.py split|verify|assemble` y `generar_sitio_mkdocs.py`. Las dependencias están fijadas a serie menor en `requirements.txt`. Prueba de humo: `python3 Auxiliares/herramientas/test_smoke_pipeline.py`.
+
+**EN.** The seed is declared and propagated to every stage; dependencies are pinned to minor series and a smoke test checks the central component.
 
 ### 71.6 Posicionamiento frente a trabajos cercanos / Positioning against prior work
 
-Frente a Gegić, Isaković, Keco, Mašetić y Kevrić (2019), que predicen precios con machine learning sobre catálogos estructurados, este trabajo parte de anuncios en lenguaje libre y construye las variables por análisis del texto: la contribución es de procedencia y normalización, no de algoritmo. Frente a Muça, Bani y Alla (2026), que integran datos públicos empresariales albaneses mediante scraping, el énfasis aquí es la conversión con TRMI fechada y la auditoría de procedencia, no el pipeline de integración. Frente a Du, Yang, Zhang, Li y Liu (2026), que modelan depreciación no lineal y heterogeneidad de marca con evaluación fuera de muestra, este trabajo no estima una tasa anual: reporta la no significancia de los coeficientes y la pérdida de muestra como hallazgo. Frente a Vidal Alejandro, Muñiz-Cuza y Calas Torres (2024), que estudian el mercado informal de divisas en Cuba, la tasa informal se usa aquí como convención de conversión fechada, no como objeto de estudio.
+Gegić y otros [14] predicen precios con aprendizaje automático sobre catálogos estructurados; aquí las variables se extraen de anuncios en lenguaje libre, así que el aporte es de procedencia y normalización, no de algoritmo. Muça, Bani y Alla [26] integran datos públicos albaneses por scraping; en este trabajo el énfasis está en la conversión con TRMI fechada y en auditar la procedencia. Du y otros [9] modelan depreciación no lineal y heterogeneidad de marca con evaluación fuera de muestra; este informe no estima una tasa anual y reporta la pérdida de muestra como hallazgo. Vidal Alejandro y otros [29] estudian el mercado informal de divisas en Cuba; aquí esa tasa es una convención de conversión fechada, no el objeto de estudio.
+
+### 71.15 Declaraciones / Declarations
+
+**ES.** No se reclutaron sujetos humanos: la encuesta de 33 respuestas y las entrevistas se tratan como documentación de contexto, no como datos experimentales; no se requirió un procedimiento de anonimización ejecutado. Se declara ausencia de conflicto de intereses. El tema no se considera de doble uso sensible, con la salvedad de que los anuncios contienen datos de contacto que se excluyen de la publicación. La disponibilidad de datos y código se documenta en §71.5; la licencia queda pendiente de declaración.
+
+**EN.** No human subjects were recruited: the 33-response survey and interviews are context documentation, not experimental data, so no executed anonymisation procedure was required. No conflict of interest is declared. The topic is not considered sensitive dual-use, except that listing contact details are excluded from publication. Data and code availability are documented in §71.5; a license is still pending.
 
 ### 71.14 Obras del mapa literario citadas en el cuerpo / Prior work cited in the body
 

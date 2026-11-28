@@ -27,7 +27,7 @@ referencias verificadas. `Citada: sí/no` indica mención nominal en el informe.
 
 [11] Miranda, A. M.; Alavi, A. B.; Gella, M. A.. *Depreciation Patterns in the UAE Used Car Market: Evidence from Dubizzle Listings*. Journal of Business Insight and Innovation (2026). https://doi.org/10.63544/jbii.v5i6.110. Citada en el informe: no.
 
-[12] Hulten, C. R.. *Price Hedonics: A Critical Review*. Federal Reserve Bank of New York Economic Policy Review (2003). https://newyorkfed.org/research/epr/03v09n3/0309hult.pdf. Citada en el informe: no.
+[12] Hulten, C. R.. *Price Hedonics: A Critical Review*. Federal Reserve Bank of New York Economic Policy Review (2003). https://newyorkfed.org/research/epr/03v09n3/0309hult.pdf. **(metadata incomplete: PDF no extraido)**. Citada en el informe: no.
 
 [13] Francke, M.; Van de Minne, A.. *Modeling unobserved heterogeneity in hedonic price models*. Real Estate Economics (2020). https://doi.org/10.1111/1540-6229.12320. Citada en el informe: no.
 
@@ -80,3 +80,8 @@ referencias verificadas. `Citada: sí/no` indica mención nominal en el informe.
 [37] Etro, F.. *Product Selection in Online Marketplaces*. Journal of Economics & Management Strategy (2020). https://doi.org/10.1111/jems.12428. Citada en el informe: no.
 
 [38] Quariguasi Frota Neto, J.; Bloemhof-Ruwaard, J. M.; Corbett, C. J.. *Market prices of remanufactured, used and new items: Evidence from eBay*. International Journal of Production Economics (2015). https://doi.org/10.1016/j.ijpe.2015.02.006. Citada en el informe: no. Resumen no indexado en OpenAlex; discrepancia de año documentada: 2015 en OpenAlex, 2016 en Crossref (published-print).
+[39] Department for Transport / DVLA. Vehicle statistics. GOV.UK. https://www.gov.uk/government/organisations/department-for-transport. **(metadata incomplete: URL profunda no confirmada)**.
+
+[40] ANFAC. Informes del sector automotriz español. https://anfac.com/. Citada en el informe: sí (fuente institucional en §70).
+
+[41] AEADE. Estadísticas de matriculaciones. https://www.aeade.net/. Citada en el informe: sí (fuente institucional en §70).
