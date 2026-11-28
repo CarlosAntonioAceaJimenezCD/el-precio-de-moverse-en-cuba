@@ -4,7 +4,7 @@ Revisión del relato como **puerta de entrada**: ¿logra que un visitante nuevo 
 
 ## 1. Diagnóstico honesto
 
-**Lo que funciona:** la apertura —«En Cuba, salir de casa no empieza cuando uno abre la puerta»— es concreta y genera identificación. El dato del ONEI (−59 % de pasajeros frente a 2019) y los números del mercado (<!-- kpi:autos_revolico -->952 autos, <!-- kpi:precio_mediano_usd -->21.000 USD) son prueba sólida.
+**Lo que funciona:** la apertura —«En Cuba, salir de casa no empieza cuando uno abre la puerta»— es concreta y genera identificación. El dato del ONEI (−59 % de pasajeros frente a 2019) y los números del mercado (<!-- kpi:autos_revolico -->974 autos, <!-- kpi:precio_mediano_usd -->21.000 USD) son prueba sólida.
 
 **Lo que frenaba al lector antes de la última revisión:**
 - Metadatos y convención visual ocupaban los primeros renglones, antes de cualquier promesa.
@@ -34,7 +34,7 @@ La causa del abandono no es calidad, sino tres piezas ausentes: promesa arriba, 
 ## 3. Cómo llegar a más personas
 
 1. **SEO de intención comercial**: título y meta descripción con «cuánto cuesta un carro en Cuba 2026» y cifras concretas. Métrica: CTR > 3 % en 90 días.
-2. **Distribución con UTM**: hilo con cinco datos duros (781 M pasajeros, −59 %, <!-- kpi:precio_mediano_usd -->21.000 USD, <!-- kpi:autos_revolico -->952 autos, TRMI 930) en X; carrusel en LinkedIn; resumen en comunidades cubanas de Telegram. Métrica: clics por canal yscroll > 90 %.
+2. **Distribución con UTM**: hilo con cinco datos duros (781 M pasajeros, −59 %, <!-- kpi:precio_mediano_usd -->21.000 USD, <!-- kpi:autos_revolico -->974 autos, TRMI 930) en X; carrusel en LinkedIn; resumen en comunidades cubanas de Telegram. Métrica: clics por canal yscroll > 90 %.
 3. **Cluster de contenido**: páginas hijas sobre Decreto 163, combustible 2026, depreciación y mapa de carga/talleres, todas enlazando al texto principal. Métrica: tráfico orgánico del cluster.
 4. **Activo enlazable**: publicar el CSV limpio con licencia y resumen ejecutivo de una página. Métrica: dominios que enlazan y descargas.
 5. **E-E-A-T**: autor, fecha visible, fuentes etiquetadas y FAQ schema con las cuatro preguntas. Métrica: rich results y clics en fuentes.
@@ -49,4 +49,4 @@ La causa del abandono no es calidad, sino tres piezas ausentes: promesa arriba, 
 
 **Titular (60 caracteres):** *El precio de moverse en Cuba: cuánto cuesta un carro en 2026*
 
-**Subtitular (152 caracteres):** *Descubre cuánto cuesta realmente moverse en Cuba: <!-- kpi:autos_revolico -->952 autos, precios en USD y CUP, combustible, talleres y el Decreto 163 explicados con datos del ONEI.*
+**Subtitular (152 caracteres):** *Descubre cuánto cuesta realmente moverse en Cuba: <!-- kpi:autos_revolico -->974 autos, precios en USD y CUP, combustible, talleres y el Decreto 163 explicados con datos del ONEI.*

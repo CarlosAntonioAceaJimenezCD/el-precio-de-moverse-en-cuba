@@ -1,13 +1,13 @@
 # El precio de moverse en Cuba
 
-Análisis reproducible del mercado automotor cubano: **<!-- kpi:autos_revolico -->952 autos únicos** de Revolico, **<!-- kpi:anuncios_marketplaces -->2.232 anuncios** de 8 marketplaces y **256 vehículos** de 11 concesionarios, consolidados con fuentes oficiales (ONEI, Gaceta Oficial, BCC) y una serie de entrevistas y encuestas.
+Análisis reproducible del mercado automotor cubano: **<!-- kpi:autos_revolico -->974 autos únicos** de Revolico, **<!-- kpi:anuncios_marketplaces -->2.232 anuncios** de 8 marketplaces y **256 vehículos** de 11 concesionarios, consolidados con fuentes oficiales (ONEI, Gaceta Oficial, BCC) y una serie de entrevistas y encuestas.
 
 *Ubicación:* `~/Proyectos/El precio de moverse en Cuba` · *Repositorio:* `el-precio-de-moverse-en-cuba` · *Actualizado:* 23/11/2026.
 
 ## Qué incluye
 
 - **Datos crudos y auditables**: anuncios, enlaces, colas de descarga y descartes exportados por categoría en `Data/CRUDO_POR_CATEGORIA/`.
-- **Base consolidada**: `Data/Revolico/revolico.sqlite` (<!-- kpi:anuncios_revolico -->10.357 anuncios, <!-- kpi:autos_revolico -->952 autos) y `Data/repos-autos-referencias/referencias_autos.sqlite` (25 tablas).
+- **Base consolidada**: `Data/Revolico/revolico.sqlite` (<!-- kpi:anuncios_revolico -->10.379 anuncios, <!-- kpi:autos_revolico -->974 autos) y `Data/repos-autos-referencias/referencias_autos.sqlite` (25 tablas).
 - **Análisis regenerable**: KPIs, benchmarks, depreciación y gráficos en `Data/analisis_rentabilidad/`.
 - **Fuentes oficiales**: los 12 anuarios del ONEI (2014–2025), 233 archivos, en `Data/fuentes-oficiales/ONEI/`.
 - **Documentación**: informe técnico, storytelling, auditoría de fuentes e índices de datos.
@@ -30,7 +30,7 @@ Data/analisis_rentabilidad/outputs/tables/kpis.csv
 Data/analisis_rentabilidad/outputs/tables/kpis_canal.csv
 ```
 
-**Resultado esperado:** <!-- kpi:anuncios_totales -->2.156 anuncios limpios (<!-- kpi:anuncios_locales -->1.465 locales + <!-- kpi:anuncios_importacion -->691 de importación), mediana local <!-- kpi:precio_mediano_usd -->21.000 USD.
+**Resultado esperado:** <!-- kpi:anuncios_totales -->2.174 anuncios limpios (<!-- kpi:anuncios_locales -->1.483 locales + <!-- kpi:anuncios_importacion -->691 de importación), mediana local <!-- kpi:precio_mediano_usd -->21.000 USD.
 
 ## Estructura
 
@@ -57,7 +57,7 @@ Los repositorios auxiliares y `Copias/` se conservan en disco pero **no se suben
 |---|---|---:|
 | Marketplaces | Autocubana, iTENCEL, Cogetucarro, Cubisima, Timbirichi, Carros.com, Apululu, VentaCuba | 2.222 anuncios |
 | Concesionarios | BDC One, Dongfeng, Changan, Chinautos, MCV, Finauto, ATR Export y otros | 256 vehículos |
-| Revolico | `autos` (tabla canónica) | <!-- kpi:autos_revolico -->952 autos únicos |
+| Revolico | `autos` (tabla canónica) | <!-- kpi:autos_revolico -->974 autos únicos |
 | Referencias externas | Repos ICD, AutosxCuba, Mercado-automotriz y otros | 3.958 anuncios ICD |
 | Oficiales | ONEI, Gaceta Oficial 65/2026, BCC, elTOQUE | 12 anuarios + normas |
 

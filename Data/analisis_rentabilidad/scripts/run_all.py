@@ -22,7 +22,7 @@ PY = sys.executable
 NUMEROS = HERE.parents[2] / "Auxiliares/herramientas/actualizar_numeros.py"
 DASHBOARD = HERE.parents[2] / "Auxiliares/herramientas/generar_dashboard.py"
 COMPACTO = HERE.parents[2] / "Auxiliares/herramientas/exportar_parquet_compacto.py"
-STEPS = ["01_ingest.py", "02_clean.py", "03_eda.py", "04_stats.py", "05_benchmark.py"]
+STEPS = ["01_ingest.py", "02_clean.py", "03_eda.py", "03b_baselines.py", "04_stats.py", "05_benchmark.py"]
 
 
 def main():

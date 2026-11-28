@@ -5,7 +5,7 @@ Los metadatos se verificaron en vivo con OpenAlex/Crossref. `metadata incomplete
 indica que algún campo no pudo confirmarse; esas entradas no se presentan como
 referencias verificadas. `Citada: sí/no` indica mención nominal en el informe.
 
-[1] Akerlof, G. A.. *The Market for "Lemons": Quality Uncertainty and the Market Mechanism*. The Quarterly Journal of Economics (1970). https://doi.org/10.2307/1879431. Citada en el informe: yes. **(metadata incomplete: resumen indexado no sustantivo; identidad y DOI verificados en OpenAlex)**
+[1] Akerlof, G. A.. *The Market for "Lemons": Quality Uncertainty and the Market Mechanism*. The Quarterly Journal of Economics (1970). https://doi.org/10.2307/1879431. Citada en el informe: sí. **(metadata incomplete: resumen indexado no sustantivo; identidad y DOI verificados en OpenAlex)**
 
 [2] Lewis, G. M.. *Asymmetric Information, Adverse Selection and Online Disclosure: The Case of eBay Motors*. American Economic Review (2011 (el registro OpenAlex indexa la versión SSRN de 2010; la publicación AER es de 2011)). https://doi.org/10.1257/aer.101.4.1535. Citada en el informe: no.
 
@@ -65,7 +65,7 @@ referencias verificadas. `Citada: sí/no` indica mención nominal en el informe.
 
 [30] Castro Fernández, M.; Vilaragut Llanes, M.; Hernández, J. C.. *Electromobility and Energy Transition in Cuba*. Sustainability (2024). https://doi.org/10.3390/su16229688. Citada en el informe: no.
 
-[31] Ritter, A. R. M.. *Cuba's Underground Economy*. RePEc (Carleton Economic Papers) (2004). http://www.carleton.ca/economics/wp-content/uploads/cep04-12.pdf. Citada en el informe: no.
+[31] Ritter, A. R. M.. *Cuba's Underground Economy*. RePEc (Carleton Economic Papers) (2004). https://ir.library.carleton.ca/pub/15983. Citada en el informe: no.
 
 [32] Ávila Castellanos, D. D.. *Currency exchange in post-ordenamiento Cuba: An exploration of institutional waiting for dollar purchases*. Revista Foro Cubano (2024). https://doi.org/10.22518/jour.rfc/2023.6a02. Citada en el informe: no.
 

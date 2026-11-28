@@ -11,6 +11,15 @@
 
 # Parte I — Español
 
+## Resumen (VSN-C)
+
+- **Visión:** en Cuba, quien busca un auto usado decide con precios pedidos dispersos, sin series históricas y con una tasa informal que cambia cada día.
+- **Pasos:** se construye una base de anuncios de 8 marketplaces y concesionarios, se normalizan marca, año, kilometraje y moneda con TRMI fechada, y se aplican estadística descriptiva, un modelo hedónico y benchmarks por marca/modelo/año.
+- **Novedad:** la procedencia y la normalización se tratan como objeto de auditoría; la pérdida de muestra por variables ausentes se reporta como hallazgo y no se oculta.
+- **Contribuciones:** base compacta reproducible, panel interactivo autocontenido, pipeline con timers y un expediente de auditoría con 13 artefactos.
+
+**Hipótesis falsable (H1):** «los precios de los tres tiers de marca en el mercado local provienen de la misma distribución, controlando por antigüedad y kilometraje». Se contrasta con Kruskal-Wallis; se rechaza con p < 0,001 en la corrida vigente.
+
 ## 1. Objetivo
 
 El proyecto se llama **El precio de moverse en Cuba**. Su objetivo actual es realizar un **análisis del mercado automotor cubano**: caracterizar estructura, precios, oferta, segmentos, tendencias, asequibilidad y condiciones de rentabilidad. La definición de un producto interactivo que recomiende la compra más rentable según las preocupaciones del usuario queda diferida a una especialización posterior. El análisis se apoya en dos pilares: la base de datos del mercado cubano y un pipeline de scraping reutilizable que se actualiza para adaptarse al momento en que se revise.
@@ -142,6 +151,15 @@ Solo se incluyen las normas y fuentes relevantes para el contexto del proyecto:
 
 # Part II — English
 
+## Abstract (VSN-C)
+
+- **Vision:** buyers of used cars in Cuba decide from scattered asking prices, without price series and with a daily informal exchange rate.
+- **Steps:** a database of listings from 8 marketplaces and dealerships is built; brand, year, mileage and currency are normalised with a dated informal rate; descriptive statistics, a hedonic model and brand/model/year benchmarks follow.
+- **News:** provenance and normalisation are treated as an audit object; sample loss from missing variables is reported as a finding.
+- **Contributions:** a reproducible compact database, a self-contained interactive dashboard, a timer-driven pipeline and an audit trail with 13 artifacts.
+
+**Falsifiable hypothesis (H1):** "prices across the three brand tiers in the local market come from the same distribution, controlling for age and mileage". Tested with Kruskal-Wallis and rejected at p < 0.001 in the current run.
+
 ## 1. Objective
 
 The project is named **El precio de moverse en Cuba**. Its current goal is to analyse the Cuban automotive market —structure, prices, supply, segments, trends, affordability and profitability conditions—. Defining an interactive product that recommends the most profitable purchase is deferred to a later specialisation. The analysis rests on two pillars: the market database and a reusable scraping pipeline that is updated to match the moment of review.
@@ -161,7 +179,7 @@ Phases were redefined so that the active phase is the sixth. Status as of 17 Nov
 | 5 | Data schema and pipeline design | Complete |
 | 6 | **Scraping and capture of catalogues and listings** | **In progress** |
 | 7 | Unification, cleaning and QA | Pending |
-| 8 | Analysis, profitability model and interactive product | Pending |
+| 8 | Market analysis, comparables and profitability | Pending |
 | 9 | Final documentation, PDF report and delivery | Pending |
 
 Creating this report and the `README.md` is cross-cutting support and does not change the active phase.
@@ -271,7 +289,7 @@ Only relevant norms and sources are included:
 
 ---
 
-# 13. Registro de altas / Change log
+## 13. Registro de altas / Change log
 
 Registro automático de todo lo que se añade a la carpeta del proyecto. El script `Auxiliares/herramientas/actualizar_informe.py` añade filas debajo del marcador y regenera el PDF. `Copias/` queda excluido por decisión explícita.
 
@@ -1036,7 +1054,7 @@ Data/analisis_rentabilidad/
 └── README.md
 ```
 
-Instalé además `statsmodels 0.15`, `pyarrow 26`, `kaleido`, `nbformat` y `nbconvert`. `duckdb` se desinstaló porque produce `Illegal instruction` en esta CPU; se usa Parquet + Pandas en su lugar.
+Instalé además `statsmodels 0.14`, `pyarrow 14`, `kaleido`, `nbformat` y `nbconvert`. `duckdb` se desinstaló porque produce `Illegal instruction` en esta CPU; se usa Parquet + Pandas en su lugar.
 
 ### Línea base real de la primera ejecución
 
@@ -1376,17 +1394,17 @@ La BD pasó de 951 a **961 anuncios** (961 URLs únicas, `integrity_check=ok`). 
 
 ## 59. Storytelling alineado con los datos finales (23/11/2026)
 
-Se actualizó `PRESENTACION_STORYTELLING.md` con la narrativa vigente, conservando la voz y la estructura originales. El relato ahora usa **772 autos únicos**, **2.029 anuncios limpios** (1.338 locales y 691 de importación), mediana local de **21.000 USD**, kilometraje mediano de **43.000 km**, 50 marcas, 101 grupos comparables y 81 anomalías (corrida vigente del 27/11/2026; los valores se actualizan solos en `outputs/tables/kpis.csv`). La caída del transporte de pasajeros según el ONEI y los diez anuncios nuevos de iTENCEL entraron en la historia sin convertirla en una explicación técnica.
+Se actualizó `PRESENTACION_STORYTELLING.md` con la narrativa vigente, conservando la voz y la estructura originales. El relato ahora usa **<!-- kpi:autos_revolico -->974 autos únicos**, **<!-- kpi:anuncios_totales -->2.174 anuncios limpios** (<!-- kpi:anuncios_locales -->1.483 locales y <!-- kpi:anuncios_importacion -->691 de importación), mediana local de **<!-- kpi:precio_mediano_usd -->21.000 USD**, kilometraje mediano de **<!-- kpi:km_medianos -->32.569 km**, <!-- kpi:marcas_distintas -->50 marcas, <!-- kpi:grupos_benchmark -->114 grupos comparables y <!-- kpi:anomalias -->89 anomalías (corrida vigente del 27/11/2026; los valores se actualizan solos en `outputs/tables/kpis.csv`). La caída del transporte de pasajeros según el ONEI y los diez anuncios nuevos de iTENCEL entraron en la historia sin convertirla en una explicación técnica.
 
-La depreciación se reformuló con honestidad: el modelo actual no encuentra una pendiente anual significativa tras corregir el kilometraje, y la prima premium dejó de afirmarse como cifra. El modelo con todos los términos dispone de **<!-- kpi:modelo_n_completo -->28 observaciones completas** de <!-- kpi:modelo_candidatas -->981 candidatas (R² = <!-- kpi:modelo_r2_completo -->0,277; p del F = <!-- kpi:modelo_pf_completo -->0,411), límite que se registra explícitamente en `MODELOS_Y_FUNCIONES.md`. Se aplicaron las skills de marketing y SEO para cifras concretas y enlaces internos, y las de voz propia y edición quirúrgica para preservar el estilo del autor. Se añadió además un **apéndice visual** con cinco cuadros y seis gráficos reales; el texto solo deja referencias discretas entre paréntesis, de modo que las tablas y figuras puedan insertarse sin romper la narrativa.
+La depreciación se reformuló con honestidad: el modelo actual no encuentra una pendiente anual significativa tras corregir el kilometraje, y la prima premium dejó de afirmarse como cifra. El modelo completo (con `hp`), frente al modelo principal sin ese término, dispone de **<!-- kpi:modelo_n_completo -->28 observaciones completas** de <!-- kpi:modelo_candidatas -->993 candidatas (R² = <!-- kpi:modelo_r2_completo -->0,274; p del F = <!-- kpi:modelo_pf_completo -->0,411), límite que se registra explícitamente en `MODELOS_Y_FUNCIONES.md`. Se aplicaron las skills de marketing y SEO para cifras concretas y enlaces internos, y las de voz propia y edición quirúrgica para preservar el estilo del autor. Se añadió además un **apéndice visual** con cinco cuadros y seis gráficos reales; el texto solo deja referencias discretas entre paréntesis, de modo que las tablas y figuras puedan insertarse sin romper la narrativa.
 
-**EN.** Updated the storytelling to the final dataset while preserving the author's voice: 744 unique cars, 2,014 clean listings, 21,000 USD median and a statistically honest depreciation narrative.
+**EN.** Updated the storytelling to the final dataset while preserving the author's voice: <!-- kpi:autos_revolico -->974 unique cars, <!-- kpi:anuncios_totales -->2.174 clean listings, <!-- kpi:precio_mediano_usd -->21.000 USD median and a statistically honest depreciation narrative.
 
 ---
 
 ## 60. Inventario de funciones y modelos (23/11/2026)
 
-Se documentó en `Data/analisis_rentabilidad/MODELOS_Y_FUNCIONES.md` cada transformación y cada estimación del pipeline, con su justificación: normalización sintáctica y TRMI, features derivados, mediana y cuartiles, modelo hedónico log-lineal, VIF, Kruskal-Wallis, Welch t-test y detección de anomalías. El respaldo es metodológico y empírico: se explica por qué cada forma encaja con datos asimétricos y por qué la corrida actual **no** sostiene una tasa de depreciación ni una prima premium significativa (p mínimo 0,165; VIF 1,13–1,58; Kruskal-Wallis p = 1e−05).
+Se documentó en `Data/analisis_rentabilidad/MODELOS_Y_FUNCIONES.md` cada transformación y cada estimación del pipeline, con su justificación: normalización sintáctica y TRMI, features derivados, mediana y cuartiles, modelo hedónico log-lineal, VIF, Kruskal-Wallis, Welch t-test y detección de anomalías. El respaldo es metodológico y empírico: se explica por qué cada forma encaja con datos asimétricos y por qué la corrida actual **no** sostiene una tasa de depreciación ni una prima premium significativa (p mínimo <!-- kpi:modelo_p_min -->0,0941; VIF <!-- kpi:vif_min -->1,12–<!-- kpi:vif_max -->1,40; Kruskal-Wallis p = <!-- kpi:kw_p -->0,00000).
 
 **EN.** Documented every function and statistical model in the pipeline with its rationale and current evidence, including the honest non-significance of the hedonic OLS coefficients.
 
@@ -1476,7 +1494,7 @@ La API de GitHub reporta **205.002 KB (0,20 GB)** para el historial normal; los 
 
 **ES.** Referencias citadas y verificadas externamente durante la auditoría: Akerlof (1970), *The Market for "Lemons"* (DOI 10.2307/1879431 confirmado en OpenAlex; el resumen indexado es solo un índice de secciones, por lo que su flag es `(metadata incomplete: resumen)`); UK Department for Transport / DVLA, estadísticas de vehículos (GOV.UK); ANFAC, informes del sector automotriz español (sitio oficial); AEADE, estadísticas de matriculaciones (sitio oficial). Las fuentes restantes figuran con estado `(metadata incomplete)` en `reviews/informe-tecnico-2026-11-27.e2-literature.md` y no se presentan como referencias verificadas. La convención numerada de 38 referencias y su estado de verificación están en `Data/referencias.md`; la correspondencia entre afirmación y fuente se documenta en el expediente forense.
 
-**EN.** Externally verified references cited during the audit: Akerlof (1970), *The Market for "Lemons"* (Crossref/OpenAlex); UK Department for Transport / DVLA vehicle statistics (GOV.UK); ANFAC Spanish automotive reports (official site); AEADE registration statistics (official site). Remaining sources are marked `(metadata incomplete)` in `reviews/informe-tecnico-2026-11-27.e2-literature.md` and are not presented as verified references. A numbered list of 38 references and their verification status is available in `Data/referencias.md`; claim-to-source correspondence is documented in the forensic assembly.
+**EN.** Externally verified references cited during the audit: Akerlof (1970), *The Market for "Lemons"* (DOI 10.2307/1879431 confirmed in OpenAlex; the indexed abstract is only a section index, so its flag is `(metadata incomplete: abstract)`); UK Department for Transport / DVLA vehicle statistics (GOV.UK); ANFAC Spanish automotive reports (official site); AEADE registration statistics (official site). Remaining sources are marked `(metadata incomplete)` in `reviews/informe-tecnico-2026-11-27.e2-literature.md` and are not presented as verified references. A numbered list of 38 references and their verification status is available in `Data/referencias.md`; claim-to-source correspondence is documented in the forensic assembly.
 
 ---
 
@@ -1488,11 +1506,14 @@ La API de GitHub reporta **205.002 KB (0,20 GB)** para el historial normal; los 
 
 | Base / Baseline | Descripción | Métrica observada |
 |---|---|---|
-| Mediana global ( ingenua ) | Predice la mediana de los usados locales | MAE 18.220,46 USD sobre 1.444 anuncios |
+| Mediana global ( ingenua ) | Predice la mediana de los usados locales | MAE <!-- kpi:mae_mediana_global -->18.188,34 USD sobre <!-- kpi:n_mediana_global -->1.462 anuncios |
+| Mediana por marca | Predice la mediana de cada marca | MAE <!-- kpi:mae_mediana_por_marca -->16.603,28 USD sobre <!-- kpi:n_mediana_por_marca -->1.462 anuncios |
 | Egyptian-Used-Cars | Referencia de ingeniería del campo: 23.500 anuncios y series mensuales | Contraste cualitativo de cobertura y frescura |
+
+Las 981 candidatas y las 8 fuentes se registran en `Data/analisis_rentabilidad/config.py`, `scripts/01_ingest.py` y `outputs/tables/kpis_canal.csv`; los MAE se calculan en `scripts/03b_baselines.py` y se publican en `outputs/tables/baselines.csv`.
 | Modelo principal propio | OLS de log-precio con antigüedad, km, condición y tier | R² 0,101 sobre 584 observaciones |
 
-**EN.** Baseline 1 is the naive global median (MAE 18,220.46 USD on 1,444 listings); baseline 2 is the Egyptian-Used-Cars engineering reference (23,500 listings, monthly series); the local principal model is reported alongside both.
+**EN.** Baseline 1 is the naive global median (MAE <!-- kpi:mae_mediana_global -->18.188,34 USD on <!-- kpi:n_mediana_global -->1.462 listings); baseline 1b is the brand median (MAE <!-- kpi:mae_mediana_por_marca -->16.603,28 USD); baseline 2 is the Egyptian-Used-Cars engineering reference (23,500 listings, monthly series); the local principal model is reported alongside both.
 
 ### 71.2 Ablación explícita / Explicit ablation
 
@@ -1518,6 +1539,53 @@ La semilla `SEED = 20261127` está declarada en `run_all.py` y en este documento
 ### 71.6 Posicionamiento frente a trabajos cercanos / Positioning against prior work
 
 Frente a Gegić, Isaković, Keco, Mašetić y Kevrić (2019), que predicen precios con machine learning sobre catálogos estructurados, este trabajo parte de anuncios en lenguaje libre y construye las variables por análisis del texto: la contribución es de procedencia y normalización, no de algoritmo. Frente a Muça, Bani y Alla (2026), que integran datos públicos empresariales albaneses mediante scraping, el énfasis aquí es la conversión con TRMI fechada y la auditoría de procedencia, no el pipeline de integración. Frente a Du, Yang, Zhang, Li y Liu (2026), que modelan depreciación no lineal y heterogeneidad de marca con evaluación fuera de muestra, este trabajo no estima una tasa anual: reporta la no significancia de los coeficientes y la pérdida de muestra como hallazgo. Frente a Vidal Alejandro, Muñiz-Cuza y Calas Torres (2024), que estudian el mercado informal de divisas en Cuba, la tasa informal se usa aquí como convención de conversión fechada, no como objeto de estudio.
+
+### 71.14 Obras del mapa literario citadas en el cuerpo / Prior work cited in the body
+
+| Ref. | Clúster | Autor (año) | Obra |
+|---|---|---|---|
+| [1] | Asimetría de informaci | Akerlof (1970) | The Market for "Lemons": Quality Uncertainty and the Market Mech |
+| [2] | Asimetría de informaci | Lewis (2011) | Asymmetric Information, Adverse Selection and Online Disclosure: |
+| [3] | Asimetría de informaci | Peterson (2014) | Adverse selection in the used-car market: evidence from purchase |
+| [4] | Asimetría de informaci | Englmaier (2017) | Price Discontinuities in an Online Market for Used Cars |
+| [5] | Asimetría de informaci | Che (2019) | Warranty, Seller Reputation, and Buyer Experience: Evidence From |
+| [6] | Asimetría de informaci | Wolf (2005) | Adverse Selection and Reputation Systems in Online Auctions: Evi |
+| [7] | Asimetría de informaci | Sultan (2009) | A model of the used car market with lemons and leasing |
+| [8] | Asimetría de informaci | Tilles (2011) | A Markovian model market—Akerlof's lemons and the asymmetry of i |
+| [9] | Modelos de precio, reg | Du (2026) | Nonlinear Depreciation and Brand Heterogeneity in Chinese Used-C |
+| [10] | Modelos de precio, reg | Kang (2026) | The pricing of used electric vehicles via machine learning and h |
+| [11] | Modelos de precio, reg | Miranda (2026) | Depreciation Patterns in the UAE Used Car Market: Evidence from  |
+| [12] | Modelos de precio, reg | Hulten (2003) | Price Hedonics: A Critical Review |
+| [13] | Modelos de precio, reg | Francke (2020) | Modeling unobserved heterogeneity in hedonic price models |
+| [14] | Modelos de precio, reg | Gegić (2019) | Car Price Prediction using Machine Learning Techniques |
+| [15] | Modelos de precio, reg | Mutİ (2023) | Using Linear Regression For Used Car Price Prediction |
+| [16] | Modelos de precio, reg | Jin (2021) | Price Prediction of Used Cars Using Machine Learning |
+| [17] | Modelos de precio, reg | Ahtesham (2022) | Used Car Price Prediction with Pyspark |
+| [18] | Modelos de precio, reg | Madhusudhanan (2024) | ProbSAINT: Probabilistic Tabular Regression for Used Car Pricing |
+| [19] | Modelos de precio, reg | Pal (2017) | How much is my car worth? A methodology for predicting used cars |
+| [20] | Modelos de precio, reg | Arefin (2021) | Second Hand Price Prediction for Tesla Vehicles |
+| [21] | Ética, legalidad, proc | Krotov (2020) | Legality and Ethics of Web Scraping |
+| [22] | Ética, legalidad, proc | Brown (2025) | Web scraping for research: Legal, ethical, institutional, and sc |
+| [23] | Ética, legalidad, proc | Priestley (2023) | A Survey of Data Quality Requirements That Matter in ML Developm |
+| [24] | Ética, legalidad, proc | Hohensinner (2026) | Tracing the Data Trail: A Survey of Data Provenance, Transparenc |
+| [25] | Ética, legalidad, proc | Wenger (2024) | Data Isotopes for Data Provenance in DNNs |
+| [26] | Ética, legalidad, proc | Muça (2026) | A Pipeline for Integrating and Analyzing Public Business Data in |
+| [27] | Ética, legalidad, proc | Essien (2023) | The Ethics of Web Scraping In Research: A Review |
+| [28] | Ética, legalidad, proc | Paige (2024) | The Legality and Ethics of Web Scraping in Archaeology |
+| [29] | Cuba: divisas informal | Vidal Alejandro (2024) | Using AI in the informal currency market: evidence from Cuba |
+| [30] | Cuba: divisas informal | Castro Fernández (2024) | Electromobility and Energy Transition in Cuba |
+| [31] | Cuba: divisas informal | Ritter (2004) | Cuba's Underground Economy |
+| [32] | Cuba: divisas informal | Ávila Castellanos (2024) | Currency exchange in post-ordenamiento Cuba: An exploration of i |
+| [33] | Cuba: divisas informal | Guerra (2015) | The geography of car ownership in Mexico City: a joint model of  |
+| [34] | Cuba: divisas informal | Klein (2023) | Transitions into and out of Car Ownership among Low-Income House |
+| [35] | Cuba: divisas informal | Srisan (2026) | Auto insurance affordability and the gap in car ownership: An an |
+| [36] | Señales de precio en m | Holtz (2020) | Reducing Interference Bias in Online Marketplace Pricing Experim |
+| [37] | Señales de precio en m | Etro (2020) | Product Selection in Online Marketplaces |
+| [38] | Señales de precio en m | Quariguasi Frota Neto (2015) | Market prices of remanufactured, used and new items: Evidence fr |
+
+Los trabajos [1], [9], [14], [26] y [29] se discuten además en §71.6; el resto se registra aquí con su marcador numérico y se enlaza a `Data/referencias.md`.
+
+---
 
 **Firma / Signature:** responsable del proyecto / project owner.  
 **Última actualización / Last update:** 27/11/2026.

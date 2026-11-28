@@ -32,8 +32,8 @@ ARCHIVOS = [
 # unidad. Cualquier otra cosa significa que el patrón se comió prosa y hay que
 # parar antes de escribir.
 NUMERO = re.compile(r"^[0-9.,]+(?:\s*(?:USD|km|años))?$")
-MARCADOR = re.compile(r"(<!-- kpi:([a-z_]+) -->)([0-9.,]+(?:\s*(?:USD|km|años))?)")
-RUIDO = re.compile(r"<!-- kpi:[a-z_]+ -->|[0-9.,]+|\b(?:USD|km|años)\b")
+MARCADOR = re.compile(r"(<!-- kpi:([a-z0-9_]+) -->)([0-9.,]+(?:\s*(?:USD|km|años))?)")
+RUIDO = re.compile(r"<!-- kpi:[a-z0-9_]+ -->|[0-9.,]+|\b(?:USD|km|años)\b")
 
 
 def es_espana(v: float, decimales: int = 0) -> str:
@@ -85,6 +85,24 @@ def valores() -> dict[str, str]:
         salida["modelo_r2_principal"] = es_espana(float(fila["r2"]), 3)
         salida["modelo_pf_principal"] = es_espana(float(fila["p_f"]), 3)
 
+    coef = filas_csv(TABLAS / "modelo_depreciacion.csv")
+    ps = [float(r["p_valor"]) for r in coef if r["termino"] != "Intercept" and r["p_valor"]]
+    if ps:
+        salida["modelo_p_min"] = es_espana(min(ps), 4)
+    vif = [float(r["VIF"]) for r in filas_csv(TABLAS / "vif.csv") if r["VIF"] not in ("", None)]
+    if vif:
+        salida["vif_min"] = es_espana(min(vif), 2)
+        salida["vif_max"] = es_espana(max(vif), 2)
+    tests = filas_csv(TABLAS / "tests.csv")
+    for r in tests:
+        if r["test"].startswith("Kruskal-Wallis"):
+            # Notacion decimal: la guarda de prosa no tolera letras en el valor.
+            salida["kw_p"] = es_espana(float(r["p_valor"]), 5)
+    bases = filas_csv(TABLAS / "baselines.csv")
+    for r in bases:
+        salida[f"mae_{r['modelo']}"] = es_espana(float(r["mae_usd"]), 2) + " USD"
+        salida[f"n_{r['modelo']}"] = es_espana(float(r["observaciones"]))
+
     c = sqlite3.connect(f"file:{ROOT}/Data/Revolico/revolico.sqlite?mode=ro", uri=True, timeout=30)
     salida["autos_revolico"] = es_espana(c.execute("select count(*) from autos").fetchone()[0])
     salida["anuncios_revolico"] = es_espana(c.execute("select count(*) from anuncios").fetchone()[0])
@@ -107,7 +125,7 @@ def expandir(plantilla: str, vals: dict[str, str], con_marca: bool = True) -> st
             raise ValueError(f"clave desconocida: {clave}")
         return (f"<!-- kpi:{clave} -->" if con_marca else "") + vals[clave]
 
-    return re.sub(r"\{\{kpi:([a-z_]+)\}\}", cambio, plantilla)
+    return re.sub(r"\{\{kpi:([a-z0-9_]+)\}\}", cambio, plantilla)
 
 
 def solo_prosa(texto: str) -> str:

@@ -10,17 +10,17 @@ Estos apoyos se insertan aquí para que la narrativa no se detenga. Cada cuadro 
 
 | Métrica | Valor |
 |---|---:|
-| Anuncios limpios | <!-- kpi:anuncios_totales -->2.156 |
-| Locales | <!-- kpi:anuncios_locales -->1.465 |
+| Anuncios limpios | <!-- kpi:anuncios_totales -->2.174 |
+| Locales | <!-- kpi:anuncios_locales -->1.483 |
 | De importación | <!-- kpi:anuncios_importacion -->691 |
-| Usados locales | <!-- kpi:anuncios_usados_locales -->1.444 |
+| Usados locales | <!-- kpi:anuncios_usados_locales -->1.462 |
 | Nuevos locales | <!-- kpi:anuncios_nuevos_locales -->21 |
 | Marcas distintas | <!-- kpi:marcas_distintas -->50 |
-| Precio medio local | <!-- kpi:precio_medio_usd -->28.166,17 USD |
+| Precio medio local | <!-- kpi:precio_medio_usd -->28.201,06 USD |
 | Precio mediano local | <!-- kpi:precio_mediano_usd -->21.000 USD |
 | Año mediano | <!-- kpi:anio_mediano -->2020 |
-| Kilometraje mediano | <!-- kpi:km_medianos -->33.256 km |
-| Antigüedad media | <!-- kpi:antiguedad_media -->8,2 años |
+| Kilometraje mediano | <!-- kpi:km_medianos -->32.569 km |
+| Antigüedad media | <!-- kpi:antiguedad_media -->8,1 años |
 
 <a id="cuadro-2"></a>
 
@@ -30,7 +30,7 @@ Estos apoyos se insertan aquí para que la narrativa no se detenga. Cada cuadro 
 |---|---|---:|---:|---:|
 | Importación | Usado | <!-- kpi:anuncios_importacion -->691 | <!-- kpi:mediana_importacion -->26.000 USD | <!-- kpi:media_importacion -->27.046,22 USD |
 | Local | Nuevo | 21 | 24.623,66 | 24.729,59 |
-| Local | Usado | <!-- kpi:anuncios_usados_locales -->1.444 | <!-- kpi:mediana_local -->21.000 USD | <!-- kpi:media_local_usada -->28.166,17 USD |
+| Local | Usado | <!-- kpi:anuncios_usados_locales -->1.462 | <!-- kpi:mediana_local -->21.000 USD | <!-- kpi:media_local_usada -->28.201,06 USD |
 
 <a id="cuadro-3"></a>
 

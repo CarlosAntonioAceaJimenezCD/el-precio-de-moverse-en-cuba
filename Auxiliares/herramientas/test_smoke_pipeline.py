@@ -41,10 +41,12 @@ def test_artefactos():
 
 
 def test_csv_legibles():
-    for nombre in ("kpis.csv", "modelo_muestra.csv", "tests.csv", "vif.csv"):
+    for nombre in ("kpis.csv", "modelo_muestra.csv", "tests.csv", "vif.csv", "baselines.csv"):
         with (TABLES / nombre).open(encoding="utf-8") as fh:
             filas = list(csv.DictReader(fh))
         assert filas, nombre
+    bases = list(csv.DictReader((TABLES / "baselines.csv").open(encoding="utf-8")))
+    assert len(bases) >= 2 and all(float(r["mae_usd"]) > 0 for r in bases)
 
 
 def test_comando_unico():

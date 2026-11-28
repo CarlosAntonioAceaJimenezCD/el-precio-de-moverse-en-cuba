@@ -6,17 +6,17 @@ Página de referencia generada desde los CSV del pipeline. Si cambia el análisi
 
 | metrica | valor |
 |---|---|
-| anuncios_totales | 2156.0 |
-| anuncios_locales | 1465.0 |
+| anuncios_totales | 2174.0 |
+| anuncios_locales | 1483.0 |
 | anuncios_importacion | 691.0 |
-| anuncios_usados_locales | 1444.0 |
+| anuncios_usados_locales | 1462.0 |
 | anuncios_nuevos_locales | 21.0 |
 | marcas_distintas | 50.0 |
-| precio_medio_usd | 28166.17 |
+| precio_medio_usd | 28201.06 |
 | precio_mediano_usd | 21000.0 |
 | anio_mediano | 2020.0 |
-| km_medianos | 33256.0 |
-| antiguedad_media | 8.2 |
+| km_medianos | 32569.0 |
+| antiguedad_media | 8.1 |
 
 ## Por canal
 
@@ -24,7 +24,7 @@ Página de referencia generada desde los CSV del pipeline. Si cambia el análisi
 |---|---|---|---|---|
 | importacion | usado | 691 | 26000.0 | 27046.22 |
 | local | nuevo | 21 | 24623.66 | 24729.59 |
-| local | usado | 1444 | 21000.0 | 28166.17 |
+| local | usado | 1462 | 21000.0 | 28201.06 |
 
 ## Coeficientes del modelo
 
