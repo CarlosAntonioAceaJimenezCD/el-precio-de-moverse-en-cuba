@@ -21,7 +21,7 @@ referencias verificadas. `Citada: sí/no` indica mención nominal en el informe.
 
 [8] Tilles, P. F. C.; Ferreira, F. F.; Francisco, G.; Pereira, C. de B.; Sarti, F. M.. *A Markovian model market—Akerlof's lemons and the asymmetry of information*. Physica A: Statistical Mechanics and its Applications (2011). https://doi.org/10.1016/j.physa.2011.03.007. Citada en el informe: no.
 
-[9] Du, Z.; Yang, Z.; Zhang, Y.; Li, S.; Liu, Y.. *Nonlinear Depreciation and Brand Heterogeneity in Chinese Used-Car Listing Prices: An Interpretable Hedonic Regression and Out-of-Sample Evaluation*. Advances in Economics, Management and Political Sciences (2026). https://doi.org/10.54254/2754-1169/2026.38524. Citada en el informe: no.
+[9] Du, Z.; Yang, Z.; Zhang, Y.; Li, S.; Liu, Y.. *Nonlinear Depreciation and Brand Heterogeneity in Chinese Used-Car Listing Prices: An Interpretable Hedonic Regression and Out-of-Sample Evaluation*. Advances in Economics, Management and Political Sciences (2026). https://doi.org/10.54254/2754-1169/2026.38524. Citada en el informe: sí (mención nominal en §71.6, sin marcador numérico).
 
 [10] Kang, W.; Fu, X.. *The pricing of used electric vehicles via machine learning and hedonic price model: A comparative study*. Computers & Industrial Engineering (2026). https://doi.org/10.1016/j.cie.2026.111964. Citada en el informe: no. **(metadata incomplete: resumen no indexado; campos bibliográficos verificados)**
 
@@ -31,7 +31,7 @@ referencias verificadas. `Citada: sí/no` indica mención nominal en el informe.
 
 [13] Francke, M.; Van de Minne, A.. *Modeling unobserved heterogeneity in hedonic price models*. Real Estate Economics (2020). https://doi.org/10.1111/1540-6229.12320. Citada en el informe: no.
 
-[14] Gegić, E.; Isaković, B.; Keco, D.; Mašetić, Z.; Kevrić, J.. *Car Price Prediction using Machine Learning Techniques*. TEM Journal (2019). https://doi.org/10.18421/tem81-16. Citada en el informe: no.
+[14] Gegić, E.; Isaković, B.; Keco, D.; Mašetić, Z.; Kevrić, J.. *Car Price Prediction using Machine Learning Techniques*. TEM Journal (2019). https://doi.org/10.18421/tem81-16. Citada en el informe: sí (mención nominal en §71.6, sin marcador numérico).
 
 [15] Mutİ, S.; Yıldız, K.. *Using Linear Regression For Used Car Price Prediction*. International Journal of Computational and Experimental Science and Engineering (2023). https://doi.org/10.22399/ijcesen.1070505. Citada en el informe: no.
 
@@ -55,13 +55,13 @@ referencias verificadas. `Citada: sí/no` indica mención nominal en el informe.
 
 [25] Wenger, E.; Li, X.; Zhao, B. Y.; Shmatikov, V.. *Data Isotopes for Data Provenance in DNNs*. Proceedings on Privacy Enhancing Technologies (2024). https://doi.org/10.56553/popets-2024-0024. Citada en el informe: no.
 
-[26] Muça, M.; Bani, K.; Alla, A.. *A Pipeline for Integrating and Analyzing Public Business Data in Albania Using Web Scraping and Machine Learning*. International Journal of Advanced Computer Science and Applications (2026). https://doi.org/10.14569/ijacsa.2026.0170845. Citada en el informe: no.
+[26] Muça, M.; Bani, K.; Alla, A.. *A Pipeline for Integrating and Analyzing Public Business Data in Albania Using Web Scraping and Machine Learning*. International Journal of Advanced Computer Science and Applications (2026). https://doi.org/10.14569/ijacsa.2026.0170845. Citada en el informe: sí (mención nominal en §71.6, sin marcador numérico).
 
 [27] Essien, I. A.; Adebayo, A. O.; Afuwape, A. A.; Eboseremen, B. O.; Oladega, F.; Soneye, O. M.. *The Ethics of Web Scraping In Research: A Review*. Journal of Frontiers in Multidisciplinary Research (2023). https://doi.org/10.54660/.jfmr.2023.4.1.529-538. Citada en el informe: no.
 
 [28] Paige, J.. *The Legality and Ethics of Web Scraping in Archaeology*. Advances in Archaeological Practice (2024). https://doi.org/10.1017/aap.2023.42. Citada en el informe: no.
 
-[29] Vidal Alejandro, P.; Muñiz-Cuza, C. E.; Calas Torres, A.. *Using AI in the informal currency market: evidence from Cuba*. Applied Economics (2024). https://doi.org/10.1080/00036846.2024.2416091. Citada en el informe: no.
+[29] Vidal Alejandro, P.; Muñiz-Cuza, C. E.; Calas Torres, A.. *Using AI in the informal currency market: evidence from Cuba*. Applied Economics (2024). https://doi.org/10.1080/00036846.2024.2416091. Citada en el informe: sí (mención nominal en §71.6, sin marcador numérico).
 
 [30] Castro Fernández, M.; Vilaragut Llanes, M.; Hernández, J. C.. *Electromobility and Energy Transition in Cuba*. Sustainability (2024). https://doi.org/10.3390/su16229688. Citada en el informe: no.
 
