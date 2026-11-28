@@ -24,6 +24,7 @@ ENTORNO["PROYECTO_SEED"] = str(SEED)
 NUMEROS = HERE.parents[2] / "Auxiliares/herramientas/actualizar_numeros.py"
 DASHBOARD = HERE.parents[2] / "Auxiliares/herramientas/generar_dashboard.py"
 COMPACTO = HERE.parents[2] / "Auxiliares/herramientas/exportar_parquet_compacto.py"
+ARTEFACTOS = HERE.parents[2] / "Auxiliares/herramientas/generar_artefactos_repro.py"
 STEPS = [
     "01_ingest.py",
     "02_clean.py",
@@ -53,6 +54,8 @@ def main():
     ejecutar(DASHBOARD, "--solo-si-cambia")
     print("\n===== exportar_parquet_compacto.py =====", flush=True)
     ejecutar(COMPACTO)
+    print("\n===== generar_artefactos_repro.py =====", flush=True)
+    ejecutar(ARTEFACTOS)
     print("\nANALISIS COMPLETO")
 
 

@@ -73,7 +73,7 @@ Se guarda, en UTC y con hashes:
 - Servicio `push-final` con 8 reinicios sin progreso: **detenido**.
 - `Data/_state/run_step.sh`: `flock` por job, `timeout`, estado JSON atómico con `last_success`, `last_failure` y `fallos_consecutivos`.
 - Wrappers `job_circuitos.sh`, `job_calidad.sh`, `job_salud.sh`, `job_analisis.sh`, `job_sitio.sh`.
-- `validar_calidad.py`: 6 reglas, cuarentena en `Data/_cuarentena/`, umbral 10 %. Corrida real: 2.014 filas, 0 inválidos.
+- `validar_calidad.py`: 6 reglas, cuarentena en `Data/_cuarentena/`, umbral 10 %. Corrida vigente: 2.174 filas limpias, 0 inválidos; la corrida de 2.014 filas quedó registrada como estado anterior.
 - `salud.py`: `Data/_estado/salud.json`, `Data/auditoria/SALUD.md`, `alertas.jsonl` y `ALERTA.stale`.
 - Capturador de circuitos con **ETag / Last-Modified** (HTTP 304 = sin descarga) y evidencia en estado HTTP.
 - Timers `precio-{circuitos,calidad,salud,analisis,sitio}.{service,timer}` creados, verificados con `systemd-analyze verify`, habilitados y activos.

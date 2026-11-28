@@ -5,7 +5,7 @@
 `exportar_parquet_compacto.py` copia **todas** las tablas y columnas de
 `revolico.sqlite` a Parquet particionado por `year=/month=` y comprimido con
 Zstandard, en `Data/analisis_rentabilidad/data/compacto/`. Medición real:
-**849 MB → 27,5 MB** (10.379 anuncios, 974 autos, 23.697 imágenes, 14.512
+**849 MB → 27,5 MB** (10.379 anuncios, 974 autos, 23.697 imágenes, **14.528**
 revisiones, 12.538 teléfonos y 716 precios), con las mismas filas, columnas
 y valores; `MANIFEST.json` guarda recuentos y SHA-256 por archivo. La SQLite
 sigue siendo la base de trabajo del capturador; el Parquet es la copia

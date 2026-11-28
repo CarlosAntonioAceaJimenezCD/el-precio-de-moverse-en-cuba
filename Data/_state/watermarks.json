@@ -1,0 +1,22 @@
+{
+  "listings_clean": {
+    "sha256": "46282813e00852f7e6d48046cffa0a32be78957425944e9dc39047ebc73f5449",
+    "actualizado_utc": "2026-11-28T10:26:07.718497+00:00",
+    "bytes": 1226698
+  },
+  "revolico_chunks": {
+    "sha256": "cfa7b46bd32974f5b67bef8934f90b3be340e1b75fc7d221b184b49541fb3edd",
+    "actualizado_utc": "2026-11-28T10:26:07.718497+00:00",
+    "bytes": 16421
+  },
+  "kpis": {
+    "sha256": "726df1be86af5559e8f9e4ae497b9aed64e30a695bcbf88c21e731b4aa9fc198",
+    "actualizado_utc": "2026-11-28T10:26:07.718497+00:00",
+    "bytes": 285
+  },
+  "benchmark": {
+    "sha256": "606823110161511a68f8acb1041fad553cd37775cba6337d903137ff26783a54",
+    "actualizado_utc": "2026-11-28T10:26:07.718497+00:00",
+    "bytes": 5323
+  }
+}

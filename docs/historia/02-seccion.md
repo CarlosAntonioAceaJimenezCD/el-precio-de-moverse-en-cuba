@@ -32,6 +32,8 @@ Nuestra base reúne **<!-- kpi:autos_revolico -->974 autos únicos de Revolico**
 
 Con **<!-- kpi:marcas_distintas -->50 marcas** y **<!-- kpi:grupos_benchmark -->114 grupos** de marca, modelo y año comparables, detectamos **<!-- kpi:infravalorados -->30 oportunidades infravaloradas** y **<!-- kpi:anomalias -->89 anomalías** entre precio y kilometraje. La depreciación ya no se presenta como una cifra única: al corregir el kilometraje, el modelo actual no encuentra una pendiente anual estadísticamente significativa. La edad ya no explica el precio por sí sola; importa de dónde viene el auto, en qué moneda se paga y en qué estado llega. Ese retorno depende también del precio de compra, de la documentación y de la regulación vigente —en particular del Decreto 163/2026—. Cuando el taxi sube con la hora y el combustible cambia con la divisa, el carro propio deja de ser solo un gasto: es una decisión sobre cómo se conserva —o se pierde— el valor.
 
+El uso de herramientas de IA en la redacción y el análisis se declara en §69 del `INFORME_TECNICO.md`.
+
 *Apoyo: [Cuadro 1](apendice.md#cuadro-1) y [Cuadro 2](apendice.md#cuadro-2).*
 
 Estas cuatro preguntas tienen respuesta, pero estaban dispersas en anuncios, catálogos, resoluciones y conversaciones. Este proyecto nace para juntarlas.

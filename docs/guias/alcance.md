@@ -16,6 +16,8 @@ Revisión del relato como **puerta de entrada**: ¿logra que un visitante nuevo 
 
 **Correcciones aplicadas al storytelling:** titular beneficio-driven, gancho de tres datos en el primer bloque, enlaces de entrada, CTA de retorno al cierre y corrección del carácter.
 
+El uso de herramientas de IA en la redacción y el análisis se declara en §69 del `INFORME_TECNICO.md`.
+
 ## 2. Estimación de retención (inferencia, no medición)
 
 Supuesto: ~4.000–5.000 palabras, 18–25 minutos de lectura, patrones generales de long-form. De cada **100 visitantes**:

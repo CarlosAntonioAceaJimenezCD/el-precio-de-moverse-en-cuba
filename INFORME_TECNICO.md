@@ -18,7 +18,7 @@
 - **Novedad:** la procedencia y la normalización se tratan como objeto de auditoría; la pérdida de muestra por variables ausentes se reporta como hallazgo y no se oculta.
 - **Contribuciones:** base compacta reproducible, panel interactivo autocontenido, pipeline con timers y un expediente de auditoría con 13 artefactos.
 
-**Hipótesis falsable (H1):** «los precios de los tres tiers de marca en el mercado local provienen de la misma distribución, controlando por antigüedad y kilometraje». Se contrasta con Kruskal-Wallis; se rechaza con p < 0,001 en la corrida vigente.
+**Hipótesis falsable (H1):** «los precios de los tres tiers de marca en el mercado local provienen de la misma distribución». Es un contraste no ajustado: antigüedad y kilometraje se examinan por separado en el modelo hedónico. Se usa Kruskal-Wallis; se rechaza con p < 0,001 en la corrida vigente.
 
 ## 1. Objetivo
 
@@ -124,7 +124,7 @@ Solo se incluyen las normas y fuentes relevantes para el contexto del proyecto:
 
 - **Decreto 163/2026**, Gaceta Oficial No. 65 Ordinaria (04/08/2026): regula la importación y comercialización de vehículos; define el marco sobre el que debe trabajar el análisis de precios y oferta.
 - **Resolución 104/2026 (MINCEX), 17/2026 (MINCIN), 52/2026 (MITRANS), 171–175/2026 (MFP), 312/2026, derogada por 340/2026 (Aduana) y 102/2026 (BCC)**: desarrollos sectoriales, fiscales y cambiarios que condicionan el mercado.
-- **Condiciones de uso de cada portal**: criterio operativo para la recolección. No se eluden mecanismos anti-automatización; los HTTP 403/429 se registran como limitación.
+- **Condiciones de uso de cada portal**: criterio operativo para la recolección. No se sortean muros de pago ni áreas privadas; para contenido público que devuelve 403 se documenta el bloqueo y se usa navegación con fingerprint de Chrome y FlareSolverr. Los HTTP 403/429 se registran como limitación.
 - **Protección de datos personales, ciberseguridad y derechos de autor**: antes de publicar resultados deben verificarse las normas cubanas vigentes y aplicar solo datos agregados, sin nombres, teléfonos ni información personal de anunciantes.
 - `~/Utilidades/Leyes/gaceta_catalog.json` es el índice de referencia; el corpus completo de gacetas no se registra entrada por entrada en este informe, solo se citan las normas anteriores.
 
@@ -160,7 +160,7 @@ Solo se incluyen las normas y fuentes relevantes para el contexto del proyecto:
 - **News:** provenance and normalisation are treated as an audit object; sample loss from missing variables is reported as a finding.
 - **Contributions:** a reproducible compact database, a self-contained interactive dashboard, a timer-driven pipeline and an audit trail with 13 artifacts.
 
-**Falsifiable hypothesis (H1):** "prices across the three brand tiers in the local market come from the same distribution, controlling for age and mileage". Tested with Kruskal-Wallis and rejected at p < 0.001 in the current run.
+**Falsifiable hypothesis (H1):** "prices across the three brand tiers in the local market come from the same distribution". This is an unadjusted contrast: age and mileage are examined separately in the hedonic model. Tested with Kruskal-Wallis and rejected at p < 0.001 in the current run.
 
 ## 1. Objective
 
@@ -1223,7 +1223,7 @@ Fuentes: Cubadebate (07/02/2026), Directorio Cubano (12 y 15/05/2026), CubaTrám
 Se reescribieron los dos párrafos restantes de la sección 2 con el mismo nivel de detalle que el apartado del combustible:
 
 - **¿Quién lo mantiene?**: incorpora los **22 talleres** y **25 concesionarios** geolocalizados, las redes formales (BDC One, Dongfeng, ATR, SASA) y los talleres independientes (CarFix, Taller Calle 8, Taller VÉLO, Trisolinera Habana, Tecni-Motos, Taller Manolito), además del costo de inmovilización por piezas importadas.
-- **¿Qué devuelve la inversión?**: incorpora el uso del vehículo como **taxi formal o informal** para ingresos estables, en continuidad con taxis, triciclos y gacelas; la depreciación de **−5,43 % anual** obtenida en la primera corrida (p < 0,001; §34), cifra que la corrida vigente ya no sostiene, junto con las primas premium de **+21 %**, los descuentos del **−22 %** para tier medio, **30 infravalorados**, **66 anomalías** y el marco del **Decreto 163/2026**.
+- **¿Qué devuelve la inversión?**: incorpora el uso del vehículo como **taxi formal o informal** para ingresos estables, en continuidad con taxis, triciclos y gacelas; la depreciación de **−5,43 % anual** obtenida en la primera corrida (p < 0,001; §34), cifra que la corrida vigente ya no sostiene, junto con las primas premium de **+21 %**, los descuentos del **−22 %** para tier medio, **30 infravalorados**, **<!-- kpi:anomalias -->89 anomalías** y el marco del **Decreto 163/2026**; las primas y descuentos citados pertenecen a la primera corrida y la vigente no los sostiene.
 
 **EN.** Rewrote the maintenance and ROI storytelling sections with mapped workshops/dealerships, immobilization costs, taxi-income use, depreciation metrics and the 2026 regulatory framework.
 
@@ -1342,7 +1342,7 @@ Para el proyecto, la serie más útil es el capítulo 13 (Transporte y Seguridad
 
 ## 54. Base de datos distribuida en chunks (20/11/2026)
 
-`Data/Revolico/revolico.sqlite` (849.465.344 bytes) se dividió en **82 chunks de 10 MB** en `Data/Revolico/chunks/`, con un `MANIFEST.json` que guarda el SHA-256 del archivo completo, el orden, el offset y el hash de cada fragmento. La verificación de los 82 chunks dio OK.
+`Data/Revolico/revolico.sqlite` (849.465.344 bytes en el momento del chunk; la base viva es mayor) se dividió en **82 chunks de 10 MB** en `Data/Revolico/chunks/`, con un `MANIFEST.json` que guarda el SHA-256 del archivo completo, el orden, el offset y el hash de cada fragmento. La verificación de los 82 chunks dio OK.
 
 Se añadió `Auxiliares/herramientas/db_chunks.py` con tres comandos (`split`, `verify`, `assemble`); la reconstrucción valida todos los hashes antes de escribir y no reemplaza un archivo existente salvo `--force`. `.gitattributes` gestiona los `.bin` con Git LFS. `config.py` expone `REVOLICO_CHUNKS`, `REVOLICO_MANIFEST` y `DB_CHUNKS_TOOL`, y `scripts/01_ingest.py` reconstruye la base desde los chunks si el SQLite no existe. El archivo original se conserva en el árbol de trabajo.
 
@@ -1388,7 +1388,7 @@ Se volvieron a descargar las dos primeras páginas de los 8 marketplaces y se co
 
 Se scrapearon e insertaron los 10 anuncios detectados en la reclasificación: GMC Sierra 2022, Honda Accord 2025, Hyundai Santa Cruz 2022, Hyundai Santa Fe 2024, Kia Forte GT Line 2020, Maxus G10 2015, Mercedes Sprinter 211 2020, Nissan Titan 2017, Sonata 2021 SEL y Van Nissan 2020. Se hizo copia de seguridad de `itencel.sqlite` antes de escribir (`itencel.sqlite.bak-20261123`), se canonizaron las URLs con barra final para no duplicar y se reparó un título de interfaz usando el JSON-LD.
 
-La BD pasó de 951 a **961 anuncios** (961 URLs únicas, `integrity_check=ok`). El pipeline se regeneró con el entorno `Auxiliares/.venv-py` (añadido `pyarrow` a `requirements.txt`): **2.014 anuncios limpios**, de ellos 1.323 locales y 691 de importación; mediana local 21.000 USD y mediana de kilometraje 44.125 km. Se dejó listo el terreno para volver a trabajar con Revolico.
+La BD pasó de 951 a **961 anuncios** (961 URLs únicas, `integrity_check=ok`). El pipeline se regeneró con el entorno `Auxiliares/.venv-py` (añadido `pyarrow` a `requirements.txt`): **2.014 anuncios limpios**, de ellos 1.323 locales y 691 de importación; mediana local 21.000 USD y mediana de kilometraje 44.125 km. Esa fue la corrida del 23/11; la vigente está en `kpis.csv` y se actualiza sola. Se dejó listo el terreno para volver a trabajar con Revolico.
 
 **EN.** Scraped and inserted 10 new iTENCEL ads after backing up the database and canonicalizing URLs; the database has 961 unique ads and the regenerated analysis has 2,014 clean listings (1,323 local + 691 imported).
 
@@ -1494,9 +1494,9 @@ La API de GitHub reporta **205.002 KB (0,20 GB)** para el historial normal; los 
 
 ## 70. Referencias verificadas / Verified references
 
-**ES.** Referencias citadas y verificadas externamente durante la auditoría: Akerlof (1970), *The Market for "Lemons"* (DOI 10.2307/1879431 confirmado en OpenAlex; el resumen indexado es solo un índice de secciones, por lo que su flag es `(metadata incomplete: resumen)`); UK Department for Transport / DVLA, estadísticas de vehículos (GOV.UK); ANFAC, informes del sector automotriz español (sitio oficial); AEADE, estadísticas de matriculaciones (sitio oficial). Las fuentes restantes figuran con estado `(metadata incomplete)` en `reviews/informe-tecnico-2026-11-27.e2-literature.md` y no se presentan como referencias verificadas. La convención numerada de 41 referencias y su estado de verificación están en `Data/referencias.md`; la correspondencia entre afirmación y fuente se documenta en el expediente forense.
+**ES.** Referencias citadas y verificadas externamente durante la auditoría: Akerlof (1970), *The Market for "Lemons"* (identidad y DOI 10.2307/1879431 verificados en OpenAlex/Crossref; solo el resumen indexado está incompleto, de ahí su flag `(metadata incomplete: resumen)`); UK Department for Transport / DVLA, estadísticas de vehículos (GOV.UK); ANFAC, informes del sector automotriz español (sitio oficial); AEADE, estadísticas de matriculaciones (sitio oficial). Las fuentes restantes figuran con estado `(metadata incomplete)` en `reviews/informe-tecnico-2026-11-27.e2-literature.md` y no se presentan como referencias verificadas. La convención numerada de 41 referencias y su estado de verificación están en `Data/referencias.md`; la correspondencia entre afirmación y fuente se documenta en el expediente forense.
 
-**EN.** Externally verified references cited during the audit: Akerlof (1970), *The Market for "Lemons"* (DOI 10.2307/1879431 confirmed in OpenAlex; the indexed abstract is only a section index, so its flag is `(metadata incomplete: abstract)`); UK Department for Transport / DVLA vehicle statistics (GOV.UK); ANFAC Spanish automotive reports (official site); AEADE registration statistics (official site). Remaining sources are marked `(metadata incomplete)` in `reviews/informe-tecnico-2026-11-27.e2-literature.md` and are not presented as verified references. A numbered list of 41 references and their verification status is available in `Data/referencias.md`; claim-to-source correspondence is documented in the forensic assembly.
+**EN.** Externally verified references cited during the audit: Akerlof (1970), *The Market for "Lemons"* (identity and DOI 10.2307/1879431 verified in OpenAlex/Crossref; only the indexed abstract is incomplete, hence `(metadata incomplete: abstract)`); UK Department for Transport / DVLA vehicle statistics (GOV.UK); ANFAC Spanish automotive reports (official site); AEADE registration statistics (official site). Remaining sources are marked `(metadata incomplete)` in `reviews/informe-tecnico-2026-11-27.e2-literature.md` and are not presented as verified references. A numbered list of 41 references and their verification status is available in `Data/referencias.md`; claim-to-source correspondence is documented in the forensic assembly.
 
 ---
 
@@ -1512,20 +1512,20 @@ La API de GitHub reporta **205.002 KB (0,20 GB)** para el historial normal; los 
 | Mediana por marca | Predice la mediana de cada marca | MAE <!-- kpi:mae_mediana_por_marca -->16.603,28 USD sobre <!-- kpi:n_mediana_por_marca -->1.462 anuncios |
 | Egyptian-Used-Cars | Referencia de ingeniería del campo: 23.500 anuncios y series mensuales | Contraste cualitativo de cobertura y frescura |
 
-Las 981 candidatas y las 8 fuentes se registran en `Data/analisis_rentabilidad/config.py`, `scripts/01_ingest.py` y `outputs/tables/kpis_canal.csv`; los MAE se calculan en `scripts/03b_baselines.py` y se publican en `outputs/tables/baselines.csv`.
-| Modelo principal propio | OLS de log-precio con antigüedad, km, condición y tier | R² 0,101 sobre 584 observaciones |
+Las <!-- kpi:modelo_candidatas -->993 candidatas y las 8 fuentes se registran en `Data/analisis_rentabilidad/config.py`, `scripts/01_ingest.py` y `outputs/tables/kpis_canal.csv`; los MAE se calculan en `scripts/03b_baselines.py` y se publican en `outputs/tables/baselines.csv`.
+| Modelo principal propio | OLS de log-precio con antigüedad, km, condición y tier | R² <!-- kpi:modelo_r2_principal -->0,101 sobre <!-- kpi:modelo_n_principal -->586 observaciones |
 
 **EN.** Baseline 1 is the naive global median (MAE <!-- kpi:mae_mediana_global -->18.188,34 USD on <!-- kpi:n_mediana_global -->1.462 listings); baseline 1b is the brand median (MAE <!-- kpi:mae_mediana_por_marca -->16.603,28 USD); baseline 2 is the Egyptian-Used-Cars engineering reference (23,500 listings, monthly series); the local principal model is reported alongside both.
 
 ### 71.2 Ablación explícita / Explicit ablation
 
-`modelo_muestra.csv` documenta la ablación del término `hp`: al retirarlo, la muestra pasa de 28 a 584 observaciones de 981 candidatas y el R² baja de 0,274 a 0,101. El cambio de especificación y el cambio de muestra se informan juntos. La pendiente positiva de antigüedad en el modelo principal se atribuye a la selección de anuncios con kilometraje declarado y no se interpreta como una tasa de depreciación.
+`modelo_muestra.csv` documenta la ablación del término `hp`: al retirarlo, la muestra pasa de <!-- kpi:modelo_n_completo -->28 a <!-- kpi:modelo_n_principal -->586 observaciones de <!-- kpi:modelo_candidatas -->993 candidatas y el R² baja de 0,274 a 0,101. El cambio de especificación y el cambio de muestra se informan juntos. La pendiente positiva de antigüedad en el modelo principal se atribuye a la selección de anuncios con kilometraje declarado y no se interpreta como una tasa de depreciación.
 
 **EN.** Removing `hp` changes the sample from 28 to 584 observations and R² from 0.274 to 0.101; both changes are reported together. The positive age slope in the principal model is attributed to selection into the mileage-reported subsample, not to a depreciation rate.
 
 ### 71.3 Pruebas y tamaño muestral / Tests and sample size
 
-No hay diseño pareado: los anuncios son observaciones independientes, por lo que no se aplican Wilcoxon de pares ni t de diferencias; se usan Kruskal-Wallis y Welch para grupos independientes. El tamaño se mide en anuncios (981 candidatas de 8 marketplaces), no en ensayos experimentales. El contraste central se cuantifica con H = 44,313 y un intervalo bootstrap de la diferencia de medianas premium−económico de <!-- kpi:ci_bajo -->10.000 a <!-- kpi:ci_alto -->29.500 USD (`comparaciones.csv`, 2.000 réplicas).
+No hay diseño pareado: los anuncios son observaciones independientes, por lo que no se aplican Wilcoxon de pares ni t de diferencias; se usan Kruskal-Wallis y Welch para grupos independientes. El tamaño se mide en anuncios (<!-- kpi:modelo_candidatas -->993 candidatas de 8 marketplaces), no en ensayos experimentales. El contraste central se cuantifica con H = 44,313 y un intervalo bootstrap de la diferencia de medianas premium−económico de <!-- kpi:ci_bajo -->10.000 a <!-- kpi:ci_alto -->29.500 USD (`comparaciones.csv`, 2.000 réplicas).
 
 **EN.** There is no paired design: listings are independent, so Kruskal-Wallis and Welch are used. Sample size is measured in listings, not trials; an operationalised SOTA baseline is still missing.
 
@@ -1534,13 +1534,14 @@ No hay diseño pareado: los anuncios son observaciones independientes, por lo qu
 - **Externa:** solo La Habana y anuncios en línea; los precios son pedidos, no transaccionados.
 - **De constructo:** kilometraje y potencia faltan en la mayoría de los anuncios; la condición se infiere del texto.
 - **Interna:** no hay asignación aleatoria; la ablación es observacional.
+- **Conversión monetaria:** la TRMI fija de 930 CUP/USD del 18/11/2026 es una convención fechada; la serie diaria se conserva como referencia histórica.
 - **Estadística conclusiva:** el modelo completo usa 28 observaciones y ningún coeficiente alcanza p < 0,05; el principal tiene mejor cobertura pero su signo de antigüedad refleja selección.
 
 **EN.** Threats are external (Havana only, asking prices), construct (missing mileage and power), internal (no random assignment) and statistical conclusion (28 complete cases).
 
 ### 71.5 Protocolo, semillas y reproducción / Protocol, seeds and reproduction
 
-La semilla `SEED = 20261127` está declarada en `run_all.py` y se propaga a cada etapa por la variable de entorno `PROYECTO_SEED`; antes se declaraba sin efecto. El panel vigente es `Data/dashboard.html` (copiado a `docs/dashboard.html`). Las bases crudas están en `Data/Revolico/` gestionadas con Git LFS y reconstruibles desde `chunks/MANIFEST.json`; el repositorio público es `https://github.com/CarlosAntonioAceaJimenezCD/el-precio-de-moverse-en-cuba`. No se ha declarado todavía una licencia de datos o código. Comando único: `Auxiliares/.venv-py/bin/python Data/analisis_rentabilidad/scripts/run_all.py`. Puntos de entrada con argumentos: `generar_dashboard.py --solo-si-cambia`, `exportar_parquet_compacto.py --tablas ...`, `db_chunks.py split|verify|assemble` y `generar_sitio_mkdocs.py`. Las dependencias están fijadas a serie menor en `requirements.txt`. Prueba de humo: `python3 Auxiliares/herramientas/test_smoke_pipeline.py`.
+La semilla `SEED = 20261127` está declarada en `run_all.py` y se propaga a cada etapa por la variable de entorno `PROYECTO_SEED`; antes se declaraba sin efecto. El panel vigente es `Data/dashboard.html` (copiado a `docs/dashboard.html`). Las bases crudas están en `Data/Revolico/` gestionadas con Git LFS y reconstruibles desde `chunks/MANIFEST.json`; el repositorio público es `https://github.com/CarlosAntonioAceaJimenezCD/el-precio-de-moverse-en-cuba`. Licencia declarada: código MIT y datos derivados CC BY 4.0 (archivo `LICENSE`). Comando único: `Auxiliares/.venv-py/bin/python Data/analisis_rentabilidad/scripts/run_all.py`. Puntos de entrada con argumentos: `generar_dashboard.py --solo-si-cambia`, `exportar_parquet_compacto.py --tablas ...`, `db_chunks.py split|verify|assemble` y `generar_sitio_mkdocs.py`. Las dependencias están fijadas a serie menor en `requirements.txt`. Prueba de humo: `python3 Auxiliares/herramientas/test_smoke_pipeline.py`.
 
 **EN.** The seed is declared and propagated to every stage; dependencies are pinned to minor series and a smoke test checks the central component.
 
@@ -1548,13 +1549,7 @@ La semilla `SEED = 20261127` está declarada en `run_all.py` y se propaga a cada
 
 Gegić y otros [14] predicen precios con aprendizaje automático sobre catálogos estructurados; aquí las variables se extraen de anuncios en lenguaje libre, así que el aporte es de procedencia y normalización, no de algoritmo. Muça, Bani y Alla [26] integran datos públicos albaneses por scraping; en este trabajo el énfasis está en la conversión con TRMI fechada y en auditar la procedencia. Du y otros [9] modelan depreciación no lineal y heterogeneidad de marca con evaluación fuera de muestra; este informe no estima una tasa anual y reporta la pérdida de muestra como hallazgo. Vidal Alejandro y otros [29] estudian el mercado informal de divisas en Cuba; aquí esa tasa es una convención de conversión fechada, no el objeto de estudio.
 
-### 71.15 Declaraciones / Declarations
-
-**ES.** No se reclutaron sujetos humanos: la encuesta de 33 respuestas y las entrevistas se tratan como documentación de contexto, no como datos experimentales; no se requirió un procedimiento de anonimización ejecutado. Se declara ausencia de conflicto de intereses. El tema no se considera de doble uso sensible, con la salvedad de que los anuncios contienen datos de contacto que se excluyen de la publicación. La disponibilidad de datos y código se documenta en §71.5; la licencia queda pendiente de declaración.
-
-**EN.** No human subjects were recruited: the 33-response survey and interviews are context documentation, not experimental data, so no executed anonymisation procedure was required. No conflict of interest is declared. The topic is not considered sensitive dual-use, except that listing contact details are excluded from publication. Data and code availability are documented in §71.5; a license is still pending.
-
-### 71.14 Obras del mapa literario citadas en el cuerpo / Prior work cited in the body
+### 71.15 Obras del mapa literario citadas en el cuerpo / Prior work cited in the body
 
 | Ref. | Clúster | Autor (año) | Obra |
 |---|---|---|---|
@@ -1596,8 +1591,18 @@ Gegić y otros [14] predicen precios con aprendizaje automático sobre catálogo
 | [36] | Señales de precio en m | Holtz (2020) | Reducing Interference Bias in Online Marketplace Pricing Experim |
 | [37] | Señales de precio en m | Etro (2020) | Product Selection in Online Marketplaces |
 | [38] | Señales de precio en m | Quariguasi Frota Neto (2015) | Market prices of remanufactured, used and new items: Evidence fr |
+| [39] | Cuba: divisas informales | Department for Transport / DVLA (s.f.) | Vehicle statistics (GOV.UK) |
+| [40] | Cuba: divisas informales | ANFAC (s.f.) | Informes del sector automotriz español |
+| [41] | Cuba: divisas informales | AEADE (s.f.) | Estadísticas de matriculaciones |
 
-Los trabajos [1], [9], [14], [26] y [29] se discuten además en §71.6; el resto se registra aquí con su marcador numérico y se enlaza a `Data/referencias.md`.
+Los trabajos [14], [26], [9] y [29] se discuten en §71.6; [1] aparece en §17/§19 y §70, y [12] en el clúster 2 del mapa; el resto se registra aquí con su marcador numérico y se enlaza a `Data/referencias.md`.
+
+### 71.14 Declaraciones / Declarations
+
+**ES.** No se reclutaron sujetos humanos: la encuesta de 33 respuestas y las entrevistas se tratan como documentación de contexto, no como datos experimentales; no se requirió un procedimiento de anonimización ejecutado. Se declara ausencia de conflicto de intereses. El tema no se considera de doble uso sensible, con la salvedad de que los anuncios contienen datos de contacto que se excluyen de la publicación. La disponibilidad de datos y código se documenta en §71.5; la licencia está declarada en §71.5 y en el archivo `LICENSE` (MIT para código, CC BY 4.0 para datos derivados).
+
+**EN.** No human subjects were recruited: the 33-response survey and interviews are context documentation, not experimental data, so no executed anonymisation procedure was required. No conflict of interest is declared. The topic is not considered sensitive dual-use, except that listing contact details are excluded from publication. Data and code availability are documented in §71.5; a license is still pending.
+
 
 ---
 

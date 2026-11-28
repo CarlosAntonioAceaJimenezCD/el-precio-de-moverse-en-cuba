@@ -1,0 +1,28 @@
+{
+  "generado_utc": "2026-11-28T10:26:07.718497+00:00",
+  "commit": "6c6aa6c02c461832f20c327c3f97eaf27eb10b14",
+  "python": "3.14",
+  "config_sha256": "e688acdff4a87852fb6d5a894eed1bda65f4ba654614f7acc8476c149b11b514",
+  "fuentes": {
+    "listings_clean": {
+      "ruta": "Data/analisis_rentabilidad/data/listings_clean.parquet",
+      "sha256": "46282813e00852f7e6d48046cffa0a32be78957425944e9dc39047ebc73f5449",
+      "bytes": 1226698
+    },
+    "revolico_chunks": {
+      "ruta": "Data/Revolico/chunks/MANIFEST.json",
+      "sha256": "cfa7b46bd32974f5b67bef8934f90b3be340e1b75fc7d221b184b49541fb3edd",
+      "bytes": 16421
+    },
+    "kpis": {
+      "ruta": "Data/analisis_rentabilidad/outputs/tables/kpis.csv",
+      "sha256": "726df1be86af5559e8f9e4ae497b9aed64e30a695bcbf88c21e731b4aa9fc198",
+      "bytes": 285
+    },
+    "benchmark": {
+      "ruta": "Data/analisis_rentabilidad/outputs/tables/benchmark.csv",
+      "sha256": "606823110161511a68f8acb1041fad553cd37775cba6337d903137ff26783a54",
+      "bytes": 5323
+    }
+  }
+}
