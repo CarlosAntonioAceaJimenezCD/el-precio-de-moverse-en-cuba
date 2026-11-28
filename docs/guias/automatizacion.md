@@ -22,7 +22,7 @@ Objetivo: que una persona abra el proyecto **dos años después** y lo encuentre
 | Metadatos pequeños a Git | Diario | Separado de los binarios grandes |
 | Publicación LFS | Bajo demanda | Chunks de 10 MiB reanudables; push por bloques cuando hay cambios |
 
-Todo se programa en **UTC**, con `Persistent=true` y `RandomizedDelaySec=5m` para recuperarse tras apagones sin picos de carga.
+Todo se programa en **UTC**, con `Persistent=true` y `RandomizedDelaySec=5m` para recuperarse tras apagones sin picos de carga. La semilla `SEED = 20261127` está declarada en `run_all.py` y se propaga por la variable `PROYECTO_SEED`; solo el bootstrap de `03c_comparaciones.py` la consume, porque las demás etapas son deterministas.
 
 ### Panel interactivo autocontenido
 

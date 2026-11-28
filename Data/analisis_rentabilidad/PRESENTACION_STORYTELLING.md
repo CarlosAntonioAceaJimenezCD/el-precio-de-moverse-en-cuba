@@ -14,7 +14,7 @@ Datos y método: [informe técnico](../../INFORME_TECNICO.md) · [auditoría de 
 
 ---
 
-## 1. El punto de partida: moverse en Cuba
+## 1. Por qué moverse en Cuba cuesta más de lo que parece
 
 En Cuba, salir de casa no empieza cuando uno abre la puerta. Empieza antes: mirando el reloj, calculando cuánto se tarda en llegar a la parada, si pasará el ómnibus, si habrá que esperar una hora más o si habrá que improvisar.
 
@@ -172,7 +172,7 @@ La diferencia es el tiempo. Egipto construyó su serie durante meses; aquí el m
 4. Publicar un índice de precio por marca, modelo y provincia.
 5. Actualizar el marco regulatorio cada vez que cambie la Gaceta Oficial.
 
-El resultado no será un informe. Será un **observatorio del mercado automotor cubano**.
+El resultado de hoy es un informe reproducible; el **observatorio del mercado automotor cubano** es el destino, no una promesa ya cumplida.
 
 ---
 
@@ -184,7 +184,7 @@ Porque detrás de cada anuncio hay una familia, un negocio, una decisión de inv
 
 **¿Cuánto cuesta realmente moverse en Cuba?**
 
-El mercado no se detiene. Cada semana sumamos una observación real de precios; el índice por marca, modelo y provincia se actualiza en [KPIs y tablas](outputs/tables/kpis.csv) y el estado eléctrico en el [mapa de circuitos](../mapas/TIMELAPSE_CIRCUITOS.md). Vuelve por un dato puntual, no por un informe entero.
+El mercado no se detiene. Cada semana sumamos una observación real de precios; los [KPIs y tablas](outputs/tables/kpis.csv) se actualizan solos y el estado eléctrico vive en el [mapa de circuitos](../mapas/TIMELAPSE_CIRCUITOS.md); el índice por marca, modelo y provincia sigue siendo una tarea pendiente. Vuelve por un dato puntual, no por un informe entero.
 
 ---
 

@@ -93,6 +93,8 @@ El resultado queda en `site/` (ignorado por Git) y la configuración en `mkdocs.
 
 ## Documentación
 
+- **Alcance de la novedad:** el diferenciador declarado es de procedencia y normalización sobre datos cubanos, no de método; la última pasada no hizo búsqueda bibliográfica nueva ni lectura de texto completo (§71.14 del informe).
+- **Términos:** TRMI (tasa de cambio informal), KPI (indicador), OLS (mínimos cuadrados ordinarios), UTM (parámetros de seguimiento), E-E-A-T (experiencia, pericia, autoridad y confianza), CDN (red de distribución de contenidos), long-form (texto extenso).
 - **Arquitectura y evolución:** `Data/analisis_rentabilidad/ARQUITECTURA_DATOS.md`, `Data/analisis_rentabilidad/ALCANCE_Y_RETENCION.md`, `Data/AUTOMATIZACION.md`, `Data/ESTRUCTURA_ESPACIO.md`, `Data/mapas/README.md`.
 - **Referencia:** `INFORME_TECNICO.md` (secciones 1–71.15), `Data/referencias.md` (41 entradas), `Data/CRUDO_POR_CATEGORIA/INDICE.md`, `Data/fuentes-oficiales/ONEI/README.md`, `Data/analisis_rentabilidad/MODELOS_Y_FUNCIONES.md`.
 - **Cómo hacerlo:** `Data/analisis_rentabilidad/README.md`, `Data/Revolico/chunks/README.md`.
@@ -100,6 +102,8 @@ El resultado queda en `site/` (ignorado por Git) y la configuración en `mkdocs.
 - **Necesidades pendientes:** `Data/analisis_rentabilidad/NECESIDADES.md`.
 
 ## Marco legal y límites
+
+**Disponibilidad y declaraciones:** el código y los datos derivados están en https://github.com/CarlosAntonioAceaJimenezCD/el-precio-de-moverse-en-cuba; las bases crudas se reconstruyen desde `Data/Revolico/chunks/MANIFEST.json`. La licencia de datos y código está pendiente de declarar y no se declara conflicto de intereses. El uso de IA en redacción, código y auditoría se describe en §69 del informe técnico.
 
 El proyecto respeta los términos de uso de los portales: no elude mecanismos anti-automatización, no publica datos personales de anunciantes —los teléfonos se almacenan en la base de trabajo pero se excluyen de la publicación— y conserva la procedencia de cada dato. El uso de IA en redacción, código y auditoría se declara en §69 del informe técnico. El marco normativo es el **Decreto 163/2026** y las resoluciones 104, 17, 52, 171–175, 340 (que derogó la 312) y 102/2026.
 

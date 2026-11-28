@@ -1,4 +1,4 @@
-1. El punto de partida: moverse en Cuba|historia/01-seccion.md
+1. Por qué moverse en Cuba cuesta más de lo que parece|historia/01-seccion.md
 2. La alternativa personal: cuatro preguntas antes de comprar|historia/02-seccion.md
 3. Lo que encontramos|historia/03-seccion.md
 4. La curva de valor|historia/04-seccion.md

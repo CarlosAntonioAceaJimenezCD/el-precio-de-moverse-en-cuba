@@ -6,7 +6,7 @@ Porque detrás de cada anuncio hay una familia, un negocio, una decisión de inv
 
 **¿Cuánto cuesta realmente moverse en Cuba?**
 
-El mercado no se detiene. Cada semana sumamos una observación real de precios; el índice por marca, modelo y provincia se actualiza en [KPIs y tablas](../referencia/kpis.md) y el estado eléctrico en el [mapa de circuitos](../fuentes/circuitos.md). Vuelve por un dato puntual, no por un informe entero.
+El mercado no se detiene. Cada semana sumamos una observación real de precios; los [KPIs y tablas](../referencia/kpis.md) se actualizan solos y el estado eléctrico vive en el [mapa de circuitos](../fuentes/circuitos.md); el índice por marca, modelo y provincia sigue siendo una tarea pendiente. Vuelve por un dato puntual, no por un informe entero.
 
 ---
 

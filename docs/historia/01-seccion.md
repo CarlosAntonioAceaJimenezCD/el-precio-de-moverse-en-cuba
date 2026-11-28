@@ -1,4 +1,4 @@
-# 1. El punto de partida: moverse en Cuba
+# 1. Por qué moverse en Cuba cuesta más de lo que parece
 
 En Cuba, salir de casa no empieza cuando uno abre la puerta. Empieza antes: mirando el reloj, calculando cuánto se tarda en llegar a la parada, si pasará el ómnibus, si habrá que esperar una hora más o si habrá que improvisar.
 

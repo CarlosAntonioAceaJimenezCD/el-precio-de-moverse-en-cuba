@@ -6,7 +6,7 @@
 4. Publicar un índice de precio por marca, modelo y provincia.
 5. Actualizar el marco regulatorio cada vez que cambie la Gaceta Oficial.
 
-El resultado no será un informe. Será un **observatorio del mercado automotor cubano**.
+El resultado de hoy es un informe reproducible; el **observatorio del mercado automotor cubano** es el destino, no una promesa ya cumplida.
 
 ---
 

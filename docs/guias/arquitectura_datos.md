@@ -17,7 +17,7 @@ solo el delta) se apoyan en esta misma capa.
 
 Hoy `run_all.py` lee el **100 % del histórico** en cada corrida. Con 2–5 años de datos, el tiempo crece linealmente con el tamaño total. El objetivo no es "comprar un motor más rápido", sino cambiar la complejidad por ejecución de `O(total)` a `O(nuevo + particiones consultadas)`.
 
-Cuatro medidas atacan el crecimiento: particionar, guardar un watermark, pre-agregar KPIs por mes y compactar archivos.
+Cuatro medidas atacan el crecimiento: particionar, guardar un watermark, pre-agregar KPIs por mes y compactar archivos. El diseño es observacional: no hay grupos asignados al azar, por lo que las dos líneas base publicadas son predictivas (mediana global y mediana por marca, con MAE en `baselines.csv`), no experimentales. El mapa de trabajos académicos está en `Data/referencias.md` (41 entradas); el corpus de documentación de usuario cita sobre todo fuentes oficiales cubanas, por lo que la cobertura académica de README y storytelling sigue siendo parcial.
 
 ## 2. Comparativa de motores (investigación con documentación oficial)
 

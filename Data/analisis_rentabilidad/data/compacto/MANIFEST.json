@@ -29,15 +29,15 @@
       ]
     },
     "revision": {
-      "filas": 14519,
-      "exportadas": 14519,
+      "filas": 14528,
+      "exportadas": 14528,
       "particiones": 1,
-      "bytes": 557549,
+      "bytes": 557775,
       "archivos": [
         {
           "ruta": "revision/year=2026/month=11/parte-000.parquet",
-          "bytes": 557549,
-          "sha256": "58c9779296a8b4236181c497a4402eeebc4a27dedacb5432c7c184afcbd531d6"
+          "bytes": 557775,
+          "sha256": "b047302fd2ef5d590811562a3dd3db697679a6d283fa6f0ee30ccbc31cc02e4c"
         }
       ]
     },
